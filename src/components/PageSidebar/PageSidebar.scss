@@ -12,7 +12,7 @@
     float: left;
     width: $sidebarWidth;
     height: 100%;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid $grayD;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -25,7 +25,13 @@
           background-color: #e1e4e4;
           color: #333;
           padding: 10px 30px;
-          .ic {
+          &.cur{
+            background-color: #d1d4d4;
+            .ic-add:before{
+              content: '\e645';
+            }
+          }
+          .ic-add {
             position: absolute;
             right: 0;
             top: 50%;
@@ -42,10 +48,10 @@
             display: block;
             padding: 6px 30px;
             font-size:13px;
-          }
-          &.cur a, a:hover {
-            color: $white;
-            background-color: $blueLight;
+            &:hover, &.cur{
+              color: $white;
+              background-color: $blueLight;
+            }
           }
         }
       }

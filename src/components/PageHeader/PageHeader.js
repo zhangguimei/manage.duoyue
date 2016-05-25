@@ -12,79 +12,79 @@ import styles from './PageHeader.scss';
 class PageHeader extends React.Component {
   render() {
     const headerData = this.props.data;
-    const fastData=[
+    const fastData = [
       {
-        "id":1,
-        "title":"作者查询",
-        "icon":"icon-writer",
-        "href":""
+        "id": 1,
+        "title": "作者查询",
+        "icon": "icon-writer",
+        "href": ""
       },
       {
-        "id":2,
-        "title":"圈子查询",
-        "icon":"icon-community",
-        "href":" "
+        "id": 2,
+        "title": "圈子查询",
+        "icon": "icon-community",
+        "href": " "
       },
       {
-        "id":3,
-        "title":"资源查询",
-        "icon":"icon-resource",
-        "href":" "
+        "id": 3,
+        "title": "资源查询",
+        "icon": "icon-resource",
+        "href": " "
       },
       {
-        "id":4,
-        "title":"书籍查询",
-        "icon":"icon-book",
-        "href":" "
+        "id": 4,
+        "title": "书籍查询",
+        "icon": "icon-book",
+        "href": " "
       },
       {
-        "id":5,
-        "title":"用户查询",
-        "icon":"icon-user",
-        "href":" "
+        "id": 5,
+        "title": "用户查询",
+        "icon": "icon-user",
+        "href": " "
       },
       {
-        "id":6,
-        "title":"二维码应用",
-        "icon":"icon-qrcode",
-        "href":" "
+        "id": 6,
+        "title": "二维码应用",
+        "icon": "icon-qrcode",
+        "href": " "
       },
       {
-        "id":7,
-        "title":"红包活动",
-        "icon":"icon-gift",
-        "href":" "
+        "id": 7,
+        "title": "红包活动",
+        "icon": "icon-gift",
+        "href": " "
       },
       {
-        "id":8,
-        "title":"文章查询",
-        "icon":"icon-article",
-        "href":" "
+        "id": 8,
+        "title": "文章查询",
+        "icon": "icon-article",
+        "href": " "
       },
       {
-        "id":9,
-        "title":"商品查询",
-        "icon":"icon-goods",
-        "href":" "
+        "id": 9,
+        "title": "商品查询",
+        "icon": "icon-goods",
+        "href": " "
       }
-    ]
+    ];
     return (
       <div className="PageHeader">
-        <Link className="logo" to="user"></Link>
+        <Link className="logo" to="user">RAYS-2.0</Link>
         <div className="menu">
           <Menu data={headerData}/>
         </div>
         <div className="fast-menu">
           <a className="title" href="javascript:;">三</a>
           <div className="cont">
-            <div className="icon-caret"><em></em><i></i></div>
+            <div className="icon-caret"><em/><i/></div>
             <h5>快速操作</h5>
             <div className="list">
               {
-                fastData.map((item,i) => {
+                fastData.map((item, i) => {
                   return (
                     <Link key={i} to={item.href}>
-                      <i className={`icon ${item.icon}`}></i>
+                      <i className={`icon ${item.icon}`}/>
                       <span>{item.title}</span>
                     </Link>
                   );
@@ -100,7 +100,9 @@ class PageHeader extends React.Component {
   }
 }
 
-PageHeader.propTypes = {};
+PageHeader.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 function mapStateToProps(state) {
   return {

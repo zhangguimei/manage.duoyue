@@ -2,6 +2,9 @@
 @import "../../assets/sass/function";
 
 //Format
+html, body{
+  height:100%;
+}
 body {
   font-family: Arial, 'Microsoft YaHei';
 }

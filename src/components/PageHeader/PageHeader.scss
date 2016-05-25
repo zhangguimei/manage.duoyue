@@ -4,7 +4,7 @@
 $headerHeightInner: $headerHeight - 5px;
 
 .PageHeader {
-
+  min-width: 1000px;
   @extend %fixed-top;
   @extend %clearfix;
   height: $headerHeight;
@@ -17,6 +17,7 @@ $headerHeightInner: $headerHeight - 5px;
     float: left;
     width: $sidebarWidth;
     height: $headerHeightInner;
+    text-indent: -9999px;
     img {
       width: 120px;
       height: 35px;
@@ -39,37 +40,37 @@ $headerHeightInner: $headerHeight - 5px;
   .fast-menu {
     float: right;
     position: relative;
-    .icon{
+    .icon {
       display: inline-block;
       width: 40px;
-      height:40px;
+      height: 40px;
       background-image: url(../../assets/images/fast-menu.png);
     }
-    .icon-writer{
+    .icon-writer {
       background-position: 0 0;
     }
-    .icon-community{
+    .icon-community {
       background-position: -40px 0;
     }
-    .icon-resource{
+    .icon-resource {
       background-position: -80px 0;
     }
-    .icon-book{
+    .icon-book {
       background-position: -120px 0;
     }
-    .icon-user{
+    .icon-user {
       background-position: -160px 0;
     }
-    .icon-qrcode{
+    .icon-qrcode {
       background-position: -200px 0;
     }
-    .icon-gift{
+    .icon-gift {
       background-position: -240px 0;
     }
-    .icon-article{
+    .icon-article {
       background-position: -280px 0;
     }
-    .icon-goods{
+    .icon-goods {
       background-position: -320px 0;
     }
 
@@ -90,26 +91,26 @@ $headerHeightInner: $headerHeight - 5px;
       width: 324px;
       border: 1px solid $grayC;
       background-color: $white;
-      color:$colorText;
-      .icon-caret{
+      color: $colorText;
+      .icon-caret {
         position: absolute;
-        right:14px;
-        top:-10px;
-        width:20px;
+        right: 14px;
+        top: -10px;
+        width: 20px;
         height: 10px;
         overflow: hidden;
-        em,i {
+        em, i {
           display: block;
           position: absolute;
-          left:0;
+          left: 0;
         }
-        em{
-          @include triangle(top,10px,$grayC);
+        em {
+          @include triangle(top, 10px, $grayC);
         }
-        i{
+        i {
           position: absolute;
-          top:1px;
-          @include triangle(top,10px,$white);
+          top: 1px;
+          @include triangle(top, 10px, $white);
         }
       }
       h5 {
@@ -118,22 +119,22 @@ $headerHeightInner: $headerHeight - 5px;
       }
       .list {
         @extend %clearfix;
-        padding:20px;
+        padding: 20px;
         a {
           display: block;
           float: left;
           width: 94px;
           height: 94px;
-          padding:15px 0;
+          padding: 15px 0;
           border: 1px solid transparent;
           span {
             display: block;
-            margin-top:5px;
+            margin-top: 5px;
           }
-          &:hover{
-            border-color:$grayC;
+          &:hover {
+            border-color: $grayC;
             background-color: #f5f5f5;
-            color:$colorText;
+            color: $colorText;
           }
         }
       }
