@@ -11,9 +11,9 @@ class PageSidebar extends React.Component {
     }
   }
 
-  componentWillMount() {
-    const {route} = this.props;
-    if (route) {
+  componentWillReceiveProps(np) {
+    const {route} = np;
+    if (route.length > 0) {
       this.setState({
         route: route
       })
@@ -49,6 +49,6 @@ class PageSidebar extends React.Component {
 
 PageSidebar.propTypes = {
   data: PropTypes.array.isRequired
-}
+};
 
 export default PageSidebar;

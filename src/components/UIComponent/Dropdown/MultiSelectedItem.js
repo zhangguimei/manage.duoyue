@@ -6,11 +6,11 @@ import styles from './Dropdown.scss';
 class MultiSelectedItem extends React.Component {
 
   render() {
-    const { selected, onDelete } = this.props;
+    const { data, onDelete } = this.props;
     return (
 			<li className="MultiSelectedItem left" >
-        <span className="item-title">{selected}</span>
-        <a className="close-icon ic ic-close" onClick={(e) => onDelete(selected, e)} ></a>
+        <span className="item-title">{data.title}</span>
+        <a className="close-icon ic ic-close" onClick={(e) => { e.stopPropagation(); return onDelete()}} />
       </li>
     );
   }

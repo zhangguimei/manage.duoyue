@@ -30,7 +30,7 @@ class SidebarItem extends React.Component {
           children.length > 0 && <ul style={{display:open?'block':'none'}}>
             {
               children.map((item, i) => {
-                let select = route.join(".").slice(2) == `${parent}.${i}`;
+                let select = route.join(".").slice(2, 5) == `${parent}.${i}`;
                 return (
                   <SidebarItemList key={i} select={select} data={item}
                                    onClick={() => changeRoute(`${parent}.${i}`)}/>
@@ -49,6 +49,6 @@ SidebarItem.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.array.isRequired
   }).isRequired
-}
+};
 
 export default SidebarItem;
