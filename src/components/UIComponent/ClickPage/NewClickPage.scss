@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.ClickPage {
+  @include props-dpr(margin-top margin-bottom, $baseMargin $baseMargin);
+  text-align: center;
+  li {
+    @include props-dpr(margin-left margin-right border-radius, 3px 3px $radiusSmall);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: $green;
+    text-align: center;
+    background-color: $white;
+  }
+
+  .flag-button, .flag-button-on {
+    @include props-dpr(padding-top padding-bottom padding-left padding-right, 3px 3px 9px 9px);
+    border: 1px solid $green;
+  }
+  .flag-button-on {
+    color: $white;
+    border-color: $green;
+    background-color: $green;
+  }
+  .prev-button, .next-button {
+    @include props-dpr(padding-top padding-bottom padding-left padding-right, 3px 3px 7px 7px);
+    padding: 3px 7px;
+    border: 1px solid $green;
+  }
+  .prev-button.disabled, .next-button.disabled {
+    @extend %disabled;
+  }
+  .page-dot {
+    color: $green;
+  }
+}

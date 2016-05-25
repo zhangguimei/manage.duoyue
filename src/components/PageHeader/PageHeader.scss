@@ -1,0 +1,150 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+$headerHeightInner: $headerHeight - 5px;
+
+.PageHeader {
+
+  @extend %fixed-top;
+  @extend %clearfix;
+  height: $headerHeight;
+  border-bottom: 5px solid #00AEE8;
+  background-color: #1c6fa8;
+  color: $white;
+  z-index: $zIndexHeader;
+  .logo {
+    display: block;
+    float: left;
+    width: $sidebarWidth;
+    height: $headerHeightInner;
+    img {
+      width: 120px;
+      height: 35px;
+    }
+    background: url(../../assets/images/logo.png) no-repeat center;
+    background-size: 120px 35px;
+  }
+  .menu {
+    float: left;
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+  .name {
+    float: right;
+    padding: 17px 20px 18px 20px;
+    border-right: 1px solid #0083AE;
+  }
+  .fast-menu {
+    float: right;
+    position: relative;
+    .icon{
+      display: inline-block;
+      width: 40px;
+      height:40px;
+      background-image: url(../../assets/images/fast-menu.png);
+    }
+    .icon-writer{
+      background-position: 0 0;
+    }
+    .icon-community{
+      background-position: -40px 0;
+    }
+    .icon-resource{
+      background-position: -80px 0;
+    }
+    .icon-book{
+      background-position: -120px 0;
+    }
+    .icon-user{
+      background-position: -160px 0;
+    }
+    .icon-qrcode{
+      background-position: -200px 0;
+    }
+    .icon-gift{
+      background-position: -240px 0;
+    }
+    .icon-article{
+      background-position: -280px 0;
+    }
+    .icon-goods{
+      background-position: -320px 0;
+    }
+
+    .title {
+      display: block;
+      font-size: 20px;
+      line-height: 25px;
+      color: #fff;
+      padding: 15px 20px 15px 20px;
+      cursor: pointer;
+    }
+    .cont {
+      display: none;
+      position: absolute;
+      text-align: center;
+      top: 50px;
+      right: 5px;
+      width: 324px;
+      border: 1px solid $grayC;
+      background-color: $white;
+      color:$colorText;
+      .icon-caret{
+        position: absolute;
+        right:14px;
+        top:-10px;
+        width:20px;
+        height: 10px;
+        overflow: hidden;
+        em,i {
+          display: block;
+          position: absolute;
+          left:0;
+        }
+        em{
+          @include triangle(top,10px,$grayC);
+        }
+        i{
+          position: absolute;
+          top:1px;
+          @include triangle(top,10px,$white);
+        }
+      }
+      h5 {
+        border-bottom: 1px solid #eee;
+        padding: 10px 0px;
+      }
+      .list {
+        @extend %clearfix;
+        padding:20px;
+        a {
+          display: block;
+          float: left;
+          width: 94px;
+          height: 94px;
+          padding:15px 0;
+          border: 1px solid transparent;
+          span {
+            display: block;
+            margin-top:5px;
+          }
+          &:hover{
+            border-color:$grayC;
+            background-color: #f5f5f5;
+            color:$colorText;
+          }
+        }
+      }
+      .logout {
+        display: block;
+        background-color: #f8f8f8;
+        padding: 10px;
+      }
+    }
+    &:hover .cont {
+      display: block;
+    }
+  }
+}

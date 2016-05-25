@@ -1,0 +1,59 @@
+﻿@charset "UTF-8";
+@import "../../assets/sass/function";
+
+//Format
+body {
+  font-family: Arial, 'Microsoft YaHei';
+}
+a{
+  color:$colorText;
+}
+a:hover,a:focus{
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+}
+
+label {
+  font-weight: normal;
+}
+ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  @extend %f30;
+}
+
+h2 {
+  @extend %f24;
+}
+
+h3 {
+  @extend %f18;
+}
+
+h4 {
+  @extend %f16;
+}
+
+h5 {
+  @extend %f14;
+}
+
+h6 {
+  @extend %f12;
+}
+
+/* Btn */
+.btn-pill {
+  border-radius: 200px;
+}

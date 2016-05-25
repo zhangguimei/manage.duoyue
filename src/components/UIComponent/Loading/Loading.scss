@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.Loading {
+  position: relative;
+  text-align: center;
+  .spinner {
+    @include props-dpr(height width margin-left margin-top, 30px 30px -20px 10px);
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    margin-top: 10px;
+    border-bottom: 4px solid rgba(165, 162, 156, .2);
+    border-left: 4px solid rgba(165, 162, 156, .2);
+    border-right: 4px solid rgba(165, 162, 156, .2);
+    border-top: 4px solid rgba(165, 162, 156, 1);
+    border-radius: 100%;
+    animation: rot .9s infinite linear;
+  }
+  @keyframes rot {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}

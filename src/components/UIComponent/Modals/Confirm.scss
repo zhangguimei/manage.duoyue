@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.Confirm {
+  @include props-dpr(width height line-height border-radius margin-left, 200px 105px 22px $radiusBase -100px);
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  z-index: 11101;
+  border: 1px solid $green;
+  background-color: $white;
+  .confirm-content {
+    @include props-dpr(margin-top, $baseMargin);
+    display: block;
+  }
+  .confirm-text {
+    @include props-dpr(margin-top, $baseMargin);
+    margin-top: $baseMargin;
+  }
+  .confirm-no,
+  .confirm-yes {
+    @include props-dpr(width height border-radius margin-top margin-bottom, 50px 25px $radiusSmall $baseMargin/2 $baseMargin/2);
+    border: 1px solid $green;
+  }
+  .confirm-no {
+    color: $green;
+    margin-right: 10px;
+  }
+  .confirm-yes {
+    background-color: $green;
+    color: $white;
+  }
+}

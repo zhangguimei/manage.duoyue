@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+
+// switch
+//-----------------------------------------------------	
+$borderBoxSwitch:                true !default; // true为*{box-sizing:border-box;}
+
+
+// font相关
+//-----------------------------------------------------	
+$fontSize:                       14px !default;
+$fontLineHeight:                 1.5 !default;
+$fontFamily:                     "consolas", "Microsoft Yahei", Arial, sans-serif !default;
+
+
+// 背景色，文本色，边框色，链接色
+//-----------------------------------------------------	
+$colorText:                      #333 !default;
+$colorLink:                      #333 !default; // 如果只有一个值则滑过的值为这个值的darken 5%，如果有两个值则第二个值为滑过的值
+$colorTextLight:                 #777 !default;
+$colorBg:                        #fff !default;
+$colorBgLight:                   #f8f8f8 !default;
+$colorBorder:                    #eee !default;
+$colorPrimary:                   #62c3a2 !default;
+$colorPlaceholder:               #999 !default; // input placeholder color
+$colorDisabled:                  #777 #eee #eee !default; // textColor bgColor borderColor
+
+
+$colorBase:                      #f8f8f8 !default;
+$colorTitle:                     #e1e1e1 !default;
+
+
+// Colors
+// -----------------------------------------------------------------------------
+$black:                          #000 !default;
+$gray3:                          #333 !default;
+$gray5:                          #555 !default;
+$gray6:                          #666 !default;
+$gray7:                          #777 !default;
+$gray9:                          #999 !default;
+$grayC:                          #ccc !default;
+$grayD:                          #ddd !default;
+$grayE:                          #eee !default;
+$grayF:                          #f5f5f5 !default;
+$white:                          #fff !default;
+
+$orange:                         #feb794 !default;
+$yellow:                         #f8b020 !default;
+$red:                            #f00 !default;
+$green:                          #62c3a2 !default;
+$greenLight:                     #77cdb0 !default;
+$sliver:                         #7da0b4 !default;
+
+$blue:                           #1c6fa8 !default;
+$blueLight:                      #00aee8 !default;
+$blueDark:                       #126198 !default;
+
+// radius
+//-----------------------------------------------------	
+$radiusBase:                     5px !default;
+$radiusSmall:                    3px !default;
+
+
+// btn
+// 默认的按钮大小，颜色，圆角
+//-----------------------------------------------------	
+$btnSize:                        1em 42px !default; // 默认按钮的左右padding，高度
+$btnColor:                       $white $green !default; // 默认按钮的textColor, bgColor
+$btnRadius:                      false !default;
+
+
+// z-index
+//-----------------------------------------------------	
+$zIndexHeader:                   1000 !default;
+$zIndexFooter:                   2000 !default;
+$zIndexPopup:                    3000 !default;
+$zIndexOverlay:                  4000 !default; // 默认高于header和footer部分
+
+
+// margin
+//-----------------------------------------------------	
+$baseMargin:                     20px !default;
+$basePadding:                    15px !default;
+
+
+// header,footer等的高度
+//-----------------------------------------------------	
+$headerHeight:                   60px !default;
+$footerHeight:                   50px !default;
+$sidebarWidth:                   180px !default;
+
+
+// Popup
+//-----------------------------------------------------
+$popupMask:                      rgba(0,0,0,.5) !default;
+$popupBg:                        #fff !default;
+$popupText:                      #333 !default;

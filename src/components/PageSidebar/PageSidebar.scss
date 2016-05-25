@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.PageSidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: $headerHeight;
+  width: $sidebarWidth;
+  background-color: #f0f0f0;
+  .sidebarOne, .sidebarTwo {
+    float: left;
+    width: $sidebarWidth;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .sidebarOne {
+    .item {
+      h5 {
+        a {
+          display: block;
+          position: relative;
+          background-color: #e1e4e4;
+          color: #333;
+          padding: 10px 30px;
+          .ic {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 30px;
+            @extend %f12;
+            margin-top: -6px;
+          }
+        }
+      }
+      ul {
+        padding:6px 0;
+        li {
+          a {
+            display: block;
+            padding: 6px 30px;
+            font-size:13px;
+          }
+          &.cur a, a:hover {
+            color: $white;
+            background-color: $blueLight;
+          }
+        }
+      }
+    }
+  }
+  .sidebarTwo {
+    display: none;
+    background-color: $white;
+  }
+}

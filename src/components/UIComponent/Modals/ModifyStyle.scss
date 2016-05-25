@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.ModifyStyle {
+  @include props-dpr(height width right top border-radius, 106px 220px 10px 50px $radiusBase);
+  position: fixed;
+  border: 1px solid $grayF;
+  z-index: 11002;
+  background-color: $white;
+  %top-common {
+    position: absolute;
+    z-index: 11003;
+    top: -35px;
+    right: 31%;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-color: transparent;
+    border-style: outset solid solid;
+    border-width: 18px;
+  }
+  .top-white {
+    &:before {
+      @extend %top-common;
+      border-bottom-color: $white
+    }
+  }
+  .top-black {
+    &:before {
+      @extend %top-common;
+      border-bottom-color: 1px solid $black;
+    }
+  }
+  .top {
+    @include props-dpr(height, 40px);
+    width: 100%;
+    border-bottom: 1px solid $colorBorder;
+    border-top-left-radius: $radiusBase;
+    border-top-right-radius: $radiusBase;
+    %font-change {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 50%;
+    }
+    .small {
+      @include font-dpr(18px);
+      @extend %font-change;
+      border-right: 1px solid $colorBorder;
+    }
+    .big {
+      @include font-dpr(25px);
+      @extend %font-change;
+    }
+  }
+  .bottom {
+    @include props-dpr(height, 50px);
+    width: 100%;
+    .set-color {
+      @include props-dpr(width height margin-top line-height, 30px 30px 15px 30px);
+      box-sizing: content-box;
+      display: inline-block;
+      border-radius: 100%;
+      border: 1px solid $grayD;
+    }
+    .white {
+      @extend .set-color;
+      border: 1px solid $grayD;
+    }
+    .black {
+      @extend .set-color;
+      margin-left: 30%;
+    }
+  }
+}

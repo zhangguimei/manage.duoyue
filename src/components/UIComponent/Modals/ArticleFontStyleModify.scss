@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import "../../assets/sass/font";
+@import "../../assets/sass/function";
+
+.ArticleFontStyleModify {
+  @mixin icon-set($iconUrl) {
+    background: url($iconUrl) no-repeat center;
+  }
+  .black {
+    color: $white !important;
+    background-color: $black !important;
+    //border: 1px solid #333 !important;
+  }
+  .white {
+    color: $gray3 !important;
+    background-color: $white !important;
+    //border: 1px solid #e5e5e5 !important;
+  }
+
+  .StyleBox {
+    position: relative;
+    .arrow {
+      position: absolute;
+      z-index: 12000;
+      top: -11px;
+      right: 52px;
+      color: rgba(0, 0, 0, 0.8);
+      transform: rotate(180deg);
+      font-size: 16px;
+    }
+    .checkstyle {
+      width: 100%;
+      position: fixed;
+      //top: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 12000;
+      // font-size: 14px; 
+      // line-height: 30px;
+      @extend %container;
+      @include props-dpr(top font-size line-height, $headerHeight 14px 30px);
+      .row-title {
+        display: block;
+        //width: 40px;
+        height: 100%;
+        @include props-dpr(width, 40px);
+      }
+      .swipe-model,
+      .top {
+        @extend %center-flex-y;
+        @extend %container3;
+        border-bottom: 1px solid $gray7;
+        color: $white;
+        .fz-panel {
+          flex: 1;
+          @include equal-flex(span);
+          .fz-btn {
+            border: 1px solid $gray7;
+            border-radius: $radiusBase;
+            text-align: center;
+            &:not(:last-child) {
+              @extend %mr10;
+            }
+          }
+          .night-active {
+            border: 1px solid steelblue;
+          }
+          .normal-active {
+            border: 1px solid $orange;
+          }
+        }
+      }
+      .middle {
+        @extend %center-flex-y;
+        @extend %container3;
+        border-bottom: 1px solid $gray7;
+        color: $white;
+        .font-panel {
+          flex: 1;
+          @include equal-flex(span);
+          .articleStyleFont {
+            color: $white;
+            &:not(:last-child) {
+              @extend %mr10;
+            }
+            .articleFontContent {
+              width: 100%;
+              display: inline-block;
+              border: 1px solid $gray7;
+              border-radius: $radiusBase;
+              text-align: center;
+              color: $white;
+            }
+            .night-active {
+              border: 1px solid steelblue;
+            }
+            .normal-active {
+              border: 1px solid $orange;
+            }
+          }
+        }
+      }
+      .bottom {
+        @extend %center-flex-y;
+        @extend %container3;
+        color: $white;
+        .bg-panel {
+          display: block;
+          flex: 1;
+          @include equal-flex(span);
+          .bg-container {
+            line-height: 1;
+            &:not(:last-child) {
+              @extend %mr10;
+            }
+            .fontStyleItem {
+              display: inline-block;
+              // width: 32px;
+              // height: 32px;
+              border-radius: 50%;
+              //line-height: 32px;
+              @include props-dpr(width height line-height, 32px 32px 32px);
+            }
+            .normal-active {
+              border: 1px solid $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}

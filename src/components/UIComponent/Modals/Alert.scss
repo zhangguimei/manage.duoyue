@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.Alert {
+  @include props-dpr(border-radius, $radiusBase*2);
+  position: fixed;
+  left: 15%;
+  top: 20%;
+  z-index: 11003;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $white;
+  text-align: center;
+  @include props-dpr(padding, 20px);
+  .alert-img {
+    display: block;
+    line-height: 1;
+    @extend %mb10;
+    @extend %f30;
+  }
+  .alert-content {
+    display: block;
+    @extend %f16;
+  }
+}
