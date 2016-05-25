@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+%testblock {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+.DatePickerTestPage {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  .left {
+    float: left;
+  }
+  .test1 {
+    @extend %testblock;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    .input-wrap {
+      position: relative;
+      display: inline-block;
+      border: 1px solid #ddd;
+      white-space: nowrap;
+      font-size: 16px;
+      line-height: 30px;
+      background-color: $grayE;
+      border-radius: 3px;
+      .date-input {
+        position: relative;
+        width: 206px;
+        padding: 0 5px;
+        font-size: 16px;
+        line-height: 30px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        vertical-align: top;
+      }
+      .date-input:focus {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 3px rgba(82,168,236,0.6);
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 3px rgba(82,168,236,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 3px rgba(82,168,236,0.6)
+      }
+      .ic {
+        display: inline-block;
+        width: 30px;
+        border-left: 1px solid #ddd;
+        line-height: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+  .test2 {
+    @extend %testblock;
+    background-color: #abced8;
+  }
+  .checked {
+    position: absolute;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform: rotate(90deg);
+  }
+
+}

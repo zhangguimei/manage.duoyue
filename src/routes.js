@@ -3,6 +3,10 @@ import { Route, IndexRoute } from 'react-router';
 
 import Manage from './components/Manage/Manage';
 import UserPage from './pages/PageUser/PageUser';
+
+import TestPage from './pages/PageTest/PageTest';
+import DatePickerTest from './components/PageTest/DatePickerTestPage/DatePickerTestPage';
+
 import Rays from './components/Rays2.0/index';
 import NotFound from './components/NotFound/NotFound';
 
@@ -10,6 +14,10 @@ export default (
   <Route path="/" component={Manage}>
     <IndexRoute component={UserPage}/>
     <Route path="user" component={UserPage}>
+    </Route>
+
+    <Route path="test" component={TestPage}>
+      <Route path="datepicker" component={DatePickerTest}/>
     </Route>
 
     <Route path="rays" component={Rays} />
