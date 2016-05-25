@@ -40,7 +40,8 @@ class ClickPage extends React.Component {
   }
 
   render() {
-    const {index} = this.state, {count}=this.props;
+    const {index} = this.state, {count}=this.props,
+          screenWidth = window.screen.width;
     if(parseInt(count, 10) <= 1) return null;
     let array = new Array(count + 2), node = null;
     for (let i = 0; i < count + 2; i++) {
@@ -61,19 +62,36 @@ class ClickPage extends React.Component {
         node = <li className="flag-button" key={i} onClick={() => ::this.onChangePage("index", i)}>{i}</li>;
       }
 
-      if(i > index - 2 && i < index + 2) {
-        if(i == index) {
-          node = <li className="flag-button flag-button-on" key={i}>{i}</li>
-        } else {
-          node = <li className="flag-button" key={i} onClick={() => ::this.onChangePage("index", i)}>{i}</li>
+      if(screenWidth < 1048) {
+        if(i > index - 2 && i < index + 2) {
+          if(i == index) {
+            node = <li className="flag-button flag-button-on" key={i}>{i}</li>
+          } else {
+            node = <li className="flag-button" key={i} onClick={() => ::this.onChangePage("index", i)}>{i}</li>
+          }
         }
-      }
 
-      if(i == index - 2 && index > 3) {
-        node = <li className="page-dot" key={i}>..</li>
-      }
-      if(i == count - 1 && index < count - 2) {
-        node = <li className="page-dot" key={i}>..</li>
+        if(i == index - 2 && index > 3) {
+          node = <li className="page-dot" key={i}>..</li>
+        }
+        if(i == count - 1 && index < count - 2) {
+          node = <li className="page-dot" key={i}>..</li>
+        }
+      } else {
+        if(i > index - 4 && i < index + 6) {
+          if(i == index) {
+            node = <li className="flag-button flag-button-on" key={i}>{i}</li>
+          } else {
+            node = <li className="flag-button" key={i} onClick={() => ::this.onChangePage("index", i)}>{i}</li>
+          }
+        }
+
+        if(i == 2 && index > 4) {
+          node = <li className="page-dot" key={i}>..</li>
+        }
+        if(i == count - 1 && index < count - 4) {
+          node = <li className="page-dot" key={i}>..</li>
+        }
       }
       return node;
     });

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+$silver: #7da0b4;
+
+.CheckBox {
+  //margin: auto;
+  text-align: center;
+  .check-label {
+    position: relative;
+    background-color: $white;
+    border: 1px solid #aaa;
+    @include props-dpr(width height border-radius margin-bottom, 16px 16px 4px 0);
+  }
+  input {
+    display: none;
+  }
+  span:after {
+    position: absolute;
+    @include props-dpr(top left font-size, -8px 0px 0px);
+    font-weight: normal;
+    content: '\2714';
+    color: $silver;
+  }
+  &.checked span:after {
+    @include props-dpr(font-size, 20px);
+  }
+}

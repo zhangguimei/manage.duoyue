@@ -113,7 +113,6 @@ const data = [
 ];
 
 class Rays extends React.Component {
-
   render() {
     const {route, actions:{changeRoute, chooseTreeLeaves}} = this.props;
     let collapseData= require("../../assets/MockData/collapse_data.json");
