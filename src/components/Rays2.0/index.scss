@@ -1,8 +1,16 @@
 @charset "UTF-8";
 @import "../../assets/sass/function";
 .ShowRoute {
-  @include props-dpr(margin-top, 150px);
+  display: block;
+  @include props-dpr(margin-top, 30px);
 }
 .Tree {
   @include props-dpr(margin-top, 50px);
+}
+.DropdownPage {
+  @include props-dpr(width margin-left padding-bottom, 300px 100px 50px);
+  @extend %f10;
+  .title {
+    @include props-dpr(margin-top, 50px);
+  }
 }

@@ -1,8 +1,11 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../../../actions/MenuActions';
+
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
-import Immutable from 'Immutable';
 
 class Menu extends React.Component {
   constructor(props, context) {
@@ -11,14 +14,6 @@ class Menu extends React.Component {
       mainIndex: 0,  //Menu主页的显示index
       route: [] //当前鼠标滑过的路线
     };
-  }
-
-  componentWillReceiveProps(np) {
-    // if(np.route) {
-    //   this.setState({
-    //     route: np.route
-    //   })
-    // }
   }
 
   moveItem(e, nodeRoute) {
@@ -33,9 +28,10 @@ class Menu extends React.Component {
   clickItem(e) {
     e.stopPropagation();
     e.preventDefault();
-    let {route} = this.state, {changeRoute} = this.props;
+    let {route} = this.state, {actions:{changeRoute}} = this.props;
     this.setState({
-      mainIndex: route[0].toString()
+      mainIndex: route[0].toString(),
+      route: []
     });
     changeRoute && changeRoute(route);
   }
@@ -64,4 +60,21 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+Menu.propTypes = {
+  actions: PropTypes.shape({
+    changeRoute: PropTypes.func
+  }),
+  data: PropTypes.array,
+  parent: PropTypes.string
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
+
+export default connect(
+  "",
+  mapDispatchToProps
+)(Menu);

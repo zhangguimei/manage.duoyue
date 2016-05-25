@@ -3,11 +3,28 @@ import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import {Iterable} from 'immutable';
 
 const debug = process.env.NODE_ENV !== 'production';
-const middlewares = debug ? [thunk, logger(), routerMiddleware(history)] : [thunk, routerMiddleware(history)];
 
 export default function configureStore(history, initialState) {
+
+  const stateTransformer = (state) => {
+    let newState = {};
+    Object.keys(state).forEach((x) => {
+      if(Iterable.isIterable(state[x])){
+        newState[x] = state[x].toJS();
+      }else {
+        newState[x] = state[x];
+      }
+    });
+    return newState;
+  };
+
+  let middlewares = [thunk, routerMiddleware(history)];
+  if(debug) {
+    middlewares.push(logger({stateTransformer}));
+  }
 
   const store = createStore(
       rootReducer,

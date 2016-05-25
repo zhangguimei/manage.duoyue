@@ -17,6 +17,6 @@ SidebarItemList.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.array.isRequired
   }).isRequired
-}
+};
 
 export default SidebarItemList;

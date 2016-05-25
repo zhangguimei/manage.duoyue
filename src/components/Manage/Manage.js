@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+
 import PageHeader from '../PageHeader/PageHeader';
 import PageSidebar from '../PageSidebar/PageSidebar';
 import styles from './Manage.scss';
@@ -7,12 +8,12 @@ import styles from './Manage.scss';
 class Manage extends React.Component {
 
   render() {
-    const {children} = this.props;
+    const {children, route} = this.props;
     const headerData = require("../../assets/MockData/header_data.json");
     return (
       <div className="Manage">
         <PageHeader data={headerData}/>
-        <PageSidebar data={headerData} route={[0, 1, 0]}/>
+        <PageSidebar data={headerData} route={route}/>
         <div className="PageMain">
           {children && React.cloneElement(children)}
         </div>
@@ -24,11 +25,12 @@ class Manage extends React.Component {
 Manage.propTypes = {
   children: PropTypes.node,
   defaultPath: PropTypes.string.isRequired
-}
+};
 
 function mapStateToProps(state, ownProps) {
   return {
-    defaultPath: ownProps.location.pathname
+    defaultPath: ownProps.location.pathname,
+    route: state.menu.toJS()
   }
 }
 export default connect(mapStateToProps)(Manage);

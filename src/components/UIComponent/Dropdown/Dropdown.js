@@ -1,10 +1,4 @@
 import React, {PropTypes}  from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import classNames from 'classnames';
-import { browserHistory } from 'react-router';
-import { Link } from 'react-router';
-// import {Map, List, is, fromJS} from 'immutable';
 import styles from './Dropdown.scss';
 
 import MultiSelectedItem from './MultiSelectedItem';
@@ -15,7 +9,7 @@ class Dropdown extends React.Component {
     super(props);
     this.state = {
       isShowDropdownList: false,
-      selectedArr: ["全部"]
+      selectedArr: []
     }
   }
 
@@ -25,43 +19,21 @@ class Dropdown extends React.Component {
     })
   }
 
-  select(title) {
-    let temp = title;
-    const { selectedArr } = this.state;
-    let { isMultiple,cantSelect } = this.props;
-    if(cantSelect.indexOf(title) == -1) {
-      if(isMultiple) {
-        temp = [...selectedArr];
-        if(title == "全部") {
-          temp = [title];
-        }else if(selectedArr.indexOf(title) == -1) {
-          if (temp.indexOf("全部") > -1) {
-            temp.splice(0,1)
-          } 
-          temp.push(title);
-        }
-      } 
-      this.setState({
-        selectedArr: temp
-      })
-    }
+  select(id) {
+    const {selectedArr} = this.state;
+    let {isMultiple, option} = this.props;
+    let data = option.filter(v => v.id == id);
     this.setState({
-      isShowDropdownList: false
-    })
-
+      selectedArr: isMultiple ? id == option[0].id ? data : selectedArr.concat(data).filter(v => v.id != option[0].id) : data,
+      isShowDropdownList: !this.state.isShowDropdownList
+    });
   }
 
-  deleteSelected(title, e) {
-    const { selectedArr } = this.state;
-    let temp = [...selectedArr];
-    let num = temp.indexOf(title);
-    if (num > -1) {
-      temp.splice(num, 1); 
-        this.setState({
-          selectedArr: temp
-        })
-    }
-    e.stopPropagation()
+  deleteSelected(id) {
+    const {selectedArr} = this.state;
+    this.setState({
+      selectedArr: selectedArr.filter(v => v.id != id)
+    })
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
@@ -75,39 +47,39 @@ class Dropdown extends React.Component {
   // }
 
   render() {
-    const { option, isMultiple, cantSelect, skin} = this.props;
-    const { isShowDropdownList, selectedArr } = this.state;
+    const {option, isMultiple, skin} = this.props;
+    const {isShowDropdownList, selectedArr} = this.state;
     return (
       <div className={`Dropdown Dropdown-${skin}`}>
-        <div className="dropdown-box" onClick={() => this.dropdownItem()}>
-        {
-          isMultiple &&
-          <ul className="multiple-list clearfix">
+        <div className="dropdown-box" onClick={::this.dropdownItem}>
           {
-            selectedArr.map((item,i) => {
-              return(
-                <MultiSelectedItem selected={item} onDelete={::this.deleteSelected}  key={i}/>
-                );
-            })
+            isMultiple &&
+            <ul className="multiple-list clearfix">
+              {
+                selectedArr.map((item, i) => {
+                  return (
+                    <MultiSelectedItem data={item} onDelete={() => this.deleteSelected(item.id)} key={i}/>
+                  );
+                })
+              }
+
+            </ul>
           }
-            
-        </ul>
-        }
-        {
-          !isMultiple &&
-          <div className="single-select a-line">{selectedArr}</div>
-        }
+          {
+            !isMultiple &&
+            <div className="single-select a-line">{selectedArr[0] && selectedArr[0].title}</div>
+          }
         </div>
         {
-         isShowDropdownList &&
+          isShowDropdownList &&
           <ul className="dropdown-list">
-          { 
-            option.map((item,i) => {
-              return(
-              <DropdownItem data={item} isMultiple={isMultiple} select={::this.select} cantSelect={cantSelect} selectedArr={selectedArr} key={i}/>
-              );
-            })
-          }
+            {
+              option.map((item, i) => {
+                return (
+                  <DropdownItem data={item} select={::this.select} selectedArr={selectedArr} key={i}/>
+                );
+              })
+            }
           </ul>
         }
 

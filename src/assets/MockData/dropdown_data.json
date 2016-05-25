@@ -1,10 +1,52 @@
 [
-	{"id": 0,"title": "全部"},
-	{"id": 1,"title": "WEB主页"},
-	{"id": 2,"title": "资讯主页（微信）"},
-	{"id": 3,"title": "龙族专区（微信）"},
-	{"id": 4,"title": "书城（微信）"},
-	{"id": 5,"title": "龙族首页"},
-	{"id": 6,"title": "栏目广告（PC）"},
-	{"id": 7,"title": "书城（次元）"}
+  {
+    "id": 0,
+    "title": "全部",
+    "canSelect": true
+  },
+  {
+    "id": 1,
+    "title": "WEB主页",
+    "canSelect": true
+  },
+  {
+    "id": 2,
+    "title": "资讯主页（微信）",
+    "canSelect": true
+  },
+  {
+    "id": 3,
+    "title": "龙族专区（微信）",
+    "canSelect": true
+  },
+  {
+    "id": 4,
+    "title": "书城（微信）",
+    "canSelect": true
+  },
+  {
+    "id": 5,
+    "title": "龙族首页",
+    "canSelect": true
+  },
+  {
+    "id": 6,
+    "title": "栏目广告（PC）",
+    "canSelect": true
+  },
+  {
+    "id": 7,
+    "title": "书城（次元）",
+    "canSelect": true
+  },
+  {
+    "id": 8,
+    "title": "WEB副页",
+    "canSelect": false
+  },
+  {
+    "id": 9,
+    "title": "栏目广告（Linux）",
+    "canSelect": false
+  }
 ]

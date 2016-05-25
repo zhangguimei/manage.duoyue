@@ -1,112 +1,113 @@
 @charset "UTF-8";
 @import "../../../assets/sass/function";
 
-$default:                          #77cdb0 !default;
-$blue:                             #1e90ff !default;
+$default: #77cdb0 !default;
+$blue: #1e90ff !default;
 
 .Dropdown {
-	.dropdown-box {
-		height: auto;
-		@include props-dpr(min-height,40px);
-		margin: 0 auto;
-		border: 1px solid $default;
-		.multiple-list {
-			@include props-dpr(padding,5px);
-			.MultiSelectedItem {
-				position: relative;
-				@include props-dpr(height line-height border-radius margin,25px 25px 5px 5px);
-				@extend %mr10;
-				border: 1px solid $default;
-				background-color: #f5f5f5;
-				.item-title {
-					@extend %container;
-					color: #666;
-				}
-				.close-icon {
-					position: absolute;
-					@extend %f10;
-					border-radius: 50%;
-					color: $white;
-					background-color: $default;
-					@include props-dpr(padding top right,2px -5px -7px);
-					cursor: pointer;
-				}
-			}
-		}
-		.single-select {
-			@include props-dpr(line-height,40px);
-			@extend %container;
-			color: $gray6;
-		}
-	}
-	.dropdown-list {
-		@include props-dpr(line-height, 40px);
-		margin: 0 auto;
-		border-left: 1px solid $default;
-		border-right: 1px solid $default;
-		.DropdownItem {
-			@extend %container;
-			color: $default;
-			border-bottom: 1px dashed $default;
-			cursor: pointer;
-		}
-		.DropdownItem:last-child {
-			border-bottom: 1px solid $default;
-		}
-		.DropdownItem:hover {
-			color: $white;
-			background-color: $default;
-		}
-		.DropdownItem:before {
-			content:" ";
-			border: 1px solid $default;
-			@include props-dpr(margin-right,10px);
-		}
-		.DropdownItem:hover::before {
-			content:" ";
-			border: 1px solid $white;
-			@include props-dpr(margin-right,10px);
-		}
-		.gray-color {
-			color: $gray9;
-		}
-		.cant-click {
-			cursor: not-allowed;
-		}
-	}
+  .dropdown-box {
+    height: auto;
+    @include props-dpr(min-height, 40px);
+    margin: 0 auto;
+    border: 1px solid $default;
+    .multiple-list {
+      @include props-dpr(padding, 5px);
+      .MultiSelectedItem {
+        position: relative;
+        @include props-dpr(height line-height border-radius margin, 25px 25px 5px 5px);
+        @extend %mr10;
+        display: inline-block;
+        border: 1px solid $default;
+        background-color: #f5f5f5;
+        .item-title {
+          @extend %container;
+          color: #666;
+        }
+        .close-icon {
+          position: absolute;
+          @extend %f10;
+          border-radius: 50%;
+          color: $white;
+          background-color: $default;
+          @include props-dpr(padding top right, 2px -5px -7px);
+          cursor: pointer;
+        }
+      }
+    }
+    .single-select {
+      @include props-dpr(line-height, 40px);
+      @extend %container;
+      color: $gray6;
+    }
+  }
+  .dropdown-list {
+    @include props-dpr(line-height, 40px);
+    margin: 0 auto;
+    border-left: 1px solid $default;
+    border-right: 1px solid $default;
+    .DropdownItem {
+      @extend %container;
+      color: $default;
+      border-bottom: 1px dashed $default;
+      cursor: pointer;
+    }
+    .DropdownItem:last-child {
+      border-bottom: 1px solid $default;
+    }
+    .DropdownItem:hover {
+      color: $white;
+      background-color: $default;
+    }
+    .DropdownItem:before {
+      content: " ";
+      border: 1px solid $default;
+      @include props-dpr(margin-right, 10px);
+    }
+    .DropdownItem:hover::before {
+      content: " ";
+      border: 1px solid $white;
+      @include props-dpr(margin-right, 10px);
+    }
+    .gray-color {
+      color: $gray9;
+    }
+    .cant-click {
+      cursor: not-allowed;
+    }
+  }
 }
 
 .Dropdown-blue {
-	.dropdown-box {
-		border: 1px solid $blue;
-		.multiple-list {
-			.MultDropdownItemiSelectedItem {
-				border: 1px solid $blue;
-				background-color: #f5f5f5;
-				.close-icon {
-					background-color: $blue;
-				}
-			}
-		}
-	}
-	.dropdown-list {
-		border-left: 1px solid $blue;
-		border-right: 1px solid $blue;
-		.DropdownItem {
-			color: $blue;
-			border-bottom: 1px dashed $blue;
-		}
-		.DropdownItem:last-child {
-			border-bottom: 1px solid $blue;
-		}
-		.DropdownItem:hover {
-			background-color: $blue;
-		}
-		.DropdownItem:before {
-			border: 1px solid $blue;
-		}
-		.gray-color {
-			color: $gray9;
-		}
-	}
+  .dropdown-box {
+    border: 1px solid $blue;
+    .multiple-list {
+      .MultDropdownItemiSelectedItem {
+        border: 1px solid $blue;
+        background-color: #f5f5f5;
+        .close-icon {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+  .dropdown-list {
+    border-left: 1px solid $blue;
+    border-right: 1px solid $blue;
+    .DropdownItem {
+      color: $blue;
+      border-bottom: 1px dashed $blue;
+    }
+    .DropdownItem:last-child {
+      border-bottom: 1px solid $blue;
+    }
+    .DropdownItem:hover {
+      background-color: $blue;
+    }
+    .DropdownItem:before {
+      border: 1px solid $blue;
+    }
+    .gray-color {
+      color: $gray9;
+    }
+  }
 }
