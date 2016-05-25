@@ -4,21 +4,51 @@ import SidebarItem from './SidebarItem';
 import styles from './PageSidebar.scss';
 
 class PageSidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      route: [0]
+    }
+  }
+
+  componentWillMount() {
+    const {route} = this.props;
+    if (route) {
+      this.setState({
+        route: route
+      })
+    }
+  }
+
+  changeRoute(routes) {
+    const {route} = this.state;
+    this.setState({
+      route: [route[0], ...routes.split(".")]
+    })
+  }
+
   render() {
-    const headerData = this.props.data;
-    let sidebarData = headerData[1].children;
-    //console.log(sidebarData);
+    const {data} = this.props, {route} = this.state;
+    let sidebarData = data[route[0]].children;
     return (
       <div className="PageSidebar">
         <div className="sidebarOne">
           {
-            sidebarData.map((item, i)=> <SidebarItem key={i} data={item}/>)
+            sidebarData.map((item, i)=> {
+              return (
+                <SidebarItem key={i} data={item} route={route} changeRoute={::this.changeRoute} parent={`${i}`}/>
+              );
+            })
           }
         </div>
         {/*<div className="sidebarTwo"></div>*/}
       </div>
     );
   }
+}
+
+PageSidebar.propTypes = {
+  data: PropTypes.array.isRequired
 }
 
 export default PageSidebar;

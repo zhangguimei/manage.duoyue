@@ -2,23 +2,21 @@
 import React, {PropTypes} from 'react';
 
 class SidebarItemList extends React.Component {
-  constructor(props){
-    super(props);
-    this.state={
-      levelThree:false
-    }
-  }
-  componentWillMount(){
-
-  }
   render() {
-    let {data:{title,children}} = this.props;
+    let {data:{title}, onClick, select} = this.props;
     return (
       <li>
-        <a>{title}</a>
+        <a className={select?"cur":null} onClick={onClick}>{title}</a>
       </li>
     );
   }
+}
+
+SidebarItemList.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    children: PropTypes.array.isRequired
+  }).isRequired
 }
 
 export default SidebarItemList;
