@@ -23,7 +23,7 @@ import styles from './Table.scss';
  * CheckBox:                You can deliver your own checkbox component through this prop, or you can ignore
  *                          this prop and use the default CheckBox.
  *
- * rowsForOnePage:          If you use this component with ClickPage component together, this prop is used
+ * rowsForOnePage:          If you use this component with Pagination component together, this prop is used
  *                          for setting the row number of table showing in one page. MUST be set with
  *                          pageIndex together.
  *
@@ -77,11 +77,13 @@ class Table extends React.Component {
       }
     }
     //表格翻页
-    if(pageIndex && ((this.props.pageIndex != pageIndex) || this.contentDataForShow.length < 1)) {
-      this.startIndex = (pageIndex - 1) * rowsForOnePage;
-      this.endIndex = pageIndex * rowsForOnePage;
-      this.contentDataForShow = nextProps.contentData.slice(this.startIndex, this.endIndex);
-      ::this.initCheckBoxState(this.contentDataForShow);
+    if(pageIndex) {
+      if((this.props.rowsForOnePage != rowsForOnePage) || (this.props.pageIndex != pageIndex) || this.contentDataForShow.length < 1) {
+        this.startIndex = (pageIndex - 1) * rowsForOnePage;
+        this.endIndex = pageIndex * rowsForOnePage;
+        this.contentDataForShow = nextProps.contentData.slice(this.startIndex, this.endIndex);
+        ::this.initCheckBoxState(this.contentDataForShow);
+      }
     } else if(!pageIndex) {
       this.contentDataForShow = nextProps.contentData;
     }
@@ -172,16 +174,18 @@ class Table extends React.Component {
     let _this  = this;
     _this.contentDataForShow = data.sort(function(o1, o2) {
       if(_this.columnHasString(data, columnIndex)) {
-        if(isAscending) {
-          return _this.str2Unicode(o1[_this.headKeyList[columnIndex]]) > _this.str2Unicode(o2[_this.headKeyList[columnIndex]]);
+        if(_this.str2Unicode(o1[_this.headKeyList[columnIndex]]) > _this.str2Unicode(o2[_this.headKeyList[columnIndex]])) {
+          return isAscending ? -1 : 1;
+        } else if(_this.str2Unicode(o1[_this.headKeyList[columnIndex]]) < _this.str2Unicode(o2[_this.headKeyList[columnIndex]])) {
+          return isAscending ? 1 : -1;
         } else {
-          return _this.str2Unicode(o1[_this.headKeyList[columnIndex]]) < _this.str2Unicode(o2[_this.headKeyList[columnIndex]]);
+          return 0;
         }
       } else {
         if(isAscending) {
-          return o1[_this.headKeyList[columnIndex]] >  o2[_this.headKeyList[columnIndex]];
+          return o2[_this.headKeyList[columnIndex]] - o1[_this.headKeyList[columnIndex]];
         } else {
-          return o1[_this.headKeyList[columnIndex]] <  o2[_this.headKeyList[columnIndex]];
+          return o1[_this.headKeyList[columnIndex]] - o2[_this.headKeyList[columnIndex]];
         }
       }
     });
@@ -242,7 +246,7 @@ class Table extends React.Component {
               {
                 isOperatable &&
                 <td>
-                  <CheckBox checked={checkBoxState[item.id]} CheckBoxOnClick={::this.checkBoxClick} index={item.id} value={item.id} />
+                  <CheckBox checked={checkBoxState[item.id]} checkBoxOnClick={::this.checkBoxClick} index={item.id} value={item.id} />
                 </td>
               }
               {tdCodes}
@@ -254,8 +258,8 @@ class Table extends React.Component {
           <tr>
             {
               isOperatable && (this.headLength > 0) &&
-              <td className="select-all" style={{ width: "5%" }}>
-                <CheckBox checked={checkBoxState && checkBoxState.selectAll} CheckBoxOnClick={::this.selectAllClick} value={null} />
+              <td title="全选当前页" className="select-all" style={{ width: "5%" }}>
+                <CheckBox name="isAll" checked={checkBoxState && checkBoxState.selectAll} checkBoxOnClick={::this.selectAllClick} value={null} />
               </td>
             }
             {headCodes}

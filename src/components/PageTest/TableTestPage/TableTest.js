@@ -3,10 +3,9 @@ import React from 'react';
 
 import Table from '../../UIComponent/Table/Table';
 import CheckBox from '../../UIComponent/Table/CheckBox';
-import ClickPage from '../../UIComponent/ClickPage/NewClickPage';
+import Pagination from '../../UIComponent/Pagination/Pagination';
 
-const ROWS_FOR_ONE_PAGE = 6,
-      tableHeadData = {
+const tableHeadData = {
         id: "编号",
         sortValue: "排序值",
         iconName: "图片名称",
@@ -23,7 +22,8 @@ class Test extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageIndex: 1
+      pageIndex: 1,
+      rowsForOnePage: 5
     };
   }
 
@@ -33,14 +33,29 @@ class Test extends React.Component {
     });
   }
 
+  selectOnChange(e) {
+    let selectDOM = e.target,
+        nextRowsForOnePage = selectDOM.options[selectDOM.options.selectedIndex].value,
+        nextPageIndex;
+    const { pageIndex, rowsForOnePage } = this.state;
+    nextRowsForOnePage = parseInt(nextRowsForOnePage, 10);
+    nextPageIndex = Math.ceil((rowsForOnePage * (pageIndex - 1) + 1) / nextRowsForOnePage);
+    this.setState({
+      pageIndex: nextPageIndex,
+      rowsForOnePage: nextRowsForOnePage
+    });
+  }
+
   render() {
-    const totalPages = Math.ceil(tableContentData.length / ROWS_FOR_ONE_PAGE);
+    const { rowsForOnePage, pageIndex } = this.state,
+          totalPages = Math.ceil(tableContentData.length / rowsForOnePage);
     return(
       <div className="Test" style={{ marginTop: 100 }}>
         <Table headData={tableHeadData} contentData={tableContentData} thClass={thClass} tdClass={tdClass}
-               isOperatable={true} rowsForOnePage={ROWS_FOR_ONE_PAGE} pageIndex={this.state.pageIndex}
+               isOperatable={true} rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}
                CheckBox={CheckBox} />
-        <ClickPage count={totalPages} index={1} onPageClick={::this.onPageClick}/>
+        <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}
+                    selectOnChange={::this.selectOnChange} />
       </div>
     );
   }
