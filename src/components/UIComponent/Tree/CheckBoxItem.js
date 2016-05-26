@@ -1,16 +1,33 @@
 'use strict';
 import React from 'react';
 import TreeList from './TreeList';
-//import {Map} from 'immutable';
 
 class CheckBoxItem extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      showItem: true
+      showItem: false
     };
     this.child = [];
+  }
+
+  componentWillReceiveProps(np) {
+    const {open, freeOpen} = np, {showItem} = this.state;
+    if( freeOpen &&  !open == showItem) {
+      this.setState({
+        showItem: open
+      })
+    }
+  }
+
+  componentDidMount() {
+    const {open, freeOpen} = this.props, {showItem} = this.state;
+    if( freeOpen &&  !open == showItem) {
+      this.setState({
+        showItem: open
+      })
+    }
   }
 
   showItem() {
@@ -69,9 +86,9 @@ class CheckBoxItem extends React.Component {
   }
 
   render() {
-    const {data: {title, children = []}, route, parent, chooseTreeLeaves} = this.props, {showItem} = this.state;
+    const {data: {title, children = []}, route, parent, ...props} = this.props, {showItem} = this.state;
     const level = parent.split(".").length - 2;
-    const chooseClass = this.getChooseClass() ;
+    const chooseClass = this.getChooseClass();
     return (
       <li className="CheckBoxItem text-center" style={{marginLeft: `${level*10}` }}  >
         <div className="tree-item">
@@ -93,7 +110,7 @@ class CheckBoxItem extends React.Component {
         </div>
         {
           children.length > 0 && showItem &&
-          <TreeList data={children} parent={parent} route={route} chooseTreeLeaves={chooseTreeLeaves}/>
+          <TreeList data={children} parent={parent} route={route} {...props}/>
         }
       </li>
     );

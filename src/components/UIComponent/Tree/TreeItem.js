@@ -1,7 +1,6 @@
 'use strict';
 import React from 'react';
 import TreeList from './TreeList';
-//import {Map} from 'immutable';
 
 class TreeItem extends React.Component {
 
@@ -12,8 +11,26 @@ class TreeItem extends React.Component {
     }
   }
 
+  componentWillReceiveProps(np) {
+    const {open, freeOpen} = np, {showItem} = this.state;
+    if( freeOpen &&  !open == showItem) {
+      this.setState({
+        showItem: open
+      })
+    }
+  }
+
+  componentDidMount() {
+    const {open, freeOpen} = this.props, {showItem} = this.state;
+    if( freeOpen &&  !open == showItem) {
+      this.setState({
+        showItem: open
+      })
+    }
+  }
+
   showItem() {
-    const {data:{children = [], id}, clickItem, parent} = this.props;
+    const {data:{children = [], id}, clickItem} = this.props;
     if(children.length > 0) {
       this.setState({
         showItem: !this.state.showItem
@@ -24,7 +41,7 @@ class TreeItem extends React.Component {
   }
 
   render() {
-    const {data: {title, children = []}, route, parent, clickItem} = this.props, {showItem} = this.state;
+    const {data: {title, children = []}, route, parent, ...props} = this.props, {showItem} = this.state;
     const level = parent.split(".").length - 2;
     return (
       <li className="TreeItem text-center" style={{marginLeft: `${level*10}` }}  >
@@ -35,11 +52,23 @@ class TreeItem extends React.Component {
               :
               <i className="triangle-replace"/>
           }
+          {
+            children.length > 0 && showItem &&
+            <i className="ic ic-folderopenempty"/>
+          }
+          {
+            children.length > 0 && !showItem &&
+            <i className="ic ic-folderempty"/>
+          }
+          {
+          children.length == 0 &&
+            <i className="ic ic-doc"/>
+          }
           <span className="item-title">{title}</span>
         </div>
         {
           children.length > 0 && showItem &&
-          <TreeList data={children} parent={parent} route={route} clickItem={clickItem}/>
+          <TreeList data={children} parent={parent} route={route} {...props}/>
         }
       </li>
     );

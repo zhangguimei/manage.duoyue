@@ -6,20 +6,25 @@ import CheckBoxItem from './CheckBoxItem';
 class TreeList extends React.Component {
 
   render() {
-    const {data = [], route = [0], parent = "", clickItem, chooseTreeLeaves} = this.props;
-    let level = parent.split(".").length - 1;
-    //let routeString = route.join("."), test = new RegExp("^" + parent.slice(0, -1), );
+    const {checkable, data = [], route = [0], parent = "", clickItem, chooseTreeLeaves, open, freeOpen} = this.props;
     let props = {
       route: route,
       clickItem: clickItem,
-      chooseTreeLeaves: chooseTreeLeaves
+      chooseTreeLeaves: chooseTreeLeaves,
+      checkable: checkable,
+      open: open,
+      freeOpen: freeOpen
     };
     if(data.length) {
       return (
         <ul className="ul-item">
           {
             data.map((item, index) => {
-              return <CheckBoxItem data={item} parent={`${parent}${index}.`} key={index} {...props}/>
+              if(checkable){
+                return <CheckBoxItem data={item} parent={`${parent}${index}.`} key={index} {...props}/>
+              }else{
+                return <TreeItem data={item} parent={`${parent}${index}.`} key={index} {...props}/>
+              }
             })
           }
         </ul>

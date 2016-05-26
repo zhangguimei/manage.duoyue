@@ -11,7 +11,7 @@ class ProgressController extends React.Component {
     e.preventDefault();
     this.startXP = e.targetTouches[0].pageX;
     this.startV = progressValue;
-    onProgressControll("start", progressValue);
+    onProgressControll && onProgressControll("start", progressValue);
   }
 
   touchMoveProgress(e) {
@@ -22,7 +22,7 @@ class ProgressController extends React.Component {
     let moveX = touchmove[0].pageX - this.startXP;
     progressValueNew = this.startV + moveX / progressLong;
     if(progressValueNew >= 0 && progressValueNew <= 1) {
-      onProgressControll("move", progressValueNew);
+      onProgressControll && onProgressControll("move", progressValueNew);
     }
   }
 
@@ -30,7 +30,7 @@ class ProgressController extends React.Component {
     e.stopImmediatePropagation();
     e.preventDefault();
     let {onProgressControll, progressValue} = this.props;
-    onProgressControll("end", progressValue);
+    onProgressControll && onProgressControll("end", progressValue);
   }
 
   moveProgress(node) {
@@ -42,6 +42,7 @@ class ProgressController extends React.Component {
   componentDidMount() {
     let progressDot = findDOMNode(this.refs.progressDot);
     this.progressLong = findDOMNode(this.refs.progress).offsetWidth;
+    this.forceUpdate();
     this.moveProgress(progressDot);
   }
 

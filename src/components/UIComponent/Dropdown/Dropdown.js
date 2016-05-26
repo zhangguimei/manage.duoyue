@@ -1,4 +1,5 @@
 import React, {PropTypes}  from 'react';
+import {is, fromJS, Map} from 'immutable';
 import styles from './Dropdown.scss';
 
 import MultiSelectedItem from './MultiSelectedItem';
@@ -36,15 +37,13 @@ class Dropdown extends React.Component {
     })
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   const { isMultiple } =this.props;
-  //   const thisStateValue = this.state, nextStateValue = nextState;
-  //   if (is(fromJS(thisStateValue), fromJS(nextStateValue))) {
-  //     return false;
-  //   } else {
-  //     return true; 
-  //   }
-  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    const IthisProps = Map(this.props),
+      IthisState = fromJS(this.state),
+      InextProps = Map(nextProps),
+      InextState = fromJS(nextState);
+    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
+  }
 
   render() {
     const {option, isMultiple, skin} = this.props;

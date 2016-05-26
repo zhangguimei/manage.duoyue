@@ -16,10 +16,11 @@ class Rays extends React.Component {
     let collapseData = require("../../assets/MockData/collapse_data.json");
     let treeData = require("../../assets/MockData/tree_data.json");
     let dropdownData = require("../../assets/MockData/dropdown_data.json");
+    let routeData = require("../../assets/MockData/header_data.json");
     return (
       <div className="RaysTab">
         <Menu data={treeData}/>
-        <ShowRoute data={treeData} route={route}/>
+        <ShowRoute data={routeData} route={route}/>
         <Tree data={treeData}/>
         <div className="DropdownPage">
           <div className="title">多选</div>

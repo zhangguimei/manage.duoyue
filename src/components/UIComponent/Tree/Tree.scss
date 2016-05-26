@@ -13,17 +13,26 @@
     @include props-dpr(padding-top padding-right padding-bottom padding-left, 4px 10px 2px 10px);
 
   }
+  .control-open {
+    >span {
+      display: inline-block;
+      @include props-dpr(width height margin-left, 60px 20px 5px);
+      cursor: pointer;
+      &:hover {
+        text-decoration:  underline;
+        color: $red;
+      }
+    }
+  }
   .choose {
     display: inline-block;
     padding-left: 10px;
   }
-
   .tree-item {
     height: 30px;
     line-height: 30px;
     overflow: hidden;
   }
-
   .TreeList {
     @include props-dpr(margin-left,100px);
   }
@@ -41,6 +50,7 @@
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 10px solid #333;
+    margin-right: 5px;
   }
   .triangle-right {
     display: inline-block;
@@ -49,10 +59,12 @@
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 10px solid #333;
+    margin-right: 5px;
   }
   .triangle-replace {
     display: inline-block;
-    width: 20px;
+    width: 10px;
     height: 1px;
+    margin-right: 5px;
   }
 }
