@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"name": "北京",
+		"parentid": 0,
+		"haschild": true,
+		"initial": "b",
+		"initials": "bj",
+		"pinyin": "beijing",
+		"suffix": "市",
+		"code": "110000",
+		"order": 1
+	},
+	{
+		"id": 18,
+		"name": "湖北",
+		"parentid": 0,
+		"haschild": true,
+		"initial": "h",
+		"initials": "hb",
+		"pinyin": "hubei",
+		"suffix": "省",
+		"code": "420000",
+		"order": 18
+	}
+]
