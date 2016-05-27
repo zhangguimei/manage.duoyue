@@ -5,11 +5,11 @@
 @import '../../assets/sass/common';
 
 .Manage {
-  .PageMain{
+  .PageMain {
     position: absolute;
-    left:$sidebarWidth;
-    right:0;
-    top:$headerHeight;
+    left: $sidebarWidth;
+    right: 0;
+    top: $headerHeight;
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;

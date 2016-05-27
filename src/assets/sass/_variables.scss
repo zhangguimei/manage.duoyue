@@ -70,8 +70,9 @@ $btnRadius:                      false !default;
 
 
 // z-index
-//-----------------------------------------------------	
-$zIndexHeader:                   1000 !default;
+//-----------------------------------------------------
+$zIndexSidebar:                  1000 !default;
+$zIndexHeader:                   1500 !default;
 $zIndexFooter:                   2000 !default;
 $zIndexPopup:                    3000 !default;
 $zIndexOverlay:                  4000 !default; // 默认高于header和footer部分

@@ -6,8 +6,7 @@ class SidebarItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
-      selectIndex: -1
+      open: true
     }
   }
 
@@ -18,22 +17,26 @@ class SidebarItem extends React.Component {
   }
 
   render() {
-    let {data:{title, children}, route, changeRoute, parent} = this.props,
+    const {menuData:{name, data}, route, changeRoutes, parent, selectTitle} = this.props,
       {open} = this.state;
     return (
       <div className="SidebarItem item">
         <h5>
-          <a className={open ? "cur" : null} onClick={()=>this.toggleClick()}>{title}{children.length > 0 ?
-            <i className="ic ic-add"/> : null}</a>
+          {
+            data.length > 0 ?
+              <a className={selectTitle ? 'cur' : null} onClick={() => this.toggleClick()}>{name}<i
+                className={open ? 'ic ic-move' :'ic ic-add'}/></a> :
+              <a className={selectTitle ? 'cur' : null} onClick={() => changeRoutes(`${parent}`)}>{name}</a>
+          }
         </h5>
         {
-          children.length > 0 && <ul style={{display:open?'block':'none'}}>
+          data.length > 0 && <ul style={{display:open?'block':'none'}}>
             {
-              children.map((item, i) => {
-                let select = route.join(".").slice(2, 5) == `${parent}.${i}`;
+              data.map((item, i) => {
+                let select = route.slice(1, 3).join(".") == `${parent}.${i}`;
                 return (
-                  <SidebarItemList key={i} select={select} data={item}
-                                   onClick={() => changeRoute(`${parent}.${i}`)}/>
+                  <SidebarItemList key={i} select={select} menuData={item}
+                                   onClick={() => changeRoutes(`${parent}.${i}`, item, `${parent}.${i}`)}/>
                 );
               })
             }
@@ -45,9 +48,9 @@ class SidebarItem extends React.Component {
 }
 
 SidebarItem.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    children: PropTypes.array.isRequired
+  menuData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    data: PropTypes.array.isRequired
   }).isRequired
 };
 

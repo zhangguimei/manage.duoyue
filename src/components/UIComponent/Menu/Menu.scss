@@ -1,48 +1,27 @@
 @charset "UTF-8";
 @import "../../../assets/sass/function";
 
-$headerHeightInner :$headerHeight -5px;
+$headerHeightInner: $headerHeight - 5px;
 .Menu {
-  .icon {
-    display: inline-block;
-    width: 20px;
-    height:20px;
-    background-image: url(../../../assets/images/header-nav.png);
-  }
-  .icon-user{
-    background-position: 0px 0;
-  }
-  .icon-resource{
-    background-position: -20px 0;
-  }
-  .icon-operation{
-    background-position: -40px 0;
-  }
-  .icon-home{
-    background-position: -60px 0;
-  }
-  .icon-sales{
-    background-position: -80px 0;
-  }
-  .icon-analysis{
-    background-position: -100px 0;
-  }
-  .icon-system{
-    background-position: -120px 0;
-  }
   .ul-menu {
     width: 100%;
     color: $white;
     cursor: pointer;
-    height: $headerHeightInner;;
+    height: $headerHeightInner;
     .MenuItem {
       position: relative;
       color: $gray3;
       text-align: center;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        margin-bottom: 3px;
+      }
       .text {
         position: relative;
         white-space: nowrap;
-        padding:6px 15px;
+        padding: 6px 15px;
         .item-title {
           display: block;
           color: inherit;
@@ -53,9 +32,9 @@ $headerHeightInner :$headerHeight -5px;
           background-image: url(http://v2.manage.duoyue.me/manage/images/manage.png);
           background-repeat: no-repeat;
           background-position: -13px -15px;
-          width:15px;
-          height:15px;
-          margin-left:10px;
+          width: 15px;
+          height: 15px;
+          margin-left: 10px;
         }
         .item-next-on {
           background-position: -13px -30px;
@@ -63,11 +42,11 @@ $headerHeightInner :$headerHeight -5px;
       }
       .ul-menu-index {
         position: absolute;
-        left:0;
-        top:$headerHeightInner;
+        left: 0;
+        top: $headerHeightInner;
         border: 1px solid $grayC;
         background-color: $white;
-        padding:2px;
+        padding: 2px;
       }
       .ul-item {
         position: absolute;
@@ -83,7 +62,7 @@ $headerHeightInner :$headerHeight -5px;
       position: relative;
       height: 100%;
       color: $white;
-      margin-right:2px;
+      margin-right: 2px;
       background-color: #126198;
     }
     .li-menu-on {
@@ -92,17 +71,18 @@ $headerHeightInner :$headerHeight -5px;
     .li-item {
       min-width: 100px;
       text-align: left;
-      .item-title{
-        padding-right:8px;
+      font-size: 12px;
+      .item-title {
+        padding-right: 8px;
       }
       .text {
         position: relative;
 
-        .ic{
+        .ic {
           position: absolute;
-          right:8px;
-          top:50%;
-          margin-top:-6px;
+          right: 8px;
+          top: 50%;
+          margin-top: -6px;
           @extend %f12;
         }
       }
