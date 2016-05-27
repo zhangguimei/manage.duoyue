@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Manage from './components/Manage/Manage';
-import UserPage from './pages/PageUser/PageUser';
+import UserPage from './components/PageUser/PageUser';
 
 import TestPage from './pages/PageTest/PageTest';
 import DatePickerTest from './components/PageTest/DatePickerTestPage/DatePickerTestPage';

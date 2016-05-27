@@ -33,7 +33,8 @@ class Menu extends React.Component {
       mainIndex: route[0].toString(),
       route: []
     });
-    changeRoute && changeRoute(route);
+    //console.log(route);
+    changeRoute && changeRoute(route.slice(0, route.length - 1));
   }
 
   leaveMenu() {
@@ -43,9 +44,9 @@ class Menu extends React.Component {
   }
 
   render() {
-    const {data, parent = ""} = this.props, {route, mainIndex}=this.state;
+    const {menuData, parent = ""} = this.props, {route, mainIndex}=this.state;
     let props = {
-      data: data,
+      menuData: menuData,
       route: route,
       parent: parent,
       moveItem: ::this.moveItem,
@@ -64,7 +65,7 @@ Menu.propTypes = {
   actions: PropTypes.shape({
     changeRoute: PropTypes.func
   }),
-  data: PropTypes.array,
+  menuData: PropTypes.array,
   parent: PropTypes.string
 };
 

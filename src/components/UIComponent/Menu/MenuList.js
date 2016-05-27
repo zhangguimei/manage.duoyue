@@ -5,7 +5,7 @@ import MenuItem from './MenuItem';
 class MenuList extends React.Component {
 
   render() {
-    const {data = [], route = [0], parent = "", moveItem, clickItem, mainIndex} = this.props;
+    const {menuData = [], route = [0], parent = "", moveItem, clickItem, mainIndex} = this.props;
     let level = parent.split(".").length - 1;
     let routeString = route.join("."), test = new RegExp("^" + parent.slice(0, -1), );
     let ulClass = level == 0 ? "ul-menu" : level == 1 ? "ul-menu-index" : "ul-item";
@@ -15,12 +15,12 @@ class MenuList extends React.Component {
       clickItem: clickItem,
       mainIndex: mainIndex
     };
-    if(data.length &&  routeString.match(test)) {
+    if(menuData.length &&  routeString.match(test)) {
       return (
         <ul className={`MenuList ${ulClass}`}>
           {
-            data.map((item, index) => {
-              return <MenuItem data={item} parent={`${parent}${index}.`} key={index} {...props}/>
+            menuData.map((item, index) => {
+              return <MenuItem menuData={item} parent={`${parent}${index}.`} key={index} {...props}/>
             })
           }
         </ul>

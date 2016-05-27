@@ -4,7 +4,7 @@ import MenuList from './MenuList';
 
 class MenuItem extends React.Component {
   render() {
-    const {data: {title, icon, children = []}, route, parent, clickItem, moveItem, mainIndex} = this.props;
+    const {menuData: {name, icon_min, icon_min_light, icon_max, icon_max_light, data = []}, route, parent, clickItem, moveItem, mainIndex} = this.props;
     const level = parent.split(".").length;
     //console.log(`${route.join(".")}.`.slice(0, (level-1)*2 ), parent);
     let routeString = `${route.join(".")}.`.slice(0, (level-1)*2);
@@ -14,16 +14,16 @@ class MenuItem extends React.Component {
       <li className={`MenuItem ${liClass}`} onMouseMove={(e) => moveItem(e, parent)} onClick={(e) => clickItem(e, parent)}>
         <div className="text">
           {
-            icon && <i className={`menu-pic icon ${icon}`}/>
+            icon_min && icon_min_light && icon_max && icon_max_light && <img src={icon_max} alt={name} />
           }
-          <span className="item-title">{title}</span>
+          <span className="item-title">{name}</span>
           {
-            children.length > 0 && level > 2 && <i className="ic ic-right"></i>
+            data.length > 0 && level > 2 && <i className="ic ic-right"/>
           }
         </div>
         {
-          children.length > 0 &&
-          <MenuList data={children} parent={parent} route={route} moveItem={moveItem} clickItem={clickItem}/>
+          data.length > 0 &&
+          <MenuList menuData={data} parent={parent} route={route} moveItem={moveItem} clickItem={clickItem}/>
         }
       </li>
     );
