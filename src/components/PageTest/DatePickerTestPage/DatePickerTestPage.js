@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import styles from './DatePickerTestPage.scss';
 
 import DatePicker from '../../UIComponent/DatePicker/DatePicker'
+import CascadeSelect from '../../UIComponent/CascadeSelect/CascadeSelect'
 
 class DatePickerTestPage extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class DatePickerTestPage extends React.Component {
     this.state = {
       startDate: '',
       endDate: '',
-      check: true
+      check: true,
+      selectAddress: {}
     }
   }
 
@@ -42,8 +44,14 @@ class DatePickerTestPage extends React.Component {
     this.checkDate(startDate, date)
   }
 
+  getSelectData(info) {
+    this.setState({
+      selectAddress: info
+    });
+  }
+
   render() {
-    const {startDate, endDate, check} = this.state;
+    const {startDate, endDate, check, selectAddress} = this.state;
     let datePickerData = {
       format: 'yyyy-mm-dd hh:ii:ss ',
       dateValue: '2016-5-29 00:10:12',
@@ -55,18 +63,25 @@ class DatePickerTestPage extends React.Component {
       dateValue: '',
       calendarWrapClassName: 'newWrap'
     };
+    let locationData = {
+      showGenre: ['省/市', '市/县', ''],
+      defaultItemVaule: '---------无--------',
+      addressValue: ['湖北', '武汉', '新洲', 2003]
+    };
     return (
       <div className="DatePickerTestPage clearfix">
         <div className="test1 left">
           <p>开始时间:{startDate}</p>
           <DatePicker data={datePickerData} getPickDate={::this.getPickDate}/>
-
         </div>
         <div className="test2 left">
           <p>结束时间:{endDate}</p>
           <DatePicker data={datePickerData2} getPickDate={::this.getPickDateEnd}/>
         </div>
         <p className="checked">{check ? ')' : '('}</p>
+        <p>name:{selectAddress.name}</p>
+        <p>id:{selectAddress.id}</p>
+        <CascadeSelect data={locationData} getSelectInfo={::this.getSelectData}/>
       </div>
     );
   }

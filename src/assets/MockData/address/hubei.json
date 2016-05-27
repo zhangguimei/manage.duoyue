@@ -1,0 +1,14 @@
+[
+	{
+		"id": 290,
+		"name": "武汉",
+		"parentid": 18,
+		"haschild": true,
+		"initial": "w",
+		"initials": "wh",
+		"pinyin": "wuhan",
+		"suffix": "市",
+		"code": "420100",
+		"order": 1
+	}
+]
