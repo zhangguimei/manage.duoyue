@@ -8,6 +8,9 @@ import {Map, fromJS, is} from 'immutable';
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
 
+import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
+
+@shouldUpdateDecorator()
 class Menu extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -24,14 +27,6 @@ class Menu extends React.Component {
     this.setState({
       route: [...nodeRoute.split(".")]
     })
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    const IthisProps = Map(this.props),
-      IthisState = fromJS(this.state),
-      InextProps = Map(nextProps),
-      InextState = fromJS(nextState);
-    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
   }
 
   componentWillReceiveProps(nextProps) {

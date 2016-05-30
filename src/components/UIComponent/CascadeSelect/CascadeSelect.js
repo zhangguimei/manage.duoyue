@@ -11,6 +11,9 @@ const hubei = require("../../../assets/MockData/address/hubei.json");
 const wuhan = require("../../../assets/MockData/address/wuhan.json");
 const hubeiWuhanHongshan = require("../../../assets/MockData/address/hubeiWuhanHongshan.json");//完整测试数据，湖北武汉洪山
 
+import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
+
+@shouldUpdateDecorator()
 class CascadeSelect extends React.Component {
   constructor(props) {
     super(props);
@@ -156,14 +159,6 @@ class CascadeSelect extends React.Component {
     } else {
       this.fetchData(0, 0);
     }
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    const IthisProps = fromJS(this.props),
-      IthisState = fromJS(this.state),
-      InextProps = fromJS(nextProps),
-      InextState = fromJS(nextState);
-    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
   }
 
   render() {
