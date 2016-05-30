@@ -16,7 +16,7 @@ class CheckBox extends React.Component {
 
   render() {
     let { checked, checkBoxOnClick, name, index, value, defaultChecked } = this.props;
-    let uniqCode = Math.random();
+    let uniqCode = Math.random().toFixed(4);
     return (
       <div className={classNames("CheckBox center", {"checked": checked})}>
         {

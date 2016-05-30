@@ -52,7 +52,12 @@ class Table extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      editLocation: {
+        key: null,
+        id: -1
+      }
+    };
     this.startIndex = 0;
     if(this.props.rowsForOnePage) {
       this.endIndex = this.props.rowsForOnePage;
@@ -243,19 +248,25 @@ class Table extends React.Component {
   }
 
   //表格单元格双击可编辑
-  tdOnDblClick(e) {
+  tdOnDblClick(e, key, id) {
     if(!this.props.editable || e.target.nodeName != "TD") {return;}
-    let tdDOM = e.target;
-    tdDOM.contentEditable = true;
-    tdDOM.focus();
+    this.editTDDOM = e.target;
+    this.setState({
+      editLocation: {
+        key,
+        id
+      }
+    });
   }
 
-  tdOnBlur(e, key, id) {
-    if(!this.props.editable || e.target.nodeName != "TD") {return;}
-    let tdDOM = e.target,
-        inputText = tdDOM.innerText.trim(),
+  inputOnBlur(e, key, id) {
+    if(!this.props.editable || e.target.nodeName != "INPUT") {return;}
+    let editInput = e.target,
+        inputText = editInput.value.trim(),
         isInputAllNumber = true;
-    if(inputText !== "") {
+    if(inputText == "") {
+      inputText = "无";
+    } else {
       for (let char of inputText) {
         if(char < "0" || char > "9") {
           isInputAllNumber = false;
@@ -265,8 +276,6 @@ class Table extends React.Component {
       if(isInputAllNumber) {
         inputText = parseInt(inputText, 10);
       }
-    } else {
-      inputText = "无";
     }
     for (let i = this.startIndex; i < this.endIndex; i++) {
       if(this.props.contentData[i].id == id) {
@@ -280,7 +289,14 @@ class Table extends React.Component {
         break;
       }
     }
-    tdDOM.contentEditable = false;
+    this.editTDDOM.innerText = inputText;
+    this.setState({
+      editLocation: {
+        key: null,
+        id: -1
+      }
+    });
+    this.editTDDOM = null;
     this.forceUpdate();
   }
 
@@ -344,7 +360,7 @@ class Table extends React.Component {
   render() {
     const { thClass, tdClass, isOptional, CheckBox, deletable } = this.props,
           { contentDataForShow } = this,
-          { checkBoxState } = this.state;
+          { checkBoxState, editLocation } = this.state;
     //默认每列等宽
     const columnWidth = isOptional ? (95 / this.headNameList.length) + "%" : (100 / this.headNameList.length) + "%";
     //生成thead代码
@@ -365,18 +381,21 @@ class Table extends React.Component {
       for(let i = 0; i < this.headKeyList.length; i++) {
         let key = this.headKeyList[i],
             tdContent = item[key];
+        if(key == editLocation.key && item.id == editLocation.id) {
+          tdContent = <input className="edit-input" ref="editInput" type="text" autofocus="autofocus" defaultValue={item[key]}
+                             onBlur={(e) => this.inputOnBlur(e, key, item.id)} />
+        }
         if(key == "img") {
           tdContent = item.imgLink ?
             <Link to={item.imgLink}><img src={item.imgSrc} alt="图片"/></Link>
             :
             <img src={item.imgSrc} alt="图片"/>;
         } else if(key == "link") {
-          tdContent = <Link to={item.href}>{item[key]}</Link>
+          tdContent = <Link to="item.href">{item[key]}</Link>
         }
           tdCodes.push(<td className={classNames(`tbody-column-${i}`, this.formatClassName(tdClass, i))}
-                           key={i} onDoubleClick={::this.tdOnDblClick} onBlur={(e) => ::this.tdOnBlur(e, key, item.id)}
-                           onMouseMove={(e) => this.onMouseMove(e)} onMouseDown={(e) => this.onMouseDown(e, i)}
-                           onMouseUp={::this.onMouseUp}>
+                           key={i} onDoubleClick={(e) => this.tdOnDblClick(e, key, item.id)} onMouseMove={(e) => this.onMouseMove(e)}
+                           onMouseDown={(e) => this.onMouseDown(e, i)} onMouseUp={::this.onMouseUp}>
                         {tdContent}
                         {
                           deletable && (i == this.headKeyList.length - 1) &&
