@@ -2,7 +2,6 @@
 @import "../../../assets/sass/function";
 
 $silver: #7da0b4;
-
 .CheckBox {
   @include props-dpr(width height, 18px 18px);
   margin: auto;
@@ -11,6 +10,7 @@ $silver: #7da0b4;
     background-color: $white;
     border: 1px solid #aaa;
     @include props-dpr(width height border-radius margin-bottom, 16px 16px 4px 0);
+    cursor: pointer;
   }
   input[type=checkbox] {
     display: none;
