@@ -1,28 +1,38 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
+import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
+
 import styles from './Pagination.scss';
 
+@shouldUpdateDecorator()
 class Pagination extends React.Component {
+  static defaultProps = {
+    pageNumLists: [5, 20, 50]
+  };
+
   onChangePage(type, i) {
     let {index, totalPages, onPageClick} = this.props;
     switch (type) {
       case "prev":
         (index > 1) && onPageClick(index - 1);
         break;
+
       case "index":
         onPageClick(i);
         break;
+
       case "next":
         (index < totalPages) && onPageClick(index + 1);
         break;
+
       default:
         return null;
     }
   }
 
   render() {
-    const { index, totalPages, selectOnChange, requireSelect } = this.props,
+    const { index, totalPages, selectOnChange, requireSelect, pageNumLists } = this.props,
           screenWidth = window.screen.width;
     if(parseInt(totalPages, 10) <= 0) return null;
     let array = new Array(totalPages + 2), node = null;
@@ -33,11 +43,11 @@ class Pagination extends React.Component {
       node = null;
       if(i == 0) {
         node = <li className={classnames("prev-button", index == 1 ? "disabled":"")}
-                   onClick={() => ::this.onChangePage("prev")} key={i}>上一页</li>;
+                   onClick={() => this.onChangePage("prev")} key={i}>上一页</li>;
         return node;
       } else if(i == totalPages + 1) {
         node = <li className={classnames("next-button", index == totalPages ? "disabled":"")}
-                   onClick={() => ::this.onChangePage("next")} key={i}>下一页</li>;
+                   onClick={() => this.onChangePage("next")} key={i}>下一页</li>;
         return node;
       }
       if(i == 1 || i == totalPages) {
@@ -88,9 +98,11 @@ class Pagination extends React.Component {
           <div className="rows-set left">
             每页显示：
             <select name="rowsForOnePage" className="select" onChange={selectOnChange}>
-              <option value="5">5</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
+              {
+                pageNumLists.map((option, index) => {
+                  return <option value={option} key={index}>{option}</option>
+                })
+              }
             </select>
           </div>
         }
@@ -107,7 +119,8 @@ Pagination.propTypes = {
   totalPages: PropTypes.number.isRequired,
   onPageClick: PropTypes.func,
   requireSelect: PropTypes.bool,
-  selectOnChange: PropTypes.func
+  selectOnChange: PropTypes.func,
+  pageNumsLists: PropTypes.array
 };
 
 export default Pagination;

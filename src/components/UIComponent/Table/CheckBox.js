@@ -2,8 +2,11 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
+import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
+
 import styles from './CheckBox.scss';
 
+@shouldUpdateDecorator()
 class CheckBox extends React.Component {
   static defaultProps = {
     checked: false,
@@ -13,17 +16,18 @@ class CheckBox extends React.Component {
 
   render() {
     let { checked, checkBoxOnClick, name, index, value, defaultChecked } = this.props;
+    let uniqCode = Math.random();
     return (
       <div className={classNames("CheckBox center", {"checked": checked})}>
         {
           defaultChecked ?
-            <input name={name} id={`checkbox${index}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
+            <input name={name} id={`checkbox${index}-${uniqCode}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
                    defaultValue={value} defaultChecked/>
             :
-            <input name={name} id={`checkbox${index}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
+            <input name={name} id={`checkbox${index}-${uniqCode}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
                    defaultValue={value}/>
         }
-        <label className="checkbox-label" htmlFor={`checkbox${index}`}>
+        <label className="checkbox-label" htmlFor={`checkbox${index}-${uniqCode}`}>
           <span className="checkbox-symbol"/>
         </label>
       </div>
