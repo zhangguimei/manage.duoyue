@@ -10,7 +10,7 @@ class Manage extends React.Component {
   render() {
     const {children, route} = this.props;
     const treeData = require("../../assets/MockData/tree_data.json");
-    let sidebarLeft = route.length === 3 && getChildren(treeData.menu, route).length > 0 || route.length === 4 ? '360px' : '180px'
+    let sidebarLeft = route.length === 4 ? '360px' : '180px';
     return (
       <div className="Manage">
         <PageHeader treeData={treeData}/>

@@ -1,9 +1,10 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import options from './ConstantOfFast';
 
 class FastMenu extends React.Component {
   render() {
-    let {fastData} = this.props;
+    let {fastData, changeRoute} = this.props;
     return (
       <div className="FastMenu">
         <a className="title" href="javascript:;">三</a>
@@ -15,7 +16,7 @@ class FastMenu extends React.Component {
               fastData.map((item, i) => {
                 let {name, icon_max} = item;
                 return (
-                  <a key={i} href="">
+                  <a key={i} href="javascript:;" onClick={() => changeRoute(options[item.id])}>
                     <img src={icon_max} alt={name}/>
                     <span>{name}</span>
                   </a>
