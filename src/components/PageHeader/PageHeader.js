@@ -1,17 +1,15 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../../actions/MenuActions';
-import ShowRoute from '../UIComponent/Menu/ShowRoute';
 import Menu from '../UIComponent/Menu/Menu';
 import FastMenu from './FastMenu';
 import styles from './PageHeader.scss';
 
 class PageHeader extends React.Component {
   render() {
-    const {treeData:{login, user, fast, menu}} = this.props;
+    const {treeData:{login, user, fast, menu}, actions: {changeRoute}} = this.props;
     return (
       <div className="PageHeader">
         <a className="logo">RAYS-2.0</a>
@@ -19,7 +17,7 @@ class PageHeader extends React.Component {
           <Menu menuData={menu}/>
         </div>
         <div className="fast-menu">
-          <FastMenu fastData={fast}/>
+          <FastMenu fastData={fast} changeRoute={changeRoute}/>
         </div>
         <div className="name">{login && user}</div>
       </div>

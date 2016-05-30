@@ -90,7 +90,7 @@ class PageSidebar extends React.Component {
           }
         </div>
         {
-          subData.data.length > 0 &&
+          route.length == 4 && subData.data.length > 0 &&
           <div className="sidebarTwo">
             <SidebarSubItem subData={subData} route={route} changeRoutes={::this.changeRoutes} parent={subIndex}/>
           </div>
