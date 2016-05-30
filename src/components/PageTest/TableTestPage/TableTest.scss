@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.TableTest {
+  margin-top: 50px;
+  .tbody-column-1 img{
+    display: block;
+    width: 36px;
+    margin: auto;
+  }
+}

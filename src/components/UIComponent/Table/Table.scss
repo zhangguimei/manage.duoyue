@@ -14,23 +14,22 @@ $silver: #7da0b4;
     position: relative;
     border: solid #cfd6db;
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
     @include props-dpr(border-width, 1px);
     .script {
+      position: absolute;
       border: solid $silver;
       @include props-dpr(width height margin-left border-width, 0 0 3px 5px);
       visibility: hidden;
       cursor: pointer;
     }
     .superscript {
-      position: absolute;
       border-left: solid transparent;
       border-right: solid transparent;
       @include props-dpr(top border-left-width border-right-width, 9px 5px 5px);
       border-top: none;
     }
     .subscript {
-      position: absolute;
       border-left: solid transparent;
       border-right: solid transparent;
       @include props-dpr(bottom border-left-width border-right-width, 11px 5px 5px);
@@ -47,8 +46,22 @@ $silver: #7da0b4;
     tr:nth-of-type(2n-1) {
       background-color: $white;
     }
+    tr td:last-child {
+      position: relative;
+      .ic-close {
+        @extend %center-translate-y;
+        display: inline-block;
+        @include props-dpr(width height, 14px 14px);
+        right: 10px;
+        cursor: pointer;
+        visibility: hidden;
+      }
+    }
     tr:hover {
       background-color: #fffce4;
+      td:last-child .ic-close {
+        visibility: visible;
+      }
     }
   }
   td {
