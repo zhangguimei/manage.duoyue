@@ -25,7 +25,7 @@
           display: block;
           position: relative;
           background-color: #e1e4e4;
-          color: #333;
+          color: $gray3;
           padding: 10px 30px;
           &.cur {
             background-color: #d1d4d4;
@@ -61,7 +61,7 @@
     background-color: #f8f8f8;
     font-size: 13px;
     h5 {
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $grayD;
       padding: 10px 20px;
     }
     ul {
@@ -73,13 +73,14 @@
           &.cur {
             position: relative;
             width: $sidebarWidth;
-            background-color: #fff;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+            background-color: $white;
+            border-top: 1px solid $grayE;
+            border-bottom: 1px solid $grayE;
             z-index: 100000;
           }
           &:hover {
             color: #f1454e;
+            text-decoration: underline;
           }
         }
       }

@@ -3,6 +3,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../../../actions/MenuActions';
+import {Map, fromJS, is} from 'immutable';
 
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
@@ -23,6 +24,24 @@ class Menu extends React.Component {
     this.setState({
       route: [...nodeRoute.split(".")]
     })
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const IthisProps = Map(this.props),
+      IthisState = fromJS(this.state),
+      InextProps = Map(nextProps),
+      InextState = fromJS(nextState);
+    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    //接受外部改变Menu的mainIndex
+    const {mainIndex} = this.state;
+    if(nextProps.route && nextProps.route[0] != mainIndex) {
+      this.setState({
+        mainIndex: nextProps.route[0]
+      })
+    }
   }
 
   clickItem(e) {
@@ -69,6 +88,12 @@ Menu.propTypes = {
   parent: PropTypes.string
 };
 
+function mapStateToProps(state) {
+  return {
+    route: state.menu.toJS()
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
@@ -76,6 +101,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  "",
+  mapStateToProps,
   mapDispatchToProps
 )(Menu);
