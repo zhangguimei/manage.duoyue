@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
 import {Map, is, fromJS} from 'immutable';
 import classNames from 'classnames';
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 import styles from './DatePicker.scss';
 
 const dateData = {
@@ -37,6 +38,7 @@ class DatePicker extends React.Component {
     this.hoursPanelData = [];
     this.minsPanelData = [];
     this.isShowTimePanel = Map(this.props.data).get('showTimePanel') || false;
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
   }
 
   getDate() {
@@ -466,14 +468,6 @@ class DatePicker extends React.Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    const IthisProps = Map(this.props),
-      IthisState = fromJS(this.state),
-      InextProps = Map(nextProps),
-      InextState = fromJS(nextState);
-    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
-  }
-
   render() {
     const {
       props: {data},
@@ -494,7 +488,7 @@ class DatePicker extends React.Component {
     return (
       <div className="DatePicker">
         <div className={`date-input-wrap ${Map(data).get('calendarWrapClassName') || ''}`}>
-          <input ref="input" className="date-input no-allow" type="text" readOnly="readonly"
+          <input ref="input" className="date-input" type="text" readOnly="readonly"
                  placeholder={Map(data).get('placeHolder')}
                  onClick={()=>{::this.toggleCalendar(true)}}/>
           <i className="ic ic-close" title="清空" onClick={()=>{::this.clearInputValue()}}></i>

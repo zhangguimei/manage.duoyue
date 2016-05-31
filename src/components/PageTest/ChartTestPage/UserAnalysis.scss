@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.UserAnalysis {
+  .page-header {
+    padding: 5px 20px;
+    margin: 0;
+    background-color: #f8f8f8;
+  }
+  .page-body {
+    padding: 5px 20px;
+    .body-header {
+      border-bottom: 2px solid $blue;
+      .info-btn {
+        padding: 0;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #2e91e3;
+        cursor: pointer;
+      }
+    }
+    .tab-wrap {
+      font-size: 14px;
+      .tab-box {
+        display: inline-block;
+        margin: 8px 30px 0;
+        border-bottom: 1px solid $grayC;
+        font-size: 16px;
+        .tab {
+          display: inline-block;
+          padding: 5px 15px;
+          cursor: pointer;
+        }
+        .active {
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+    .chart-wrap {
+      width: 900px;
+      margin: 30px 0;
+    }
+  }
+}

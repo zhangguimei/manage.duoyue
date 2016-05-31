@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.NewsOrder {
+  padding-top: 30px;
+  .page-header {
+    position: fixed;
+    top: 60px;
+    z-index: 1;
+    width: 100%;
+    padding: 5px 20px;
+    margin: 0;
+    background-color: #f8f8f8;
+  }
+  .page-body {
+    margin: 30px 20px;
+    .control-box {
+      padding: 0 30px;
+      width: 400px;
+      font-size: 13px;
+      .title {
+        font-size: 16px;
+        color: orangered;
+        font-weight: 700;
+      }
+      .date-box {
+        margin: 10px 0;
+        .DatePicker {
+          display: inline-block;
+          .date-input {
+            width: 120px;
+          }
+        }
+        .desc {
+          font-size: 16px;
+        }
+      }
+      .search-btn {
+        padding: 5px 30px;
+        color: $white;
+        background-color: $blue;
+      }
+      .tab-wrap {
+        @extend .date-box;
+        .tab-box {
+          display: inline-block;
+          .tab {
+            display: inline-block;
+            padding-left: 20px;
+            cursor: pointer;
+          }
+          .active {
+            color: orangered;
+          }
+        }
+      }
+    }
+    .chart-wrap {
+      width: 500px;
+      height: 300px;
+    }
+  }
+}

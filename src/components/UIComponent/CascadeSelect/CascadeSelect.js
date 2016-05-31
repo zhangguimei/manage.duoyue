@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
 import {Map, List, is, fromJS} from 'immutable';
 import classNames from 'classnames';
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 import styles from './CascadeSelect.scss';
 
 const none = require("../../../assets/MockData/address/none.json");
@@ -11,9 +12,6 @@ const hubei = require("../../../assets/MockData/address/hubei.json");
 const wuhan = require("../../../assets/MockData/address/wuhan.json");
 const hubeiWuhanHongshan = require("../../../assets/MockData/address/hubeiWuhanHongshan.json");//完整测试数据，湖北武汉洪山
 
-import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
-
-@shouldUpdateDecorator()
 class CascadeSelect extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +22,8 @@ class CascadeSelect extends React.Component {
     this.pickedDate = {
       name: [],
       id: []
-    }
+    };
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
   }
 
   fetchData(id, index, all) {

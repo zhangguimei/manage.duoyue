@@ -11,8 +11,18 @@
     right: 0;
     top: $headerHeight;
     bottom: 0;
+    padding-top: 30px;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: $white;
+    .page-header {
+      position: fixed;
+      top: $headerHeight;
+      z-index: 1;
+      width: 100%;
+      padding: 5px 20px;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
   }
 }

@@ -7,11 +7,11 @@ class PageTest extends React.Component {
   render(){
     return(
       <div className="PageTest">
-        <h1>PageTest 功能测试页面</h1>
         <p className="component"><Link to="/test/datepicker">DatePicker</Link></p>
         <p className="component"><Link to="/test/table">table</Link></p>
         <p className="component"><Link to="/test/modal">modal</Link></p>
-        {this.props.children}
+        <p className="component"><Link to="/test/useranalysis">useranalysis</Link></p>
+        <p className="component"><Link to="/test/newsorder">newsorder</Link></p>
       </div>
     );
   }
