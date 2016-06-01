@@ -9,6 +9,7 @@ import TestPage from './pages/PageTest/PageTest';
 import DatePickerTest from './components/PageTest/DatePickerTestPage/DatePickerTestPage';
 import TableTest from './components/PageTest/TableTestPage/TableTest';
 import ModalTestPage from './components/PageTest/ModalTestPage/ModalTestPage';
+import MapTest from 'components/PageTest/Map/Map';
 import UserAnalysis from './components/PageTest/ChartTestPage/UserAnalysis';
 import NewsOrder from './components/PageTest/ChartTestPage/NewsOrder';
 
@@ -26,6 +27,7 @@ export default (
       <Route path="datepicker" component={DatePickerTest}/>
       <Route path="table" component={TableTest} />
       <Route path="modal" component={ModalTestPage}/>
+      <Route path="map" component={MapTest}/>
       <Route path="useranalysis" component={UserAnalysis}/>
       <Route path="newsorder" component={NewsOrder}/>
     </Route>

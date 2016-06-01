@@ -10,6 +10,7 @@ class PageTest extends React.Component {
         <p className="component"><Link to="/test/datepicker">DatePicker</Link></p>
         <p className="component"><Link to="/test/table">table</Link></p>
         <p className="component"><Link to="/test/modal">modal</Link></p>
+        <p className="component"><Link to="/test/map">map</Link></p>
         <p className="component"><Link to="/test/useranalysis">useranalysis</Link></p>
         <p className="component"><Link to="/test/newsorder">newsorder</Link></p>
       </div>
