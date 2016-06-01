@@ -2,15 +2,13 @@
 @import "../../../assets/sass/function";
 
 .Modal {
-  position: fixed;
-  left: 0%;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 11110;
-  .content {
+  .real-modal {
     position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 11000;
   }
 }

@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import {Map, is, fromJS} from 'immutable';
 import { Link } from 'react-router';
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 
-import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
 import DefaultCheckBox from './CheckBox';
 
 import styles from './Table.scss';
@@ -39,7 +39,6 @@ import styles from './Table.scss';
  * deleteDataFunc:          MUST be a function, MUST set the deletable prop as true at the same time.
  **/
 
-@shouldUpdateDecorator()
 class Table extends React.Component {
   static defaultProps = {
     headData: [],
@@ -58,6 +57,7 @@ class Table extends React.Component {
         id: -1
       }
     };
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
     this.startIndex = 0;
     if(this.props.rowsForOnePage) {
       this.endIndex = this.props.rowsForOnePage;
