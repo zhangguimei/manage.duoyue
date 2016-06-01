@@ -13,6 +13,7 @@ import MapTest from 'components/PageTest/Map/Map';
 import UserAnalysis from './components/PageTest/ChartTestPage/UserAnalysis';
 import NewsOrder from './components/PageTest/ChartTestPage/NewsOrder';
 
+import BookSearch from './components/BookSearch/BookSearch';
 import Rays from './components/Rays2.0/index';
 import NotFound from './components/NotFound/NotFound';
 
@@ -31,7 +32,8 @@ export default (
       <Route path="useranalysis" component={UserAnalysis}/>
       <Route path="newsorder" component={NewsOrder}/>
     </Route>
-    
+
+    <Route path="book" component={BookSearch} />
     <Route path="rays" component={Rays} />
     <Route path="*" component={NotFound} status={404}/>
   </Route>

@@ -1,0 +1,73 @@
+{
+  "tableHeadData": {
+    "id": "ID (升序)",
+    "img": "封面",
+    "title": "书名",
+    "salesStatus": "销售状态",
+    "inventory": "库存",
+    "price": "售价",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 7888,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "膨胀土边坡工程地质研究",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    },
+    {
+      "id": 7887,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "2012年长江防汛抗旱减灾",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    },
+    {
+      "id": 7886,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "三峡库区城镇迁建总结性研究",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    },
+    {
+      "id": 7888,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "膨胀土边坡工程地质研究",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    },
+    {
+      "id": 7887,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "2012年长江防汛抗旱减灾",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    },
+    {
+      "id": 7886,
+      "imgSrc": "http://www.cjpress.com.cn/upload/ebook/2016_05_30_095522622/9787549220304/Cover/9787549220304.jpg",
+      "imgLink": "",
+      "title": "三峡库区城镇迁建总结性研究",
+      "salesStatus": "销售中",
+      "inventory": "1000",
+      "price": "￥38",
+      "operation": "修改"
+    }
+  ]
+}

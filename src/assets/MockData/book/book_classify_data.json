@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "书籍类别",
+    "pic": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200528883.png",
+    "children": []
+  },
+  {
+    "id": 1,
+    "title": "教育",
+    "pic": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200528883.png",
+    "children": []
+  },
+  {
+    "id": 2,
+    "title": "社科",
+    "pic": "http://file.duoyue.me/upload/menu/20160330/2016_03_30_190937379.png",
+    "children": []
+  },
+  {
+    "id": 3,
+    "title": "科技",
+    "pic": "http://file.duoyue.me/upload/menu/20160330/2016_03_30_190937379.png",
+    "children": []
+  }
+]

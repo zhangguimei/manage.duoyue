@@ -1,6 +1,10 @@
 import React, {PropTypes}  from 'react';
 import {Map, is, fromJS} from 'immutable';
 
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
+import { nodeDraggable, removeDraggable } from '../../../utils/nodeDraggable';
+import { nodeResizable, removeResizable } from '../../../utils/nodeResizable';
+
 import styles from './ShowPage.scss';
 
 class ShowPage extends React.Component {
@@ -11,6 +15,11 @@ class ShowPage extends React.Component {
     title: '新增',
     newPageHref: 'javascript:void(0)'
   };
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
+  }
 
   closePage() {
     const {closeShowPage} = this.props;
@@ -24,22 +33,23 @@ class ShowPage extends React.Component {
 
   centerNode(node) {
     let showPageNode = this.refs[node],
-      width = showPageNode.offsetWidth,
-      height = showPageNode.offsetHeight;
-    showPageNode.style.marginLeft = -(width / 2) + 'px';
-    showPageNode.style.marginTop = -(height / 2) + 'px';
+      browserWidth = document.body.clientWidth || document.documentElement.clientWidth,
+      browserHeight = document.body.clientHeight || document.documentElement.clientHeight,
+      left = (browserWidth - showPageNode.offsetWidth) / 2,
+      top = (browserHeight - showPageNode.offsetHeight) / 2;
+    showPageNode.style.left = left + 'px';
+    showPageNode.style.top = top + 'px';
   }
 
   componentDidMount() {
     this.centerNode('ShowPage');
+    nodeDraggable(this.refs.ShowPage, this.refs.Header);
+    nodeResizable(this.refs.ShowPage, true, true);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    const IthisProps = fromJS(this.props),
-      IthisState = fromJS(this.state),
-      InextProps = fromJS(nextProps),
-      InextState = fromJS(nextState);
-    return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
+  componentWillUnmount() {
+    removeDraggable(this.refs.ShowPage, this.refs.Header);
+    removeResizable(this.refs.ShowPage);
   }
 
   render() {
@@ -50,12 +60,12 @@ class ShowPage extends React.Component {
     };
     return (
       <div className="ShowPage" style={contentStyle} ref="ShowPage">
-        <header className="header clearfix">
+        <header className="header clearfix" ref="Header">
           <span className="title left">{title}</span>
-          <i className="ic ic-close right" onClick={::this.closePage}></i>
-          <a className="ic ic-openinnewwindow right" href={newPageHref} target="_blank"></a>
+          <i className="ic ic-close right" onClick={::this.closePage} />
+          <a className="ic ic-openinnewwindow right" href={newPageHref} target="_blank" />
         </header>
-        <div className="content" ref='content'>
+        <div className="content">
           {this.props.children}
         </div>
         <footer className="footer">

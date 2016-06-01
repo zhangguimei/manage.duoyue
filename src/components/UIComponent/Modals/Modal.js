@@ -5,10 +5,11 @@ import styles from './Modal.scss';
 class Modal extends React.Component {
 
   render() {
-    const {className=""} = this.props;
+    const { className = "" } = this.props;
     return (
-        <div className="Modal" onClick={ () => this.props.onModalClick && this.props.onModalClick()}>
-          <div className={ className }>
+        <div className="Modal">
+          <div className="real-modal" onClick={ () => this.props.onModalClick && this.props.onModalClick()}></div>
+          <div className={className}>
             {this.props.children}
           </div>
         </div>

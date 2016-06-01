@@ -2,15 +2,19 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
-import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 
 import styles from './Pagination.scss';
 
-@shouldUpdateDecorator()
 class Pagination extends React.Component {
   static defaultProps = {
     pageNumLists: [5, 20, 50]
   };
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
+  }
 
   onChangePage(type, i) {
     let {index, totalPages, onPageClick} = this.props;
