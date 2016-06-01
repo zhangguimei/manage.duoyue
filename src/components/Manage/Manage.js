@@ -4,6 +4,7 @@ import PageHeader from '../PageHeader/PageHeader';
 import PageSidebar from '../PageSidebar/PageSidebar';
 import {Map, is, fromJS} from 'immutable';
 import {getChildren} from '../UIComponent/Menu/ShowRoute';
+import {getTitle} from '../UIComponent/Menu/ShowRoute';
 import styles from './Manage.scss';
 
 class Manage extends React.Component {
@@ -16,6 +17,7 @@ class Manage extends React.Component {
         <PageHeader treeData={treeData}/>
         <PageSidebar treeData={treeData} route={route}/>
         <div className="PageMain" style={{left : sidebarLeft}}>
+          <header className="page-header">{getTitle(treeData.menu, route)}</header>
           {children && React.cloneElement(children)}
         </div>
       </div>

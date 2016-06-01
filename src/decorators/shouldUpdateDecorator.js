@@ -16,9 +16,9 @@ export default function shouldUpdateDecorator(){
     class FetchOnUpdateDecorator extends React.Component {
 
       shouldComponentUpdate(nextProps, nextState) {
-        const IthisProps = Map(this.props),
+        const IthisProps = fromJS(this.props),
             IthisState = fromJS(this.state),
-            InextProps = Map(nextProps),
+            InextProps = fromJS(nextProps),
             InextState = fromJS(nextState);
         return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
       }
