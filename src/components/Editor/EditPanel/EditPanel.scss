@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.editPanel-box {
+  height: 100%;
+  background-color: $grayF;
+  overflow-y: scroll;
+  .EditPanel {
+    width: 420px;
+    margin: auto;
+    border: 2px solid $colorBorder;
+    background-color: $white;
+  }
+}

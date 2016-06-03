@@ -14,6 +14,7 @@ import UserAnalysis from './components/PageTest/ChartTestPage/UserAnalysis';
 import NewsOrder from './components/PageTest/ChartTestPage/NewsOrder';
 import ValidationForm from './components/PageTest/ValidationForm/ValidationModal';
 
+import Editor from './components/Editor/Editor';
 import BookSearch from './components/BookSearch/BookSearch';
 import Rays from './components/Rays2.0/index';
 
@@ -50,6 +51,7 @@ export default (
       <Route path="source" component={ShowcaseSource}/>
     </Route>
 
+    <Route path="editor" component={Editor} />
     <Route path="book" component={BookSearch} />
     <Route path="rays" component={Rays} />
     <Route path="*" component={NotFound} status={404}/>

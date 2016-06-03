@@ -1,13 +1,15 @@
 import React, {PropTypes}from 'react';
+import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 
 class Tab extends React.Component {
 
+  static defaultProps = {
+    typeIndex: 0
+  };
+
   constructor(props) {
     super(props);
-    let typeIndex = this.props.typeIndex || 0;
-    this.state = {
-      index: typeIndex
-    }
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
   }
 
   handleClick(index) {
@@ -18,19 +20,19 @@ class Tab extends React.Component {
   }
 
   componentWillMount() {
-    this.props.onTypeChange(this.state.index);
+    this.props.onTypeChange(this.props.typeIndex);
   }
 
   render() {
-    const {content, tabClass} = this.props.TabItemsData;
+    const { TabItemsData: {content, tabClass}, typeIndex } = this.props;
     let picCode, picUrl, titleCode, itemClassName;
     return (
       <ul className={tabClass.tabBox}>
         {
           content.map((item, index) => {
-            itemClassName = this.state.index == index ? tabClass.tabItemOn : tabClass.tabItemDefault;
+            itemClassName = typeIndex == index ? tabClass.tabItemOn : tabClass.tabItemDefault;
             if(item.pic) {
-              picUrl = this.state.index == index ? item.pic.on : item.pic.default;
+              picUrl = typeIndex == index ? item.pic.on : item.pic.default;
               picCode = <span className='tab-item-pic' style={{ 'backgroundImage' : picUrl }}></span>;
             } else {
               picCode = null;

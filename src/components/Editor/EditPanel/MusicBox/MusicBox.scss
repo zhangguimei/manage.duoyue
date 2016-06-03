@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "../../../../assets/sass/function";
+
+%input {
+  padding: 5px 10px;
+  border: 1px solid $grayC;
+  border-radius: $radiusSmall;
+}
+
+.MusicBox {
+  width: 100%;
+  height: 230px;
+  border-bottom: 2px solid $colorBorder;
+  padding: 10px 20px;
+  .image-cover {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    background: url("../../../../assets/images/v2_rays/placeholder_img.jpg") no-repeat center center;
+    background-size: 120px;
+    .tip {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      padding: 20px 10px;
+      visibility: hidden;
+      text-align: center;
+      border: 2px dashed $gray6;
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    &:hover .tip {
+      visibility: visible;
+    }
+  }
+  .text-container {
+    width: 242px;
+    .title {
+      width: 240px;
+      height: 34px;
+      margin-bottom: 10px;
+      @extend %input;
+    }
+    .describe {
+      width: 240px;
+      height: 76px;
+      @extend %input;
+    }
+  }
+  .music {
+    width: 376px;
+    height: 34px;
+    margin-bottom: 10px;
+    @extend %input;
+  }
+  .audio {
+    width: 376px;
+  }
+}
