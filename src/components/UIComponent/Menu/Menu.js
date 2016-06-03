@@ -3,14 +3,12 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../../../actions/MenuActions';
-import {Map, fromJS, is} from 'immutable';
+import shouldUpdate from '../../../utils/shouldUpdate';
 
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
 
-import shouldUpdateDecorator from '../../../decorators/shouldUpdateDecorator';
-
-@shouldUpdateDecorator()
+@shouldUpdate()
 class Menu extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -23,7 +21,6 @@ class Menu extends React.Component {
   moveItem(e, nodeRoute) {
     e.stopPropagation();
     e.preventDefault();
-    //console.log(nodeRoute);
     this.setState({
       route: [...nodeRoute.split(".")]
     })
@@ -47,7 +44,6 @@ class Menu extends React.Component {
       mainIndex: route[0].toString(),
       route: []
     });
-    //console.log(route);
     changeRoute && changeRoute(route.slice(0, route.length - 1));
   }
 

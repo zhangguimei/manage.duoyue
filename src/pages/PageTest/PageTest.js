@@ -13,6 +13,8 @@ class PageTest extends React.Component {
         <p className="component"><Link to="/test/map">map</Link></p>
         <p className="component"><Link to="/test/useranalysis">useranalysis</Link></p>
         <p className="component"><Link to="/test/newsorder">newsorder</Link></p>
+        <p className="component"><Link to="/test/validation">validation</Link></p>
+        {this.props.children}
       </div>
     );
   }

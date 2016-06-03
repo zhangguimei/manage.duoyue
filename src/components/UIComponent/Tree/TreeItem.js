@@ -30,45 +30,45 @@ class TreeItem extends React.Component {
   }
 
   showItem() {
-    const {data:{children = [], id}, clickItem} = this.props;
-    if(children.length > 0) {
+    const {data, clickItem} = this.props;
+    if(data.data.length > 0) {
       this.setState({
         showItem: !this.state.showItem
       })
     }else {
-      clickItem && clickItem(id);
+      clickItem && clickItem(data);
     }
   }
 
   render() {
-    const {data: {title, children = []}, route, parent, ...props} = this.props, {showItem} = this.state;
+    const {data: {name, data = []}, route, parent, ...props} = this.props, {showItem} = this.state;
     const level = parent.split(".").length - 2;
     return (
-      <li className="TreeItem text-center" style={{marginLeft: `${level*10}` }}  >
+      <li className="TreeItem text-center" >
         <div className="tree-item" onClick={::this.showItem}>
           {
-            children.length > 0 ?
+            data.length > 0 ?
               <i className={`triangle-${showItem ? "down" : "right"}`}/>
               :
               <i className="triangle-replace"/>
           }
           {
-            children.length > 0 && showItem &&
+            data.length > 0 && showItem &&
             <i className="ic ic-folderopenempty"/>
           }
           {
-            children.length > 0 && !showItem &&
+            data.length > 0 && !showItem &&
             <i className="ic ic-folderempty"/>
           }
           {
-          children.length == 0 &&
+            data.length == 0 &&
             <i className="ic ic-doc"/>
           }
-          <span className="item-title">{title}</span>
+          <span className="item-title">{name}</span>
         </div>
         {
-          children.length > 0 && showItem &&
-          <TreeList data={children} parent={parent} route={route} {...props}/>
+          data.length > 0 && showItem &&
+          <TreeList data={data} parent={parent} route={route} {...props}/>
         }
       </li>
     );

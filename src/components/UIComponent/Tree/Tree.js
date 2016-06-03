@@ -22,9 +22,9 @@ class Tree extends React.Component {
     this.freeOpen = true; //自由控制状态
   }
 
-  clickItem(id) {
-    let {changeRoute} = this.props;
-    console.log(id);
+  clickItem(data) {
+    let {clickItem} = this.props;
+    clickItem && clickItem(data);
   }
 
   toggleOpen(value) {
