@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 import options from './ConstantOfFast';
 
 class FastMenu extends React.Component {
@@ -14,12 +15,13 @@ class FastMenu extends React.Component {
           <div className="list">
             {
               fastData.map((item, i) => {
-                let {name, icon_max} = item;
+                let {name, url, icon_max} = item;
+                let route = options[item.id].join('.');
                 return (
-                  <a key={i} href="javascript:;" onClick={() => changeRoute(options[item.id])}>
+                  <Link to={`${url}?route=${route}`} key={i} onClick={() => changeRoute(options[item.id])}>
                     <img src={icon_max} alt={name}/>
                     <span>{name}</span>
-                  </a>
+                  </Link>
                 );
               })
             }
@@ -34,6 +36,7 @@ class FastMenu extends React.Component {
 FastMenu.propTypes = {
   fastData: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     icon_max: PropTypes.string.isRequired
   })).isRequired
 }

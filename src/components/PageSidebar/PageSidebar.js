@@ -7,20 +7,23 @@ import {bindActionCreators} from 'redux';
 import {getTitle, getChildren} from '../UIComponent/Menu/ShowRoute';
 import {Map, is, fromJS} from 'immutable';
 import * as actions from '../../actions/MenuActions';
+import {Scrollbars} from 'react-custom-scrollbars';
 import styles from './PageSidebar.scss';
 
 class PageSidebar extends React.Component {
   constructor(props) {
     super(props);
+    const {route} = this.props;
     this.state = {
-      route: ['0'],
+      route: route.length > 0 ? route : ['0'],
       subData: {data: []},
       subIndex: ''
-    }
+    };
   }
 
   componentWillReceiveProps(np) {
     const {route} = np, {treeData:{menu}} = this.props;
+    //console.log(route);
     if (route.length > 0) {
       this.setState({
         route: route
@@ -47,6 +50,14 @@ class PageSidebar extends React.Component {
           },
           subIndex: route.slice(1).join('.')
         })
+      } else {
+        this.setState({
+          subData: {
+            data: [],
+            name: ''
+          },
+          subIndex: ''
+        })
       }
     } else {
       this.setState({
@@ -59,9 +70,15 @@ class PageSidebar extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const {actions:{changeRoute}, queryRoute} = this.props;
+    changeRoute && changeRoute(queryRoute);
+  }
+
   changeRoutes(routes, subDatas = {data: []}, subIndexs = '') {
-    const {route} = this.state, {actions:{changeRoute}} = this.props;
-    let routeArray = [route[0].toString(), ...routes.split(".")];
+    const {actions:{changeRoute}} = this.props;
+    let {route} = this.state;
+    let routeArray = [route[0], ...routes.split(".")];
     this.setState({
       route: routeArray,
       subData: subDatas,
@@ -78,19 +95,21 @@ class PageSidebar extends React.Component {
     return (
       <div className="PageSidebar">
         <div className="sidebarOne">
-          {
-            menuData.map((item, i)=> {
-              let selectTitle = route.slice(0, 2).join('.') == `${routeFirst}.${i}`;
-              return (
-                <SidebarItem key={i} menuData={item} route={route} selectTitle={selectTitle}
-                             changeRoutes={::this.changeRoutes}
-                             parent={i}/>
-              );
-            })
-          }
+          <Scrollbars autoHide={true} style={{height:'100%'}}>
+            {
+              menuData.map((item, i)=> {
+                let selectTitle = route.slice(0, 2).join('.') == `${routeFirst}.${i}`;
+                return (
+                  <SidebarItem key={i} menuData={item} route={route} selectTitle={selectTitle}
+                               changeRoutes={::this.changeRoutes}
+                               parent={i}/>
+                );
+              })
+            }
+          </Scrollbars>
         </div>
         {
-          route.length == 4 && subData.data.length > 0 &&
+          subData.data.length > 0 &&
           <div className="sidebarTwo">
             <SidebarSubItem subData={subData} route={route} changeRoutes={::this.changeRoutes} parent={subIndex}/>
           </div>
@@ -109,7 +128,7 @@ PageSidebar.propTypes = {
 function mapStateToProps(state) {
   let {menu} = fromJS(state).toJS();
   return {
-    menu
+    route: menu
   }
 }
 
