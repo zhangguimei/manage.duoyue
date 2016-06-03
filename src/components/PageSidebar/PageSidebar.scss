@@ -62,7 +62,8 @@
     font-size: 13px;
     h5 {
       border-bottom: 1px solid $grayD;
-      padding: 10px 20px;
+      padding: 0 20px;
+      line-height: 32px;
     }
     ul {
       margin-top: 5px;
@@ -70,17 +71,19 @@
         a {
           display: block;
           padding: 6px 20px;
+          color:$colorText;
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
           &.cur {
             position: relative;
             width: $sidebarWidth;
             background-color: $white;
-            border-top: 1px solid $grayE;
-            border-bottom: 1px solid $grayE;
+            border-top-color:$grayE;
+            border-bottom-color: $grayE;
             z-index: 100000;
           }
           &:hover {
             color: #f1454e;
-            text-decoration: underline;
           }
         }
       }

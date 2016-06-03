@@ -27,11 +27,12 @@ class PageHeader extends React.Component {
 
 PageHeader.propTypes = {
   treeData: PropTypes.shape({
-    login:PropTypes.bool.isRequired,
-    user:PropTypes.string.isRequired,
-    fast:PropTypes.array.isRequired,
-    menu:PropTypes.array.isRequired
-  }).isRequired
+    login: PropTypes.bool.isRequired,
+    user: PropTypes.string.isRequired,
+    fast: PropTypes.array.isRequired,
+    menu: PropTypes.array.isRequired
+  }).isRequired,
+  actions: PropTypes.object
 };
 
 function mapStateToProps(state) {

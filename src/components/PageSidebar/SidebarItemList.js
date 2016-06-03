@@ -1,12 +1,13 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
 class SidebarItemList extends React.Component {
   render() {
-    const {menuData:{name}, onClick, select} = this.props;
+    const {menuData:{name, url}, onClick, select, route} = this.props;
     return (
       <li>
-        <a className={select?"cur":null} onClick={onClick}>{name}</a>
+        <Link to={`${url}?route=${route}`} className={select?"cur":null} onClick={onClick}>{name}</Link>
       </li>
     );
   }
@@ -15,6 +16,7 @@ class SidebarItemList extends React.Component {
 SidebarItemList.propTypes = {
   menuData: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     data: PropTypes.array.isRequired
   }).isRequired
 };
