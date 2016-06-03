@@ -1,0 +1,23 @@
+/* Shake Heart*/
+@include keyframes(#{$nameSpace}-shake-heart) {
+  0% {
+    @include prefixed(transform, rotate(6deg));
+  }
+  50% {
+    @include prefixed(transform, scale(1.1));
+  }
+}
+
+@mixin shake-heart() {
+  @include hacks();
+  @include prefixed(transition-duration, $slowDuration);
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include prefixed(animation-name, #{$nameSpace}-shake-heart);
+    @include prefixed(animation-duration, 1s);
+    @include prefixed(animation-timing-function, linear);
+    @include prefixed(animation-iteration-count, infinite);
+  }
+}

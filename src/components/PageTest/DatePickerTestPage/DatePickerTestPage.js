@@ -52,6 +52,27 @@ class DatePickerTestPage extends React.Component {
     });
   }
 
+  drawHeart(ele) {
+    if (ele.getContext) {
+      let ctx = ele.getContext('2d');
+      ctx.fillStyle = '#ff2233';
+      ctx.beginPath();
+      ctx.moveTo(75, 40);
+      ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+      ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+      ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+      ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+      ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+      ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+      ctx.fill();
+    }
+  }
+
+  componentDidMount() {
+    this.drawHeart(this.refs.heartCvs);
+    this.drawHeart(this.refs.heartCvs2);
+  }
+
   render() {
     const {startDate, endDate, check, selectAddress} = this.state;
     let datePickerData = {
@@ -72,15 +93,21 @@ class DatePickerTestPage extends React.Component {
     };
     return (
       <div className="DatePickerTestPage clearfix">
-        <div className="test1 left">
-          <p>开始时间:{startDate}</p>
-          <DatePicker data={datePickerData} getPickDate={::this.getPickDate}/>
+        <span>shake-heart</span>
+        <canvas ref="heartCvs" width="130" height="130" className="hvr-shake-heart"></canvas>
+        <span>shake-crazy</span>
+        <canvas ref="heartCvs2" width="130" height="130" className="hvr-shake-crazy"></canvas>
+        <div className="datePicker-test-wrap">
+          <div className="test1 left">
+            <p>开始时间:{startDate}</p>
+            <DatePicker data={datePickerData} getPickDate={::this.getPickDate}/>
+          </div>
+          <div className="test2 left">
+            <p>结束时间:{endDate}</p>
+            <DatePicker data={datePickerData2} getPickDate={::this.getPickDateEnd}/>
+          </div>
+          <p className="checked">{check ? ')' : '('}</p>
         </div>
-        <div className="test2 left">
-          <p>结束时间:{endDate}</p>
-          <DatePicker data={datePickerData2} getPickDate={::this.getPickDateEnd}/>
-        </div>
-        <p className="checked">{check ? ')' : '('}</p>
         <p>name:{selectAddress.name}</p>
         <p>id:{selectAddress.id}</p>
         <CascadeSelect data={locationData} getSelectInfo={::this.getSelectData}/>

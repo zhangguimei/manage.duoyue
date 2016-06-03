@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "../../../assets/sass/function";
+@import "../../../assets/sass/animation/hover";
 
 $headerHeightInner: $headerHeight - 5px;
 .Menu {
@@ -68,6 +69,11 @@ $headerHeightInner: $headerHeight - 5px;
       > .text{
         color:$white;
       }
+      > .text:hover {
+        img {
+          @extend .hvr-pulse;
+        }
+      }
     }
     .li-menu-on {
       background-color: #00aee8;
@@ -80,6 +86,7 @@ $headerHeightInner: $headerHeight - 5px;
         padding-right: 8px;
       }
       .text {
+        @extend .hvr-bounce-to-right;
         position: relative;
         color:$colorText;
         .ic {
