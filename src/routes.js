@@ -12,6 +12,7 @@ import ModalTestPage from './components/PageTest/ModalTestPage/ModalTestPage';
 import MapTest from 'components/PageTest/Map/Map';
 import UserAnalysis from './components/PageTest/ChartTestPage/UserAnalysis';
 import NewsOrder from './components/PageTest/ChartTestPage/NewsOrder';
+import ValidationForm from './components/PageTest/ValidationForm/ValidationModal';
 
 import BookSearch from './components/BookSearch/BookSearch';
 import Rays from './components/Rays2.0/index';
@@ -39,6 +40,7 @@ export default (
       <Route path="map" component={MapTest}/>
       <Route path="useranalysis" component={UserAnalysis}/>
       <Route path="newsorder" component={NewsOrder}/>
+      <Route path="validation" component={ValidationForm}/>
     </Route>
 
     <Route path="showcase" component={Showcase}>

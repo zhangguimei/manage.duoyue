@@ -1,0 +1,52 @@
+'use strict';
+import {isUrl, isInt} from '../../../utils/validations';
+
+const validation =  (values) => {
+  const
+    errors = {},
+    MAX_LENGTH_NAME = 20, //最长的名字长度
+    MAX_TITLE_LENGTH = 50, //最长的标题长度
+    illegality = /^([\u4e00-\u9fa5]+|([a-zA-Z]+\s?)+)$/g;
+
+  if(!values.tree) {
+    errors.tree = "该项不能为空";
+  }
+
+  if(!values.classify) {
+    errors.classify = "该项不能为空";
+  }
+
+  if(!values.position || values.position == "0") {
+    errors.position = "该项不能为空";
+  }
+
+  if(values.author) {
+    if(!illegality.test(values.author)) {
+      errors.author = "含有非法字符";
+    } else if(values.author.length > MAX_LENGTH_NAME) {
+      errors.author = "名字超出长度";
+    }
+  }
+
+  if(values.order) {
+    if(!isInt(values.order)) {
+      errors.order = "排序值必须是一个整数";
+    }
+  }
+
+  if(!values.title) {
+    errors.title = "该项不能为空";
+  } else if (values.title.length > MAX_TITLE_LENGTH) {
+    errors.title = "长度超出限制";
+  }
+
+  if(values.url) {
+    if(!isUrl(values.url)) {
+      errors.url = "链接不合法";
+    }
+  }
+
+  return errors;
+};
+
+export default validation;
