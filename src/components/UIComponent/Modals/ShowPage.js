@@ -1,6 +1,6 @@
 import React, {PropTypes}  from 'react';
 import {Map, is, fromJS} from 'immutable';
-
+import {Scrollbars} from 'react-custom-scrollbars';
 import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 import { nodeDraggable, removeDraggable } from '../../../utils/nodeDraggable';
 import { nodeResizable, removeResizable } from '../../../utils/nodeResizable';
@@ -37,8 +37,8 @@ class ShowPage extends React.Component {
       browserHeight = document.body.clientHeight || document.documentElement.clientHeight,
       left = (browserWidth - showPageNode.offsetWidth) / 2,
       top = (browserHeight - showPageNode.offsetHeight) / 2;
-    showPageNode.style.left = left + 'px';
-    showPageNode.style.top = top + 'px';
+    showPageNode.style.left = left / browserWidth * 100 + '%';
+    showPageNode.style.top = top / browserHeight * 100 + '%';
   }
 
   componentDidMount() {
@@ -66,7 +66,9 @@ class ShowPage extends React.Component {
           <a className="ic ic-openinnewwindow right" href={newPageHref} target="_blank" />
         </header>
         <div className="content">
-          {this.props.children}
+          <Scrollbars style={{height:'100%'}}>
+            {this.props.children}
+          </Scrollbars>
         </div>
         <footer className="footer">
           <span className="submit-btn btn" onClick={::this.submitChange}>确定新增</span>

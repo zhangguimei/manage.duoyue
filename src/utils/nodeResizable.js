@@ -4,14 +4,14 @@ import {is, fromJS} from 'immutable';
 /*
 * resizableNode:              要调整大小的节点
 * requirePercentSize:         是否需要设置百分比宽高，默认值为false
-* requireFixed:               是否需要设置position为fixed，默认值为false
+* requirePosition:            是否需要改变left, top等属性值，默认值为false
 * */
 
 const RECOGNIZE_WIDTH = 5;
 let initWidth, initHeight, browserWidth, browserHeight,
     rec, left, right, top, bottom, initLeft, initTop, startX, startY,
     borderLeft, borderRight, borderTop, borderBottom,
-    direction, thisRequirePercentSize, thisRequireFixed, node;
+    direction, thisRequirePercentSize, thisRequirePosition, node;
 
 const reCalculateRec = (node) => {
   rec = node.getBoundingClientRect();
@@ -41,7 +41,7 @@ const onMouseMove = (e) => {
     mouseY = e.pageY,
     moveX,
     moveY;
-  if(thisRequireFixed && !is(fromJS(node.getBoundingClientRect()), fromJS(rec))) {
+  if(thisRequirePosition && !is(fromJS(node.getBoundingClientRect()), fromJS(rec))) {
     reCalculateRec(node);
   }
   switch(true) {
@@ -93,7 +93,7 @@ const onMouseMove = (e) => {
     case "NORTHWEST": {
       node.style.width = thisRequirePercentSize ? ((initWidth - moveX) / browserWidth * 100 + "%") : (initWidth - moveX + "px");
       node.style.height = thisRequirePercentSize ? ((initHeight - moveY) / browserHeight * 100 + "%") : (initWidth - moveY + "px");
-      if(thisRequireFixed) {
+      if(thisRequirePosition) {
         node.style.left = initLeft + moveX + "px";
         node.style.top = initTop + moveY + "px";
       }
@@ -103,7 +103,7 @@ const onMouseMove = (e) => {
     case "NORTHEAST": {
       node.style.width = thisRequirePercentSize ? ((initWidth + moveX) / browserWidth * 100 + "%") : (initWidth + moveX + "px");
       node.style.height = thisRequirePercentSize ? ((initHeight - moveY) / browserHeight * 100 + "%") : (initWidth - moveY + "px");
-      if(thisRequireFixed) {
+      if(thisRequirePosition) {
         node.style.top = initTop + moveY + "px";
       }
     }
@@ -112,7 +112,7 @@ const onMouseMove = (e) => {
     case "SOUTHWEST": {
       node.style.height = thisRequirePercentSize ? ((initHeight + moveY) / browserHeight * 100 + "%") : (initWidth + moveY + "px");
       node.style.width = thisRequirePercentSize ? ((initWidth - moveX) / browserWidth * 100 + "%") : (initWidth - moveX + "px");
-      if(thisRequireFixed) {
+      if(thisRequirePosition) {
         node.style.left = initLeft + moveX + "px";
       }
     }
@@ -126,7 +126,7 @@ const onMouseMove = (e) => {
 
     case "WEST": {
       node.style.width = thisRequirePercentSize ? ((initWidth - moveX) / browserWidth * 100 + "%") : (initWidth - moveX + "px");
-      if(thisRequireFixed) {
+      if(thisRequirePosition) {
         node.style.left = initLeft + moveX + "px";
       }
     }
@@ -139,7 +139,7 @@ const onMouseMove = (e) => {
 
     case "NORTH": {
       node.style.height = thisRequirePercentSize ? ((initHeight - moveY) / browserHeight * 100 + "%") : (initWidth - moveY + "px");
-      if(thisRequireFixed) {
+      if(thisRequirePosition) {
         node.style.top = initTop + moveY + "px";
       }
     }
@@ -210,13 +210,10 @@ const onMouseUp = () => {
   direction = null;
 };
 
-export const nodeResizable = (resizableNode, requirePercentSize = false, requireFixed = false) => {
+export const nodeResizable = (resizableNode, requirePercentSize = false, requirePosition = false) => {
   thisRequirePercentSize = requirePercentSize;
-  thisRequireFixed = requireFixed;
+  thisRequirePosition = requirePosition;
   node = resizableNode;
-  if(requireFixed) {
-    node.style.position = "fixed";
-  }
   reCalculateSize(node);
   reCalculateRec(node);
 

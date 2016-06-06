@@ -31,7 +31,6 @@ export const nodeDraggable = (moveNode, dragNode = moveNode) => {
   dragNode.draggable = true;
   dragNode.style.cursor = "move";
   moveNode.style.margin = 0;
-  moveNode.style.position = "fixed";
   nodeForMove = moveNode;
   dragNode.addEventListener("dragstart", onDragStart, false);
   dragNode.addEventListener("drag", onDrag, false);

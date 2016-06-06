@@ -1,5 +1,10 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import { fetchBookData } from '../../actions/BookActions';
+
 import Table from '../UIComponent/Table/Table';
 import Pagination from '../UIComponent/Pagination/Pagination';
 import Modal from '../UIComponent/Modals/Modal'
@@ -12,7 +17,7 @@ import styles from './BookSearch.scss';
 
 const tableData = require("../../assets/MockData/book/book_list_data.json"),
   bookInfo = require("../../assets/MockData/book/book_info.json"),
-  classifyInfo = require("../../assets/MockData/book/book_classify_data.json");
+  classifyInfo = require("../../assets/MockData/tree_data.json").menu;
 
 const keyMaps = [{"basicType": "基本信息"}, {"menu": "目录"}, {"article": "文章"}, {"source": "资源"}, {"tag": "标签"}, {"code": "二维码"}, {"author": "作者"}, {"browse": "浏览记录"}, {"subAccount": "分账设置"}, {"salesRecord": "销售记录"}, {"relatedRecommend": "相关推荐"}];
 const tabContent = keyMaps.map((item) => {
@@ -37,8 +42,7 @@ class BookSearch extends React.Component {
     this.state = {
       pageIndex: 1,
       rowsForOnePage: 5,
-      showModal: false,
-      showClassify: false
+      showModal: false
     };
   }
 
@@ -48,9 +52,14 @@ class BookSearch extends React.Component {
     });
   }
 
-  toggleModal() {
+  toggleModal(id) {
+    const { showModal } = this.state,
+          { fetchBookData } = this.props;
+    if(!showModal && id != undefined) {
+      fetchBookData && fetchBookData(id);
+    }
     this.setState({
-      showModal: !this.state.showModal
+      showModal: !showModal
     });
   }
 
@@ -78,37 +87,41 @@ class BookSearch extends React.Component {
     }
   }
 
-  onShowClassify() {
-    this.setState({
-      showClassify: !this.state.showClassify
-    });
+  submitChange() {
+    this.refs.BookForm.submit();
+  }
+
+  onSubmit(values) {
+    return new Promise((resolve) => {
+      resolve(values);
+      ::this.toggleModal();
+    })
   }
 
   render() {
-    const { rowsForOnePage, pageIndex, showModal, showClassify } = this.state,
+    const { rowsForOnePage, pageIndex, showModal } = this.state,
       totalPages = Math.ceil(tableData.tableContentData.length / rowsForOnePage);
     let pagedata = {
       title: "修改书籍",
       newPageHref: 'http://www.baidu.com',
       closeShowPage: ::this.toggleModal
     };
-    let content = tableData.tableContentData.map((item, i) => {
-      item.operation = <Modify index={i} linkContent="修改" linkOnClick={::this.toggleModal}/>;
+    tableData.tableContentData.map((item, i) => {
+      item.operation = <Modify index={i} linkContent="修改" linkOnClick={() => this.toggleModal(item.id)}/>;
     });
     return (
       <div className="BookSearch" style={{ marginTop: 100 }}>
         <Table headData={tableData.tableHeadData} contentData={tableData.tableContentData}
-               rowsForOnePage={rowsForOnePage} pageIndex={pageIndex} editable={true}/>
+               rowsForOnePage={rowsForOnePage} pageIndex={pageIndex} />
         <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}
                     selectOnChange={::this.selectOnChange}/>
         {
           showModal &&
           <Modal onModalClick={::this.toggleModal}>
-            <ShowPage {...pagedata}>
+            <ShowPage {...pagedata} submitChange={::this.submitChange}>
               <BookInfo bookInfo={bookInfo}/>
               <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
-              <BookForm bookInfo={bookInfo} classifyInfo={classifyInfo} onShowClassify={::this.onShowClassify}
-                        showClassify={showClassify}/>
+              <BookForm ref="BookForm" bookInfo={bookInfo} classifyInfo={classifyInfo} onSubmit={::this.onSubmit} />
             </ShowPage>
           </Modal>
         }
@@ -116,4 +129,18 @@ class BookSearch extends React.Component {
     );
   }
 }
-export default BookSearch;
+
+function mapStateToProps() {
+  return {};
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchBookData: bindActionCreators(fetchBookData, dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookSearch);

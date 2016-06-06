@@ -415,6 +415,7 @@ class DatePicker extends React.Component {
 
   setInputValue(info = '') {
     this.refs.input.value = info;
+    this.props.field && this.props.field.onUpdate(info);
   }
 
   exportPickedDate(date) {
@@ -470,7 +471,7 @@ class DatePicker extends React.Component {
 
   render() {
     const {
-      props: {data},
+      props: {data, field = {}, className = ""},
       state: {
         activeDate:{year, month, day, daysPanelData=[], yearsPanelDate=[]},
         showCalendar,
@@ -488,8 +489,8 @@ class DatePicker extends React.Component {
     return (
       <div className="DatePicker">
         <div className={`date-input-wrap ${Map(data).get('calendarWrapClassName') || ''}`}>
-          <input ref="input" className="date-input" type="text" readOnly="readonly"
-                 placeholder={Map(data).get('placeHolder')}
+          <input ref="input" className={`date-input ${className}`} type="text" readOnly="readonly"
+                 placeholder={Map(data).get('placeHolder')} {...field}
                  onClick={()=>{::this.toggleCalendar(true)}}/>
           <i className="ic ic-close" title="清空" onClick={()=>{::this.clearInputValue()}}></i>
           <i className="ic ic-calendar" onClick={()=>{::this.toggleCalendar(true)}}></i>
