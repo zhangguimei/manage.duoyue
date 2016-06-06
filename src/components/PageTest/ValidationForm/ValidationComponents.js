@@ -10,30 +10,30 @@ import Tree from '../../UIComponent/Tree/Tree';
 export class InputF extends React.Component {
 
   getInputByType() {
-    const {field, inputType, children} = this.props;
+    const {field, inputType, children, placeholder, className = ''} = this.props;
     const inputErrorClass = field && field.error && field.touched ? "error-input" : "";
     let input;
     if(!inputType) {
-      input = <input type="text" {...field} className={`${field.name}-input ${inputErrorClass}`} name={field.name}/>
+      input = <input type="text" {...field} className={`${field.name}-input ${className} ${inputErrorClass}`} name={field.name} placeholder={placeholder} />
     } else if(inputType == "textarea"){
-      input = <textarea {...field} className={`${field.name}-textarea ${inputErrorClass}`} name={field.name}/>;
+      input = <textarea {...field} className={`${field.name}-textarea ${className} ${inputErrorClass}`} name={field.name} placeholder={placeholder} />;
     } else if(inputType == "file") {
       throw Error('InputF can not be used as file');
     } else if(inputType == "radio" || inputType == "checkbox") {
       if(!children ) {
-        input = <input type={inputType} {...field} className={`${field.name}-input ${inputErrorClass}`} name={field.name}/>
+        input = <input type={inputType} {...field} className={`${field.name}-input ${className} ${inputErrorClass}`} name={field.name} placeholder={placeholder} />
       } else if(children){
         input  = children.map((item, index) => {
           return (
             <div className={`${field.name}-box`} key={index}>
-              <input type={inputType} {...field} value={item.value} className={`${field.name}-input ${inputErrorClass}`} name={field.name}/>
+              <input type={inputType} {...field} value={item.value} className={`${field.name}-input ${className} ${inputErrorClass}`} name={field.name} placeholder={placeholder} />
               <span>{item.content}</span>
             </div>
           )
         })
       }
     } else {
-      input = <input type="text" {...field} className={`${field.name}-input ${inputErrorClass}`} name={field.name}/>
+      input = <input type="text" {...field} className={`${field.name}-input ${className} ${inputErrorClass}`} name={field.name} placeholder={placeholder} />
     }
 
     return input;
@@ -62,7 +62,9 @@ InputF.propTypes = {
   inputType: PropTypes.string,
   children: PropTypes.array,
   defaultPrompt: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  className: PropTypes.string
 };
 
 /*
@@ -70,14 +72,14 @@ InputF.propTypes = {
 */
 export class SelectF extends React.Component {
   render() {
-    const {field, options, multiple = false, defaultPrompt, showError = true, label } = this.props;
+    const {field, options, multiple = false, defaultPrompt, showError = true, label, className = "" } = this.props;
     return (
       <section className={`SelectF ${field.name}`}>
         { 
           label &&
             <label className="label-select">{label}</label>
         }
-        <select {...field} multiple={multiple} className={`select-${field.name}`}>
+        <select {...field} multiple={multiple} className={`select-${field.name} ${className}`}>
           {options.map(item => <option key={item.value} value={item.value} className={`option-${field.name}`}>{item.content}</option>)}
         </select>
         {
@@ -97,19 +99,19 @@ SelectF.propTypes = {
 };
 
 /*
-* For Input NUmber
+* For Input Number
 **/
 
 export class InputNumber extends React.Component {
 
   changeValue(type) {
     const {field} = this.props;
-    let value = type == "add" ? Number(field.value)+1: Number(field.value)-1;
+    let value = type == "add" ? Number(field.value) + 1 : Number(field.value) - 1;
     field.onUpdate(value);
   }
 
   render() {
-    const {field, showError = true, defaultPrompt, label} = this.props;
+    const {field, showError = true, defaultPrompt, label, className = ""} = this.props;
     const inputErrorClass = field && field.error && field.touched ? "error-input" : "";
     return (
       <section className="InputNumber">
@@ -118,7 +120,7 @@ export class InputNumber extends React.Component {
           <label className="label-number">{label}</label>
         }
         <div className="number">
-          <input type="text" {...field} className={`number-input ${inputErrorClass}`}/>
+          <input type="text" {...field} className={`number-input ${inputErrorClass} ${className}`}/>
           <div className="number-box">
             <i className="ic ic-fold modify-input" onClick={() => this.changeValue('add')}/>
             <i className="ic ic-unfold modify-input" onClick={() => this.changeValue('reduce')}/>
@@ -160,17 +162,16 @@ export class InputTree extends React.Component {
   }
 
   render() {
-    const {field, treeData, label,  showError = true, defaultPrompt, required =false} = this.props, {showTree} = this.state;
+    const {field, treeData, label, showError = true, defaultPrompt, required = false, className = ""} = this.props,
+          {showTree} = this.state;
     const inputErrorClass = field && field.error && field.touched ? "error-input" : "";
     return (
       <section className="InputTree tree">
         <div className="tree-box">
-          <label className="">
-            {
-              label && <span className={`label-tree ${required && "required"}`}>{label}</span>
-            }
-            <input type="text" {...field} className={`tree-input ${inputErrorClass}`} readOnly onClick={::this.toggleShowTree}/>
-          </label>
+          {
+            label && <span className={`label-tree ${required && "required"}`}>{label}</span>
+          }
+          <input type="text" {...field} className={`tree-input ${inputErrorClass} ${className}`} readOnly onClick={::this.toggleShowTree}/>
           <span onClick={() => this.clickItem("")} className="clear-tree">清除</span>
           {
             showTree && treeData &&

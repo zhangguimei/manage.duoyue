@@ -4,10 +4,11 @@ import { reduxForm } from 'redux-form';
 
 import validate from './Validation';
 import {InputF, SelectF, InputNumber, InputTree} from './ValidationComponents';
+import CascadeSelect from '../../UIComponent/CascadeSelect/CascadeSelect'
 
-const fields = ['tree', 'range', 'position' ,'classify', 'author', 'order', 'title', 'description', 'original', 'color', 'cover', 'url', 'content'];
+const fields = ['tree', 'range', 'position' ,'classify', 'author', 'bookNum', 'province', 'city', 'district', 'order', 'title', 'description', 'original', 'color', 'cover', 'url', 'content'];
 const potentialColor = [{
-    value: "zone",
+    value: "brown",
     content: <i className="color-radio" style={{backgroundColor: "#c29364"}}/>
   },
   {
@@ -50,8 +51,26 @@ const positions = [
   }
 ];
 const treeData = require('../../../assets/MockData/tree_data.json').menu;
+const locationData = {
+  showGenre: ['省/市', '市/县', '区'],
+  defaultItemVaule: '---------无--------',
+  addressValue: ['湖北', '武汉', '新洲', 2003]
+};
 
 class ValidationForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectAddress: {}
+    }
+  }
+
+  getSelectData(info) {
+    this.setState({
+      selectAddress: info
+    });
+  }
 
   submit(values) {
     return new Promise((resolve, reject) => {
@@ -63,9 +82,15 @@ class ValidationForm extends React.Component {
 
   render() {
     const {
-        fields: {tree, range, classify, author,position, order, title, description, original, color, cover, url, content},
+        fields: {tree, range, classify, author, bookNum, province, city, district, position, order, title, description, original, color, cover, url, content},
         handleSubmit, submitting
       } = this.props;
+    const { selectAddress } = this.state;
+    const CascadeSelectClassName = [
+      province.touched && province.error ? "error-input" : "",
+      city.touched && city.error ? "error-input" : "",
+      district.touched && district.error ? "error-input" : ""
+    ];
     return (
       <form className="ValidationForm article-form" onSubmit={handleSubmit(this.submit)}>
 
@@ -78,6 +103,12 @@ class ValidationForm extends React.Component {
         <InputF field={classify} label="选择分类" defaultPrompt="必填" required={true} showError={true}/>
 
         <InputF field={author} label="作者" />
+
+        <InputF field={bookNum} label="书号" placeholder="999-9-9999-9999-9" />
+
+        <p>name:{selectAddress.name}</p>
+        <p>id:{selectAddress.id}</p>
+        <CascadeSelect data={locationData} getSelectInfo={::this.getSelectData} fields={[province, city, district]} fieldsClassName={CascadeSelectClassName}/>
 
         <InputF field={title} label="标题" required={"required"} defaultPrompt={"长度小于150"}/>
 
@@ -106,7 +137,7 @@ class ValidationForm extends React.Component {
         </section>
 
         {
-          submitting && <div style={{coor: 'red'}}>submitting</div>
+          submitting && <div style={{color: 'red'}}>submitting</div>
         }
         <button className="btn" type="submit">提交</button>
 
@@ -115,8 +146,21 @@ class ValidationForm extends React.Component {
   }
 }
 
+ValidationForm.propTypes = {
+  fields: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  resetForm: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired
+};
+
 export default reduxForm({
   form: 'article',
+  initialValues: {
+    province: locationData.addressValue[0],
+    city: locationData.addressValue[1],
+    district: locationData.addressValue[2]
+  },
   fields,
   validate
 })(ValidationForm)

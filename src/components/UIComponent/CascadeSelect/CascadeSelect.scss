@@ -10,6 +10,9 @@
       .select-input {
         cursor: pointer;
         text-align: center;
+        &.error-input {
+          border: 2px solid red;
+        }
       }
       .triangle {
         position: absolute;

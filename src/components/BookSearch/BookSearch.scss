@@ -75,6 +75,10 @@
       }
       .BookForm {
         padding: 35px 50px 20px 50px;
+        .label-span {
+          font-size: 13px;
+          padding: 5px 0;
+        }
         .form-title {
           padding: 5px 0;
         }
@@ -89,6 +93,9 @@
           font-size: 16px;
           padding: 8px;
           height: 36px;
+        }
+        .link-error {
+          display: block;
         }
         .w300 {
           width: 300px;
@@ -141,13 +148,16 @@
             width: 250px;
           }
         }
+        .InputTree {
+          font-size: 13px;
+          .tree-component {
+            top: 56px;
+          }
+        }
         .Tree {
           margin-top: 0;
           border: 1px solid $grayD;
-          height: 200px;
           width: 300px;
-          position: absolute;
-          top: 68px;
           z-index: 10000;
           background-color: $white;
           padding: 10px;
@@ -193,15 +203,26 @@
             .virtual-item-width {
               width: 30%;
             }
-          }
-          .introduction {
-            .introduction-input {
-              rows: 3;
-              padding: 8px;
-              font-size: 16px;
-              border: 1px solid $grayD;
-              margin-top: 10px;
+            .eBook {
+              .eBook-box {
+                display: inline-block;
+                margin-right: 5px;
+              }
             }
+            .tryRead {
+              .tryRead-box {
+                display: inline-block;
+                margin-right: 5px;
+              }
+            }
+          }
+          .introduction-input {
+            width: 100%;
+            rows: 3;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid $grayD;
+            margin-top: 10px;
           }
         }
       }
