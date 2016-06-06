@@ -26,3 +26,93 @@
     }
   }
 }
+
+.LoadingRect {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  min-width: 200px;
+  padding: 35px 10px;
+  border-radius: 3px;
+  border: 1px solid $gray9;
+  background-color: $white;
+  .desc {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 0 0 5px;
+    margin: 0;
+    font-size: 10px;
+    color: $gray7;
+  }
+  .spinner {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 18px;
+    border: 1px solid $grayC;
+    white-space: nowrap;
+    overflow: hidden;
+    @keyframes running {
+      0%, to {
+        width: 30%;
+        -webkit-transform: translate3d(-10%, 0, 0);
+        transform: translate3d(-10%, 0, 0);
+        opacity: 0.8;
+      }
+
+      100% {
+        width: 100%;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes running-end {
+      0%{
+        left: -100%;
+        width: 30%;
+        opacity: 1;
+      }
+      100% {
+        left: 0%;
+        width: 28%;
+        opacity: 0.8;
+      }
+    }
+    .running {
+      display: inline-block;
+      background-color: $blueDark;
+      height: 100%;
+      -webkit-animation-name: running;
+      animation-name: running;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+    }
+    .running-end {
+      position: absolute;
+      @extend .running;
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      //background-color: rgba(0, 0, 0, .3);
+      -webkit-animation-name: running-end;
+      animation-name: running-end;
+    }
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite
+}

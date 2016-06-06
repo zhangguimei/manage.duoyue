@@ -2,6 +2,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Link} from 'react-router';
 import * as actions from '../../actions/MenuActions';
 import Menu from '../UIComponent/Menu/Menu';
 import FastMenu from './FastMenu';
@@ -12,7 +13,7 @@ class PageHeader extends React.Component {
     const {treeData:{login, user, fast, menu}, actions: {changeRoute}} = this.props;
     return (
       <div className="PageHeader">
-        <a className="logo">RAYS-2.0</a>
+       <Link className="logo" to="/">RAYS-2.0</Link>
         <div className="menu">
           <Menu menuData={menu}/>
         </div>

@@ -19,7 +19,7 @@ class FastMenu extends React.Component {
                 let route = options[item.id].join('.');
                 return (
                   <Link to={`${url}?route=${route}`} key={i} onClick={() => changeRoute(options[item.id])}>
-                    <img src={icon_max} alt={name}/>
+                    <img src={icon_max} alt={name} className="hvr-pop"/>
                     <span>{name}</span>
                   </Link>
                 );

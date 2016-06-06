@@ -47,7 +47,8 @@
             display: block;
             padding: 6px 30px;
             font-size: 13px;
-            &:hover, &.cur {
+           //&:hover,
+            &.cur {
               color: $white;
               background-color: $blueLight;
             }
