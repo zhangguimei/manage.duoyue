@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "../../../../../assets/sass/function";
+
+.MainBody {
+  width: 100%;
+  margin: auto;
+  background-color: $white;
+  .text {
+    width: 100%;
+    padding: 5px;
+    border: none;
+  }
+}

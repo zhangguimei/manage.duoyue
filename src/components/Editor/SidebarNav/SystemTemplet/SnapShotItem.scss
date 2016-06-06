@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@import "../../../../assets/sass/function";
+
+.SnapShotItem {
+  margin: 10px 5px;
+  cursor: pointer;
+  &:hover {
+    -webkit-box-shadow: 0 0 16px #60d0ff;
+    -moz-box-shadow: 0 0 16px #60d0ff;
+    box-shadow: 0 0 16px #60d0ff;
+  }
+}

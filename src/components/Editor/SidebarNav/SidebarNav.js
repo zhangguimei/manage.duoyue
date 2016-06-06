@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 
-import Tab from '../../UIComponent/Tab/Tab';
+import Tab from './Tab/Tab';
 import SystemTemplet from './SystemTemplet/SystemTemplet';
 
 import styles from './SidebarNav.scss';
@@ -22,7 +22,7 @@ class SidebarNav extends React.Component {
   }
 
   render() {
-    const { tabItemsData, tabIndex, togglePanel, showPanel } = this.props,
+    const { tabItemsData, tabIndex, togglePanel, showPanel, snapShotOnClick } = this.props,
           { panelWidth } = this.state;
     return(
       <div className="SidebarNav left clearfix">
@@ -30,7 +30,7 @@ class SidebarNav extends React.Component {
         <div className="sidebar-panel left" style={{ marginLeft: showPanel ? 80 : (80 - panelWidth) }}>
           {
             tabIndex == 0 &&
-           <SystemTemplet />
+           <SystemTemplet snapShotOnClick={snapShotOnClick} />
           }
         </div>
         <div className="toggle-button left" onClick={togglePanel}>

@@ -4,7 +4,7 @@
 .editPanel-box {
   height: 100%;
   background-color: $grayF;
-  overflow-y: scroll;
+  overflow-y: hidden;
   .EditPanel {
     width: 420px;
     margin: auto;

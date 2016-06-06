@@ -1,6 +1,5 @@
 "use strict";
 import React from 'react';
-
 import SidebarNav from './SidebarNav/SidebarNav';
 import EditPanel from './EditPanel/EditPanel';
 
@@ -11,7 +10,8 @@ class Editor extends React.Component {
     super(props);
     this.state = {
       activeTabIndex: 0,
-      showPanel: true
+      showPanel: true,
+      editPanelContent: []
     };
   }
 
@@ -28,13 +28,19 @@ class Editor extends React.Component {
     });
   }
 
+  snapShotOnClick(snapShot) {
+    this.setState({
+      editPanelContent: this.state.editPanelContent.concat(snapShot)
+    });
+  }
+
   render() {
-    const { activeTabIndex, showPanel } = this.state;
+    const { activeTabIndex, showPanel, editPanelContent } = this.state;
     return(
       <div className="Editor clearfix">
         <SidebarNav tabIndex={activeTabIndex} showPanel={showPanel} onTabChange={::this.onTabChange}
-                    togglePanel={::this.togglePanel} />
-        <EditPanel onTabChange={::this.onTabChange} />
+                    togglePanel={::this.togglePanel} snapShotOnClick={::this.snapShotOnClick} />
+        <EditPanel onTabChange={::this.onTabChange} content={editPanelContent} />
       </div>
     );
   };

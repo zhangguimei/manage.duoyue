@@ -1,45 +1,59 @@
 "use strict";
 import React from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 
+import {Scrollbars} from 'react-custom-scrollbars';
+import Tab from '../Tab/Tab';
+import TitleStore from './TitleStore';
+import ImageStore from './ImageStore';
+
 import styles from './SystemTemplet.scss';
+
+const tabClass = {
+  tabBox: "tab-box",
+  tabItemOn: "tab-item active",
+  tabItemDefault: "tab-item"
+};
+
+const tabItemsData = {
+  content: ["标题", "图片"],
+  tabClass: tabClass
+};
 
 class SystemTemplet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPageTemplet: true,
-      showEffectTemplet: false
+      activeTabIndex: 0
     };
   }
 
-  toggleTemplet(index) {
-    if(index == 0) {
-      this.setState({
-        showPageTemplet: !this.state.showPageTemplet
-      });
-    } else if(index == 1) {
-      this.setState({
-        showEffectTemplet: !this.state.showEffectTemplet
-      });
-    }
+  onTabChange(nextIndex) {
+    this.setState({
+      activeTabIndex: nextIndex
+    });
   }
 
   render() {
-    const { showPageTemplet, showEffectTemplet } = this.state
+    const { activeTabIndex } = this.state,
+          { snapShotOnClick } = this.props;
+    let contentCode;
+    switch(activeTabIndex) {
+      case 0:
+        contentCode =  <TitleStore snapShotOnClick={snapShotOnClick} />;
+        break;
+
+      case 1:
+        contentCode =  <ImageStore snapShotOnClick={snapShotOnClick} />;
+        break;
+    }
     return(
       <div className="SystemTemplet left">
-        <header className="header" onClick={() => this.toggleTemplet(0)}>
-          页面模板
-          <i className={classNames("ic right", {"ic-unfold": showPageTemplet}, {"ic-right": !showPageTemplet})} />
-        </header>
-        <div className="page-templet">
-
-        </div>
-        <header className="header" onClick={() => this.toggleTemplet(1)}>
-          特效模板
-          <i className={classNames("ic right", {"ic-unfold": showEffectTemplet}, {"ic-right": !showEffectTemplet})} />
-        </header>
+        <Tab TabItemsData={tabItemsData} onTypeChange={::this.onTabChange} typeIndex={activeTabIndex} />
+        <Scrollbars autoHide={true} style={{height:'100%'}}>
+          { contentCode }
+        </Scrollbars>
       </div>
     );
   }

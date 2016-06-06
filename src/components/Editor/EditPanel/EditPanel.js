@@ -1,5 +1,6 @@
 "use strict";
 import React from 'react';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 import MusicBox from './MusicBox/MusicBox';
 import WechatContent from './WechatContent/WechatContent';
@@ -8,14 +9,15 @@ import styles from './EditPanel.scss';
 
 class EditPanel extends React.Component {
   render() {
-    const { onTabChange } = this.props;
+    const { onTabChange, content } = this.props;
     return (
       <div className="editPanel-box">
-        <div className="EditPanel">
-          <MusicBox onTabChange={onTabChange} />
-          <WechatContent pages={[]} onTabChange={onTabChange} />
-        </div>
-
+        <Scrollbars style={{height:'100%'}}>
+          <div className="EditPanel">
+            <MusicBox onTabChange={onTabChange} />
+            <WechatContent content={content} onTabChange={onTabChange} />
+          </div>
+        </Scrollbars>
       </div>
     );
   }
