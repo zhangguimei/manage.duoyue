@@ -13,6 +13,11 @@ const wuhan = require("../../../assets/MockData/address/wuhan.json");
 const hubeiWuhanHongshan = require("../../../assets/MockData/address/hubeiWuhanHongshan.json");//完整测试数据，湖北武汉洪山
 
 class CascadeSelect extends React.Component {
+  static defaultProps = {
+    fields: [],
+    fieldsClassName: []
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -63,7 +68,7 @@ class CascadeSelect extends React.Component {
 
     if (id !== (fromJS(pickedDate).getIn(['id', index - 1]) || 0)) {
       mergedSelectData = mergedSelectData.slice(0, index + 1);
-    };
+    }
     this.setState({
       selectData: mergedSelectData.toJS()
     });
@@ -72,7 +77,7 @@ class CascadeSelect extends React.Component {
   onSelectItem(data = {}, index) {
     const {id, name, haschild} = data;
     const {
-      props: {data: {defaultItemVaule}},
+      props: {data: {defaultItemVaule}, fields},
       state: {selectData},
       pickedDate
     } = this;
@@ -105,7 +110,7 @@ class CascadeSelect extends React.Component {
       }
       this.fetchData(tempId, index + 1);
     }
-    if (pickedDate[index] !== tempName) {
+    if (pickedDate.name[index] !== tempName) {
       pickedNames = pickedNames.slice(0, index);
       pickedId = pickedId.slice(0, index);
       if (!!id) {
@@ -119,6 +124,10 @@ class CascadeSelect extends React.Component {
 
     this.togglePanel(index);
     this.exportSelectInfo()
+
+    if(fields[index] && data) {
+      fields[index].onUpdate(name || defaultItemVaule);
+    }
   }
 
   togglePanel(index) {
@@ -168,6 +177,7 @@ class CascadeSelect extends React.Component {
           showGenre = [],
           defaultItemVaule = ''
         },
+        fields, fieldsClassName
       },
       pickedDate
     } = this;
@@ -181,9 +191,8 @@ class CascadeSelect extends React.Component {
             return (
               <div className="select-wrap" key={i}>
                 <div className="select-input-box">
-                  <input className="select-input" defaultValue={defaultItemVaule} type="text"
-                         value={fromJS(pickedDate).getIn(['name', i])} readOnly
-                         onClick={(e)=>{::this.onClickInput(i, e)}}/>
+                  <input className={`select-input ${fieldsClassName[i]}`} defaultValue={defaultItemVaule} type="text"
+                         {...fields[i]} value={fromJS(pickedDate).getIn(['name', i])} readOnly onClick={(e)=>{::this.onClickInput(i, e)}}/>
                   <em className="triangle"></em>
                   {
                     showPanelIndex === i &&
@@ -194,7 +203,7 @@ class CascadeSelect extends React.Component {
                         selectData[`key${i}`].map((item, index)=> {
                           let checkActive = false;
                           if (fromJS(pickedDate).getIn(['name', i]) === item.name) {
-                            fromJS(pickedDate).setIn(['id', i], item.id)
+                            fromJS(pickedDate).setIn(['id', i], item.id);
                             checkActive = true;
                           }
                           return (
