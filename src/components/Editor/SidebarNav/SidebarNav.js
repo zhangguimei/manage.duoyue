@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import Tab from './Tab/Tab';
 import SystemTemplet from './SystemTemplet/SystemTemplet';
+import MyImages from './MyImages/MyImages';
 
 import styles from './SidebarNav.scss';
 
@@ -31,6 +32,10 @@ class SidebarNav extends React.Component {
           {
             tabIndex == 0 &&
            <SystemTemplet snapShotOnClick={snapShotOnClick} />
+          }
+          {
+            tabIndex == 1 &&
+            <MyImages />
           }
         </div>
         <div className="toggle-button left" onClick={togglePanel}>

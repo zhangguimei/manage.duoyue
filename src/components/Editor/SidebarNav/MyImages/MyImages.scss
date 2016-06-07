@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import "../../../../assets/sass/function";
+
+.MyImages {
+  width: 100%;
+  background-color: #555d6a;
+  height: 100%;
+  @include props-dpr(padding-top, 20px);
+  .room-name {
+    @include props-dpr(height, 30px)
+  }
+  .room-name a {
+    border-bottom: 2px solid $white;
+    color: $white;
+    cursor: pointer;
+    @include props-dpr(padding-bottom margin-left, 3px 10px);
+    &:hover {
+      @extend %f16;
+    }
+  }
+  .click-area {
+    @include props-dpr(margin-top height, 20px 50px);
+    position: relative;
+    .upload-box {
+      position: absolute;
+      height: 30px;
+      width: 80%;
+      margin-left: 10%;
+      >button {
+        width: 100%;
+        text-align: center;
+        color: $white;
+        background-color: #7bcb96;
+        border-color: #54a06d;
+      }
+    }
+    .file-input {
+      opacity: 0;
+    }
+  }
+  .clear-img {
+    color: $white;
+    background-color: #f17c72;
+    border-color: #d65a50;
+    margin-right: 10%;
+    @include props-dpr(width, 100px)
+  }
+  .add-url {
+    color: $white;
+    background-color: #7bcb96;
+    border-color: #54a06d;
+    margin-left: 10%;
+  }
+  .my-images {
+    @include props-dpr(margin-top, 30px);
+    .ImagesItem {
+      float: left;
+      width: 50%;
+      text-align: center;
+      @include props-dpr(margin-top, 10px);
+      .image-box {
+        text-align: center;
+        position: relative;
+        .delete-item {
+          position: absolute;
+          color: $white;
+          right: 10px;
+          top: 10px;
+          @extend %f24;
+          &:hover {
+            color: #d65a50;
+            font-size: 26px;
+            margin-top: -2px;
+            margin-right: -2px;
+          }
+        }
+        >img {
+          display: block;
+          width: 100%;
+          height: 125px;
+        }
+        &:hover {
+          -webkit-box-shadow: 0 0 15px #60d0ff;
+          -moz-box-shadow: 0 0 15px #60d0ff;
+          box-shadow: 0 0 15px #60d0ff;
+        }
+      }
+      &:nth-child(even) {
+        padding-right: 5%;
+        padding-left: 2.5%;
+      }
+      &:nth-child(odd) {
+        padding-left: 5%;
+        padding-right: 2.5%;
+      }
+      span {
+        color: $white;
+      }
+    }
+  }
+}
