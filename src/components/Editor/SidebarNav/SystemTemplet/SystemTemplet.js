@@ -36,16 +36,15 @@ class SystemTemplet extends React.Component {
   }
 
   render() {
-    const { activeTabIndex } = this.state,
-          { snapShotOnClick } = this.props;
+    const { activeTabIndex } = this.state;
     let contentCode;
     switch(activeTabIndex) {
       case 0:
-        contentCode =  <TitleStore snapShotOnClick={snapShotOnClick} />;
+        contentCode =  <TitleStore />;
         break;
 
       case 1:
-        contentCode =  <ImageStore snapShotOnClick={snapShotOnClick} />;
+        contentCode =  <ImageStore />;
         break;
     }
     return(

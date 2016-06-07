@@ -13,7 +13,7 @@ class SidebarNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      panelWidth: 360
+      panelWidth: 390
     };
   }
 
@@ -23,7 +23,7 @@ class SidebarNav extends React.Component {
   }
 
   render() {
-    const { tabItemsData, tabIndex, togglePanel, showPanel, snapShotOnClick } = this.props,
+    const { tabItemsData, tabIndex, togglePanel, showPanel } = this.props,
           { panelWidth } = this.state;
     return(
       <div className="SidebarNav left clearfix">
@@ -31,7 +31,7 @@ class SidebarNav extends React.Component {
         <div className="sidebar-panel left" style={{ marginLeft: showPanel ? 80 : (80 - panelWidth) }}>
           {
             tabIndex == 0 &&
-           <SystemTemplet snapShotOnClick={snapShotOnClick} />
+           <SystemTemplet />
           }
           {
             tabIndex == 1 &&

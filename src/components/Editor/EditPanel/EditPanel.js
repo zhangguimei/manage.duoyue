@@ -9,13 +9,13 @@ import styles from './EditPanel.scss';
 
 class EditPanel extends React.Component {
   render() {
-    const { onTabChange, content } = this.props;
+    const { onTabChange } = this.props;
     return (
       <div className="editPanel-box">
         <Scrollbars style={{height:'100%'}}>
           <div className="EditPanel">
             <MusicBox onTabChange={onTabChange} />
-            <WechatContent content={content} onTabChange={onTabChange} />
+            <WechatContent onTabChange={onTabChange} />
           </div>
         </Scrollbars>
       </div>

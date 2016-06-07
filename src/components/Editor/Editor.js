@@ -10,8 +10,7 @@ class Editor extends React.Component {
     super(props);
     this.state = {
       activeTabIndex: 0,
-      showPanel: true,
-      editPanelContent: []
+      showPanel: true
     };
   }
 
@@ -28,19 +27,13 @@ class Editor extends React.Component {
     });
   }
 
-  snapShotOnClick(snapShot) {
-    this.setState({
-      editPanelContent: this.state.editPanelContent.concat(snapShot)
-    });
-  }
-
   render() {
-    const { activeTabIndex, showPanel, editPanelContent } = this.state;
+    const { activeTabIndex, showPanel } = this.state;
     return(
       <div className="Editor clearfix">
         <SidebarNav tabIndex={activeTabIndex} showPanel={showPanel} onTabChange={::this.onTabChange}
-                    togglePanel={::this.togglePanel} snapShotOnClick={::this.snapShotOnClick} />
-        <EditPanel onTabChange={::this.onTabChange} content={editPanelContent} />
+                    togglePanel={::this.togglePanel} />
+        <EditPanel onTabChange={::this.onTabChange} />
       </div>
     );
   };
