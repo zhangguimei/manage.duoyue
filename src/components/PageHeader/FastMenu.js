@@ -2,8 +2,24 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import options from './ConstantOfFast';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {Map, is, fromJS} from 'immutable';
+import * as actions from '../../actions/LoginActions';
 
 class FastMenu extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  handleLogout(){
+    let {actions:{logOut}} = this.props;
+    logOut();
+    if(confirm('确定退出管理平台吗？')){
+      this.context.router.push('/login');
+    }
+  }
+
   render() {
     let {fastData, changeRoute} = this.props;
     return (
@@ -18,7 +34,7 @@ class FastMenu extends React.Component {
                 let {name, url, icon_max} = item;
                 let route = options[item.id].join('.');
                 return (
-                  <Link to={`${url}?route=${route}`} key={i} onClick={() => changeRoute(options[item.id])}>
+                  <Link to={`/user${url}?route=${route}`} key={i} onClick={() => changeRoute(options[item.id])}>
                     <img src={icon_max} alt={name} className="hvr-pop"/>
                     <span>{name}</span>
                   </Link>
@@ -26,7 +42,7 @@ class FastMenu extends React.Component {
               })
             }
           </div>
-          <a className="logout" href="">退出系统</a>
+          <a className="logout" href="javascript:;" onClick={::this.handleLogout}>退出系统</a>
         </div>
       </div>
     );
@@ -41,4 +57,25 @@ FastMenu.propTypes = {
   })).isRequired
 }
 
-export default FastMenu;
+FastMenu.contextTypes = {
+  router: PropTypes.object.isRequired
+};
+
+
+function mapStateToProps(state) {
+  let {login:{username}} = fromJS(state).toJS();
+  return {
+    username
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FastMenu);

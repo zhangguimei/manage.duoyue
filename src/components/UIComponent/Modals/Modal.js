@@ -3,11 +3,13 @@ import React, {PropTypes}  from 'react';
 import styles from './Modal.scss';
 
 class Modal extends React.Component {
+  static defaultProps = {
+    className: ''
+  }
 
   render() {
-    const {className = ""} = this.props;
     return (
-      <div className="Modal">
+      <div className={`Modal ${this.props.className}`}>
         <div className="real-modal" onClick={ () => this.props.onModalClick && this.props.onModalClick()}></div>
         {this.props.children}
       </div>

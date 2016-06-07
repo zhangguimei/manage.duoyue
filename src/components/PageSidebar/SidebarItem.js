@@ -28,7 +28,7 @@ class SidebarItem extends React.Component {
             data.length > 0 ?
               <a className={selectTitle ? 'cur' : null} onClick={() => this.toggleClick()}>{name}<i
                 className={open ? 'ic ic-move' :'ic ic-add'}/></a> :
-              <Link to={`${url}?route=${routeFirst}.${parent}`} className={selectTitle ? 'cur' : null}
+              <Link to={`/user${url}?route=${routeFirst}.${parent}`} className={selectTitle ? 'cur' : null}
                     onClick={() => changeRoutes(`${parent}`)}>{name}</Link>
           }
         </h5>
@@ -37,7 +37,6 @@ class SidebarItem extends React.Component {
             {
               data.map((item, i) => {
                 let select = route.slice(1, 3).join('.') === `${parent}.${i}`;
-                //console.log(routeSub);
                 return (
                   <SidebarItemList key={i} select={select} menuData={item} route={`${routeFirst}.${parent}.${i}`}
                                    onClick={() => changeRoutes(`${parent}.${i}`, item, `${parent}.${i}`)}/>

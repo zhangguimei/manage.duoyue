@@ -7,7 +7,7 @@ class SidebarItemList extends React.Component {
     const {menuData:{name, url}, onClick, select, route} = this.props;
     return (
       <li>
-        <Link to={`${url}?route=${route}`} className={select?"cur":"hvr-shutter-out-horizontal"} onClick={onClick}>{name}</Link>
+        <Link to={`/user${url}?route=${route}`} className={select?"cur":"hvr-shutter-out-horizontal"} onClick={onClick}>{name}</Link>
       </li>
     );
   }

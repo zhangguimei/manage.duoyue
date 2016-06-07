@@ -28,17 +28,16 @@ const onDragEnd = () => {
 };
 
 export const nodeDraggable = (moveNode, dragNode = moveNode) => {
-  dragNode.draggable = true;
   dragNode.style.cursor = "move";
   moveNode.style.margin = 0;
   nodeForMove = moveNode;
-  dragNode.addEventListener("dragstart", onDragStart, false);
-  dragNode.addEventListener("drag", onDrag, false);
-  dragNode.addEventListener("dragend", onDragEnd, false);
+  dragNode.addEventListener("mousedown", onDragStart, false);
+  window.addEventListener("mousemove", onDrag, false);
+  window.addEventListener("mouseup", onDragEnd, false);
 };
 
 export const removeDraggable = (moveNode, dragNode = moveNode) => {
-  dragNode.addEventListener("dragstart", onDragStart, false);
-  dragNode.addEventListener("drag", onDrag, false);
-  dragNode.addEventListener("dragend", onDragEnd, false);
+  dragNode.addEventListener("mousedown", onDragStart, false);
+  window.addEventListener("mousemove", onDrag, false);
+  window.addEventListener("mouseup", onDragEnd, false);
 };

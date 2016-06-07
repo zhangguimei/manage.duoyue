@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+.PageLogin {
+  font-family: $fontFamily;
+  padding-top: 30px;
+  .index-wrapper {
+    .login-box {
+      position: relative;
+      .logo {
+        width: 100%;
+        height: 117px;
+        background: url(../../assets/images/Loginlogo.png) no-repeat center;
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      .slogan {
+        padding: 25px 0 30px 0;
+        color: $white;
+        letter-spacing: 3px;
+        list-style: none;
+        .slogan-top {
+          line-height: 34px;
+          font-size: 30px;
+          span {
+            display: inline-block;
+            &:nth-child(2) {
+              padding: 0 25px 0 25px;
+            }
+          }
+        }
+        .slogan-bottom {
+          padding-top: 45px;
+          line-height: 50px;
+          font-size: 48px;
+          text-shadow: 0 0 8px rgba(17, 113, 164, 0.5);
+        }
+      }
+      .login-panel {   
+        width: 800px;
+        padding: 70px 65px 65px 65px;
+        background-color: $white;
+        border-radius: 20px;
+        box-shadow: 0 0 8px rgba(17, 113, 164, 0.6);
+        .LoginForm {
+          .input-block {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            padding-bottom: 50px;
+            &:first-child {
+              margin-right: 4%;
+            }
+            label {
+              @extend %f20;
+              padding: 0;
+              color: $gray6;
+              font-weight: normal;
+            }
+            input {
+              @extend %f20;
+              width: 100%;
+              height: 60px;
+              box-sizing: border-box;
+              box-shadow: inset 0 1px 1px $grayD;
+              border: 1px solid $gray9;
+              padding-left: 20px;
+              &:focus {
+                box-shadow: 0 0 8px rgba(17, 113, 164, 0.6);
+              }
+            }
+            .msg-error {
+              @extend %f18;
+              display: block;
+              position: absolute;
+              bottom: 10px;
+              height: 30px;
+              line-height: 30px;
+              color: $red;
+            }
+          }
+        }
+        a {
+          display: block;
+          margin-top: $baseMargin;
+          color: $black;
+        }
+        button {
+          @extend %f24;
+          width: 100%;
+          height: 60px;
+          padding: 0;
+          background-color: #3184a9;
+          line-height: 60px;
+          color: $white;
+          text-indent: 20px;
+          letter-spacing: 20px;
+          cursor: pointer;
+          border: none;
+        }
+      }
+      .new-user {
+        @extend %f18;
+        width: 320px;
+        height: 50px;
+        margin-top: 100px;
+        background: rgba(0, 0, 0, 0.6);
+        line-height: 50px;
+        color: $white;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .announcement {
+        @extend %f14;
+        margin-top: $baseMargin/2;
+        color: $white;
+      }
+    }
+    @media all and (max-height:900px) {
+      .login-box {
+        width: 500px;
+        .logo {
+          height: 70px;
+        }
+        .slogan {
+          padding: 20px 0 20px 0;
+          .slogan-top {
+            @extend %f20;
+            line-height: 22px;
+          }
+          .slogan-bottom {
+            padding-top: 32px;
+            line-height: 34px;
+            font-size: 32px;
+          }
+        }
+        .login-panel {
+          width: 500px;
+          padding: 30px 25px 25px 25px;
+          .LoginForm {
+            .input-block {
+              padding-bottom: 30px;
+              label {
+                @extend %f16;
+              }
+              input {
+                @extend %f16;
+                height: 40px;
+                padding-left: $basePadding;
+              }
+              .msg-error {
+                @extend %f16;
+                bottom: 5px;
+                height: 20px;
+                line-height: 20px;
+              }
+            } 
+          }
+        }
+        .new-user {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+  .index-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    zoom: 1;
+    padding: 0;
+    z-index: -99999;
+    width: 100%;
+    height: 100%;
+    .login-cover {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    } 
+  }
+}

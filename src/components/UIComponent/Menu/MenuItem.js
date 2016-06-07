@@ -15,7 +15,7 @@ class MenuItem extends React.Component {
     return (
       <li className={`MenuItem ${liClass}`} onMouseMove={(e) => moveItem(e, parent)}
           onClick={(e) => clickItem(e, parent)}>
-        <Link to={`${url}?route=${thisRoute}`} className="text">
+        <Link to={`/user${url}?route=${thisRoute}`} className="text">
           {
             icon_min && icon_min_light && icon_max && icon_max_light && <img src={icon_max} alt={name}/>
           }

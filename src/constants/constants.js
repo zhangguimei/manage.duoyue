@@ -1,4 +1,3 @@
-
 //Menu Actions
 export const CHANGE_MENU_ROUTE = "CHANGE_MENU_ROUTE";
 export const CHOOSED_TREE_LEAVES = "CHOOSED_TREE_LEAVES";
@@ -9,3 +8,9 @@ export const RECEIVED_DROPDOWN_CANTSELECT_DATA = "RECEIVED_DROPDOWN_CANTSELECT_D
 
 //Book Actions
 export const RECEIVE_BOOK_DATA = "RECEIVE_BOOK_DATA";
+
+//Login
+export const LOG_IN = "LOG_IN";
+export const LOG_OUT = "LOG_OUT";
+export const LOGGED_IN = "LOGGED_IN";
+
