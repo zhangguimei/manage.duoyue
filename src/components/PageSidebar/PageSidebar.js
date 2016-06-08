@@ -17,7 +17,8 @@ class PageSidebar extends React.Component {
     this.state = {
       route: route.length > 0 ? route : ['0'],
       subData: {data: []},
-      subIndex: ''
+      subIndex: '',
+      fold: false
     };
   }
 
@@ -87,13 +88,20 @@ class PageSidebar extends React.Component {
     changeRoute && changeRoute(routeArray);
   }
 
+  foldToggle() {
+    this.setState({
+      fold: !this.state.fold
+    })
+  }
+
   render() {
     const {treeData:{menu}} = this.props,
-      {route, subData, subIndex} = this.state;
+      {route, subData, subIndex, fold} = this.state;
     const routeFirst = route[0];
     const menuData = menu[routeFirst].data;
+    let foldClass = fold ? 'fold' : '';
     return (
-      <div className="PageSidebar">
+      <div className={`PageSidebar ${foldClass}`}>
         <div className="sidebarOne">
           <Scrollbars autoHide={true} style={{height:'100%'}}>
             {
@@ -107,6 +115,8 @@ class PageSidebar extends React.Component {
               })
             }
           </Scrollbars>
+          <a className="btn-toggle" onClick={::this.foldToggle}><i
+            className={fold ? 'ic ic-right2' : 'ic ic-back2'}/></a>
         </div>
         {
           subData.data.length > 0 &&

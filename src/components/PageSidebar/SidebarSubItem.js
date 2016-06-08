@@ -15,7 +15,7 @@ class SidebarSubItem extends React.Component {
               let select = route.join(".").slice(2) == `${parent}.${i}`;
               return (
                 <li key={i}>
-                  <Link to={`/user${item.url}?route=${routeFirst}.${parent}.${i}`} className={select ? 'cur': ''}
+                  <Link to={`manage${item.url}?route=${routeFirst}.${parent}.${i}`} className={select ? 'cur': ''}
                         onClick={() => changeRoutes(`${parent}.${i}`)}>{item.name}</Link>
                 </li>
               );

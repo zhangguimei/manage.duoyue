@@ -18,18 +18,21 @@ class SidebarItem extends React.Component {
   }
 
   render() {
-    const {menuData:{name, url, data}, route, changeRoutes, parent, selectTitle} = this.props,
+    const {menuData:{id, name, url, data}, route, changeRoutes, parent, selectTitle} = this.props,
       {open} = this.state;
+    const treeAdd = require("../../assets/MockData/tree_add_data.json");
+    const icon = treeAdd[id].icon;
     let routeFirst = route[0];
     return (
       <div className="SidebarItem item">
         <h5>
           {
             data.length > 0 ?
-              <a className={selectTitle ? 'cur' : null} onClick={() => this.toggleClick()}>{name}<i
-                className={open ? 'ic ic-move' :'ic ic-add'}/></a> :
-              <Link to={`/user${url}?route=${routeFirst}.${parent}`} className={selectTitle ? 'cur' : null}
-                    onClick={() => changeRoutes(`${parent}`)}>{name}</Link>
+              <a className={selectTitle ? 'cur' : null} onClick={() => this.toggleClick()}><i
+                className={`ic ${icon} ic1`}/>{name}<i
+                className={open ? 'ic ic-move ic2' :'ic ic-add ic2'}/></a> :
+              <Link to={`manage${url}?route=${routeFirst}.${parent}`} className={selectTitle ? 'cur' : null}
+                    onClick={() => changeRoutes(`${parent}`)}><i className={`ic ${icon} ic1`}/>{name}</Link>
           }
         </h5>
         {
