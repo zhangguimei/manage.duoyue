@@ -6,21 +6,21 @@
 
 let nodeForMove, startX, startY, xPos, yPos;
 
-const onDragStart = (e) => {
+const onMouseDown = (e) => {
   startX = e.pageX;
   startY = e.pageY;
   xPos = nodeForMove.getBoundingClientRect().left + document.body.scrollLeft + document.documentElement.scrollLeft;
   yPos = nodeForMove.getBoundingClientRect().top + document.body.scrollTop + document.documentElement.scrollTop;
 };
 
-const onDrag = (e) => {
+const onMouseMove = (e) => {
   let moveX = (e.pageX) ? (e.pageX - startX) : 0,
     moveY = (e.pageY) ? (e.pageY - startY) : 0;
   nodeForMove.style.left = parseInt(xPos, 10) + moveX + "px";
   nodeForMove.style.top = parseInt(yPos, 10) + moveY + "px";
 };
 
-const onDragEnd = () => {
+const onMouseUp = () => {
   startX = null;
   startY = null;
   xPos = null;
@@ -31,13 +31,13 @@ export const nodeDraggable = (moveNode, dragNode = moveNode) => {
   dragNode.style.cursor = "move";
   moveNode.style.margin = 0;
   nodeForMove = moveNode;
-  dragNode.addEventListener("mousedown", onDragStart, false);
-  window.addEventListener("mousemove", onDrag, false);
-  window.addEventListener("mouseup", onDragEnd, false);
+  dragNode.addEventListener("mousedown", onMouseDown, false);
+  window.addEventListener("mousemove", onMouseMove, false);
+  window.addEventListener("mouseup", onMouseUp, false);
 };
 
 export const removeDraggable = (moveNode, dragNode = moveNode) => {
-  dragNode.addEventListener("mousedown", onDragStart, false);
-  window.addEventListener("mousemove", onDrag, false);
-  window.addEventListener("mouseup", onDragEnd, false);
+  dragNode.addEventListener("mousedown", onMouseDown, false);
+  window.addEventListener("mousemove", onMouseMove, false);
+  window.addEventListener("mouseup", onMouseUp, false);
 };

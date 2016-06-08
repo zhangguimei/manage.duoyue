@@ -35,7 +35,7 @@
           text-shadow: 0 0 8px rgba(17, 113, 164, 0.5);
         }
       }
-      .login-panel {   
+      .login-panel {
         width: 800px;
         padding: 70px 65px 65px 65px;
         background-color: $white;
@@ -125,7 +125,7 @@
         .slogan {
           padding: 20px 0 20px 0;
           .slogan-top {
-            @extend %f20;
+            font-size: 20px;
             line-height: 22px;
           }
           .slogan-bottom {
@@ -141,20 +141,20 @@
             .input-block {
               padding-bottom: 30px;
               label {
-                @extend %f16;
+                font-size: 16px;
               }
               input {
-                @extend %f16;
+                font-size: 16px;
                 height: 40px;
                 padding-left: $basePadding;
               }
               .msg-error {
-                @extend %f16;
+                font-size: 16px;
                 bottom: 5px;
                 height: 20px;
                 line-height: 20px;
               }
-            } 
+            }
           }
         }
         .new-user {
@@ -183,6 +183,6 @@
       height: 100%;
       width: 100%;
       position: absolute;
-    } 
+    }
   }
 }

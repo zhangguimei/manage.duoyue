@@ -1,7 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 
-class Showcase extends React.Component {
+class User extends React.Component {
   render() {
     return (
       <div className="Showcase">
@@ -11,8 +11,8 @@ class Showcase extends React.Component {
   }
 }
 
-Showcase.propTypes = {
+User.propTypes = {
   children: PropTypes.any
 }
 
-export default Showcase;
+export default User;
