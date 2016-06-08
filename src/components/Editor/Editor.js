@@ -27,6 +27,15 @@ class Editor extends React.Component {
     });
   }
 
+  toggeleWordsEditMenu(requireMenu) {
+    const { showWordsEditMenu } = this.state;
+    if(showWordsEditMenu != requireMenu) {
+      this.setState({
+        showWordsEditMenu: requireMenu
+      });
+    }
+  }
+
   render() {
     const { activeTabIndex, showPanel } = this.state;
     return(

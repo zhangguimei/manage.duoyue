@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import "../../../../../../assets/sass/function";
+
+%menuDiv {
+  display: block;
+  float: left;
+  padding: 0 5px;
+  border-right: 1px solid $gray6;
+}
+
+.WordsEditMenu {
+  position: fixed;
+  left: 500px;
+  top: 300px;
+  z-index: 12000;
+  width: 610px;
+  height: 40px;
+  color: $white;
+  line-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid $grayC;
+  background-color: rgba(66, 74, 88, 0.95);
+  border-radius: $radiusBase;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  &.show {
+    opacity: 0.98;
+  }
+  .title {
+    @extend %menuDiv;
+    width: 40px;
+  }
+  .font-size {
+    @extend %menuDiv;
+    .font-size-input {
+      width: 50px;
+      height: 30px;
+      margin-right: 5px;
+      border: 1px solid $white;
+      border-radius: $radiusBase;
+      text-align: center;
+      outline: none;
+      background-color: #424a58;
+    }
+    .font-btn {
+      width: 20px;
+      height: 20px;
+      margin: 4px 0;
+      padding: 2px;
+      border: 1px solid transparent;
+      border-radius: $radiusSmall;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid $white;
+      }
+    }
+  }
+  .color {
+    @extend %menuDiv;
+    .btn {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border: 2px solid $white;
+      border-radius: 50%;
+      outline: none;
+    }
+    .color-btn {
+      margin-right: 4px;
+      background-color: #424a58;
+    }
+    .bg-color-btn {
+      color: $gray3;
+    }
+  }
+  .align,
+  .font {
+    @extend %menuDiv;
+    padding-top: 2px;
+    .btn {
+      width: 26px;
+      height: 26px;
+      margin-right: 2px;
+      padding: 0;
+      border-radius: $radiusBase;
+      background-color: transparent;
+      color: $white;
+      outline: none;
+      &:hover {
+        background-color: #424a58;
+      }
+      &.active {
+        background-color: $blueLight;
+      }
+    }
+  }
+  .format,
+  .spacing {
+    @extend %menuDiv;
+    .btn {
+      padding: 2px 5px;
+      margin: 0 0 2px 0;
+      height: 26px;
+      background-color: transparent;
+      color: $white;
+      outline: none;
+      &:hover {
+        background-color: #424a58;
+      }
+      &.active {
+        background-color: $blueLight;
+      }
+    }
+  }
+  .ellipsis {
+    @extend %menuDiv;
+    border-right: none;
+    .btn {
+      padding: 0;
+      margin: 0 0 2px 0;
+      height: 26px;
+      font-size: 26px;
+      font-weight: bold;
+      background-color: transparent;
+      color: $white;
+      outline: none;
+      &:hover {
+        background-color: #424a58;
+      }
+      &.active {
+        background-color: $blueLight;
+      }
+      i {
+        display: block;
+        height: 26px;
+        line-height: 26px;
+      }
+    }
+  }
+}

@@ -1,23 +1,17 @@
 "use strict";
 import React from 'react';
 import { clickToEdit, removeClickToEdit } from '../../../editorUtils/clickToEdit';
+import WordsComponent from '../WordsComponent/WordsComponent';
 
 import styles from './MainBody.scss';
 
 class MainBody extends React.Component {
-
-  componentDidMount() {
-    clickToEdit(this.refs.text);
-  }
-
-  componentWillUnmount() {
-    removeClickToEdit(this.refs.text);
-  }
-
   render(){
     return (
       <div className="MainBody">
-        <p ref="text" className="text">请输入正文</p>
+        <WordsComponent _this={this}>
+          <p ref="text" className="text">请输入正文</p>
+        </WordsComponent>
       </div>
     );
   }

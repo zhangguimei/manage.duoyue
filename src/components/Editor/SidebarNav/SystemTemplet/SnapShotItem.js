@@ -10,7 +10,6 @@ class SnapShotItem extends React.Component {
 
   click(component) {
     const { addEditContent } = this.props;
-    console.log(component);
     addEditContent && addEditContent(component);
   }
 

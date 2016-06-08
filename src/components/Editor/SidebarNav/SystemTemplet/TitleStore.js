@@ -6,9 +6,8 @@ import TitleTempletArray from './TitleComponents/index';
 
 class TitleStore extends React.Component {
   render() {
-    const { snapShotOnClick } = this.props;
     let contentCode = TitleTempletArray.map((item, index) => {
-      return <SnapShotItem snapShotOnClick={snapShotOnClick} key={index}>{item}</SnapShotItem>
+      return <SnapShotItem key={index}>{item}</SnapShotItem>
     });
     return(
       <div className="TitleStore">

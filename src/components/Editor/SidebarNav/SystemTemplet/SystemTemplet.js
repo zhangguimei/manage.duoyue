@@ -50,7 +50,7 @@ class SystemTemplet extends React.Component {
     return(
       <div className="SystemTemplet left">
         <Tab TabItemsData={tabItemsData} onTypeChange={::this.onTabChange} typeIndex={activeTabIndex} />
-        <Scrollbars autoHide={true} style={{height:'100%'}}>
+        <Scrollbars style={{height:'100%'}}>
           { contentCode }
         </Scrollbars>
       </div>

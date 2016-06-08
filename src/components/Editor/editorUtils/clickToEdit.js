@@ -1,39 +1,30 @@
 "use strict";
 
 const onClick = (e) => {
-  console.log("click");
   const node = e.target;
   node.contentEditable = true;
-  node.click();
+  node.focus();
 };
 
 const onBlur = (e) => {
-  console.log("blur");
   const node = e.target;
   node.contentEditable = false;
+  node.style.cursor = "move";
 };
 
-const onMouseOver = (e) => {
+const onFocus = (e) => {
   const node = e.target;
-  node.style.border = "1px dashed #00AEE8";
-};
-
-const onMouseOut = (e) => {
-  const node = e.target;
-  node.style.border = "1px dashed #fff";
+  node.style.cursor = "text";
 };
 
 export const clickToEdit = (editNode) => {
   editNode.addEventListener("click", onClick, false);
   editNode.addEventListener("blur", onBlur, false);
-  editNode.addEventListener("mouseover", onMouseOver, false);
-  editNode.addEventListener("mouseout", onMouseOut, false);
+  editNode.addEventListener("focus", onFocus, false);
 };
 
 export const removeClickToEdit = (editNode) => {
   editNode.removeEventListener("click", onClick, false);
   editNode.removeEventListener("blur", onBlur, false);
-  editNode.removeEventListener("mouseover", onMouseOver, false);
-  editNode.removeEventListener("mouseout", onMouseOut, false);
-
+  editNode.removeEventListener("focus", onFocus, false);
 };

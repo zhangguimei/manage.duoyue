@@ -2,7 +2,8 @@
 @import "../../../../assets/sass/function";
 
 .SnapShotItem {
-  margin: 10px 5px;
+  width: 90%;
+  margin: 10px auto;
   cursor: pointer;
   &:hover {
     -webkit-box-shadow: 0 0 16px #60d0ff;
