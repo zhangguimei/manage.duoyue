@@ -4,9 +4,14 @@ import {Link} from 'react-router';
 
 class SidebarSubItem extends React.Component {
   render() {
-    const {subData:{name, data}, route, parent, changeRoutes} = this.props;
-    const routeFirst = route[0];
-    return (
+      const {subData:{id,name, data}, route, parent, changeRoutes} = this.props;
+      const routeFirst = route[0];
+      const treeAdd = require("../../assets/MockData/tree_add_data.json");
+      if (!treeAdd[id]) {
+        treeAdd[id] = {}
+      }
+      let {url="/hover"} = treeAdd[id];
+      return (
       <div className="SidebarSubItem">
         <h5>{name}</h5>
         <ul>
@@ -15,7 +20,7 @@ class SidebarSubItem extends React.Component {
               let select = route.join(".").slice(2) == `${parent}.${i}`;
               return (
                 <li key={i}>
-                  <Link to={`manage${item.url}?route=${routeFirst}.${parent}.${i}`} className={select ? 'cur': ''}
+                  <Link to={`/manage${url}?route=${routeFirst}.${parent}.${i}`} className={select ? 'cur': ''}
                         onClick={() => changeRoutes(`${parent}.${i}`)}>{item.name}</Link>
                 </li>
               );

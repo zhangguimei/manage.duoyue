@@ -9,7 +9,7 @@ class Modify extends React.Component {
   render() {
     const { index, linkContent, linkOnClick } = this.props;
     return (
-      <button className="Modify" onClick={() => linkOnClick(index)}>{linkContent}</button>
+      <button className="Modify hvr-radial-out" onClick={() => linkOnClick(index)}>{linkContent}</button>
     );
   };
 }

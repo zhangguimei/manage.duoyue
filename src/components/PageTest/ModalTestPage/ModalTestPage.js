@@ -8,6 +8,7 @@ import ShowPage from '../../UIComponent/Modals/ShowPage'
 import TableTestpage from '../TableTestPage/TableTest'
 import DatePickerTestpage from '../DatePickerTestPage/DatePickerTestPage'
 import Chart from '../../UIComponent/Chart/Chart'
+import {animations} from '../../../utils/animation';
 
 import styles from './ModalTestPage.scss';
 
@@ -23,7 +24,7 @@ class ModalTestPage extends React.Component {
     };
     this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
   }
-  
+
 
   toggleModal() {
     this.setState({
@@ -32,15 +33,16 @@ class ModalTestPage extends React.Component {
   }
 
   newAuthor() {
+    animations(this.refs.modal, 'fadeInDown');
     this.toggleModal();
   }
 
   changeData() {
     const {data} = this.state;
     //if(chartData2 != data) {
-      this.setState({
-        data: chartData2
-      });
+    this.setState({
+      data: chartData2
+    });
     //}
   }
 
@@ -50,7 +52,8 @@ class ModalTestPage extends React.Component {
       width: '80%',
       height: '90%',
       newPageHref: 'http://www.baidu.com',
-      closeShowPage: ::this.toggleModal
+      closeShowPage: ::this.toggleModal,
+      className: 'animated fadeInDown'
     };
     let chartData = {
       width: 600,
@@ -81,21 +84,42 @@ class ModalTestPage extends React.Component {
       }
     };
     return (
-      <div className="ModalTestPage">
-        <Chart type="line" {...chartData}/>
-        <Chart type="bar" {...chartData}/>
+      <div className="ModalTestPage animated fadeInLeft">
+        <div className="chart-wrap clearfix">
+          <div className="chart left">
+            <Chart type="line" {...chartData}/>
+          </div>
+          <div className="chart left">
+            <Chart type="bar" {...chartData}/>
+          </div>
+          <div className="chart left">
+            <Chart type="radar" {...chartData}/>
+          </div>
+          <div className="chart left">
+            <Chart type="polarArea" {...chartData}/>
+          </div>
+          <div className="chart left">
+            <Chart type="pie" {...chartData}/>
+          </div>
+          <div className="chart left">
+            <Chart type="doughnut" {...chartData}/>
+          </div>
+        </div>
+
         <span>123222</span>
         <button onClick={::this.changeData}>change</button>
         <button onClick={::this.newAuthor}>新增作者</button>
         {
           showModal &&
-          <Modal>
-            <ShowPage {...pagedata}>
-              <DatePickerTestpage/>
-              <TableTestpage/>
-              <TableTestpage/>
-            </ShowPage>
-          </Modal>
+          <div ref="modal">
+            <Modal className="modal-show">
+              <ShowPage {...pagedata}>
+                <DatePickerTestpage/>
+                <TableTestpage/>
+                <TableTestpage/>
+              </ShowPage>
+            </Modal>
+          </div>
         }
       </div>
     );

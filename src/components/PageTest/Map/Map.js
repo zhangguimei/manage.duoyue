@@ -10,7 +10,7 @@ class Map extends React.Component {
     const heatData = require("../../../assets/MockData/map/heat_data.json");
     const mapData = require("../../../assets/MockData/map/map_data.json");
     return (
-      <div>
+      <div className="animated fadeInUp">
         <HeatMap id="HeatMap" data={heatData} style={{height:580}}/>
         <PolyMap id="PolyMap" data={mapData} style={{height:580}}/>
         <MassiveMap id="MassiveMap" data={mapData} style={{height:580}}/>

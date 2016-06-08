@@ -101,7 +101,7 @@ class PageSidebar extends React.Component {
     const menuData = menu[routeFirst].data;
     let foldClass = fold ? 'fold' : '';
     return (
-      <div className={`PageSidebar ${foldClass}`}>
+      <div className={`PageSidebar ${foldClass} transitioned`}>
         <div className="sidebarOne">
           <Scrollbars autoHide={true} style={{height:'100%'}}>
             {

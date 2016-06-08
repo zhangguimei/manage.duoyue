@@ -30,8 +30,9 @@
         h5 {
           a {
             padding: 0;
+            overflow: hidden;
             span {
-              display: none;
+              display: block;
               position: absolute;
               left: 36px;
               top: 0;
@@ -43,6 +44,7 @@
               display: none;
             }
             &:hover {
+              overflow: visible;
               span {
                 display: block;
               }
@@ -62,6 +64,7 @@
     left: 36px !important;
   }
   .sidebarOne {
+    transition: all .1s ease-in;
     .btn-toggle {
       display: block;
       position: absolute;
@@ -122,17 +125,20 @@
         }
       }
       ul {
-        padding: 6px 0;
+        background-color: #f0f0f0;
+        overflow: hidden;
         li {
           a {
             display: block;
             padding: 6px 30px;
             font-size: 13px;
+            white-space: nowrap;
             //&:hover,
             &.cur {
               color: $white;
               background-color: $blueLight;
             }
+
           }
         }
       }

@@ -85,7 +85,7 @@ class UserAnalysis extends React.Component {
       }
     };
     return (
-      <div className="UserAnalysis clearfix">
+      <div className="UserAnalysis clearfix animated lightSpeedIn">
         <header className="page-header">粉丝增长统计图</header>
         <section className="page-body">
           <header className="body-header">

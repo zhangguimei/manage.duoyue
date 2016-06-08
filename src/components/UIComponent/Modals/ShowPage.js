@@ -53,13 +53,13 @@ class ShowPage extends React.Component {
   }
 
   render() {
-    const {width, height, title, newPageHref} = this.props;
+    const {width, height, title, newPageHref, className} = this.props;
     const contentStyle = {
       width: width,
       height: height
     };
     return (
-      <div className="ShowPage" style={contentStyle} ref="ShowPage">
+      <div className={`ShowPage ${className}`} style={contentStyle} ref="ShowPage">
         <header className="header clearfix" ref="Header">
           <span className="title left">{title}</span>
           <i className="ic ic-close right" onClick={::this.closePage} />
@@ -86,6 +86,7 @@ ShowPage.propTypes = {
   closeShowPage: PropTypes.func.isRequired,
   newPageHref: PropTypes.string.isRequired,
   submitChange: PropTypes.func,
-  children: PropTypes.any
+  children: PropTypes.any,
+  className: PropTypes.string
 };
 export default ShowPage;

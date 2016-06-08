@@ -2,5 +2,10 @@
 @import "../../../assets/sass/function";
 
 .ModalTestPage {
-
+  .chart-wrap {
+    .chart {
+      width: 400px;
+      height: 300px;
+    }
+  }
 }
