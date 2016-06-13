@@ -9,6 +9,7 @@ $headerHeightInner: $headerHeight - 5px;
     color: $white;
     cursor: pointer;
     height: $headerHeightInner;
+    background-color: rgba(0, 153, 204, 0.7);
     .MenuItem {
       position: relative;
       color: $gray3;
@@ -65,7 +66,7 @@ $headerHeightInner: $headerHeight - 5px;
       height: 100%;
       color: $white;
       margin-right: 2px;
-      background-color: #126198;
+      //background-color: $blue;
       > .text{
         color:$white;
       }
@@ -76,7 +77,7 @@ $headerHeightInner: $headerHeight - 5px;
       }
     }
     .li-menu-on {
-      background-color: #00aee8;
+      background-color: $blueLight;
     }
     .li-item {
       min-width: 100px;
@@ -99,7 +100,7 @@ $headerHeightInner: $headerHeight - 5px;
       }
     }
     .li-item-on {
-      background-color: #00aee8;
+      background-color: $blueLight;
       > .text{
         color: $white;
       }

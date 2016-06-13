@@ -40,7 +40,7 @@ class SidebarItem extends React.Component {
           }
         </h5>
         {
-          data.length > 0 && <ul ref="ul" className="transitioned" style={{height: open ? (data.length*30+'px'): 0 }}>
+          data.length > 0 && <ul className="transitioned" style={{height: open ? (data.length*30+'px'): 0 }}>
             {
               data.map((item, i) => {
                 let select = route.slice(1, 3).join('.') === `${parent}.${i}`;

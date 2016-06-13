@@ -84,7 +84,7 @@ class ModalTestPage extends React.Component {
       }
     };
     return (
-      <div className="ModalTestPage animated fadeInLeft">
+      <div className="ModalTestPage">
         <div className="chart-wrap clearfix">
           <div className="chart left">
             <Chart type="line" {...chartData}/>
@@ -113,7 +113,7 @@ class ModalTestPage extends React.Component {
           showModal &&
           <div ref="modal">
             <Modal className="modal-show">
-              <ShowPage {...pagedata}>
+              <ShowPage {...pagedata} className="animated fadeInDown">
                 <DatePickerTestpage/>
                 <TableTestpage/>
                 <TableTestpage/>

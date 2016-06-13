@@ -118,7 +118,7 @@ class BookSearch extends React.Component {
         {
           showModal &&
           <Modal onModalClick={::this.toggleModal}>
-            <ShowPage {...pagedata} submitChange={::this.submitChange}>
+            <ShowPage {...pagedata} submitChange={::this.submitChange} className="animated fadeInDown">
               <BookInfo bookInfo={bookInfo}/>
               <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
               <BookForm ref="BookForm" bookInfo={bookInfo} classifyInfo={classifyInfo} onSubmit={::this.onSubmit} />

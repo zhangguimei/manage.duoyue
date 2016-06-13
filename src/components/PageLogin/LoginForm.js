@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
   componentWillMount() {
     const {username} = this.props;
     if (username) {
-      this.context.router.push('/user');
+      this.context.router.push('/manage/user');
     }
   }
 
@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
         else {
           resolve();
           logIn(values.username);
-          this.context.router.go('/user');
+          this.context.router.go('/manage/user');
         }
       }, 300)
     })

@@ -17,7 +17,7 @@ class MenuList extends React.Component {
     };
     if(menuData.length &&  routeString.match(test)) {
       return (
-        <ul className={`MenuList ${ulClass} animated fadeIn`}>
+        <ul className={`MenuList ${ulClass}`}>
           {
             menuData.map((item, index) => {
               return <MenuItem menuData={item} parent={`${parent}${index}.`} key={index} {...props}/>

@@ -361,7 +361,7 @@
 //props-dpr
 @mixin props-dpr($props, $values) {
   @if length($props)==1 {
-    @if length($values)==1{
+    @if length($values)==1 {
       #{$props}: $values;
       [data-dpr="2"] & {
         #{$props}: $values * 2;
@@ -369,23 +369,23 @@
       [data-dpr="3"] & {
         #{$props}: $values * 3;
       }
-    }@else{
-      $valueStr:();
-      @each $value in $values{
-        $valueStr : append($valueStr,$value);
+    } @else {
+      $valueStr: ();
+      @each $value in $values {
+        $valueStr: append($valueStr, $value);
       }
       #{$props}: $valueStr;
       [data-dpr="2"] & {
-        $valueStr:();
-        @each $value in $values{
-          $valueStr : append($valueStr,$value * 2);
+        $valueStr: ();
+        @each $value in $values {
+          $valueStr: append($valueStr, $value * 2);
         }
         #{$props}: $valueStr;
       }
       [data-dpr="3"] & {
-        $valueStr:();
-        @each $value in $values{
-          $valueStr : append($valueStr,$value * 3);
+        $valueStr: ();
+        @each $value in $values {
+          $valueStr: append($valueStr, $value * 3);
         }
         #{$props}: $valueStr;
       }
@@ -407,7 +407,6 @@
     }
   }
 }
-
 
 //其他占位符
 %transition-all {
@@ -515,4 +514,15 @@
 
 %ml10 {
   @include props-dpr(margin-left, 10px);
+}
+
+@mixin blur($value) {
+  -webkit-filter: blur($value);
+  -moz-filter: blur($value);
+  -o-filter: blur($value);
+  //filter: url(blur.svg#blur);
+  //filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+  //-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  //filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: blur($value);
 }

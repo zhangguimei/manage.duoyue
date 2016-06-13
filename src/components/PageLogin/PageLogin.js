@@ -6,7 +6,7 @@ import styles from './PageLogin.scss';
 
 class PageLogin extends React.Component {
   render() {
-    const BgSrc = require("../../assets/images/bg.png");
+    const BgSrc = 'http://manage.duoyue.me/manage/images/login/bg.png';
     return (
       <div className="PageLogin">
         <div className="index-wrapper">
