@@ -11,16 +11,18 @@ import styles from './PageHeader.scss';
 class PageHeader extends React.Component {
   render() {
     const {treeData:{login, user, fast, menu}, actions: {changeRoute}} = this.props;
+    const imgsrc = 'http://www.sangbuzhahuwai.com/admin/do/pic/2015103017301207.jpg';
     return (
       <div className="PageHeader">
-       <Link className="logo" to="/">RAYS-2.0</Link>
-        <div className="menu">
+        <div className="blur-glass" style={{backgroundImage: `url(${imgsrc})`}}></div>
+        <Link className="logo left" to="/">RAYS-2.0</Link>
+        <div className="menu left">
           <Menu menuData={menu}/>
         </div>
-        <div className="fast-menu">
+        <div className="fast-menu right">
           <FastMenu fastData={fast} changeRoute={changeRoute}/>
         </div>
-        <div className="name">{login && user}</div>
+        <div className="name right">{login && user}</div>
       </div>
     );
   }

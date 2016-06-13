@@ -103,7 +103,7 @@ class PageSidebar extends React.Component {
     return (
       <div className={`PageSidebar ${foldClass} transitioned`}>
         <div className="sidebarOne">
-          <Scrollbars autoHide={true} style={{height:'100%'}}>
+          <Scrollbars autoHide={true} style={{height:'100%'}} renderTrackVertical={props => <div {...props} className="sideScrollBarVertical"/>}>
             {
               menuData.map((item, i)=> {
                 let selectTitle = route.slice(0, 2).join('.') == `${routeFirst}.${i}`;
@@ -115,7 +115,7 @@ class PageSidebar extends React.Component {
               })
             }
           </Scrollbars>
-          <a className="btn-toggle" onClick={::this.foldToggle}><i
+          <a className="btn-toggle transitioned" onClick={::this.foldToggle}><i
             className={fold ? 'ic ic-right2' : 'ic ic-back2'}/></a>
         </div>
         {
