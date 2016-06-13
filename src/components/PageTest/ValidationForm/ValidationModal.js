@@ -42,7 +42,7 @@ class ValidationModal extends React.Component {
       closeShowPage: ::this.toggleModal
     };
     return (
-      <div className="ValidationModal">
+      <div className="ValidationModal animated fadeInDown">
         <ValidationForm ref="validateform" />
       </div>
     );

@@ -7,13 +7,13 @@ class PageTest extends React.Component {
   render(){
     return(
       <div className="PageTest">
-        <p className="component"><Link to="/test/datepicker">DatePicker</Link></p>
-        <p className="component"><Link to="/test/table">table</Link></p>
-        <p className="component"><Link to="/test/modal">modal</Link></p>
-        <p className="component"><Link to="/test/map">map</Link></p>
-        <p className="component"><Link to="/test/useranalysis">useranalysis</Link></p>
-        <p className="component"><Link to="/test/newsorder">newsorder</Link></p>
-        <p className="component"><Link to="/test/validation">validation</Link></p>
+        <p className="component"><Link to="user/test/datepicker">DatePicker</Link></p>
+        <p className="component"><Link to="user/test/table">table</Link></p>
+        <p className="component"><Link to="user/test/modal">modal</Link></p>
+        <p className="component"><Link to="user/test/map">map</Link></p>
+        <p className="component"><Link to="user/test/useranalysis">useranalysis</Link></p>
+        <p className="component"><Link to="user/test/newsorder">newsorder</Link></p>
+        <p className="component"><Link to="user/test/validation">validation</Link></p>
         {this.props.children}
       </div>
     );

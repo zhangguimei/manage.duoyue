@@ -10,6 +10,8 @@ import {getTitle, getChildren} from '../UIComponent/Menu/ShowRoute';
 import {Scrollbars} from 'react-custom-scrollbars';
 import Modal from '../UIComponent/Modals/Modal';
 import LoadingRect from '../UIComponent/Loading/LoadingRect';
+import {animations} from '../../utils/animation';
+import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
 import styles from './Manage.scss';
 
 class Manage extends React.Component {
@@ -17,17 +19,16 @@ class Manage extends React.Component {
     super(props, context);
     this.state = {
       showWaitModal: false
-    }
+    };
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
     this.tree = null
   }
 
   tempCloseWaitModal() {
     let that = this,
-      randtime = Math.random() * 1000;
-    randtime = randtime > 500 ? randtime : 0;
-    if (!randtime) {
-      return
-    }
+      randtime = Math.random()*1000;
+    randtime = randtime > 990 ? randtime : 0;
+    if (!randtime) {return};
     this.setState({
       showWaitModal: true
     });
@@ -54,6 +55,10 @@ class Manage extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    animations(this.refs.headerText, 'bounceInLeft');
+  }
+
   render() {
     const {children, route, query} = this.props,
       {showWaitModal} = this.state;
@@ -67,8 +72,12 @@ class Manage extends React.Component {
         <PageSidebar treeData={treeData} queryRoute={queryRoute}/>
         <div className="PageMain" style={{left : sidebarLeft}}>
           <Scrollbars style={{height:'100%'}}>
-            <header className="page-title">{getTitle(treeData.menu, route)}</header>
-            {children && React.cloneElement(children)}
+            <header className="page-title">
+              <span ref="headerText">{getTitle(treeData.menu, route)}</span>
+            </header>
+            <section className="page-body">
+              {children && React.cloneElement(children)}
+            </section>
           </Scrollbars>
           {
             showWaitModal &&

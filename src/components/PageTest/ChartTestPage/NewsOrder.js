@@ -60,7 +60,7 @@ class NewsOrder extends React.Component {
       }
     };
     return (
-      <div className="NewsOrder">
+      <div className="NewsOrder animated rotateIn">
         <header className="page-header">用户阅读活跃度排行榜</header>
         <section className="page-body clearfix">
           <div className="control-box left">

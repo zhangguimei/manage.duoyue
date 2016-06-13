@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Map, is, fromJS} from 'immutable';
 import * as actions from '../../actions/LoginActions';
+import {animations} from '../../utils/animation';
 
 class FastMenu extends React.Component {
   constructor(props, context) {
@@ -25,7 +26,7 @@ class FastMenu extends React.Component {
     return (
       <div className="FastMenu">
         <a className="title" href="javascript:;">三</a>
-        <div className="cont">
+        <div className="cont animated fadeInRight">
           <div className="icon-caret"><em/><i/></div>
           <h5>快速操作</h5>
           <div className="list">

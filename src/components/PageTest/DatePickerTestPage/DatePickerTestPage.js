@@ -92,7 +92,7 @@ class DatePickerTestPage extends React.Component {
       addressValue: ['湖北', '武汉', '新洲', 2003]
     };
     return (
-      <div className="DatePickerTestPage clearfix">
+      <div className="DatePickerTestPage clearfix animated rubberBand">
         <span>shake-heart</span>
         <canvas ref="heartCvs" width="130" height="130" className="hvr-shake-heart"></canvas>
         <span>shake-crazy</span>
