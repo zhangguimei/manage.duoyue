@@ -4,15 +4,10 @@ import {Link} from 'react-router';
 
 class SidebarItemList extends React.Component {
   render() {
-    const {menuData:{id, name}, onClick, select, route} = this.props;
-    const treeAdd = require("../../assets/MockData/tree_add_data.json");
-    if (!treeAdd[id]) {
-      treeAdd[id] = {}
-    }
-    let {url="/hover"} = treeAdd[id];
+    const {menuData:{name, url}, onClick, select} = this.props;
     return (
       <li>
-        <Link to={`/manage${url}?route=${route}`} className={select?"cur":"hvr-shutter-out-horizontal"}
+        <Link to={`${url}`} className={select?"cur":"hvr-shutter-out-horizontal"}
               onClick={onClick}>{name}</Link>
       </li>
     );

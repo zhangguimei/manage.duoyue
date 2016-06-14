@@ -26,9 +26,12 @@ class Manage extends React.Component {
 
   tempCloseWaitModal() {
     let that = this,
-      randtime = Math.random()*1000;
+      randtime = Math.random() * 1000;
     randtime = randtime > 990 ? randtime : 0;
-    if (!randtime) {return};
+    if (!randtime) {
+      return
+    }
+    ;
     this.setState({
       showWaitModal: true
     });
@@ -44,7 +47,7 @@ class Manage extends React.Component {
     if (!username) {
       this.context.router.push('/login');
     }
-    console.log(actions);
+    //console.log(actions);
     this.tree = fetchTreedata(username).tree;
   }
 
@@ -60,16 +63,15 @@ class Manage extends React.Component {
   }
 
   render() {
-    const {children, route, query} = this.props,
+    const {children, route, path} = this.props,
       {showWaitModal} = this.state;
-    let queryRoute = query.route ? query.route.split('.') : [];
     const treeData = this.tree;
     let sidebarLeft = route.length === 3 && getChildren(treeData.menu, route).length > 0 || route.length === 4 ? '360px' : '180px';
 
     return (
       <div className="Manage">
         <PageHeader treeData={treeData}/>
-        <PageSidebar treeData={treeData} queryRoute={queryRoute}/>
+        <PageSidebar treeData={treeData} path={path}/>
         <div className="PageMain" style={{left : sidebarLeft}}>
           <Scrollbars style={{height:'100%'}}>
             <header className="page-title">
@@ -94,7 +96,6 @@ class Manage extends React.Component {
 Manage.propTypes = {
   children: PropTypes.node,
   route: PropTypes.array.isRequired,
-  query: PropTypes.object.isRequired,
   username: PropTypes.string
 };
 
@@ -105,7 +106,7 @@ Manage.contextTypes = {
 function mapStateToProps(state, ownProps) {
   let {login:{username}, menu} = fromJS(state).toJS();
   return {
-    query: ownProps.location.query,
+    path: ownProps.location.pathname,
     route: menu,
     username
   }

@@ -45,3 +45,36 @@ export function getChildren(data, route) {
   }
   return getData;
 }
+
+export function getUrlRoute(data, url) {
+  if (!data || !data.length) return;
+  let stack = [], item;
+  for (var i = 0, len = data.length; i < len; i++) {
+    stack.push(data[i]);
+  }
+  while (stack.length) {
+    item = stack.shift();
+    if (item.url === url) {
+      return item.route;
+    }
+    if (item.data && item.data.length) {
+      stack = item.data.concat(stack);
+    }
+  }
+}
+
+
+export function parseJson(data, route) {
+  const data_custom = require("../../../assets/MockData/tree_add_data.json");
+  if (!data.length) return;
+  route += '';
+  data.forEach(function (item, i) {
+    let temp = route + i + '.';
+    item.route = temp.slice(0, temp.length - 1);
+    item.url = data_custom[item.id] ? '/manage'+data_custom[item.id].url : '/manage/404';
+    item.icon_font = data_custom[item.id] ? data_custom[item.id].icon : '';
+    if (item.data) {
+      parseJson(item.data, temp);
+    }
+  });
+}

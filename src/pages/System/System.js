@@ -1,18 +1,18 @@
 'use strict';
 import React, {PropTypes} from 'react';
 
-class PageUser extends React.Component {
+class System extends React.Component {
   render() {
     return (
-      <div className="PageUser">
+      <div className="System">
         {this.props.children}
       </div>
     );
   }
 }
 
-PageUser.propTypes = {
+System.propTypes = {
   children: PropTypes.any
 }
 
-export default PageUser;
+export default System;

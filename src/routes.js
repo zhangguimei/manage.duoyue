@@ -3,7 +3,25 @@ import {Route, IndexRoute, IndexRedirect} from 'react-router';
 
 import ManageWrap from './components/Manage/ManageWrap';
 import Manage from './components/Manage/Manage';
-import UserPage from './pages/PageUser/PageUser';
+
+/* Six header modules */
+import UserPage from './pages/User/User';
+import ResourcePage from './pages/Resource/Resource';
+import OperatePage from './pages/Operate/Operate';
+import WebsitePage from './pages/Website/Website';
+import SalesPage from './pages/Sales/Sales';
+import AnalysisPage from './pages/Analysis/Analysis';
+import SystemPage from './pages/System/System';
+
+/* Six home page for header modules */
+import UserPageHome from './components/PageUser/home';
+import ResourcePageHome from './components/PageResource/home';
+import OperatePageHome from './components/PageOperate/home';
+import WebsitePageHome from './components/PageWebsite/home';
+import SalesPageHome from './components/PageSales/home';
+import AnalysisPageHome from './components/PageAnalysis/home';
+import SystemPageHome from './components/PageSystem/home';
+
 
 import TestPageHome from './pages/PageTest/home';
 import TestPage from './pages/PageTest/PageTest';
@@ -24,12 +42,26 @@ import RegisterPage from './components/PageRegister/PageRegister';
 
 import NotFound from './components/NotFound/NotFound';
 
-//用户管理
-import UserManage from './pages/User';
+//用户中心——用户管理
+import UserManage from './pages/User/UserManage';
 import UserManageHome from './components/UserManage/home';
 import UserImage from './components/UserManage/UserImage';
 import UserVideo from './components/UserManage/UserVideo';
 import GroupManage from './components/UserManage/GroupManage';
+
+//资源中心——文章咨询
+import Article from './pages/Resource/Article';
+import ArticleHome from 'components/Article/home';
+import ArticleSort from 'components/Article/ArticleSort';
+
+//运营中心——展示设置
+import Display from './pages/Operate/Display';
+import Showcase from './pages/Operate/Showcase';
+import ShowcaseHome from 'components/Display/home';
+import ShowcaseBook from 'components/Display/ShowcaseBook';
+import ShowcasePropduct from 'components/Display/ShowcaseProduct';
+import ShowcaseSource from 'components/Display/ShowcaseSource';
+import Invoice from 'components/Display/Invoice';
 
 export default (
   <Route path="/" component={ManageWrap}>
@@ -37,13 +69,47 @@ export default (
     <Route path="manage" component={Manage}>
       <IndexRoute component={UserPage}/>
       <Route path="user" component={UserPage}>
-        <IndexRoute component={UserManageHome}/>
+        <IndexRoute component={UserPageHome}/>
         <Route path="usermanage" component={UserManage}>
           <IndexRoute component={UserManageHome}/>
-          <Route path="userimage" component={UserImage}/>
-          <Route path="uservideo" component={UserVideo}/>
-          <Route path="groupmanage" component={GroupManage}/>
+          <Route path="search" component={UserManageHome}/>
+          <Route path="image" component={UserImage}/>
+          <Route path="video" component={UserVideo}/>
+          <Route path="group" component={GroupManage}/>
         </Route>
+      </Route>
+      <Route path="resource" component={ResourcePage}>
+        <IndexRoute component={ResourcePageHome}/>
+        <Route path="article" component={Article}>
+          <IndexRoute component={ArticleHome}/>
+          <Route path="search" component={ArticleHome}/>
+          <Route path="sort" component={ArticleSort}/>
+        </Route>
+      </Route>
+      <Route path="operate" component={OperatePage}>
+        <IndexRoute component={OperatePageHome}/>
+        <Route path="display" component={Display}>
+          <IndexRoute component={Showcase}/>
+          <Route path="showcase" component={Showcase}>
+            <IndexRoute component={ShowcaseHome}/>
+            <Route path="book" component={ShowcaseBook}/>
+            <Route path="product" component={ShowcasePropduct}/>
+            <Route path="source" component={ShowcaseSource}/>
+          </Route>
+          <Route path="invoice" component={Invoice}/>
+        </Route>
+      </Route>
+      <Route path="website" component={WebsitePage}>
+        <IndexRoute component={WebsitePageHome}/>
+      </Route>
+      <Route path="sales" component={SalesPage}>
+        <IndexRoute component={SalesPageHome}/>
+      </Route>
+      <Route path="analysis" component={AnalysisPage}>
+        <IndexRoute component={AnalysisPageHome}/>
+      </Route>
+      <Route path="system" component={SystemPage}>
+        <IndexRoute component={SystemPageHome}/>
       </Route>
       <Route path="test" component={TestPageHome}>
         <IndexRoute component={TestPage}/>
