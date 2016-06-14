@@ -4,7 +4,7 @@ import SidebarItem from './SidebarItem';
 import SidebarSubItem from './SidebarSubItem';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getTitle, getChildren} from '../UIComponent/Menu/ShowRoute';
+import {getTitle, getChildren,getUrlRoute} from '../UIComponent/Menu/ShowRoute';
 import {Map, is, fromJS} from 'immutable';
 import * as actions from '../../actions/MenuActions';
 import {Scrollbars} from 'react-custom-scrollbars';
@@ -72,8 +72,10 @@ class PageSidebar extends React.Component {
   }
 
   componentDidMount() {
-    const {actions:{changeRoute}, queryRoute} = this.props;
-    changeRoute && changeRoute(queryRoute);
+    const {actions:{changeRoute},treeData:{menu},path} = this.props;
+    let route = getUrlRoute(menu,path);
+    //console.log(route);
+    changeRoute && changeRoute(route.split('.'));
   }
 
   changeRoutes(routes, subDatas = {data: []}, subIndexs = '') {

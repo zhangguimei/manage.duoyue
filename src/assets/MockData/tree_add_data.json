@@ -1,4 +1,39 @@
 {
+  "324":{
+    "name":"用户中心",
+    "icon":"",
+    "url":"/user"
+  },
+  "325":{
+    "name":"资源中心",
+    "icon":"",
+    "url":"/resource"
+  },
+  "341":{
+    "name":"运营中心",
+    "icon":"",
+    "url":"/operate"
+  },
+  "340":{
+    "name":"官网管理",
+    "icon":"",
+    "url":"/website"
+  },
+  "327":{
+    "name":"销售结算",
+    "icon":"",
+    "url":"/sales"
+  },
+  "328":{
+    "name":"分析引擎",
+    "icon":"",
+    "url":"/analysis"
+  },
+  "368":{
+    "name":"系统管理",
+    "icon":"",
+    "url":"/system"
+  },
   "329":{
     "name":"用户管理",
     "icon":"ic-user",
@@ -7,22 +42,22 @@
   "349":{
     "name":"用户查询",
     "icon":"",
-    "url":"/user/usermanage"
+    "url":"/user/usermanage/search"
   },
   "361":{
     "name":"用户图片",
     "icon":"",
-    "url": "/user/usermanage/userimage"
+    "url": "/user/usermanage/image"
   },
   "719":{
     "name":"用户视频",
     "icon":"",
-    "url":"/user/usermanage/uservideo"
+    "url":"/user/usermanage/video"
   },
   "720":{
     "name":"群组管理",
     "icon":"",
-    "url":"/user/usermanage/groupmanage"
+    "url":"/user/usermanage/group"
   },
   "331":{
     "name":"咨询/评论",
@@ -47,7 +82,17 @@
   "334":{
     "name":"文章资讯",
     "icon":"ic-news",
-    "url":""
+    "url":"/resource/article"
+  },
+  "409":{
+    "name":"文章查询",
+    "icon":"",
+    "url":"/resource/article/search"
+  },
+  "410":{
+    "name":"文章分类",
+    "icon":"",
+    "url":"/resource/article/sort"
   },
   "335":{
     "name":"书籍管理",
@@ -97,7 +142,32 @@
   "742":{
     "name":"展示设置",
     "icon":"ic-show",
-    "url":""
+    "url":"/operate/display"
+  },
+  "765":{
+    "name":"橱窗管理",
+    "icon":"",
+    "url":"/operate/display/showcase"
+  },
+  "766":{
+    "name":"商品橱窗",
+    "icon":"",
+    "url":"/operate/display/showcase/product"
+  },
+  "767":{
+    "name":"书籍橱窗",
+    "icon":"",
+    "url":"/operate/display/showcase/book"
+  },
+  "768":{
+    "name":"资源橱窗",
+    "icon":"",
+    "url":"/operate/display/showcase/source"
+  },
+  "769":{
+    "name":"发票选项",
+    "icon":"",
+    "url":"/operate/display/invoice"
   },
   "378":{
     "name":"基础配置",

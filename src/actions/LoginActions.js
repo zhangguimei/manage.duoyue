@@ -1,5 +1,6 @@
 'use strict';
 import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
+import {parseJson} from '../components/UIComponent/Menu/ShowRoute';
 
 export const fetchTreedata = (username) => {
   let tree = "";
@@ -13,6 +14,9 @@ export const fetchTreedata = (username) => {
     default:
       tree = require("../assets/MockData/tree_data.json");
   }
+  parseJson(tree.menu,'');
+  parseJson(tree.fast,'');
+  //console.log(tree);
   return dispatch => {
     return dispatch(loggedIn(username, tree));
   }
