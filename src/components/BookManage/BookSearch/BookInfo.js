@@ -38,4 +38,7 @@ class BookInfo extends React.Component {
     )
   }
 }
+BookInfo.propTypes = {
+  bookInfo: PropTypes.object
+};
 export default BookInfo;

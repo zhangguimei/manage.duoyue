@@ -13,7 +13,7 @@ class TreeItem extends React.Component {
 
   componentWillReceiveProps(np) {
     const {open, freeOpen} = np, {showItem} = this.state;
-    if( freeOpen &&  !open == showItem) {
+    if (freeOpen && !open == showItem) {
       this.setState({
         showItem: open
       })
@@ -22,20 +22,20 @@ class TreeItem extends React.Component {
 
   componentDidMount() {
     const {open, freeOpen} = this.props, {showItem} = this.state;
-    if( freeOpen &&  !open == showItem) {
+    if (freeOpen && !open == showItem) {
       this.setState({
         showItem: open
       })
     }
   }
 
-  showItem() {
+  showItem(e) {
     const {data, clickItem} = this.props;
-    if(data.data.length > 0) {
+    if (data.data.length > 0 && e.target.className != "item-title") {
       this.setState({
         showItem: !this.state.showItem
       })
-    }else {
+    } else {
       clickItem && clickItem(data);
     }
   }
@@ -44,7 +44,7 @@ class TreeItem extends React.Component {
     const {data: {name, data = []}, route, parent, ...props} = this.props, {showItem} = this.state;
     const level = parent.split(".").length - 2;
     return (
-      <li className="TreeItem text-center" >
+      <li className="TreeItem text-center">
         <div className="tree-item" onClick={::this.showItem}>
           {
             data.length > 0 ?

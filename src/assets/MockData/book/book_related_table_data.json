@@ -1,0 +1,81 @@
+{
+  "tableHeadData": {
+    "article": "文章名称",
+    "price": "售价",
+    "classify": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 11,
+      "article": "荆门市水利志（1986—2008）",
+      "price": "￥38",
+      "classify": "d"
+    },
+    {
+      "id": 12,
+      "article": "减轻干旱灾害风险框架与实践",
+      "price": "￥38",
+      "classify": "d"
+    },
+    {
+      "id": 13,
+      "article": "中文论坛",
+      "price": "￥38",
+      "classify": "社科"
+    },
+    {
+      "id": 14,
+      "article": "曹禺研究",
+      "price": "￥38",
+      "classify": "科技"
+    },
+    {
+      "id": 15,
+      "article": "低信任环境网络广告信号传递有效性研究",
+      "price": "￥38",
+      "classify": "社科"
+    },
+    {
+      "id": 16,
+      "article": "洞庭湖与古云梦泽的演变及荆湘水文化",
+      "price": "￥38",
+      "classify": "教育"
+    },
+    {
+      "id": 17,
+      "article": "荆门市水利志（1986—2008）",
+      "price": "￥38",
+      "classify": ""
+    },
+    {
+      "id": 18,
+      "article": "减轻干旱灾害风险框架与实践",
+      "price": "￥38",
+      "classify": "a"
+    },
+    {
+      "id": 19,
+      "article": "中文论坛",
+      "price": "￥38",
+      "classify": "社科"
+    },
+    {
+      "id": 20,
+      "article": "曹禺研究",
+      "price": "￥38",
+      "classify": "科技"
+    },
+    {
+      "id": 21,
+      "article": "低信任环境网络广告信号传递有效性研究",
+      "price": "￥38",
+      "classify": "社科"
+    },
+    {
+      "id": 22,
+      "article": "洞庭湖与古云梦泽的演变及荆湘水文化",
+      "price": "￥38",
+      "classify": "教育"
+    }
+  ]
+}

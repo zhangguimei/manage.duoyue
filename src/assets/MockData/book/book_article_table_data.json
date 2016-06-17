@@ -1,0 +1,65 @@
+{
+  "tableHeadData": {
+    "code": "编号",
+    "parentMenu": "所属目录",
+    "article": "文章名称",
+    "price": "售价",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1,
+      "menuId": 1,
+      "code": 1,
+      "parentMenu": "自序",
+      "article": "自序",
+      "price": "￥38",
+      "operation": ""
+    },
+    {
+      "id": 2,
+      "menuId": 2,
+      "code": 2,
+      "parentMenu": "1 膨胀土物质组成及基本理化特性",
+      "article": "1 膨胀土物质组成及基本理化特性",
+      "price": "￥30",
+      "operation": ""
+    },
+    {
+      "id": 21,
+      "menuId": 21,
+      "code": 3,
+      "parentMenu": "1.1 膨胀土的物质组成",
+      "article": "1.1 膨胀土的物质组成",
+      "price": "￥38",
+      "operation": ""
+    },
+    {
+      "id": 22,
+      "menuId": 24,
+      "code": 4,
+      "parentMenu": "1.2 膨胀土的化学成分",
+      "article": "1.2 膨胀土的化学成分",
+      "price": "￥8",
+      "operation": ""
+    },
+    {
+      "id": 3,
+      "menuId": 31,
+      "code": 5,
+      "parentMenu": "3 膨胀土物质组成及基本理化特性",
+      "article": "3 膨胀土物质组成及基本理化特性",
+      "price": "￥38",
+      "operation": ""
+    },
+    {
+      "id": 4,
+      "menuId": 4,
+      "code": 6,
+      "parentMenu": "4 膨胀土工程地质结构分带特征",
+      "article": "4 膨胀土工程地质结构分带特征",
+      "price": "￥38",
+      "operation": ""
+    }
+  ]
+}
