@@ -66,7 +66,7 @@ class ShowPage extends React.Component {
           <a className="ic ic-openinnewwindow right" href={newPageHref} target="_blank" />
         </header>
         <div className="content">
-          <Scrollbars style={{height:'100%'}}>
+          <Scrollbars autoHide={true} style={{height:'100%'}}>
             {this.props.children}
           </Scrollbars>
         </div>

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+$paddingSmall:                    5px  !default;
+.SourceCenter {
+  @include props-dpr(padding line-height, 20px 18px);
+  @extend %f14;
+  width: 100%;
+  .SourceItem {
+    @include props-dpr(width, 280px);
+    float: left;
+    border: 1px solid $grayD;
+    @include props-dpr(margin, 10px);
+    .source-title {
+      @include props-dpr(width, 258px);
+      @extend %f16;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      @include props-dpr(padding-top padding-left, $basePadding $basePadding);
+    }
+    .source-content {
+      @include props-dpr(padding padding-top, 10px 2px);
+      .publish-desc {
+        @include props-dpr(height, 95px);
+        overflow: hidden;
+        @include props-dpr(padding-top padding-bottom, $paddingSmall $paddingSmall);
+        .publish {
+          @extend %f12;
+          color: $colorPlaceholder;
+        }
+      }
+      .pic {
+        @include props-dpr(height, 145px);
+        overflow: hidden;
+        .img {
+          @include props-dpr(width, 260px);
+        }
+      }
+    }
+  }
+  .source-bottom {
+    text-align: center;
+    border-top: 1px solid $grayD;
+    background-color: $colorBgLight;
+    .deal {
+      width: 100%;
+      border-collapse: collapse;
+      border: 0;
+      .fl {
+        @include props-dpr(height line-height, 30px 30px);
+        float: left;
+        width: 33.3%;
+        border-right: 1px solid $grayD;
+      }
+      .status {
+        color: $colorPlaceholder;
+        border-left: 0;
+        margin-top:0;
+      }
+      .delet {
+        border-right: 0;
+        cursor: pointer;
+      }
+    }
+    .code {
+      @include props-dpr(height line-height, 30px 30px);
+      width: 100%;
+      border-top: 1px solid $grayD;
+    }
+  }
+  .clear {
+    clear: both;
+  }
+}
+
