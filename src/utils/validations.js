@@ -52,5 +52,5 @@ export const isUrl = (value) => {
 
 //正整数验证
 export const isInt = (value) => {
-  return validation("int")(value.trim());
+  return validation("int")(value);
 };

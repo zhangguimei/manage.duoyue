@@ -17,3 +17,8 @@ export const LOG_IN = "LOG_IN";
 export const LOG_OUT = "LOG_OUT";
 export const LOGGED_IN = "LOGGED_IN";
 
+//Article Actions
+export const RECEIVE_ARTICLE_DATA = "RECEIVE_ARTICLE_DATA";
+export const RECEIVE_ACCOUNT_DATA = "RECEIVE_ACCOUNT_DATA";
+export const RECEIVE_RESOURCE_DATA = "RECEIVE_RESOURCE_DATA";
+export const RECEIVE_TAGS_ARR_DATA = "RECEIVE_TAGS_ARR_DATA";

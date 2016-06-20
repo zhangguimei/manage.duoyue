@@ -1,0 +1,275 @@
+@charset "utf-8";
+@import "../../assets/sass/function";
+
+table {
+  text-align: left;
+  .td-lf {
+    width: 330px;
+    vertical-align: top;
+    width: 330px;
+    padding-right: 10px;
+    overflow: hidden;
+    .lf-main {
+      border: 1px solid $grayD;
+      width: 300px;
+      .td1 {
+        padding: 20px;
+        text-align: center;
+        color: #777;
+      }
+      .td2 {
+        padding: 20px;
+        border-top: 1px solid $grayD;
+        text-align: center;
+      }
+      .rec-item {
+        border-top: 1px solid $grayD;
+        padding: 5px 10px 5px 10px;
+        .rec-title {
+          padding: 5px 0px 8px 0px;
+          @extend %f12;
+        }
+        .rec-delete {
+          text-align: right;
+          border-top: 1px dotted $grayE;
+        }
+      }
+      .source-item {
+        border-top: 1px solid $grayD;
+        padding: 5px 10px 5px 10px;
+        .title {
+          padding: 5px 2px 8px 2px;
+          border-bottom: 1px solid $grayD;
+          @extend %f16;
+        }
+        .main {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid $grayD;
+          .pic {
+            width: 110px;
+            float: left;
+            img {
+              width: 100px;
+              display: block;
+            }
+          }
+          .fr {
+            width: 320px;
+            height: auto;
+            .price {
+              line-height: 30px;
+              .red {
+                color: red;
+              }
+            }
+            .num {
+              line-height: 30px;
+              .add {
+                display: inline-block;
+                width: 85px;
+                height: 22px;
+                line-height: 20px;
+                border-top: 1px solid $grayD;
+                border-bottom: 1px solid $grayD;
+                border-right: 1px solid $grayD;
+                margin-left: 10px;
+                text-align: center;
+                .add-a {
+                  display: inline-block;
+                  width: 28px;
+                  border-left: 1px solid $grayD;
+                }
+              }
+            }
+            .intro {
+              @extend %f12;
+              width: 190px;
+              padding: 0px 20px 0px 0px;
+              margin-top: 5px;
+              line-height: 18px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-height: 36px;
+            }
+            .button {
+              padding: 10px 0px 5px 0px;
+              .buy-button, .car-button {
+                display: inline-block;
+                width: 80px;
+                color: #fff;
+                padding: 5px 0px 5px 0px;
+                text-align: center;
+                margin-right: 10px;
+              }
+              .buy-button {
+                background-color: #F00;
+              }
+              .car-button {
+                background-color: #F60;
+              }
+            }
+          }
+          .clear {
+            clear: both;
+          }
+        }
+      }
+      .delete {
+        text-align: right;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  .td-fr {
+    vertical-align: top;
+    padding: 0 20px;
+    width: 100%;
+    border: 1px solid $grayD;
+  }
+}
+
+//标签
+.addtags {
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+.RelatedRecommend, .Account, .SourcePage {
+  padding: 20px;
+  .rec-top {
+    border-bottom: 1px solid $grayD;
+    padding: 20px 0px 5px 0px;
+    .search {
+      .search-li {
+        display: inline-block;
+        padding-right: 5px;
+        .search-label {
+          padding-right: 5px;
+        }
+        .search-keyword {
+          height: 30px;
+          padding-left: 5px;
+          border:1px solid $grayD;
+        }
+      }
+    }
+    //recommend search
+    .button-search {
+      background-color: #1c6fa8;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #1c6fa8;
+      padding: 5px 30px 5px 30px;
+      cursor: pointer;
+    }
+    .InputTree {
+      position: relative;
+      .tree-box {
+        .label-tree {
+          display: inline-block;
+          padding-right: 5px;
+        }
+        .tree-input {
+          height: 30px;
+        }
+        .tree-component {
+          position: absolute;
+          top: 30px;
+          left: 53px;
+          width: 200px;
+          z-index: 10001;
+          background-color: $white;
+          border: 1px solid $grayD;
+        }
+      }
+    }
+  }
+  //资源-search
+  .source-search {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grayD;
+  }
+  .table_main {
+    padding: 10px 0px 10px 0px;
+    .Table {
+      th {
+        text-align: left;
+        padding: 5px;
+        font-weight: normal;
+      }
+    }
+    .list_table {
+      width: 100%;
+      border-top: 1px solid #cfd6db;
+      border-right: 1px solid #cfd6db;
+      .th {
+        white-space: nowrap;
+        text-align: left;
+        font-weight: normal;
+        border-bottom: 1px solid #cfd6db;
+        border-left: 1px solid #cfd6db;
+        padding: 5px 5px 5px 5px;
+        background-color: $grayF;
+        background-image: url(../../assets/images/epmp_bg.png);
+        background-repeat: repeat-x;
+        background-position: 0px -435px;
+        font-weight: normal;
+
+      }
+
+      td {
+        padding: 3px 5px;
+        border-bottom: 1px solid #cfd6db;
+        border-left: 1px solid #cfd6db;
+      }
+      .tr01 {
+        background-color: $grayF;
+      }
+      tr:hover {
+        background-color: #fffce4;
+      }
+      .cursor {
+        cursor: pointer;
+      }
+      .checkbox {
+        border: 0;
+        outline: none;
+      }
+    }
+  }
+  .AccountMain {
+    padding: 10px;
+    .InputF {
+      margin-bottom: 10px;
+      .label-span {
+        padding: 5px 0;
+      }
+    }
+    .title {
+      .price {
+        display: inline-block;
+      }
+      .name-input {
+        padding-left: 5px;
+        border:1px solid $grayD;
+        height:30px;
+      }
+      .unit {
+        padding-left: 5px;
+      }
+    }
+    .to {
+      padding: 0 5px;
+    }
+    .DatePicker {
+      display: inline-block;
+    }
+  }
+}
+
+.Pagination {
+  margin-top: 10px;
+}

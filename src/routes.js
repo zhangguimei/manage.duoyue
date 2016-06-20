@@ -50,7 +50,7 @@ import GroupManage from './components/UserManage/GroupManage';
 
 //资源中心——文章资讯
 import Article from './pages/Resource/Article';
-import ArticleHome from 'components/Article/home';
+import ArticleHome from 'components/SourceCenter/home';
 import ArticleSort from 'components/Article/ArticleSort';
 //资源中心——书籍管理
 import Book from './pages/Resource/Book';
