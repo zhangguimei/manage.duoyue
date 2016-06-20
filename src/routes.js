@@ -33,7 +33,6 @@ import UserAnalysis from './components/PageTest/ChartTestPage/UserAnalysis';
 import NewsOrder from './components/PageTest/ChartTestPage/NewsOrder';
 import ValidationForm from './components/PageTest/ValidationForm/ValidationModal';
 
-import BookSearch from './components/BookSearch/BookSearch';
 import Rays from './components/Rays2.0/index';
 
 //登录注册
@@ -49,10 +48,13 @@ import UserImage from './components/UserManage/UserImage';
 import UserVideo from './components/UserManage/UserVideo';
 import GroupManage from './components/UserManage/GroupManage';
 
-//资源中心——文章咨询
+//资源中心——文章资讯
 import Article from './pages/Resource/Article';
 import ArticleHome from 'components/Article/home';
 import ArticleSort from 'components/Article/ArticleSort';
+//资源中心——书籍管理
+import Book from './pages/Resource/Book';
+import BookSearch from './components/BookManage/BookSearch/BookSearch';
 
 //运营中心——展示设置
 import Display from './pages/Operate/Display';
@@ -84,6 +86,10 @@ export default (
           <IndexRoute component={ArticleHome}/>
           <Route path="search" component={ArticleHome}/>
           <Route path="sort" component={ArticleSort}/>
+        </Route>
+        <Route path="book" component={Book}>
+          <IndexRoute component={BookSearch}/>
+          <Route path="search" component={BookSearch}/>
         </Route>
       </Route>
       <Route path="operate" component={OperatePage}>
@@ -121,7 +127,6 @@ export default (
         <Route path="newsorder" component={NewsOrder}/>
         <Route path="validation" component={ValidationForm}/>
       </Route>
-      <Route path="book" component={BookSearch}/>
       <Route path="rays" component={Rays}/>
       <Route path="*" component={NotFound} status={404}/>
     </Route>

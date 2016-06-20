@@ -1,0 +1,54 @@
+{
+  "tableHeadData": { 
+    "orderNum": "订单号",
+    "submitTime": "提交时间",
+    "wechatNum": "微信公号",
+    "purchaseUser": "购买用户",
+    "unitPrice": "单价",
+    "number": "数量",
+    "subtotal": "小计",
+    "fashionUser":"分销用户"
+  },
+  "tableContentData": [
+    {
+      "orderNum":1122,
+      "submitTime": "2015-2-20",    
+      "wechatNum": "数字传播",
+      "purchaseUser": "111",
+      "unitPrice": "1.0",
+      "number": "250",
+      "subtotal": "2222",
+      "fashionUser":"张三"
+    },
+    {
+      "orderNum":1233,
+      "submitTime": "2015-2-20",
+      "wechatNum": "数字传播",
+      "purchaseUser": "54",
+      "unitPrice": "2.0",
+      "number": "250",
+      "subtotal": "2222",
+      "fashionUser":"张三"
+    },
+    {
+      "orderNum":1322,
+      "submitTime": "2015-2-20",
+      "wechatNum": "数字传播",
+      "purchaseUser": "fs",
+      "unitPrice": "1.0",
+      "number": "200",
+      "subtotal": "2222",
+      "fashionUser":"张三"
+    },  
+    {
+      "orderNum":1413,
+      "submitTime": "2015-2-20",  
+      "wechatNum": "数字传播",
+      "purchaseUser": "dd",
+      "unitPrice": "2.0",
+      "number": "200",
+      "subtotal": "2222",
+      "fashionUser":"张三"
+    }
+  ]
+}
