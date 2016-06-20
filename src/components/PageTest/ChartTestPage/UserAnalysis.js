@@ -3,8 +3,8 @@ import {Map, is, fromJS} from 'immutable';
 import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 import styles from './UserAnalysis.scss';
 
-import Chart from '../../UIComponent/Chart/Chart';
-import Tab from '../../UIComponent/Tab/Tab';
+import Chart from '../../../UIComponent/Chart/Chart';
+import Tab from '../../../UIComponent/Tab/Tab';
 
 export  const rand = (max, min, num) => {
   let rtn = [];

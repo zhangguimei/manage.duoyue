@@ -61,7 +61,7 @@ module.exports = {
         loader: 'url-loader?limit=8192&name=assets/images/[name].[ext]'
       },
       { test: /\.(ttf|eot|svg|woff|woff2)(\?.*)?$/,
-        loader: "url-loader?importLoaders=1&limit=8192&name=assets/fonts/[name].[ext]"
+        loader: "url-loader?limit=8192&name=assets/fonts/[name].[ext]"
       }
     ],
     noParse: [path.resolve(nodeModulesPath, '/react/dist/react.min'),path.resolve(nodeModulesPath, '/lodash/lodash.js')]

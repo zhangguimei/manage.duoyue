@@ -3,11 +3,11 @@ import {Map, is, fromJS} from 'immutable';
 
 import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage'
+import Modal from '../../../UIComponent/Modals/Modal'
+import ShowPage from '../../../UIComponent/Modals/ShowPage'
 import TableTestpage from '../TableTestPage/TableTest'
 import DatePickerTestpage from '../DatePickerTestPage/DatePickerTestPage'
-import Chart from '../../UIComponent/Chart/Chart'
+import Chart from '../../../UIComponent/Chart/Chart'
 import {animations} from '../../../utils/animation';
 
 import styles from './ModalTestPage.scss';

@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import styles from './DatePickerTestPage.scss';
 
-import DatePicker from '../../UIComponent/DatePicker/DatePicker'
-import CascadeSelect from '../../UIComponent/CascadeSelect/CascadeSelect'
+import DatePicker from '../../../UIComponent/DatePicker/DatePicker'
+import CascadeSelect from '../../../UIComponent/CascadeSelect/CascadeSelect'
 import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
 
 class DatePickerTestPage extends React.Component {

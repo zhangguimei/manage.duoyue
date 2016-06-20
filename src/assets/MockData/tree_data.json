@@ -119,7 +119,7 @@
           "id": "329",
           "parentid": "324",
           "name": "用户管理",
-          "url": "",
+          "url": "/manage/user",
           "target": "",
           "icon_min": "",
           "icon_min_light": "",
@@ -788,6 +788,95 @@
               "icon_max": "",
               "icon_max_light": "",
               "data": []
+            },
+            {
+              "id": "779",
+              "parentid": "742",
+              "name": "展示范围",
+              "url": "",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data":[{
+                "id": "743",
+                "parentid": "779",
+                "name": "资讯设置",
+                "url": "/manage/weixin/range/columnSetting.aspx",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              },{
+                "id": "744",
+                "parentid": "779",
+                "name": "书籍设置",
+                "url": "/manage/weixin/range/bookTypeSetting",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              },{
+                "id": "763",
+                "parentid": "779",
+                "name": "商品设置",
+                "url": "/manage/weixin/range/productSetting",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              },{
+                "id": "764",
+                "parentid": "779",
+                "name": "资源设置",
+                "url": "/manage/weixin/range/sourceTypeSetting",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              },{
+                "id": "795",
+                "parentid": "779",
+                "name": "报名设置",
+                "url": "/manage/weixin/range/matchSetting.aspx",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              },{
+                "id": "802",
+                "parentid": "779",
+                "name": "专题设置",
+                "url": "/manage/weixin/range/topicTypeSetting",
+                "target": "",
+                "icon_min": "",
+                "icon_min_light": "",
+                "icon_max": "",
+                "icon_max_light": "",
+                "data":[]
+              }]
+            },{
+              "id": "780",
+              "parentid": "742",
+              "name": "栏目设置",
+              "url": "/manage/weixin/viewrange/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data":[]
             }
           ]
         },

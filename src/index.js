@@ -10,7 +10,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import createHashHistory from 'history/lib/createHashHistory';
 
 import configureStore from './store/configureStore';
-import Root from './containers/Root';
+import routes from './routes';
 
 let state = window.__initialState__ || {};
 const createHistory = process.env.NODE_ENV !== 'production' ? createBrowserHistory : createHashHistory;
@@ -19,8 +19,23 @@ const createScrollHistory = useScroll(createHistory);
 const appHistory = useRouterHistory(createScrollHistory)();
 const history = syncHistoryWithStore(appHistory, store);
 
+const rootRoute = {
+  component: 'div',
+  indexRoute:  require('./routes/ManagePage'),
+  childRoutes: [ {
+    path: '/',
+    component: require('./components/App'),
+    childRoutes: [
+      require('./routes/LoginPage'),
+      require('./routes/RegisterPage'),
+      require('./routes/ManagePage')
+    ]
+  } ]
+}
 ReactDOM.render(
-    <Root store={store} history={history}/>,
-    document.getElementById('Manage')
+    <Provider store={store}>
+      <Router history={history} routes={rootRoute}/>
+    </Provider>
+    ,document.getElementById('App')
 )
 

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+@import "../../assets/sass/animation/hover";
+
+$headerHeightInner: $headerHeight - 5px;
+.Menu {
+  .ul-menu {
+    width: 100%;
+    color: $white;
+    cursor: pointer;
+    height: $headerHeightInner;
+    background-color: rgba(0, 153, 204, 0.7);
+    .MenuItem {
+      position: relative;
+      color: $gray3;
+      text-align: center;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        margin-bottom: 3px;
+      }
+      .text {
+        display: block;
+        position: relative;
+        white-space: nowrap;
+        padding: 6px 15px;
+        .item-title {
+          display: block;
+          color: inherit;
+          line-height: 18px;
+        }
+        .item-next {
+          display: inline-block;
+          background-image: url(http://v2.manage.duoyue.me/manage/images/manage.png);
+          background-repeat: no-repeat;
+          background-position: -13px -15px;
+          width: 15px;
+          height: 15px;
+          margin-left: 10px;
+        }
+        .item-next-on {
+          background-position: -13px -30px;
+        }
+      }
+      .ul-menu-index {
+        position: absolute;
+        left: 0;
+        top: $headerHeightInner;
+        border: 1px solid $grayC;
+        background-color: $white;
+        padding: 2px;
+      }
+      .ul-item {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        border: 1px solid $grayC;
+        background-color: $white;
+      }
+    }
+    .li-menu {
+      float: left;
+      display: block;
+      position: relative;
+      height: 100%;
+      color: $white;
+      margin-right: 2px;
+      //background-color: $blue;
+      > .text{
+        color:$white;
+      }
+      > .text:hover {
+        img {
+          @extend .hvr-pulse;
+        }
+      }
+    }
+    .li-menu-on {
+      background-color: $blueLight;
+    }
+    .li-item {
+      min-width: 100px;
+      text-align: left;
+      font-size: 12px;
+      .item-title {
+        padding-right: 8px;
+      }
+      .text {
+        @extend .hvr-bounce-to-right;
+        position: relative;
+        color:$colorText;
+        .ic {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          margin-top: -6px;
+          @extend %f12;
+        }
+      }
+    }
+    .li-item-on {
+      background-color: $blueLight;
+      > .text{
+        color: $white;
+      }
+    }
+  }
+}

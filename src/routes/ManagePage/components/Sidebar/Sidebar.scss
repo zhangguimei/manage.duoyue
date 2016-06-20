@@ -1,0 +1,215 @@
+@charset "UTF-8";
+@import "../../../../assets/sass/function";
+
+.Sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: $headerHeight;
+  background-color: #293038;
+
+  z-index: $zIndexSidebar;
+  .sidebarOne, .sidebarTwo {
+    float: left;
+    width: $sidebarWidth;
+    height: 100%;
+    //border-right: 1px solid $grayD;
+  }
+  &.fold {
+    .sidebarOne {
+      > div {
+        overflow: inherit !important;
+        > div {
+          overflow: inherit !important;
+          margin: 0 !important;
+        }
+      }
+      width: 36px;
+      .item {
+        margin-bottom: 1px;
+        h5 {
+          cursor: default;
+          a {
+            padding: 0;
+            overflow: visible;
+            span {
+              display: none;
+              position: absolute;
+              width: 150px;
+              left: 36px;
+              top: 0;
+              padding: 0 12px;
+              white-space: nowrap;
+              background-color: #293038;
+            }
+            .ic2 {
+              display: none;
+            }
+          }
+        }
+        ul {
+          display: none;
+          position: absolute;
+          left:36px;
+          width:150px;
+        }
+        &:hover {
+          h5 {
+            cursor: pointer;
+            a {
+              span {
+                display: block;
+                background-color: $grayLight;
+                color: $white;
+              }
+            }
+          }
+          ul{
+            display: block;
+          }
+        }
+      }
+    }
+    .sidebarTwo {
+      display: none;
+    }
+  }
+  &.fold + .PageMain {
+    left: 36px !important;
+  }
+  .sidebarOne {
+    transition: all 250ms cubic-bezier(0.1,.57,.1,1);
+    .btn-toggle {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 100px;
+      padding: 0 5px;
+      line-height: 28px;
+      background-color: #6f7883;
+      text-align: center;
+      border-radius: 5px 0 0 5px;
+      cursor: pointer;
+      color: $colorText;
+      .ic {
+        width: 20px;
+        line-height: 18px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+        font-size: 12px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+      }
+    }
+    .btn-toggle:hover {
+      padding-right: 8px;
+      background-color: #8d9bab;
+      font-weight: 600;
+    }
+    .item {
+      position: relative;
+      margin-bottom: 1px;
+      background-color: #293038;
+      h5 {
+        cursor: pointer;
+        a {
+          display: block;
+          position: relative;
+          background-color: #37424f;
+          color: $white;
+          padding: 0 20px 0 5px;
+          line-height: 36px;
+          &.cur {
+            background-color: #22282e;
+          }
+          .ic1, .ic2 {
+            vertical-align: top;
+          }
+          .ic1 {
+            width: 36px;
+            text-align: center;
+            line-height: 36px;
+            @extend %f18;
+            color: #aeb9c2;
+          }
+          .ic2 {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 32px;
+            text-align: center;
+            @extend %f12;
+            margin-top: -6px;
+          }
+        }
+      }
+      ul {
+        background-color: #293038;
+        overflow: hidden;
+        li {
+          a {
+            display: block;
+            padding: 6px 30px;
+            font-size: 13px;
+            white-space: nowrap;
+            background-color: #293038;
+            color: $white;
+            //&:hover,
+            &.cur {
+              color: $white;
+              background-color: $blueLight;
+            }
+
+          }
+        }
+      }
+      .Tip {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 150px;
+        padding: 0 15px;
+        line-height: 30px;
+        color: $white;
+        background-color: $grayLight;
+      }
+    }
+  }
+  .sidebarTwo {
+    display: block;
+    background-color: #f8f8f8;
+    font-size: 13px;
+    h5 {
+      border-bottom: 1px solid $grayD;
+      padding: 0 20px;
+      line-height: 32px;
+      background-color: #424b56;
+      color: $white;
+    }
+    ul {
+      margin-top: 5px;
+      li {
+        a {
+          display: block;
+          padding: 6px 20px;
+          color: $colorText;
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          &.cur {
+            position: relative;
+            width: $sidebarWidth;
+            background-color: $white;
+            border-top-color: $grayE;
+            border-bottom-color: $grayE;
+            z-index: 100000;
+          }
+          &:hover {
+            color: #f1454e;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,33 @@
 'use strict';
 import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
-import {parseJson} from '../components/UIComponent/Menu/ShowRoute';
+import {parseJson} from '../UIComponent/Menu/ShowRoute';
 
 export const fetchTreedata = (username) => {
   let tree = "";
   switch (username) {
     case 'admin':
       tree = require("../assets/MockData/tree_data.json");
+        console.log(tree.menu);
+
+      const dataMap = tree.menu.reduce(function (map, category) {
+        category.itemsMap = category.data.reduce(function (itemsMap, item) {
+          item.itemsMap = item.data.reduce(function(jMap, j) {
+            j.itemsMap = j.data.reduce(function(kMap, k){
+              kMap[k.name] = k;
+              return kMap;
+            }, {})
+            jMap[j.name] = j;
+            return jMap;
+          }, {})
+          itemsMap[item.name] = item;
+          return itemsMap;
+        }, {})
+        map[category.name] = category;
+        return map;
+      }, {});
+
+      console.log(dataMap);
+
       break;
     case 'admin2':
       tree = require("../assets/MockData/tree_data2.json");
@@ -43,4 +64,3 @@ export const logOut = (username)=> {
     username
   }
 }
-

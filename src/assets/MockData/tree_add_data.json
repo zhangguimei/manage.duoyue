@@ -37,7 +37,7 @@
   "329":{
     "name":"用户管理",
     "icon":"ic-user",
-    "url":""
+    "url":"/user/usermanage/"
   },
   "349":{
     "name":"用户查询",
@@ -62,7 +62,37 @@
   "331":{
     "name":"咨询/评论",
     "icon":"ic-comment",
-    "url":""
+    "url":"/user/comment"
+  },
+  "353":{
+    "name":"书籍咨询",
+    "icon":"",
+    "url":"/user/comment/bookconsult"
+  },
+  "354":{
+    "name":"文章评论",
+    "icon":"",
+    "url":"/user/comment/sitecolumn"
+  },
+  "355":{
+    "name":"书籍评论",
+    "icon":"",
+    "url":"/user/comment/book"
+  },
+  "356":{
+    "name":"资源评论",
+    "icon":"",
+    "url":"/user/comment/source"
+  },
+  "357":{
+    "name":"商品咨询",
+    "icon":"",
+    "url":"/user/comment/consult"
+  },
+  "710":{
+    "name":"微信直播",
+    "icon":"",
+    "url":"/user/comment/weixinqiang"
   },
   "332":{
     "name":"作者管理",
@@ -168,6 +198,46 @@
     "name":"发票选项",
     "icon":"",
     "url":"/operate/display/invoice"
+  },
+  "779":{
+    "name":"展示范围",
+    "icon":"",
+    "url":"/operate/display/showrange"
+  },
+  "743":{
+    "name":"资讯设置",
+    "icon":"",
+    "url":"/operate/display/showrange/columnsetting"
+  },
+  "744":{
+    "name":"书籍设置",
+    "icon":"",
+    "url":"/operate/display/showrange/booktypesetting"
+  },
+  "763":{
+    "name":"商品设置",
+    "icon":"",
+    "url":"/operate/display/showrange/productsetting"
+  },
+  "764":{
+    "name":"资源设置",
+    "icon":"",
+    "url":"/operate/display/showrange/sourcetypesetting"
+  },
+  "792":{
+    "name":"报名设置",
+    "icon":"",
+    "url":"/operate/display/showrange/matchsetting"
+  },
+  "802":{
+    "name":"专题设置",
+    "icon":"",
+    "url":"/operate/display/showrange/topictypesetting"
+  },
+  "780":{
+    "name":"栏目设置",
+    "icon":"",
+    "url":"/operate/display/viewrange"
   },
   "378":{
     "name":"基础配置",

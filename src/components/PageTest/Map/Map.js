@@ -1,9 +1,9 @@
 'use strict';
 import React from 'react';
-import HeatMap from '../../UIComponent/Map/HeatMap';
-import PolyMap from '../../UIComponent/Map/PolyMap';
-import MassiveMap from '../../UIComponent/Map/MassiveMap';
-import SexMap from '../../UIComponent/Map/SexMap';
+import HeatMap from '../../../UIComponent/Map/HeatMap';
+import PolyMap from '../../../UIComponent/Map/PolyMap';
+import MassiveMap from '../../../UIComponent/Map/MassiveMap';
+import SexMap from '../../../UIComponent/Map/SexMap';
 
 class Map extends React.Component {
   render() {
