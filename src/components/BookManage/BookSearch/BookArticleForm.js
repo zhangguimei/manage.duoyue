@@ -34,10 +34,10 @@ BookArticleForm.propTypes = {
   menuTreeData: PropTypes.array,
   handleSubmit: PropTypes.func,
   fields: PropTypes.shape({
-    article: PropTypes.string,
-    parentMenu: PropTypes.string,
-    price: PropTypes.string,
-    tryRead: PropTypes.string
+    article: PropTypes.object,
+    parentMenu: PropTypes.object,
+    price: PropTypes.object,
+    tryRead: PropTypes.object
   })
 };
 export default reduxForm({

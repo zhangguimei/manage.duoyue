@@ -65,6 +65,7 @@ class BookSearch extends React.Component {
       showModal: false,
       tabIndex: 0
     };
+    this.showPageData = {};
   }
 
   onPageClick(nextPageIndex) {
@@ -87,6 +88,7 @@ class BookSearch extends React.Component {
   componentDidMount() {
     const {fetchBookData} = this.props;
     fetchBookData && fetchBookData();
+    this.createShowPageData(0)
   }
 
   selectOnChange(e) {
@@ -103,6 +105,7 @@ class BookSearch extends React.Component {
   }
 
   onTypeChange(index) {
+    this.createShowPageData(index);
     this.setState({
       tabIndex: index
     })
@@ -130,17 +133,33 @@ class BookSearch extends React.Component {
     });
   }
 
+  createShowPageData(idx) {
+    let data = {
+      title: "修改书籍",
+      newPageHref: '',
+      closeShowPage: ::this.toggleModal,
+      submitForm: ::this.submitChange
+    };
+    if (idx === 0) {
+      data.ftChildren = <div><span className="submit-btn btn">确定新增</span>
+        <span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
+    } else if (idx === 10 || idx === 8) {
+      data.ftChildren = <div><span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
+    }
+    else {
+      data.showFooter = false;
+    }
+    this.showPageData = data;
+  }
+
   render() {
     const {rowsForOnePage, pageIndex, showModal, tabIndex} = this.state,
+      {showPageData} = this,
       totalPages = Math.ceil(tableData.tableContentData.length / rowsForOnePage);
-    let pagedata = {
-      title: "修改书籍",
-      newPageHref: 'http://www.baidu.com',
-      closeShowPage: ::this.toggleModal
-    };
-    let content = tableData.tableContentData.map((item, i) => {
+
+    tableData.tableContentData.map((item, i) => {
       item.operation = <BookSearchOperation index={i} linkOnClick={() => this.toggleModal(item.id)}/>
-    })
+    });
     return (
       <div className="BookSearch">
         <Table headData={tableData.tableHeadData} contentData={tableData.tableContentData}
@@ -150,7 +169,7 @@ class BookSearch extends React.Component {
         {
           showModal &&
           <Modal onModalClick={::this.toggleModal}>
-            <ShowPage {...pagedata} submitChange={::this.submitChange}>
+            <ShowPage {...showPageData}>
               <BookInfo bookInfo={bookInfo}/>
               <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
               { tabIndex == 0 &&
