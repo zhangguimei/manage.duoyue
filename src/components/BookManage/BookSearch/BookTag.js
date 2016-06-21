@@ -14,6 +14,7 @@ class BookTag extends React.Component {
       selectedTagArr: [],
       isModify: false
     };
+    this.updadeDropdown = null;
   }
 
   toggleModal() {
@@ -24,7 +25,6 @@ class BookTag extends React.Component {
   }
 
   modifyTagModal(data) {
-    const {tagData} = this.props;
     this.setState({
       tagName: data.name,
       showAddTagLayer: !this.state.showAddTagLayer,
@@ -59,8 +59,13 @@ class BookTag extends React.Component {
     let name = data.parentId == 0 ? data.name : parentData[0].name + "-" + data.name;
     this.setState({
       selectItem: data,
-      tagName: name
+      tagName: name,
+      tagPurpose: '不限'
     });
+    if (this.state.selectItem.id !== data.id) {
+      this.updadeDropdown();
+    }
+
   }
 
   deleteTagItem(id) {
@@ -70,6 +75,9 @@ class BookTag extends React.Component {
     });
   }
 
+  getUpdate(foo) {
+    this.updadeDropdown = foo;
+  }
 
   submitChange(data) {
     const {tagData} = this.props;
@@ -93,7 +101,6 @@ class BookTag extends React.Component {
       selectedTagArr: tempArr,
       showAddTagLayer: !this.state.showAddTagLayer
     });
-
   }
 
   render() {
@@ -103,7 +110,7 @@ class BookTag extends React.Component {
       width: "70%",
       height: "90%",
       title: "选择标签",
-      newPageHref: 'http://www.baidu.com',
+      newPageHref: '',
       closeShowPage: ::this.toggleModal
     };
     return (
@@ -142,7 +149,7 @@ class BookTag extends React.Component {
                   </div>
                   <div className="tag-info clearfix">
                     <div className="tag-info-title left w150">通用阅读目的：</div>
-                    <Dropdown option={tagData.tagReadPurpose} skin="blue" defaultContent={tagPurpose}/>
+                    <Dropdown option={tagData.tagReadPurpose} skin="blue" defaultContent={tagPurpose} exportUpdate={::this.getUpdate}/>
                   </div>
                 </div>
               </div>
