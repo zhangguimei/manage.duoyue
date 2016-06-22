@@ -2,8 +2,9 @@
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import Validate from './Validate/BookFormValidate';
-import {InputF, SelectF, InputNumber, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
+import {InputF, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
 import DatePicker from '../../UIComponent/DatePicker/DatePicker';
+import Utils from '../../../utils/utils';
 
 const fields = ['classify', 'title', 'publish', 'bookNumber', 'author', 'publishDate', 'link', 'inventory', 'startDate', 'endDate', 'price',
   'discount', 'salesPrice', 'sharing', 'eBook', 'eBookPrice', 'tryRead', 'introduction', 'cover'];
@@ -19,34 +20,23 @@ class BookForm extends React.Component {
       check: true,
       selectAddress: {}
     };
+    this.startDate = 0;
+    this.endDate = 0;
   }
 
   checkDate(start, end) {
-    if (!start || !end) {
-      return;
-    }
-    start = new Date(start);
-    end = new Date(end);
-    this.setState({
-      check: !(end < start)
-    });
-    (end < start) &&
-    console.log('开始时间不能大于结束时间！');
+    console.log('时间',Utils.compareTime(start, end))
   }
 
   getPickDate(date) {
-    const {endDate} = this.state;
-    this.setState({
-      startDate: date
-    });
+    const {endDate} = this;
+    this.startDate = date;
     this.checkDate(date, endDate);
   }
 
   getPickDateEnd(date) {
-    const {startDate} = this.state;
-    this.setState({
-      endDate: date
-    });
+    const {startDate} = this;
+    this.endDate = date;
     this.checkDate(startDate, date);
   }
 

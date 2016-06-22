@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import styles from './recommend.scss';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import Table from './Table/Table';
+import Table from '../BookManage/BookSearch/Table/Table';
 import Pagination from '../UIComponent/Pagination/Pagination';
 import Tab from '../UIComponent/Tab/Tab';
 import * as actions from '../../actions/ArticleActions';

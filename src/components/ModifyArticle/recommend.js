@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import styles from './recommend.scss';
-import Table from './Table/Table';
+import Table from '../BookManage/BookSearch/Table/Table';
 import {reduxForm} from 'redux-form';
 import {InputTree} from '../PageTest/ValidationForm/ValidationComponents';
 import Pagination from '../UIComponent/Pagination/Pagination';

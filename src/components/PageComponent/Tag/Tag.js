@@ -1,12 +1,13 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {Map, is, fromJS} from 'immutable';
+import {fromJS} from 'immutable';
 import Modal from '../../UIComponent/Modals/Modal'
 import ShowPage from '../../UIComponent/Modals/ShowPage'
 import Tree from '../../UIComponent/Tree/Tree';
 import Dropdown from '../../UIComponent/Dropdown/Dropdown';
+import styles from './Tag.scss';
 
-class BookTag extends React.Component {
+class Tag extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +55,8 @@ class BookTag extends React.Component {
   }
 
   clickItem(data) {
-    const {tagData} = this.props;
+    const {tagData} = this.props,
+      {selectItem={}} = this.state;
     let parentData = tagData.tagTreeData.filter(v => v.id == data.parentId);
     let name = data.parentId == 0 ? data.name : parentData[0].name + "-" + data.name;
     this.setState({
@@ -62,7 +64,7 @@ class BookTag extends React.Component {
       tagName: name,
       tagPurpose: '不限'
     });
-    if (this.state.selectItem.id !== data.id) {
+    if (selectItem.id !== data.id) {
       this.updadeDropdown();
     }
 
@@ -110,11 +112,10 @@ class BookTag extends React.Component {
       width: "70%",
       height: "90%",
       title: "选择标签",
-      newPageHref: '',
       closeShowPage: ::this.toggleModal
     };
     return (
-      <div className="BookTag">
+      <div className="Tag">
         <ul className="tag-list clearfix">
           {
             selectedTagArr.map((item, i) => {
@@ -160,7 +161,22 @@ class BookTag extends React.Component {
     )
   }
 }
-BookTag.propTypes = {
-  tagData: PropTypes.object
+
+/**
+ * 暂时静态数据直接调用，后期传参
+ * @type {{
+ * tagData: *,
+ * fetchData: *,
+ * selectData: *,
+ * submitForm: *,
+ * updateParent: *
+ * }}
+ */
+Tag.propTypes = {
+  tagData: PropTypes.object,
+  fetchData: PropTypes.func,
+  selectData: PropTypes.object,
+  submitForm: PropTypes.func,
+  updateParent: PropTypes.func
 };
-export default BookTag;	
+export default Tag;	
