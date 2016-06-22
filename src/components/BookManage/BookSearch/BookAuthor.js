@@ -67,7 +67,7 @@ class BookAuthor extends React.Component {
       width: "50%",
       height: "50%",
       title: "选择作者 ",
-      newPageHref: 'http://www.baidu.com',
+      showFooter: false,
       closeShowPage: ::this.addAuthorModal
     };
     let listCode = [];
@@ -106,9 +106,8 @@ class BookAuthor extends React.Component {
                   this.dataForShow.map((item, i) => {
                     return (
                       <li className="add-author-item left clearfix" key={i}>
-                        <div className="left"><CheckBox checked={authorList.indexOf(item.id) >= 0} index={item.id}
-                                                        value={item.id} checkBoxOnClick={::this.selectAuthor}/></div>
-                        <div className="add-author-name left">{item.name}</div>
+                        <CheckBox title={item.name} checked={authorList.indexOf(item.id) >= 0} index={item.id}
+                                                        value={item.id} checkBoxOnClick={::this.selectAuthor}/>
                       </li>
                     )
                   })

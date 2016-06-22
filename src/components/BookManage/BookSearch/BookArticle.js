@@ -85,13 +85,11 @@ class BookArticle extends React.Component {
     let pagedata = {
       width: "50%",
       title: operationTitle,
-      newPageHref: 'http://www.baidu.com',
       closeShowPage: ::this.articleOperation
     };
     let pageUploadData = {
       width: "50%",
       title: "批量上传文章",
-      newPageHref: 'http://www.baidu.com',
       closeShowPage: ::this.showUploadArticle
     };
     menuTableData.tableContentData.map((item, i) => {

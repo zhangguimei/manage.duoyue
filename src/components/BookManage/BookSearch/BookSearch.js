@@ -16,13 +16,13 @@ import BookForm from './BookForm';
 import BookMenu from './BookMenu';
 import BookArticle from './BookArticle';
 import BookSource from './BookSource';
-import BookTag from './BookTag';
-import BookCode from './BookCode';
 import BookAuthor from './BookAuthor';
 import BookBrowseHistory from './BookBrowseHistory';
 import BookSetFashion from './BookSetFashion';
 import BookSalesHistory from './BookSalesHistory';
 import BookRelatedRecommend from './BookRelatedRecommend';
+import Tag from '../../PageComponent/Tag/Tag';
+import QRcode from '../../PageComponent/QRcode/QRcode'
 import styles from './BookSearch.scss';
 
 const tableData = require("../../../assets/MockData/book/book_list_data.json"),
@@ -143,7 +143,7 @@ class BookSearch extends React.Component {
     if (idx === 0) {
       data.ftChildren = <div><span className="submit-btn btn">确定新增</span>
         <span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
-    } else if (idx === 10 || idx === 8) {
+    } else if (idx === 10 || idx === 8 || idx === 5) {
       data.ftChildren = <div><span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
     }
     else {
@@ -178,8 +178,8 @@ class BookSearch extends React.Component {
               <BookMenu menuTreeData={menuTreeData} classifyInfo={classifyInfo} menuTableData={menuTableData}/>}
               { tabIndex == 2 && <BookArticle menuTreeData={menuTreeData} menuTableData={menuTableData}/>}
               { tabIndex == 3 && <BookSource sourceTableData={sourceTableData}/>}
-              { tabIndex == 4 && <BookTag tagData={tagData}/>}
-              { tabIndex == 5 && <BookCode codeData={codeData}/>}
+              { tabIndex == 4 && <Tag tagData={tagData}/>}
+              { tabIndex == 5 && <QRcode/>}
               { tabIndex == 6 && <BookAuthor authorListData={authorListData}/>}
               { tabIndex == 7 && <BookBrowseHistory browseTableData={browseHistoryTableData}/>}
               { tabIndex == 8 && <BookSetFashion fashionTableData={fashionTableData}/>}

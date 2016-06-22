@@ -2,24 +2,20 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
-
 import styles from './CheckBox.scss';
 
 class CheckBox extends React.Component {
   static defaultProps = {
     checked: false,
     defaultChecked: false,
-    index: -1
+    index: -1,
+    value: "",
+    name: "",
+    title: ""
   };
 
-  constructor(props) {
-    super(props);
-    this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
-  }
-
   render() {
-    let { checked, checkBoxOnClick, name, index, value, defaultChecked } = this.props;
+    let { checked, className, checkBoxOnClick, name, index, value, defaultChecked, title } = this.props;
     let uniqCode = Math.random();
     return (
       <div className={classNames("CheckBox center", {"checked": checked})}>
@@ -31,9 +27,10 @@ class CheckBox extends React.Component {
             <input name={name} id={`checkbox${index}-${uniqCode}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
                    defaultValue={value}/>
         }
-        <label className="checkbox-label" htmlFor={`checkbox${index}-${uniqCode}`}>
+        <label className={`checkbox-label ${className}`} htmlFor={`checkbox${index}-${uniqCode}`}>
           <span className="checkbox-symbol"/>
         </label>
+        <label htmlFor={`checkbox${index}-${uniqCode}`} className="checkbox-title">{title}</label>
       </div>
     );
   };
@@ -45,7 +42,8 @@ CheckBox.propTypes = {
   name: PropTypes.string,
   index: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  defaultChecked: PropTypes.bool
+  defaultChecked: PropTypes.bool,
+  title: PropTypes.string
 };
 
 export default CheckBox;

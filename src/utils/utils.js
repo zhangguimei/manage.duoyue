@@ -5,7 +5,6 @@
  */
 
 'use strict';
-import ShoppingGoods from '../models/ShoppingGood';
 
 const Utils = {
   bindMethods(thisObject, ...methods) {
@@ -25,33 +24,25 @@ const Utils = {
       seconds: (seconds > 9) ? seconds : "0" + seconds
     }
   },
-  calculateTotalByGoodsArray(array = [], privilegeThreshold = 0) {
-    if(!array instanceof Array) {
-      throw Error("The first argument must be an array!");
-    }
-    if(array[0] && !array[0] instanceof ShoppingGoods) {
-      throw Error("Goods detail must be class ShoppingGoods!");
-    }
-    let count = 0, money = 0, frei = 0, total;
-    array.map((item) => {
-      if(item.choosed) {
-        money += parseInt(item.count, 10) * parseFloat(item.unitPrice);
-        frei = parseFloat(frei) + parseFloat(item.proFreight);
-        count += parseInt(item.count, 10);
-      }
-    });
-    frei = privilegeThreshold && money >= privilegeThreshold ? 0 : frei;
-    total = (money + frei).toFixed(2);
-    return {
-      money: money.toFixed(2),
-      total: total,
-      freight: frei.toFixed(2),
-      count: count
-    }
-  },
   getOrderNumber() {
     let myDate = new Date();
     return myDate.getFullYear() + "" + myDate.getMonth() + "" + myDate.getSeconds() + Math.floor(Math.random() * 1000);
+  },
+  getSizeByByte(size) {
+    if (typeof size != "number") {
+      throw Error("Argument Must Be A Number")
+    }
+    const KBUNIT = "KB", MBUNIT = "MB", UNITSIZE = 1024;
+    let
+      kb = size / UNITSIZE,
+      mb = size / (UNITSIZE * UNITSIZE);
+    return mb > 0.01 ? parseFloat(mb).toFixed(2) + MBUNIT : parseFloat(kb).toFixed(2) + KBUNIT;
+    //return parseFloat(mb).toFixed(2) + MBUNIT;
+  },
+  compareTime(start, end) {
+    start = +new Date(start);
+    end = +new Date(end);
+    return (end - start) > 0;
   }
 };
 

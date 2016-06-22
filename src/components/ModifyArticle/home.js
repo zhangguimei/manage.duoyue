@@ -5,10 +5,12 @@ import BasicInfo from './basicInfo';
 import Source from './source';
 import Cookies from './cookies';
 import Recommend from './recommend';
-import Tags from './tags';
-import Code from './code';
+import Tag from '../PageComponent/Tag/Tag'
+import QRcode from '../PageComponent/QRcode/QRcode';
 import Account from './account'
 import styles from './ModifyArticle.scss';
+
+const tagData = require("../../assets/MockData/book/book_tag_data.json");
 const navData = [{'info': '基本信息'}, {'source': '资源'}, {'tag': '标签'}, {'maxCard': '二维码'}, {'Cookies': '浏览记录'}, {'account': '分账设置'}, {'recommend': '相关推荐'}];
 const tabContent = navData.map((item) => {
   return Object.values(item)[0]
@@ -47,8 +49,8 @@ class ModifyPageHome extends React.Component {
         <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
         { index == 0 && <BasicInfo data={data}/>}
         { index == 1 && <Source/>}
-        { index == 2 && <Tags/>}
-        { index == 3 && <Code/>}
+        { index == 2 && <Tag tagData={tagData}/>}
+        { index == 3 && <QRcode/>}
         { index == 4 && <Cookies/>}
         { index == 6 && <Recommend/>}
         { index == 5 && <Account/>}

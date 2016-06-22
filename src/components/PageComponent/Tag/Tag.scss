@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.Tag {
+  padding: 20px;
+  .tag-list {
+    .tag-item {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid $grayD;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+      line-height: 20px;
+      .tag-name {
+        font-size: 16px;
+        color: $gray3;
+      }
+      .tag-info {
+        color: $gray7;
+        font-size: 14px;
+      }
+      .tag-operation {
+        color: $gray3;
+        line-height: 14px;
+        font-size: 14px;
+        padding-top: 5px;
+        .tag-modify {
+          cursor: pointer;
+          border-right: 1px solid $gray3;
+          padding-right: 10px;
+        }
+        .tag-delete {
+          cursor: pointer;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .add-tag-box {
+    padding: 20px;
+    .add-tag-btn {
+      margin: 0 auto;
+      width: 120px;
+      cursor: pointer;
+    }
+  }
+  .Modal {
+    .real-modal {
+      z-index: 11010;
+    }
+    .ShowPage {
+      z-index: 11011;
+      .select-tag-area {
+        height: 100%;
+        .select-tag-left {
+          width: 25%;
+          height: 100%;
+          border-right: 1px solid $grayD;
+          .Tree {
+            margin-top: 0;
+            padding: 20px;
+          }
+        }
+        .select-tag-right {
+          padding: 20px 50px;
+          .tag-info {
+            padding: 5px 0;
+            line-height: 20px;
+            font-size: 14px;
+            color: $gray3;
+            .tag-info-title {
+              padding: 10px 0;
+              display: inline-block;
+            }
+            .tag-name {
+              color: $gray6;
+              padding: 10px 0;
+            }
+            .Dropdown {
+              float: left;
+              width: 150px;
+              .dropdown-box {
+                position: relative;
+              }
+              .dropdown-list {
+                position: absolute;
+                width: 150px;
+                background-color: $white;
+                z-index: 100;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
