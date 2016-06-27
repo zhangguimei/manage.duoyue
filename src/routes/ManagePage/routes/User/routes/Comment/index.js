@@ -7,6 +7,7 @@
 'use strict';
 module.exports = {
   path: 'comment',
+  indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/Comment'))

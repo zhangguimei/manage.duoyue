@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import TableTest from '../PageTest/TableTestPage/TableTest';
+import TableTest from '../../../../../../../../../components/PageTest/TableTestPage/TableTest';
 
 class ArticleSort extends React.Component {
   render() {
@@ -12,4 +12,4 @@ class ArticleSort extends React.Component {
   }
 }
 
-export default ArticleSort;
+module.exports = ArticleSort;

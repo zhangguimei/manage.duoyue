@@ -1,5 +1,5 @@
 'use strict';
-import React, {PropTypes} from 'react';
+import React from 'react';
 
 class Article extends React.Component {
   render() {
@@ -11,8 +11,4 @@ class Article extends React.Component {
   }
 }
 
-Article.propTypes = {
-  children: PropTypes.any
-}
-
-export default Article;
+module.exports = Article;

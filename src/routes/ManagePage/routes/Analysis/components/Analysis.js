@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import styles from './Analysis.scss';
 
 class Analysis extends React.Component {
   render() {

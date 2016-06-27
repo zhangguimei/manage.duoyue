@@ -7,6 +7,7 @@
 'use strict';
 module.exports = {
   path: 'sitecolumn',
+  indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/SiteColumn'))

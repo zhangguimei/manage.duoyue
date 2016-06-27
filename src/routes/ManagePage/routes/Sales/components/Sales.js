@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import styles from './Sales.scss';
 
 class Sales extends React.Component {
   render() {

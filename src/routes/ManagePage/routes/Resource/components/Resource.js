@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import styles from './Resource.scss';
 
 class Resource extends React.Component {
   render() {
@@ -15,4 +16,4 @@ Resource.propTypes = {
   children: PropTypes.any
 }
 
-export default Resource;
+module.exports = Resource;

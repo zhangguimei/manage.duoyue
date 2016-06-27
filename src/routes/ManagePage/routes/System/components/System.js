@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import styles from './System.scss';
 
 class System extends React.Component {
   render() {

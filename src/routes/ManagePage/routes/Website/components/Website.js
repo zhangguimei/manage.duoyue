@@ -1,5 +1,6 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import styles from './Website.scss';
 
 class Website extends React.Component {
   render() {

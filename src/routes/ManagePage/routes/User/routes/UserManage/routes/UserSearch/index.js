@@ -7,6 +7,7 @@
 'use strict';
 module.exports = {
   path: 'search',
+  indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/UserSearch'))

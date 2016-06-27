@@ -1,16 +1,15 @@
 /*
- * Created on 2016-06-25 12:15
+ * Created on 2016-06-25 12:22
  *
  * By Susan Su
  */
 
 'use strict';
 module.exports = {
-  path: 'book',
-  indexRoute: { onEnter: redirectToLogin},
+  path: '*',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/Book'))
+      cb(null, require('./components/NotFound'))
     })
   }
 }

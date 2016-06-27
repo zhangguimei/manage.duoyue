@@ -1,16 +1,23 @@
+/*
+ * Created on 2016-06-25 11:40
+ *
+ * By Susan Su
+ */
+
 'use strict';
 module.exports = {
-  path: 'resource',
+  path: 'article',
   indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/Resource'))
+      cb(null, require('./components/Article'))
     })
   },
   getChildRoutes(location, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/Article')
+        require('./routes/ArticleSearch'),
+        require('./routes/ArticleSort')
       ])
     })
   }

@@ -1,18 +1,10 @@
 'use strict';
-import React, {PropTypes} from 'react';
-
-class Analysis extends React.Component {
-  render() {
-    return (
-      <div className="Analysis">
-        {this.props.children}
-      </div>
-    );
+module.exports = {
+  path: 'website',
+  indexRoute: { onEnter: redirectToLogin},
+  getComponent(nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/Website'))
+    })
   }
 }
-
-Analysis.propTypes = {
-  children: PropTypes.any
-}
-
-export default Analysis;

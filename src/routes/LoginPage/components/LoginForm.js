@@ -19,7 +19,6 @@ class LoginForm extends React.Component {
 
   componentWillMount() {
     const {username} = this.props;
-   // console.log(username)
     if (auth.loggedIn()) {
       this.props.router.replace('/');
     }
@@ -55,9 +54,9 @@ class LoginForm extends React.Component {
             }else {
               this.props.router.replace('/');
             }
+            logIn(values.username);
             resolve();
           });
-         // this.props.router.replace('/user');
         }
       }, 300)
     })
@@ -69,12 +68,12 @@ class LoginForm extends React.Component {
       <form className="LoginForm center-block" onSubmit={handleSubmit(::this.submit)}>
         <div className="input-block">
           <label htmlFor="username">请输入账号：</label>
-          <input type="text" id="username" name="username" placeholder="请输入账号" {...username}/>
+          <input type="text" id="username" name="username" placeholder="请输入账号" {...username} />
           {username.touched && username.error && <div className="msg-error">{username.error}</div>}
         </div>
         <div className="input-block">
           <label htmlFor="password">请输入密码：</label>
-          <input type="password" id="password" name="password" placeholder="请输入密码" {...password}/>
+          <input type="password" id="password" name="password" placeholder="请输入密码" {...password} />
           {password.touched && password.error && <div className="msg-error">{password.error}</div>}
         </div>
         <div className="input-block">
@@ -103,6 +102,10 @@ LoginForm.PropTypes = {
 LoginForm = reduxForm({
   form: 'login',
   fields: ['username', 'password'],
+  initialValues: {
+    username: 'admin',
+    password: '1'
+  }
 })(LoginForm);
 
 function mapStateToProps(state) {

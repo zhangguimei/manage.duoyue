@@ -8,6 +8,7 @@
 'use strict';
 module.exports = {
   path: 'showcase',
+  indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/ShowCase'))

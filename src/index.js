@@ -19,22 +19,9 @@ const createScrollHistory = useScroll(createHistory);
 const appHistory = useRouterHistory(createScrollHistory)();
 const history = syncHistoryWithStore(appHistory, store);
 
-const rootRoute = {
-  component: 'div',
-  indexRoute:  require('./routes/ManagePage'),
-  childRoutes: [ {
-    path: '/',
-    component: require('./components/App'),
-    childRoutes: [
-      require('./routes/LoginPage'),
-      require('./routes/RegisterPage'),
-      require('./routes/ManagePage')
-    ]
-  } ]
-}
 ReactDOM.render(
     <Provider store={store}>
-      <Router history={history} routes={rootRoute}/>
+      <Router history={history} routes={routes}/>
     </Provider>
     ,document.getElementById('App')
 )

@@ -1,18 +1,18 @@
 'use strict';
 import React, {PropTypes} from 'react';
 
-class Showcase extends React.Component {
+class AuthorManage extends React.Component {
   render() {
     return (
-      <div className="Showcase">
+      <div className="AuthorManage">
         {this.props.children}
       </div>
     );
   }
 }
 
-Showcase.propTypes = {
+AuthorManage.propTypes = {
   children: PropTypes.any
 }
 
-export default Showcase;
+module.exports =  AuthorManage;

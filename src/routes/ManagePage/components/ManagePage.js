@@ -49,6 +49,7 @@ class ManagePage extends React.Component {
 
   componentWillMount() {
     const {username, actions:{fetchTreedata}} = this.props;
+    console.log('logged', username);
     if (!username) {
       //this.context.router.push('/login');
     }
@@ -74,7 +75,7 @@ class ManagePage extends React.Component {
     const {children, route, path, routes} = this.props,
         {showWaitModal} = this.state;
     const depth = routes.length;
-    console.log(route, this.props.routes,this.props.location.pathname)
+    console.log("managePage", route, this.props.routes,this.props.location.pathname)
     const treeData = this.tree;
     let sidebarLeft = route.length === 3 && getChildren(treeData.menu, route).length > 0 || route.length === 4 ? '360px' : '180px';
 
@@ -83,6 +84,20 @@ class ManagePage extends React.Component {
           <PageHeader treeData={treeData}/>
           <PageSidebar treeData={treeData} path={path}/>
           <main className="Main" style={{left : sidebarLeft}}>
+            <ul className="breadcrumbs-list">
+              {
+                routes.map((item, index) =>
+                    <li key={index}>
+                      <Link
+                          onlyActiveOnIndex={true}
+                          activeClassName="breadcrumb-active"
+                          to={item.path || ''}>
+                        {item.path}
+                      </Link>
+                      {(index + 1) < depth && '\u2192'}
+                    </li>
+                )}
+            </ul>
             <Scrollbars style={{height:'100%'}}>
               <header className="page-title">
                 <span ref="headerText">{getTitle(treeData.menu, route)}</span>

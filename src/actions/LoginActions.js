@@ -1,10 +1,14 @@
 'use strict';
 import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
 import {parseJson} from '../UIComponent/Menu/ShowRoute';
+import auth from '../api/auth';
+import { getBookType } from '../api/axiosServices';
 
 export const fetchTreedata = (username) => {
+  //getBookType();
   let tree = "";
   switch (username) {
+
     case 'admin':
       tree = require("../assets/MockData/tree_data.json");
         console.log(tree.menu);
@@ -15,18 +19,18 @@ export const fetchTreedata = (username) => {
             j.itemsMap = j.data.reduce(function(kMap, k){
               kMap[k.name] = k;
               return kMap;
-            }, {})
+            }, {});
             jMap[j.name] = j;
             return jMap;
-          }, {})
+          }, {});
           itemsMap[item.name] = item;
           return itemsMap;
-        }, {})
+        }, {});
         map[category.name] = category;
         return map;
       }, {});
 
-      console.log(dataMap);
+      console.log("susan" ,dataMap);
 
       break;
     case 'admin2':
@@ -51,7 +55,8 @@ const loggedIn = (username, tree) => {
   }
 }
 
-export const logIn = (username)=> {
+export const logIn = (username, pwd)=> {
+  auth.login()
   return {
     type: LOG_IN,
     username
