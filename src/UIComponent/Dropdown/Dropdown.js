@@ -36,7 +36,7 @@ class Dropdown extends React.Component {
       selectedArr: selectedArr.filter(v => v.id != id)
     })
   }
-
+  
   shouldComponentUpdate(nextProps, nextState) {
     const IthisProps = Map(this.props),
       IthisState = fromJS(this.state),
@@ -45,8 +45,19 @@ class Dropdown extends React.Component {
     return (!is(IthisState, InextState) || !is(IthisProps, InextProps));
   }
 
+  clearContent() {
+    this.setState({
+      selectedArr: []
+    });
+  }
+
+  componentDidMount() {
+    const {exportUpdate} = this.props;
+    exportUpdate(::this.clearContent)
+  }
+  
   render() {
-    const {option, isMultiple, skin} = this.props;
+    const {option, isMultiple, skin, defaultContent} = this.props;
     const {isShowDropdownList, selectedArr} = this.state;
     return (
       <div className={`Dropdown Dropdown-${skin}`}>
@@ -66,7 +77,7 @@ class Dropdown extends React.Component {
           }
           {
             !isMultiple &&
-            <div className="single-select a-line">{selectedArr[0] && selectedArr[0].title}</div>
+            <div className="single-select a-line">{selectedArr[0] ? selectedArr[0].title: defaultContent}</div>
           }
         </div>
         {
@@ -81,7 +92,6 @@ class Dropdown extends React.Component {
             }
           </ul>
         }
-
       </div>
     );
   }

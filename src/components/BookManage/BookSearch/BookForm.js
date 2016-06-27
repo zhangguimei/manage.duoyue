@@ -1,15 +1,13 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import { reduxForm } from 'redux-form';
-
-import Validate from './Validate';
-import {InputF, SelectF, InputNumber, InputTree} from '../PageTest/ValidationForm/ValidationComponents';
-import Tree from '../UIComponent/Tree/Tree';
-import ShowRoute from '../UIComponent/Menu/ShowRoute';
-import DatePicker from '../UIComponent/DatePicker/DatePicker';
+import {reduxForm} from 'redux-form';
+import Validate from './Validate/BookFormValidate';
+import {InputF, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
+import DatePicker from '../../UIComponent/DatePicker/DatePicker';
+import Utils from '../../../utils/utils';
 
 const fields = ['classify', 'title', 'publish', 'bookNumber', 'author', 'publishDate', 'link', 'inventory', 'startDate', 'endDate', 'price',
-                'discount', 'salesPrice', 'sharing', 'eBook', 'eBookPrice', 'tryRead', 'introduction'];
+  'discount', 'salesPrice', 'sharing', 'eBook', 'eBookPrice', 'tryRead', 'introduction', 'cover'];
 const eBookRadio = [{value: "no", content: "无电子书"}, {value: "yes", content: "有电子书"}];
 const tryReadRadio = [{value: "no", content: "否"}, {value: "yes", content: "是"}];
 
@@ -22,41 +20,34 @@ class BookForm extends React.Component {
       check: true,
       selectAddress: {}
     };
+    this.startDate = 0;
+    this.endDate = 0;
   }
 
   checkDate(start, end) {
-    if(!start || !end) {
-      return;
-    }
-    start = new Date(start);
-    end = new Date(end);
-    this.setState({
-      check: !(end < start)
-    });
-    (end < start) &&
-    console.log('开始时间不能大于结束时间！');
+    console.log('时间',Utils.compareTime(start, end))
   }
 
   getPickDate(date) {
-    const {endDate} = this.state;
-    this.setState({
-      startDate: date
-    });
+    const {endDate} = this;
+    this.startDate = date;
     this.checkDate(date, endDate);
   }
 
   getPickDateEnd(date) {
-    const {startDate} = this.state;
-    this.setState({
-      endDate: date
-    });
+    const {startDate} = this;
+    this.endDate = date;
     this.checkDate(startDate, date);
   }
 
   render() {
-    const { bookInfo, classifyInfo, handleSubmit,
-      fields: { classify, title, publish, bookNumber, author, publishDate, link, inventory, startDate, endDate, price,
-                discount, salesPrice, sharing, eBook, eBookPrice, tryRead, introduction }} = this.props;
+    const {
+      bookInfo, classifyInfo, handleSubmit,
+      fields: {
+        classify, title, publish, bookNumber, author, publishDate, link, inventory, startDate, endDate, price,
+        discount, salesPrice, sharing, eBook, eBookPrice, tryRead, introduction, cover
+      }
+    } = this.props;
     let datePickerData = {
       format: 'yyyy-mm-dd hh:ii:ss ',
       dateValue: '2016-5-29 00:10:12',
@@ -69,18 +60,20 @@ class BookForm extends React.Component {
           <div className="book-pic-box left">
             <div className="book-pic">
               <img src={bookInfo.img} className="book-img"/>
+              <input type="file" multiple {...cover} value={null} className="upload-again" width="270"/>
             </div>
-            <div className="upload-again">重新上传</div>
           </div>
           <div className="book-main-right left">
-            <InputTree className="info-input w300" treeData={classifyInfo} field={classify} label="所属分类" required={true}/>
-            <InputF field={title} className="info-input input w300" label="书籍名称" required={true} />
+            <InputTree className="info-input w300" treeData={classifyInfo} field={classify} label="所属分类"
+                       required={true}/>
+            <InputF field={title} className="info-input input w300" label="书籍名称" required={true}/>
             <div className="clearfix">
               <div className="form-two-item left">
-                <InputF field={publish} className="info-input input w200" label="出版社" required={true} />
+                <InputF field={publish} className="info-input input w200" label="出版社" required={true}/>
               </div>
               <div className="form-two-item left">
-                <InputF field={bookNumber} className="info-input input w200" label="书号" required={true} placeholder="999-9-9999-9999-9" />
+                <InputF field={bookNumber} className="info-input input w200" label="书号" required={true}
+                        placeholder="999-9-9999-9999-9"/>
               </div>
             </div>
             <div className="clearfix">
@@ -92,12 +85,16 @@ class BookForm extends React.Component {
               </div>
             </div>
             <InputF field={link} className="info-input input w500" label="外链跳转网页"/>
+
           </div>
         </div>
         <ul className="form-list">
           <li className="form-item">
             <div className="info-title">微信响应消息封面图</div>
-            <div className="response-cover"></div>
+            <div className="response-cover">
+              <img src={bookInfo.img} className="response-img"/>
+              <input type="file" multiple {...cover} value={null} className="upload-again"/>
+            </div>
           </li>
           <li className="form-item">
             <div className="info-title">销售信息</div>
@@ -108,9 +105,11 @@ class BookForm extends React.Component {
               <div className="item-content left">
                 <div className="form-title">销售有效期</div>
                 <div className="validity">
-                  <DatePicker field={startDate} data={datePickerData} getPickDate={::this.getPickDate} className={startDate.touched && startDate.error ? "error-input" : ""}/>
+                  <DatePicker field={startDate} data={datePickerData} getPickDate={::this.getPickDate}
+                              className={startDate.touched && startDate.error ? "error-input" : ""}/>
                   <span className="validity-center-text">至</span>
-                  <DatePicker field={endDate} data={datePickerData} getPickDate={::this.getPickDateEnd} className={endDate.touched && endDate.error ? "error-input" : ""}/>
+                  <DatePicker field={endDate} data={datePickerData} getPickDate={::this.getPickDateEnd}
+                              className={endDate.touched && endDate.error ? "error-input" : ""}/>
                 </div>
               </div>
             </div>
@@ -136,13 +135,13 @@ class BookForm extends React.Component {
             <div className="info-title">电子书信息</div>
             <div className="virtual-book-info clearfix">
               <div className="item-content virtual-item-width left">
-                <InputF field={eBook} label="电子书" inputType="radio" children={eBookRadio} />
+                <InputF field={eBook} label="电子书" inputType="radio" children={eBookRadio}/>
               </div>
               <div className="item-content virtual-item-width left">
-                <InputF field={eBookPrice} label="电子书售价" className="info-input input eBookPrice w200" />
+                <InputF field={eBookPrice} label="电子书售价" className="info-input input eBookPrice w200"/>
               </div>
               <div className="item-content virtual-item-width left">
-                <InputF field={tryRead} label="允许试读" inputType="radio" children={tryReadRadio} />
+                <InputF field={tryRead} label="允许试读" inputType="radio" children={tryReadRadio}/>
               </div>
             </div>
           </li>
@@ -156,11 +155,17 @@ class BookForm extends React.Component {
   }
 }
 
+BookForm.propTypes = {
+  bookInfo: PropTypes.object,
+  classifyInfo: PropTypes.array,
+  handleSubmit: PropTypes.func
+};
+
 export default reduxForm({
-  form: 'bookform',
-  fields,
-  validate: Validate
-},
+    form: 'bookform',
+    fields,
+    validate: Validate
+  },
   state => ({
     initialValues: state.book.toJS().bookData
   })

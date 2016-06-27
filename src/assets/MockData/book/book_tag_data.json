@@ -1,0 +1,109 @@
+{
+ "tagTreeData":
+ [
+    {
+      "id": 1,
+      "parentId": 0,
+      "name": "标签1",
+      "readPurpose":"等级考试",
+      "data": [
+        {
+        "id": 11,
+        "parentId" : 1,
+        "name": "标签11",
+        "readPurpose":"兴趣学习",
+        "data": [],
+        "selected":false
+        },
+        {
+        "id": 12,
+        "parentId" : 1,
+        "name": "标签12",
+        "readPurpose":"等级考试",
+        "data": [],
+        "selected":false
+        },
+        {
+        "id": 13,
+        "parentId" : 1,
+        "name": "标签13",
+        "readPurpose":"等级考试",
+        "data": [],
+        "selected":false
+        },
+        {
+        "id": 14,
+        "parentId" : 1,
+        "name": "标签14",
+        "readPurpose":"等级考试",
+        "data": [],
+        "selected":false
+        }
+      ],
+      "selected": true
+    },
+    {
+      "id": 2,
+      "parentId": 0,
+      "name": "标签2",
+      "readPurpose":"等级考试",
+      "data": [],
+      "selected": true
+    },
+    {
+      "id": 3,
+      "parentId": 0,
+      "name": "标签3",
+      "readPurpose":"等级考试",
+      "data": [
+        {
+        "id": 31,
+        "parentId": 3,
+        "name": "标签31",
+        "readPurpose":"兴趣学习",
+        "data": [],
+        "selected": false
+        },
+        {
+        "id": 32,
+        "parentId": 3,
+        "name": "标签32",
+        "readPurpose":"等级考试",
+        "data": [],
+        "selected": false
+        },
+        {
+        "id": 33,
+        "parentId": 3,
+        "name": "标签33",
+        "readPurpose":"等级考试",
+        "data": [],
+        "selected": false
+        }
+      ]
+    }
+  ],
+ "tagReadPurpose": 
+  [
+    {
+      "id":111,
+      "title": "等级考试",
+      "canSelect": true
+    },
+    {
+      "id":112,
+      "title": "兴趣学习",
+      "canSelect": true
+    },
+    {
+      "id":113,
+      "title": "能力提升",
+      "canSelect": true
+    },
+    {
+      "id":114,
+      "title": "完成任务",
+      "canSelect": true
+    }
+  ]
+}

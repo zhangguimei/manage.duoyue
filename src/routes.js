@@ -1,3 +1,4 @@
+
 import auth from './api/auth';
 
 function redirectToLogin(nextState, replace) {

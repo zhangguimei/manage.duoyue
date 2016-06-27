@@ -127,7 +127,12 @@
   "335":{
     "name":"书籍管理",
     "icon":"ic-book",
-    "url":""
+    "url":"/resource/book"
+  },
+  "375":{
+    "name":"书籍查询",
+    "icon":"",
+    "url":"/resource/book/search"
   },
   "336":{
     "name":"期刊管理",

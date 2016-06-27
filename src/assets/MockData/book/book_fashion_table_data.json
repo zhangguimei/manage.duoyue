@@ -1,0 +1,76 @@
+{
+  "tableHeadData": {
+    "id": "ID",
+    "merchantName": "商户名称",
+    "wechatNum": "微信公号",
+    "relatedUser": "关联微信用户",
+    "unitPrice": "分账单价",
+    "fashionableValidity": "分账有效期",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1122,
+      "merchantName": "传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "111",
+      "unitPrice": "1.0",
+      "fashionableValidity": "2020-2-20",
+      "operation": ""
+    },
+    {
+      "id": 1233,
+      "merchantName": "公司",
+      "wechatNum": "数字传播",
+      "relatedUser": "54",
+      "unitPrice": "2.0",
+      "fashionableValidity": "2020-2-20",
+      "operation": ""
+    },
+    {
+      "id": 1322,
+      "merchantName": "数字传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "fs",
+      "unitPrice": "1.0",
+      "fashionableValidity": "2020-2-20",
+      "operation": ""
+    },
+    {
+      "id": 1413,
+      "merchantName": "数字中心",
+      "wechatNum": "数字传播",
+      "relatedUser": "dd",
+      "unitPrice": "2.0",
+      "fashionableValidity": "2020-2-20",
+      "operation": ""
+    }
+  ],
+  "userOption": [
+    {
+      "id": 0,
+      "value": "0",
+      "content": "无"
+    },
+    {
+      "id": 1122,
+      "value": "1",
+      "content": "传播"
+    },
+    {
+      "id": 1322,
+      "value": "2",
+      "content": "公司"
+    },
+    {
+      "id": 1233,
+      "value": "3",
+      "content": "武汉理工"
+    },
+    {
+      "id": 1413,
+      "value": "4",
+      "content": "数字中心"
+    }
+  ] 
+}
