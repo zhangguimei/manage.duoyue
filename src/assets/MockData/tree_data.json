@@ -1,6 +1,6 @@
 {
   "login": true,
-  "user": "长江出版社",
+  "user": "理工数传",
   "role": "-1",
   "fast": [
     {
@@ -61,7 +61,7 @@
     {
       "id": "392",
       "parentid": "380",
-      "name": "二维码应用",
+      "name": "微信二维码",
       "url": "/manage/weixin/ticket/",
       "target": "",
       "icon_min": "",
@@ -119,7 +119,7 @@
           "id": "329",
           "parentid": "324",
           "name": "用户管理",
-          "url": "/manage/user",
+          "url": "",
           "target": "",
           "icon_min": "",
           "icon_min_light": "",
@@ -188,10 +188,10 @@
           "icon_max_light": "",
           "data": [
             {
-              "id": "353",
+              "id": "357",
               "parentid": "331",
               "name": "书籍咨询",
-              "url": "",
+              "url": "/manage/comment/consult/",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",
@@ -227,19 +227,7 @@
               "id": "356",
               "parentid": "331",
               "name": "资源评论",
-              "url": "",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "357",
-              "parentid": "331",
-              "name": "商品咨询",
-              "url": "/manage/comment/consult/",
+              "url": "/manage/comment/source/",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",
@@ -250,8 +238,20 @@
             {
               "id": "710",
               "parentid": "331",
-              "name": "微信直播",
-              "url": "/manage/comment/weixinqiang/",
+              "name": "圈子评论",
+              "url": "/manage/comment/groups/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "804",
+              "parentid": "331",
+              "name": "专题评论",
+              "url": "/manage/comment/topic/",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",
@@ -460,43 +460,6 @@
           ]
         },
         {
-          "id": "336",
-          "parentid": "325",
-          "name": "期刊管理",
-          "url": "/manage/magazine/",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": [
-            {
-              "id": "713",
-              "parentid": "336",
-              "name": "期刊查询",
-              "url": "/manage/magazine/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "714",
-              "parentid": "336",
-              "name": "期刊分类",
-              "url": "/manage/magazine/magazinetype/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            }
-          ]
-        },
-        {
           "id": "337",
           "parentid": "325",
           "name": "电子资源",
@@ -607,55 +570,6 @@
           "data": []
         },
         {
-          "id": "716",
-          "parentid": "325",
-          "name": "视频管理",
-          "url": "",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": [
-            {
-              "id": "717",
-              "parentid": "716",
-              "name": "视频列表",
-              "url": "/manage/video/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "718",
-              "parentid": "716",
-              "name": "视频分类",
-              "url": "/manage/videotype/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            }
-          ]
-        },
-        {
-          "id": "723",
-          "parentid": "325",
-          "name": "验证码商品",
-          "url": "/manage/identifycode/",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": []
-        },
-        {
           "id": "727",
           "parentid": "325",
           "name": "标签体系",
@@ -691,6 +605,92 @@
               "data": []
             }
           ]
+        },
+        {
+          "id": "790",
+          "parentid": "325",
+          "name": "活动报名",
+          "url": "",
+          "target": "",
+          "icon_min": "",
+          "icon_min_light": "",
+          "icon_max": "",
+          "icon_max_light": "",
+          "data": [
+            {
+              "id": "791",
+              "parentid": "790",
+              "name": "活动列表",
+              "url": "/manage/match/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "793",
+              "parentid": "790",
+              "name": "表单选项",
+              "url": "/manage/optionlibrary/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "794",
+              "parentid": "790",
+              "name": "活动分类",
+              "url": "/manage/match/type/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            }
+          ]
+        },
+        {
+          "id": "799",
+          "parentid": "325",
+          "name": "专题管理",
+          "url": "/manage/topic/",
+          "target": "",
+          "icon_min": "",
+          "icon_min_light": "",
+          "icon_max": "",
+          "icon_max_light": "",
+          "data": [
+            {
+              "id": "800",
+              "parentid": "799",
+              "name": "专题列表",
+              "url": "/manage/topic/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "801",
+              "parentid": "799",
+              "name": "专题分类",
+              "url": "/manage/topic/type/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            }
+          ]
         }
       ]
     },
@@ -709,7 +709,7 @@
           "id": "408",
           "parentid": "341",
           "name": "公号列表",
-          "url": "weixin",
+          "url": "/manage/weixin/",
           "target": "",
           "icon_min": "",
           "icon_min_light": "",
@@ -732,7 +732,7 @@
               "id": "765",
               "parentid": "742",
               "name": "橱窗管理",
-              "url": "/showcase/",
+              "url": "",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",
@@ -799,74 +799,82 @@
               "icon_min_light": "",
               "icon_max": "",
               "icon_max_light": "",
-              "data":[{
-                "id": "743",
-                "parentid": "779",
-                "name": "资讯设置",
-                "url": "/manage/weixin/range/columnSetting.aspx",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              },{
-                "id": "744",
-                "parentid": "779",
-                "name": "书籍设置",
-                "url": "/manage/weixin/range/bookTypeSetting",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              },{
-                "id": "763",
-                "parentid": "779",
-                "name": "商品设置",
-                "url": "/manage/weixin/range/productSetting",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              },{
-                "id": "764",
-                "parentid": "779",
-                "name": "资源设置",
-                "url": "/manage/weixin/range/sourceTypeSetting",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              },{
-                "id": "795",
-                "parentid": "779",
-                "name": "报名设置",
-                "url": "/manage/weixin/range/matchSetting.aspx",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              },{
-                "id": "802",
-                "parentid": "779",
-                "name": "专题设置",
-                "url": "/manage/weixin/range/topicTypeSetting",
-                "target": "",
-                "icon_min": "",
-                "icon_min_light": "",
-                "icon_max": "",
-                "icon_max_light": "",
-                "data":[]
-              }]
-            },{
+              "data": [
+                {
+                  "id": "743",
+                  "parentid": "779",
+                  "name": "资讯设置",
+                  "url": "/manage/weixin/range/columnSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                },
+                {
+                  "id": "744",
+                  "parentid": "779",
+                  "name": "书籍设置",
+                  "url": "/manage/weixin/range/bookTypeSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                },
+                {
+                  "id": "763",
+                  "parentid": "779",
+                  "name": "商品设置",
+                  "url": "/manage/weixin/range/productSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                },
+                {
+                  "id": "764",
+                  "parentid": "779",
+                  "name": "资源设置",
+                  "url": "/manage/weixin/range/sourceTypeSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                },
+                {
+                  "id": "795",
+                  "parentid": "779",
+                  "name": "报名设置",
+                  "url": "/manage/weixin/range/matchSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                },
+                {
+                  "id": "802",
+                  "parentid": "779",
+                  "name": "专题设置",
+                  "url": "/manage/weixin/range/topicTypeSetting.aspx",
+                  "target": "",
+                  "icon_min": "",
+                  "icon_min_light": "",
+                  "icon_max": "",
+                  "icon_max_light": "",
+                  "data": []
+                }
+              ]
+            },
+            {
               "id": "780",
               "parentid": "742",
               "name": "栏目设置",
@@ -876,7 +884,19 @@
               "icon_min_light": "",
               "icon_max": "",
               "icon_max_light": "",
-              "data":[]
+              "data": []
+            },
+            {
+              "id": "781",
+              "parentid": "742",
+              "name": "风格模版",
+              "url": "/manage/weixin/wechatdemo/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
             }
           ]
         },
@@ -950,18 +970,6 @@
               "icon_max": "",
               "icon_max_light": "",
               "data": []
-            },
-            {
-              "id": "778",
-              "parentid": "378",
-              "name": "默认回复",
-              "url": "/manage/weixin/config/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
             }
           ]
         },
@@ -1011,6 +1019,67 @@
               "icon_max": "",
               "icon_max_light": "",
               "data": []
+            },
+            {
+              "id": "783",
+              "parentid": "379",
+              "name": "文本素材",
+              "url": "/manage/weixin/material/txt/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "796",
+              "parentid": "379",
+              "name": "标签查询",
+              "url": "/manage/weixin/label/user/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            }
+          ]
+        },
+        {
+          "id": "785",
+          "parentid": "341",
+          "name": "智能客服",
+          "url": "",
+          "target": "",
+          "icon_min": "",
+          "icon_min_light": "",
+          "icon_max": "",
+          "icon_max_light": "",
+          "data": [
+            {
+              "id": "786",
+              "parentid": "785",
+              "name": "客服列表",
+              "url": "/manage/weixin/custom/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
+              "id": "787",
+              "parentid": "785",
+              "name": "聊天记录",
+              "url": "/manage/weixin/custom/msgrecord/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
             }
           ]
         },
@@ -1028,7 +1097,7 @@
             {
               "id": "392",
               "parentid": "380",
-              "name": "二维码应用",
+              "name": "微信二维码",
               "url": "/manage/weixin/ticket/",
               "target": "",
               "icon_min": "",
@@ -1083,18 +1152,6 @@
                   "icon_max": "",
                   "icon_max_light": "",
                   "data": []
-                },
-                {
-                  "id": "401",
-                  "parentid": "394",
-                  "name": "红包统计",
-                  "url": "",
-                  "target": "",
-                  "icon_min": "",
-                  "icon_min_light": "",
-                  "icon_max": "",
-                  "icon_max_light": "",
-                  "data": []
                 }
               ]
             }
@@ -1128,30 +1185,6 @@
               "parentid": "381",
               "name": "图文消息群发",
               "url": "/manage/send/news/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "404",
-              "parentid": "381",
-              "name": "短信消息群发",
-              "url": "/manage/send/sms/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "405",
-              "parentid": "381",
-              "name": "邮件消息群发",
-              "url": "/manage/send/email/",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",
@@ -1356,18 +1389,6 @@
           "icon_max": "",
           "icon_max_light": "",
           "data": []
-        },
-        {
-          "id": "712",
-          "parentid": "340",
-          "name": "静态页更新",
-          "url": "/manage/website/staticPage/",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": []
         }
       ]
     },
@@ -1410,55 +1431,6 @@
               "parentid": "344",
               "name": "订单导出",
               "url": "/manage/orderform/export/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            }
-          ]
-        },
-        {
-          "id": "345",
-          "parentid": "327",
-          "name": "分销结算",
-          "url": "/manage/mention/",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": []
-        },
-        {
-          "id": "773",
-          "parentid": "327",
-          "name": "购物车管理",
-          "url": "/manage/orderform/cart/",
-          "target": "",
-          "icon_min": "",
-          "icon_min_light": "",
-          "icon_max": "",
-          "icon_max_light": "",
-          "data": [
-            {
-              "id": "774",
-              "parentid": "773",
-              "name": "购物车用户",
-              "url": "/manage/orderform/cart/user/",
-              "target": "",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "data": []
-            },
-            {
-              "id": "775",
-              "parentid": "773",
-              "name": "购物车商品",
-              "url": "/manage/orderform/cart/product/",
               "target": "",
               "icon_min": "",
               "icon_min_light": "",

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
 import {Map, is, fromJS} from 'immutable';
 import classNames from 'classnames';
-import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 import styles from './DatePicker.scss';
 
 const dateData = {

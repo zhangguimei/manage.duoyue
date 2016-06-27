@@ -5,15 +5,15 @@ import {Map, is, fromJS} from 'immutable';
 import {bindActionCreators} from 'redux';
 import {Scrollbars} from 'react-custom-scrollbars';
 import {Link} from 'react-router';
-import PageHeader from './Header/Header';
-import PageSidebar from './Sidebar/Sidebar';
+import Header from './Header/Header';
+import Sidebar from './Sidebar/Sidebar';
 
-import * as actions from '../../../actions/LoginActions';
-import {getTitle, getChildren} from '../../../UIComponent/Menu/ShowRoute';
-import Modal from '../../../UIComponent/Modals/Modal';
-import LoadingRect from '../../../UIComponent/Loading/LoadingRect';
-import {animations} from '../../../utils/animation';
-import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
+import * as actions from 'ActionsFolder/LoginActions';
+import {getTitle, getChildren} from 'UIComponentFolder/Menu/ShowRoute';
+import Modal from 'UIComponentFolder/Modals/Modal';
+import LoadingRect from 'UIComponentFolder/Loading/LoadingRect';
+import {animations} from 'UtilsFolder/animation';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
 import styles from './ManagePage.scss';
 
@@ -81,23 +81,9 @@ class ManagePage extends React.Component {
 
     return (
         <div className="ManagePage">
-          <PageHeader treeData={treeData}/>
-          <PageSidebar treeData={treeData} path={path}/>
+          <Header treeData={treeData}/>
+          <Sidebar treeData={treeData} path={path}/>
           <main className="Main" style={{left : sidebarLeft}}>
-            <ul className="breadcrumbs-list">
-              {
-                routes.map((item, index) =>
-                    <li key={index}>
-                      <Link
-                          onlyActiveOnIndex={true}
-                          activeClassName="breadcrumb-active"
-                          to={item.path || ''}>
-                        {item.path}
-                      </Link>
-                      {(index + 1) < depth && '\u2192'}
-                    </li>
-                )}
-            </ul>
             <Scrollbars style={{height:'100%'}}>
               <header className="page-title">
                 <span ref="headerText">{getTitle(treeData.menu, route)}</span>

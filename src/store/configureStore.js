@@ -22,9 +22,9 @@ export default function configureStore(history, initialState) {
   };
 
   let middlewares = [thunk, routerMiddleware(history)];
-  // if(debug) {
-  //   middlewares.push(logger({stateTransformer}));
-  // }
+  if(debug) {
+    middlewares.push(logger({stateTransformer}));
+  }
 
   const store = createStore(
       rootReducer,

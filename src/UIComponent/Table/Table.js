@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import {Map, is, fromJS} from 'immutable';
 import { Link } from 'react-router';
-import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
 import DefaultCheckBox from './CheckBox';
 

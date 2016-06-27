@@ -2,8 +2,8 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../../actions/MenuActions';
-import shouldUpdate from '../../utils/shouldUpdate';
+import * as actions from 'ActionsFolder/MenuActions';
+import shouldUpdate from 'UtilsFolder/shouldUpdate';
 
 import MenuList from './MenuList';
 import styles from "./Menu.scss";

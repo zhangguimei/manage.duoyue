@@ -5,9 +5,9 @@ import options from './ConstantOfFast';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Map, is, fromJS} from 'immutable';
-import * as actions from '../../../../actions/LoginActions';
-import {animations} from '../../../../utils/animation';
-import auth from '../../../../api/auth';
+import * as actions from 'ActionsFolder/LoginActions';
+import {animations} from 'UtilsFolder/animation';
+import auth from 'APIFolder/auth';
 
 @withRouter
 class FastMenu extends React.Component {

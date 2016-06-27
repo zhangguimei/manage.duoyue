@@ -1,10 +1,10 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import {fromJS} from 'immutable';
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage'
-import Tree from '../../UIComponent/Tree/Tree';
-import Dropdown from '../../UIComponent/Dropdown/Dropdown';
+import Modal from 'UIComponentFolder/Modals/Modal'
+import ShowPage from 'UIComponentFolder/Modals/ShowPage'
+import Tree from 'UIComponentFolder/Tree/Tree';
+import Dropdown from 'UIComponentFolder/Dropdown/Dropdown';
 import styles from './Tag.scss';
 
 class Tag extends React.Component {

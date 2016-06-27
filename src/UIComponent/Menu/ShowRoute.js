@@ -23,7 +23,6 @@ class ShowRoute extends React.Component {
 export default ShowRoute;
 
 export function getTitle(data, route, url) {
-  console.log('in', url);
   let getData = data;
   if (route.length === 0) return "Rays";
   for (let i = 0, l = route.length; i < l; i++) {

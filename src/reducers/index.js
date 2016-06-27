@@ -16,7 +16,6 @@ const rootReducer = combineReducers({
   form,
   book,
   routing,
-  form: formReducer,
   login,
   article
 });

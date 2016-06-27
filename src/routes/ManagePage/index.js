@@ -25,9 +25,9 @@ module.exports = {
   },
   getChildRoutes(location, cb) {
 
-    onEnter:  {
-      console.log(456);
-    }
+    // onEnter:  {
+    //   console.log(456);
+    // }
     if (!auth.loggedIn()) {
       console.log(123,location.pathname, cb)
     }

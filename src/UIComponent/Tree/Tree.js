@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Map, fromJS, is} from 'immutable';
 
-import {chooseTreeLeaves} from '../../actions/MenuActions';
+import {chooseTreeLeaves} from 'ActionsFolder/MenuActions';
 import TreeList from './TreeList';
 import styles from "./Tree.scss";
 

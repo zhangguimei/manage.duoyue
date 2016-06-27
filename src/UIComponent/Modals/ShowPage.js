@@ -1,8 +1,8 @@
 import React, {PropTypes}  from 'react';
 import {Scrollbars} from 'react-custom-scrollbars';
-import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';
-import {nodeDraggable, removeDraggable} from '../../../utils/nodeDraggable';
-import {nodeResizable, removeResizable} from '../../../utils/nodeResizable';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
+import {nodeDraggable, removeDraggable} from 'UtilsFolder/nodeDraggable';
+import {nodeResizable, removeResizable} from 'UtilsFolder/nodeResizable';
 
 import styles from './ShowPage.scss';
 

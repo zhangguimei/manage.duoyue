@@ -104,10 +104,40 @@
     "icon":"ic-circle",
     "url":"/user/circle"
   },
-  "759":{
+  "790":{
     "name":"活动管理",
     "icon":"ic-activity",
-    "url":""
+    "url":"/resource/match"
+  },
+  "791":{
+    "name":"活动列表",
+    "icon":"ic-activity",
+    "url":"/resource/match/list"
+  },
+  "793":{
+    "name":"表单选项",
+    "icon":"ic-activity",
+    "url":"/resource/match/optionlibrary"
+  },
+  "794":{
+    "name":"活动分类",
+    "icon":"ic-activity",
+    "url":"/resource/match/sort"
+  },
+  "799":{
+    "name":"专题管理",
+    "icon":"",
+    "url":"/resource/topic"
+  },
+  "800":{
+    "name":"专题列表",
+    "icon":"",
+    "url":"/resource/topic/list"
+  },
+  "801":{
+    "name":"专题分类",
+    "icon":"",
+    "url":"/resource/topic/sort"
   },
   "334":{
     "name":"文章资讯",
@@ -134,6 +164,11 @@
     "icon":"",
     "url":"/resource/book/search"
   },
+  "715":{
+    "name":"书籍分类",
+    "icon":"",
+    "url":"/resource/book/sort"
+  },
   "336":{
     "name":"期刊管理",
     "icon":"ic-periodical",
@@ -147,12 +182,22 @@
   "338":{
     "name":"商品管理",
     "icon":"ic-goods",
-    "url":""
+    "url":"/resource/product"
+  },
+  "721":{
+    "name":"商品查询",
+    "icon":"",
+    "url":"/resource/product/search"
+  },
+  "722":{
+    "name":"商品分类",
+    "icon":"",
+    "url":"/resource/product/sort"
   },
   "339":{
     "name":"众筹管理",
     "icon":"ic-crowdfunding",
-    "url":""
+    "url":"/resource/project"
   },
   "716":{
     "name":"视频管理",
@@ -302,7 +347,7 @@
   "344":{
     "name":"订单管理",
     "icon":"ic-order",
-    "url":""
+    "url":"/sales/orderform"
   },
   "345":{
     "name":"分销结算",

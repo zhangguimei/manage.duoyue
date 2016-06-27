@@ -4,9 +4,9 @@ import SidebarItem from './SidebarItem';
 import SidebarSubItem from './SidebarSubItem';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getTitle, getChildren,getUrlRoute} from '../../../../UIComponent/Menu/ShowRoute';
+import {getTitle, getChildren,getUrlRoute} from 'UIComponentFolder/Menu/ShowRoute';
 import {Map, is, fromJS} from 'immutable';
-import * as actions from '../../../../actions/MenuActions';
+import * as actions from 'ActionsFolder/MenuActions';
 import {Scrollbars} from 'react-custom-scrollbars';
 import styles from './Sidebar.scss';
 

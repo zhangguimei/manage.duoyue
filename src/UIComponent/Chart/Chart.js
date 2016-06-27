@@ -2,7 +2,7 @@ import React, {PropTypes}  from 'react';
 import ChartJS from  'chart.js';
 import {is, fromJS} from 'immutable';
 
-import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 import styles from './Chart.scss';
 
 const defaultColor = (opacity = 1) => {

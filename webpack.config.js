@@ -77,6 +77,12 @@ module.exports = {
       'react-redux': path.join(nodeModulesPath, '/react-redux/dist/react-redux.js'),
       'redux': path.join(nodeModulesPath, '/redux/dist/redux.js'),
       'config': path.join(__dirname, 'config.js'),
+      'APIFolder': path.join(__dirname, './src/api'),
+      'UtilsFolder': path.join(__dirname, './src/utils'),
+      'UIComponentFolder': path.join(__dirname, './src/UIComponent'),
+      'PageComponentFolder': path.join(__dirname, './src/components/PageComponent'),
+      'ActionsFolder': path.join(__dirname, './src/actions'),
+      'AssetsFolder': path.join(__dirname, './src/assets')
     }
   }
 };

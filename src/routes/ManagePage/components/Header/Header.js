@@ -3,8 +3,8 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
-import * as actions from '../../../../actions/MenuActions';
-import Menu from '../../../../UIComponent/Menu/Menu';
+import * as actions from 'ActionsFolder/MenuActions';
+import Menu from 'UIComponentFolder/Menu/Menu';
 import FastMenu from './FastMenu';
 import styles from './Header.scss';
 

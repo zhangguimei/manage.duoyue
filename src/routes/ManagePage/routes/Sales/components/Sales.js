@@ -16,4 +16,4 @@ Sales.propTypes = {
   children: PropTypes.any
 }
 
-export default Sales;
+module.exports = Sales;

@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
-import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
 import styles from './Pagination.scss';
 
