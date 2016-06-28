@@ -1,65 +1,16 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {Map, is, fromJS} from 'immutable';
-import * as actions from '../../../actions/LoginActions';
-import {withRouter} from 'react-router';
-import auth from '../../../api/auth';
 
-@withRouter
 class LoginForm extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state ={
       error: false
     }
   }
-
-  componentWillMount() {
-    const {username} = this.props;
-    if (auth.loggedIn()) {
-      this.props.router.replace('/');
-    }
-  }
-
-  submit(values, dispatch) {
-    let {actions:{logIn}} = this.props;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (!values.username) {
-          reject({username: '请输入账号'})
-        }
-        // else if (!['admin', 'admin2'].includes(values.username)) {
-        //   reject({username: '请输入正确的账号'})
-        // }
-        if (!values.password) {
-          reject({password: '请输入密码'})
-        }
-        // else if (values.password != "123456") {
-        //   reject({password: '请输入正确的密码'})
-        // }
-        else {
-
-          //logIn(values.username);
-          //this.context.router.go('/user');
-          auth.login(values.username, values.password, (loggedIn) => {
-            if(!loggedIn) {
-              this.setState({error: true});
-              reject();
-            }
-            if(location.state && location.state.nextPathname) {
-              this.props.router.replace(location.state.nextPathname);
-            }else {
-              this.props.router.replace('/');
-            }
-            logIn(values.username);
-            resolve();
-          });
-        }
-      }, 300)
-    })
+  submit(values) {
+    this.props.handleLogin(values);
   }
 
   render() {
@@ -89,14 +40,11 @@ class LoginForm extends React.Component {
   }
 }
 
-LoginForm.contextTypes = {
-  router: PropTypes.object.isRequired
-};
-
 LoginForm.PropTypes = {
   fields: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  submitting: PropTypes.bool.isRequired
+  submitting: PropTypes.bool.isRequired,
+  handleLogin: PropTypes.func.isRequired
 }
 
 LoginForm = reduxForm({
@@ -108,20 +56,4 @@ LoginForm = reduxForm({
   }
 })(LoginForm);
 
-function mapStateToProps(state) {
-  let {login:{username}} = fromJS(state).toJS();
-  return {
-    username
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginForm);
+export default LoginForm;
