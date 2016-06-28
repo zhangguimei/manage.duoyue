@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.ImageUpload {
+  width: 300px;
+  height: 200px;
+  border: 1px solid $grayD;
+  margin: 50px 0;
+  .img-box {
+    position: relative;
+    height: calc(100% - 30px);
+    border-bottom: 1px solid $grayD;
+    .file-img {
+      display: block;
+      padding: 5px;
+      width: 100%;
+      height: 100%;
+    }
+    .img-tip {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      line-height: 30px;
+      margin: auto;
+      text-align: center;
+    }
+  }
+  .input-file {
+    display: none;
+  }
+  .wrapper-label {
+    display: block;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    .upload-tip {
+      display: block;
+      overflow: hidden;
+      text-align: center;
+    }
+    .upload-btn {
+      padding: 0 10px;
+      color: $white;
+      background-color: $blueLight;
+    }
+  }
+}
