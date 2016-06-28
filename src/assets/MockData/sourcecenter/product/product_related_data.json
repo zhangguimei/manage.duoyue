@@ -1,0 +1,81 @@
+{
+  "tableHeadData": {
+    "article": "商品名称",
+    "price": "售价",
+    "classify": "分类"
+  },
+  "tableContentData": [
+    {
+      "id": 11,
+      "article": "Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)",
+      "price": "￥3338",
+      "classify": "笔记本"
+    },
+    {
+      "id": 12,
+      "article": "施华洛世奇2016情人节定制Dear Medium双心形项链锁骨链",
+      "price": "￥2238",
+      "classify": "首饰"
+    },
+    {
+      "id": 13,
+      "article": "Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)",
+      "price": "￥38",
+      "classify": "笔记本"
+    },
+    {
+      "id": 14,
+      "article": "布加迪威龙Super Sport",
+      "price": "￥34448",
+      "classify": "豪车"
+    },
+    {
+      "id": 15,
+      "article": "布加迪威龙Super Sport",
+      "price": "￥34448",
+      "classify": "豪车"
+    },
+    {
+      "id": 16,
+      "article": "Apple iPhone 6s 16GB 玫瑰金色 移动联通电信4G手机",
+      "price": "￥31238",
+      "classify": "手机"
+    },
+    {
+      "id": 17,
+      "article": "布加迪威龙Super Sport",
+      "price": "￥31328",
+      "classify": "豪车"
+    },
+    {
+      "id": 18,
+      "article": "施华洛世奇2016情人节定制Dear Medium双心形项链锁骨链",
+      "price": "￥38",
+      "classify": "首饰"
+    },
+    {
+      "id": 19,
+      "article": "Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)",
+      "price": "￥3118",
+      "classify": "笔记本"
+    },
+    {
+      "id": 20,
+      "article": "Apple iPhone 6s 16GB 玫瑰金色 移动联通电信4G手机",
+      "price": "￥32318",
+      "classify": "手机"
+    },
+    {
+      "id": 21,
+      "article": "Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)",
+      "price": "￥3568",
+      "classify": "笔记本"
+    },
+    {
+      "id": 22,
+      "article": "施华洛世奇2016情人节定制Dear Medium双心形项链锁骨链",
+      "price": "￥3668",
+      "classify": "首饰"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchMenuInfoData} from '../../../actions/BookActions';
+import {fetchMenuInfoData} from '../../../../../../../../../actions/BookActions';
 import BookMenuInfo from './BookMenuInfo'
-import Tree from '../../UIComponent/Tree/Tree';
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage'
+import Tree from 'UIComponentFolder/Tree/Tree';
+import Modal from 'UIComponentFolder/Modals/Modal'
+import ShowPage from 'UIComponentFolder/Modals/ShowPage'
 
 class BookMenu extends React.Component {
   constructor(props) {

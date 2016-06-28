@@ -189,8 +189,8 @@ export class InputTree extends React.Component {
 }
 
 InputTree.propTypes = {
-  field: PropTypes.object.isRequired,
-  treeData: PropTypes.array.isRequired,
+  field: PropTypes.object,
+  treeData: PropTypes.array,
   defaultPrompt: PropTypes.string,
   label: PropTypes.string
 };

@@ -1,0 +1,23 @@
+[
+	{
+		"basicType": "基本信息"
+	},
+	{
+		"tag": "标签"
+	},
+	{
+		"code": "二维码"
+	},
+	{
+		"salesRecord": "销售记录"
+	},
+	{
+		"browse": "浏览记录"
+	},
+	{
+		"subAccount": "分账设置"
+	},
+	{
+		"relatedRecommend": "相关推荐"
+	}
+]

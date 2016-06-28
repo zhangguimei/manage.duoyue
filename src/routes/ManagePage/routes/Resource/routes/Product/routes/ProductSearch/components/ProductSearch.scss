@@ -1,0 +1,373 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.ProductSearch {
+  padding: 100px 20px 0 20px;
+  .Table {
+    img {
+      height: 50px;
+    }
+    .thead-column-0 {
+      width: 5% !important;
+    }
+    .thead-column-1 {
+      width: 5% !important;
+    }
+    .thead-column-2 {
+      width: 5% !important;
+    }
+    .thead-column-3 {
+      width: 40% !important;
+    }
+    .thead-column-4 {
+      width: 5% !important;
+    }
+    .thead-column-5 {
+      width: 5% !important;
+    }
+    .thead-column-6 {
+      width: 5% !important;
+    }
+    .thead-column-7 {
+      width: 5% !important;
+    }
+    .thead-column-8 {
+      width: 5% !important;
+    }
+    .thead-column-9 {
+      width: 20% !important;
+    }
+    .product-desc, .product-sales {
+      font-size: 12px;
+      color: $gray6;
+    }
+    .ProductSearchOperation {
+      .operation-btn {
+        background: #f5f5f5;
+        color: $gray5;
+        @extend %f12;
+        padding: 0 12px;
+        line-height: 24px;
+        border-radius: 15px;
+        border: 1px solid $grayD;
+        margin: 0 5px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .operation-btn:hover {
+        background: #00aee8;
+        color: $white;
+        border: 1px solid #00aee8;
+      }
+    }
+    .ProductSearchTableTitleContent {
+      .product-title {
+        padding-bottom: 10px;
+      }
+      .valid-time, .create-time {
+        color: $gray9;
+      }
+    }
+
+  }
+  .Modal {
+    .ProductForm {
+      position: relative;
+      padding: 35px 50px 20px 50px;
+      .form-list {
+        .form-item {
+          padding-top: 20px;
+          font-size: 14px;
+        }
+        .base-info {
+          padding-top: 10px;
+        }
+        .InputTree {
+          font-size: 13px;
+          .tree-component {
+            top: 56px;
+          }
+
+        }
+        .Tree {
+          margin-top: 0;
+          border: 1px solid $grayD;
+          width: 200px;
+          z-index: 10000;
+          background-color: $white;
+          padding: 10px;
+        }
+        .info-title {
+          font-size: 16px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid $grayD;
+          color: $red;
+        }
+      }
+    }
+    .product-tab-box {
+      padding: 20px 0 0 50px;
+      border-bottom: 1px solid $grayD;
+      position: relative;
+      .product-item {
+        cursor: pointer;
+        color: $gray5;
+        font-size: 14px;
+        padding: 5px 15px;
+        margin-right: 2px;
+        background-color: #f8f8f8;
+        border-left: 1px solid $grayD;
+        border-top: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+        margin-bottom: -1px;
+      }
+      .over {
+        background-color: $white;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+  .TablePage {
+    padding: 20px;
+    .Table {
+      img {
+        height: 50px;
+      }
+      .thead-column-0 {
+        width: 5% !important;
+      }
+      .thead-column-1 {
+        width: 5% !important;
+      }
+      .thead-column-2 {
+        width: 5% !important;
+      }
+      .thead-column-3 {
+        width: 5% !important;
+      }
+      .thead-column-4 {
+        width: 5% !important;
+      }
+      .thead-column-5 {
+        width: 5% !important;
+      }
+      .thead-column-6 {
+        width: 5% !important;
+      }
+      .thead-column-7 {
+        width: 5% !important;
+      }
+      .product-desc, .product-sales {
+        font-size: 12px;
+        color: $gray6;
+      }
+      .ProductSearchOperation {
+        .operation-btn {
+          background: #f5f5f5;
+          color: $gray5;
+          @extend %f12;
+          padding: 0 12px;
+          line-height: 24px;
+          border-radius: 15px;
+          border: 1px solid $grayD;
+          margin: 0 5px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .operation-btn:hover {
+          background: #00aee8;
+          color: $white;
+          border: 1px solid #00aee8;
+        }
+      }
+      .ProductSearchTableTitleContent {
+        .product-title {
+          padding-bottom: 10px;
+        }
+        .valid-time, .create-time {
+          color: $gray9;
+        }
+      }
+
+    }
+  }
+  .BookRelatedRecommend {
+    padding: 20px;
+    .related-info {
+      border: 1px solid $grayD;
+      width: 20%;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+      .article-info {
+        padding: 20px;
+        color: $gray7;
+      }
+      .related-article-list {
+        .related-article-item {
+          border-top: 1px solid $grayD;
+          padding: 5px 10px;
+          font-size: 12px;
+          .related-article-title {
+            line-height: 20px;
+            color: $gray3;
+            text-align: left;
+            padding: 10px 0;
+          }
+          .related-article-delete {
+            text-align: right;
+            border-top: 1px dotted $grayE;
+            padding: 5px 0;
+          }
+        }
+      }
+      .no-related {
+        padding: 20px;
+        color: $gray3;
+        border-top: 1px solid $grayD;
+      }
+    }
+    .related-table-box {
+      margin-left: 2%;
+      padding: 20px;
+      border: 1px solid $grayD;
+      width: 78%;
+      .related-search-box {
+        border-bottom: 1px solid $grayD;
+        padding-bottom: 10px;
+        .InputTree {
+          display: inline-block;
+          width: 350px;
+          .tree-box {
+            .label-tree {
+              display: inline-block;
+              padding-right: 10px;
+            }
+            .tree-component {
+              border: 1px solid $grayD;
+              top: 35px;
+              left: 34px;
+            }
+          }
+        }
+        .InputF {
+          display: inline-block;
+          .label-span {
+            display: inline-block;
+            padding-right: 10px;
+          }
+        }
+        .inline {
+          display: inline-block;
+        }
+      }
+      .Table {
+        margin-top: 10px;
+        .thead-column-0 {
+          width: 10% !important;
+        }
+        .thead-column-1 {
+          width: 5% !important;
+        }
+        .thead-column-2 {
+          width: 5% !important;
+        }
+        .thead-column-3 {
+          width: 5% !important;
+        }
+      }
+    }
+  }
+  .product-pic-box {
+    width: 242px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    .product-pic {
+      border: 1px solid $grayD;
+    }
+    .product-img {
+      width: 240px;
+      height: 240px;
+      border: none;
+    }
+    .product-pic-delate {
+      border-top: 1px solid $grayD;
+      width: 240px;
+      text-align: center;
+      margin-top: 3px;
+      cursor: pointer;
+      background-color: $grayF;
+    }
+  }
+  .upload-again {
+    width: 240px;
+    margin-top: 3px;
+    cursor: pointer;
+  }
+  .info-input {
+    border: 1px solid $grayD;
+    font-size: 16px;
+    padding: 8px;
+    height: 36px;
+  }
+  .input-model {
+    margin-top: 10px;
+    display: block;
+    .DatePicker {
+      display: inline-block;
+      background-color: $white;
+      .date-input-wrap {
+        background-color: $white;
+      }
+      .ic {
+        text-align: center;
+      }
+    }
+    span {
+      color: $gray3;
+    }
+
+  }
+  .money {
+    &:after {
+      content: "元";
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+  .input-title {
+    font-size: 13px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  .require {
+    &:before {
+      content: "*";
+      color: #f00;
+      margin-right: 5px;
+    }
+  }
+  .goods-desc:after {
+    content: "(200字以内)";
+    color: $gray9;
+    font-size: 10px;
+  }
+  .w100 {
+    width: 100px;
+  }
+  .w200 {
+    width: 200px;
+  }
+  .w300 {
+    width: 300px;
+  }
+  .w750 {
+    width: 750px;
+  }
+  .marginL40 {
+    margin-left: 40px;
+  }
+  .marginL10 {
+    margin-left: 10px;
+  }
+}

@@ -1,9 +1,9 @@
 import React, {PropTypes}  from 'react';
 import {Scrollbars} from 'react-custom-scrollbars';
+
 import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 import {nodeDraggable, removeDraggable} from 'UtilsFolder/nodeDraggable';
 import {nodeResizable, removeResizable} from 'UtilsFolder/nodeResizable';
-
 import styles from './ShowPage.scss';
 
 class ShowPage extends React.Component {
@@ -81,16 +81,16 @@ class ShowPage extends React.Component {
       top: fullScreen ? 0 : top
     };
     return (
-      <div className={`ShowPage${ className}${fullScreen?' full-screen':''}`} style={contentStyle} ref="ShowPage">
+      <div className={`ShowPage ${ className}${fullScreen?' full-screen':''}`} style={contentStyle} ref="ShowPage">
         <header className="header clearfix" ref="Header">
           <span className="title left">{title}</span>
           <i className="ic ic-close right" onClick={::this.closePage}/>
           <i className={`ic ${fullScreen?'ic-backFullScreen':'ic-fullScreen'} right`} onClick={::this.toggleFullScreen}/>
         </header>
-        <div className={`content${showFooter||ftChildren?' show-footer':''}`}>
-          {/*<Scrollbars autoHide={true} style={{height:'100%'}}>*/}
-          {children}
-          {/*</Scrollbars>*/}
+        <div className={`content${(showFooter||ftChildren)?' show-footer':''}`}>
+          <Scrollbars autoHide={true} style={{height:'100%'}}>
+            {children}
+          </Scrollbars>
         </div>
         {
           showFooter &&
@@ -114,21 +114,21 @@ class ShowPage extends React.Component {
  * @param 组件参数介绍
  * @type {{
  * width: '弹出层页面宽度,默认90%可不传',
- * height: '弹出层页面高度，默认90%可不传', 
- * title: '弹出层页面标题', 
- * closeShowPage: '关闭弹层函数', 
+ * height: '弹出层页面高度，默认90%可不传',
+ * title: '弹出层页面标题',
+ * closeShowPage: '关闭弹层函数',
  * submitForm: '提交表单方法',
- * children: '页面内容', 
- * className: '顶层ShowPage样式类名称', 
- * showFooter: '是否显示底部', 
+ * children: '页面内容',
+ * className: '顶层ShowPage样式类名称',
+ * showFooter: '是否显示底部',
  * ftChildren: '底部内容'
  * }}
  */
 ShowPage.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  title: PropTypes.string.isRequired,
-  closeShowPage: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  closeShowPage: PropTypes.func,
   submitForm: PropTypes.func,
   children: PropTypes.any,
   className: PropTypes.string,

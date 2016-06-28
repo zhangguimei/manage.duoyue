@@ -1,5 +1,5 @@
 "use strict";
-import {require} from '../../../../utils/validations';
+import {require} from 'Utils/validations';
 
 const Validate = (values) => {
   const errors = {};
