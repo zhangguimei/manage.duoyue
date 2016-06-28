@@ -1,28 +1,19 @@
 'use strict';
 
-const isString = (value) => {
-  return typeof value === "string";
-};
-
-const regs = {
+export const regs = {
   url: "^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$",
   email: "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$",
-  phone: "^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$",
-  int: "^[1-9][0-9]*$"
-};
-
-export const require = (values, errors, fieldNames) => {
-  let fieldNamesArray = [];
-  if(typeof(fieldNames) == "string") {
-    fieldNamesArray = [fieldNames];
-  } else if(fieldNames instanceof Array) {
-    fieldNamesArray = fieldNames;
-  }
-  for(let fieldName of fieldNamesArray) {
-    if(!values[fieldName]) {
-      errors[fieldName] = "必填";
-    }
-  }
+  mobile: "^1[3|4|5|8][0-9]{9}$",
+  idCard: "^\d{15}(\d{2}[A-Za-z0-9])?$",
+  currency: "^\d+(\.\d+)?$",
+  qq: "^[1-9]\d{4,8}$",
+  number: "^[1-9][0-9]*$",
+  zip: "^[1-9]\d{5}$",
+  double: "^[-\+]?\d+(\.\d+)?$",
+  english: "^[A-Za-z]+$",
+  chinese: "^[\u0391-\uFFE5]+$",
+  unSafe: "^(.{0,5})$|\s",
+  date: "(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)"
 };
 
 function validation(reg) {
@@ -35,14 +26,8 @@ function validation(reg) {
   }
 }
 
-//邮箱验证
-export const isEmail = (value) => {
-  return validation("email")(value);
-};
-
-//手机号码验证
-export const isPhoneNumber = (value) => {
- return validation("phone")(value);
+export const isString = (value) => {
+  return typeof value === "string";
 };
 
 //URL验证
@@ -50,7 +35,59 @@ export const isUrl = (value) => {
   return validation("url")(value);
 };
 
+//邮箱验证
+export const isEmail = (value) => {
+  return validation("email")(value);
+};
+
+//手机号码验证
+export const isMobile = (value) => {
+  return validation("mobile")(value);
+};
+
 //正整数验证
-export const isInt = (value) => {
-  return validation("int")(value);
+export const isNumber = (value) => {
+  return validation("number")(value);
+};
+
+//验证必填（可验证数组）
+export const requiredValid = (value) => {
+  if(typeof(value) == "string") {
+    return !!value;
+  }else if(value instanceof Array) {
+    if(value.length === 0) { return false; }
+    for(let item of value) {
+      if(typeof(item) !== "number" && !item) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+//验证最大长度
+export const maxLengthValid = (value, maxLength) => {
+  let length;
+  if(typeof(value) === "number") {
+    length = String(value).length;
+  } else if(value instanceof Array || typeof(value) === 'string') {
+    length = value.length;
+  }
+  return maxLength > 0 && length <= maxLength;
+};
+
+//验证最小长度
+export const minLengthValid = (value, minLength) => {
+  let length;
+  if(typeof(value) === "number") {
+    length = String(value).length;
+  } else if(value instanceof Array || typeof(value) === 'string') {
+    length = value.length;
+  }
+  return minLength > 0 && length >= minLength;
+};
+
+//验证指定正则
+export const patternValid = (value, pattern) => {
+  return pattern && new RegExp(pattern).test(value);
 };

@@ -2,8 +2,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
-
 import styles from './CheckBox.scss';
 
 class CheckBox extends React.Component {
@@ -13,21 +11,30 @@ class CheckBox extends React.Component {
     index: -1,
     value: "",
     name: "",
-    title: ""
+    title: "",
+    disabled: false
   };
 
   render() {
-    let { checked, className, checkBoxOnClick, name, index, value, defaultChecked, title } = this.props;
+    let { checked, className, checkBoxOnClick, name, index, value, defaultChecked, title, disabled } = this.props;
     let uniqCode = Math.random();
+    let generalProps = {
+      type: "checkbox",
+      name: name,
+      className: "input-checkbox",
+      defaultValue: value
+    };
+    if(disabled) {
+      generalProps.disabled = "disabled";
+    }
     return (
       <div className={classNames("CheckBox center", {"checked": checked})}>
         {
           defaultChecked ?
-            <input name={name} id={`checkbox${index}-${uniqCode}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
-                   defaultValue={value} defaultChecked/>
+            <input {...generalProps} id={`checkbox${index}-${uniqCode}`} onClick={() => checkBoxOnClick(index)}
+                                     defaultChecked/>
             :
-            <input name={name} id={`checkbox${index}-${uniqCode}`} type="checkbox" onClick={() => checkBoxOnClick(index)}
-                   defaultValue={value}/>
+            <input {...generalProps} id={`checkbox${index}-${uniqCode}`} onClick={() => checkBoxOnClick(index)} />
         }
         <label className={`checkbox-label ${className}`} htmlFor={`checkbox${index}-${uniqCode}`}>
           <span className="checkbox-symbol"/>
@@ -45,7 +52,8 @@ CheckBox.propTypes = {
   index: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   defaultChecked: PropTypes.bool,
-  title: PropTypes.string
+  title: PropTypes.string,
+  disabled: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
 export default CheckBox;
