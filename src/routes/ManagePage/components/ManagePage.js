@@ -19,8 +19,8 @@ import styles from './ManagePage.scss';
 
 class ManagePage extends React.Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       showWaitModal: false
     };
@@ -49,9 +49,6 @@ class ManagePage extends React.Component {
   componentWillMount() {
     const {username, actions:{fetchTreedata}} = this.props;
     console.log('logged', username);
-    if (!username) {
-      //this.context.router.push('/login');
-    }
     this.tree = fetchTreedata(username).tree;
   }
 
@@ -109,9 +106,6 @@ ManagePage.propTypes = {
   username: PropTypes.string
 };
 
-ManagePage.contextTypes = {
-  router: PropTypes.object.isRequired
-};
 
 function mapStateToProps(state, ownProps) {
   let {login:{username}, menu} = fromJS(state).toJS();

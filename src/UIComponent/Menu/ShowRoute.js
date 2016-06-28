@@ -22,8 +22,3 @@ class ShowRoute extends React.Component {
 }
 
 export default ShowRoute;
-
-
-
-
-

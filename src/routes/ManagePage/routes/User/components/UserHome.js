@@ -7,15 +7,35 @@
 'use strict';
 
 import React from 'react'
+import styles from './User.scss';
 
 class UserHome extends React.Component {
   render() {
     return (
         <div className="UserHome">
-          1508
-          粉丝
-          45
-          书籍
+          <div className="userhome-title">数字中心</div>
+          <ul className="main">
+            <li className="tips-box">
+              <span className="data-info">28</span>
+              <span className="data-item">粉丝</span>
+            </li>
+            <li className="tips-box">
+              <span className="data-info">8</span>
+              <span className="data-item">书籍</span>
+            </li>
+            <li className="tips-box">
+              <span className="data-info">111</span>
+              <span className="data-item">文章</span>
+            </li>
+            <li className="tips-box">
+              <span className="data-info">222</span>
+              <span className="data-item">浏览</span>
+            </li>
+            <li className="tips-box">
+              <span className="data-info">2333</span>
+              <span className="data-item">评论</span>
+            </li>
+          </ul>
         </div>
     )
   }
