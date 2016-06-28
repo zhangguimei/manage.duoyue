@@ -1,6 +1,5 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import styles from './Resource.scss';
 
 class Resource extends React.Component {
   render() {
