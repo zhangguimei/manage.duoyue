@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import styles from './QRcode.scss';
 
-const data = require("../../../assets/MockData/sourcecenter/code_data.json");
+const data = require("AssetsFolder/MockData/sourcecenter/code_data.json");
 
 class QRcode extends React.Component {
 

@@ -1,6 +1,6 @@
 import {reducer as formReducer } from 'redux-form';
 import * as normalize from '../components/PageTest/ValidationForm/Normalize';
-
+// /components/PageTest/ValidationForm/Normalize
 const form = formReducer.normalize({
   article: {
     range: value => Number(value) || "0",

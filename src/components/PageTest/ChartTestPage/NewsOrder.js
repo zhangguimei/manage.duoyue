@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {Map, is, fromJS} from 'immutable';
 
-import Chart from '../../UIComponent/Chart/Chart';
-import DatePicker from '../../UIComponent/DatePicker/DatePicker';
-import Tab from '../../UIComponent/Tab/Tab';
+import Chart from '../../../UIComponent/Chart/Chart';
+import DatePicker from '../../../UIComponent/DatePicker/DatePicker';
+import Tab from '../../../UIComponent/Tab/Tab';
 import TableTestPage from '../TableTestPage/TableTest';
 import {rand} from './UserAnalysis.js';
 import shouldComponentUpdate from '../../../utils/shouldComponentUpdate';

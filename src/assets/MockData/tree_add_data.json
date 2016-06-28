@@ -37,7 +37,7 @@
   "329":{
     "name":"用户管理",
     "icon":"ic-user",
-    "url":""
+    "url":"/user/usermanage/"
   },
   "349":{
     "name":"用户查询",
@@ -62,22 +62,82 @@
   "331":{
     "name":"咨询/评论",
     "icon":"ic-comment",
-    "url":""
+    "url":"/user/comment"
+  },
+  "353":{
+    "name":"书籍咨询",
+    "icon":"",
+    "url":"/user/comment/bookconsult"
+  },
+  "354":{
+    "name":"文章评论",
+    "icon":"",
+    "url":"/user/comment/sitecolumn"
+  },
+  "355":{
+    "name":"书籍评论",
+    "icon":"",
+    "url":"/user/comment/book"
+  },
+  "356":{
+    "name":"资源评论",
+    "icon":"",
+    "url":"/user/comment/source"
+  },
+  "357":{
+    "name":"商品咨询",
+    "icon":"",
+    "url":"/user/comment/consult"
+  },
+  "710":{
+    "name":"微信直播",
+    "icon":"",
+    "url":"/user/comment/weixinqiang"
   },
   "332":{
     "name":"作者管理",
     "icon":"ic-author",
-    "url":""
+    "url":"/user/author"
   },
   "333":{
     "name":"圈子管理",
     "icon":"ic-circle",
-    "url":""
+    "url":"/user/circle"
   },
-  "759":{
+  "790":{
     "name":"活动管理",
     "icon":"ic-activity",
-    "url":""
+    "url":"/resource/match"
+  },
+  "791":{
+    "name":"活动列表",
+    "icon":"ic-activity",
+    "url":"/resource/match/list"
+  },
+  "793":{
+    "name":"表单选项",
+    "icon":"ic-activity",
+    "url":"/resource/match/optionlibrary"
+  },
+  "794":{
+    "name":"活动分类",
+    "icon":"ic-activity",
+    "url":"/resource/match/sort"
+  },
+  "799":{
+    "name":"专题管理",
+    "icon":"",
+    "url":"/resource/topic"
+  },
+  "800":{
+    "name":"专题列表",
+    "icon":"",
+    "url":"/resource/topic/list"
+  },
+  "801":{
+    "name":"专题分类",
+    "icon":"",
+    "url":"/resource/topic/sort"
   },
   "334":{
     "name":"文章资讯",
@@ -104,6 +164,11 @@
     "icon":"",
     "url":"/resource/book/search"
   },
+  "715":{
+    "name":"书籍分类",
+    "icon":"",
+    "url":"/resource/book/sort"
+  },
   "336":{
     "name":"期刊管理",
     "icon":"ic-periodical",
@@ -117,12 +182,22 @@
   "338":{
     "name":"商品管理",
     "icon":"ic-goods",
-    "url":""
+    "url":"/resource/product"
+  },
+  "721":{
+    "name":"商品查询",
+    "icon":"",
+    "url":"/resource/product/search"
+  },
+  "722":{
+    "name":"商品分类",
+    "icon":"",
+    "url":"/resource/product/sort"
   },
   "339":{
     "name":"众筹管理",
     "icon":"ic-crowdfunding",
-    "url":""
+    "url":"/resource/project"
   },
   "716":{
     "name":"视频管理",
@@ -173,6 +248,46 @@
     "name":"发票选项",
     "icon":"",
     "url":"/operate/display/invoice"
+  },
+  "779":{
+    "name":"展示范围",
+    "icon":"",
+    "url":"/operate/display/showrange"
+  },
+  "743":{
+    "name":"资讯设置",
+    "icon":"",
+    "url":"/operate/display/showrange/columnsetting"
+  },
+  "744":{
+    "name":"书籍设置",
+    "icon":"",
+    "url":"/operate/display/showrange/booktypesetting"
+  },
+  "763":{
+    "name":"商品设置",
+    "icon":"",
+    "url":"/operate/display/showrange/productsetting"
+  },
+  "764":{
+    "name":"资源设置",
+    "icon":"",
+    "url":"/operate/display/showrange/sourcetypesetting"
+  },
+  "792":{
+    "name":"报名设置",
+    "icon":"",
+    "url":"/operate/display/showrange/matchsetting"
+  },
+  "802":{
+    "name":"专题设置",
+    "icon":"",
+    "url":"/operate/display/showrange/topictypesetting"
+  },
+  "780":{
+    "name":"栏目设置",
+    "icon":"",
+    "url":"/operate/display/viewrange"
   },
   "378":{
     "name":"基础配置",
@@ -232,7 +347,7 @@
   "344":{
     "name":"订单管理",
     "icon":"ic-order",
-    "url":""
+    "url":"/sales/orderform"
   },
   "345":{
     "name":"分销结算",

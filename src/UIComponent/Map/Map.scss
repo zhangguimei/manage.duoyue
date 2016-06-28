@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.HeatMap {
+  position: relative;
+  .map-desc {
+    position: absolute;
+    left: 20px;
+    top: 10%;
+    h5 {
+      float: left;
+      line-height: 20px;
+    }
+    dl {
+      float: left;
+      dt, dd {
+        float: left;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.open-info {
+  width: 280px;
+  .pic {
+    float: left;
+    width: 50px;
+    margin-right: 10px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .text {
+    overflow: hidden;
+    .name {
+      padding-top:4px;
+      @extend %ellipsis;
+    }
+    .time {
+      margin-top:4px;
+      @extend %f12;
+      color:$colorTextLight;
+    }
+  }
+}

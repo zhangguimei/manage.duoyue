@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage';
+import Modal from '../../../UIComponent/Modals/Modal'
+import ShowPage from '../../../UIComponent/Modals/ShowPage';
 import ValidationForm from './ValidationForm';
 import styles from './ValidationForm.scss';
 

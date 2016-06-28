@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@import "../../assets/sass/function";
+
+$success: #249426;
+$error: #F22613;
+
+.Message {
+  //border-radius: 3px;
+  //padding: 20px 40px 20px 70px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+  color: $colorText;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  position: relative;
+  text-align: center;
+  //width: 128px;
+  @include props-dpr(padding-top padding-right padding-bottom padding-left border-radius width, 20px 40px 20px 70px 3px 128px);
+
+  @include center-translate;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    //width: 40px;
+    color: $white;
+    //padding-top: 18px;
+    font-family: "iconfont" !important;
+    text-align: center;
+    //font-size: 18px;
+    @include props-dpr(width padding-top font-size, 40px 18px 18px);
+  }
+  &.message-success {
+    background-color: $white;
+    &:before {
+      background-color: $success;
+      content: "\e606";
+    }
+  }
+  &.message-error {
+    background-color: $white;
+    &:before {
+      background-color: $error;
+      content: "\e608";
+    }
+  }
+  .title {
+    display: inline-block;
+    //padding-left: 10px;
+    @include props-dpr(padding-left, 10px);
+  }
+}

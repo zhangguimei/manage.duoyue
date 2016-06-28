@@ -1,7 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import ErrorShow from './ErrorShow';
-import Tree from '../../UIComponent/Tree/Tree';
+import Tree from '../../../UIComponent/Tree/Tree';
 /*
 * 1. InputF must have props: field. This is the flag of this input.
 * 2. InputF can not be used as type: file.

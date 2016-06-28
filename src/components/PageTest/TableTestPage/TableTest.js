@@ -1,9 +1,9 @@
 "use strict";
 import React from 'react';
 
-import Table from '../../UIComponent/Table/Table';
-import CheckBox from '../../UIComponent/Table/CheckBox';
-import Pagination from '../../UIComponent/Pagination/Pagination';
+import Table from '../../../UIComponent/Table/Table';
+import CheckBox from '../../../UIComponent/Table/CheckBox';
+import Pagination from '../../../UIComponent/Pagination/Pagination';
 
 import styles from './TableTest.scss';
 
