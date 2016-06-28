@@ -1,6 +1,6 @@
 'use strict';
 import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
-import {parseJson} from '../UIComponent/Menu/ShowRoute';
+import {parseJson} from 'UtilsFolder/getDataInfo';
 import auth from '../api/auth';
 import { getBookType } from '../api/axiosServices';
 

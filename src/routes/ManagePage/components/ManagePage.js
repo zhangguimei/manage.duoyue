@@ -9,7 +9,7 @@ import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 
 import * as actions from 'ActionsFolder/LoginActions';
-import {getTitle, getChildren} from 'UIComponentFolder/Menu/ShowRoute';
+import {getTitle, getChildren} from 'UtilsFolder/getDataInfo';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import LoadingRect from 'UIComponentFolder/Loading/LoadingRect';
 import {animations} from 'UtilsFolder/animation';
@@ -34,8 +34,7 @@ class ManagePage extends React.Component {
     randtime = randtime > 990 ? randtime : 0;
     if (!randtime) {
       return
-    }
-    ;
+    };
     this.setState({
       showWaitModal: true
     });

@@ -1,14 +1,21 @@
+/*
+ *  Project : Menu Guide
+ *  Date    : 2016.06.28
+ *  Author  : Paco
+ *  Declare : Website Menu
+ *  UseAge  : You need provide a json tree, which contain data , url and name
+ *
+ */
 'use strict';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from 'ActionsFolder/MenuActions';
-import shouldUpdate from 'UtilsFolder/shouldUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
 
-@shouldUpdate()
 class Menu extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -16,8 +23,9 @@ class Menu extends React.Component {
       mainIndex: 0,  //Menu主页的显示index
       route: [] //当前鼠标滑过的路线
     };
+    this.shouldComponentUpdate = shouldComponentUpdate.bind(this)
   }
-
+  
   moveItem(e, nodeRoute) {
     e.stopPropagation();
     e.preventDefault();
