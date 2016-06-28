@@ -14,7 +14,7 @@ module.exports = {
         require('./routes/Book'),
         require('./routes/Product'),
         require('./routes/Topic'),
-        require('./routes/Project'),
+        require('./routes/CrowdFunding'),
         require('./routes/Match')
       ])
     })

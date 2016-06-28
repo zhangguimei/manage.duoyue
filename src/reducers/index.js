@@ -6,8 +6,8 @@ import form from './form';
 import book from './book';
 import login from './login';
 import article from './article';
+import crowdfunding from './crowdfunding';
 import { routerReducer as routing } from 'react-router-redux';
-import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
   menu,
@@ -17,7 +17,8 @@ const rootReducer = combineReducers({
   book,
   routing,
   login,
-  article
+  article,
+  crowdfunding
 });
 
 export default rootReducer;
