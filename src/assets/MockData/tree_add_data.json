@@ -104,14 +104,14 @@
     "icon":"ic-circle",
     "url":"/user/circle"
   },
-  "790":{
+  "759":{
     "name":"活动管理",
     "icon":"ic-activity",
     "url":"/resource/match"
   },
-  "791":{
+  "760":{
     "name":"活动列表",
-    "icon":"ic-activity",
+    "icon":"",
     "url":"/resource/match/list"
   },
   "793":{
@@ -126,7 +126,7 @@
   },
   "799":{
     "name":"专题管理",
-    "icon":"",
+    "icon":"ic-news",
     "url":"/resource/topic"
   },
   "800":{
@@ -214,6 +214,11 @@
     "icon":"ic-tagfill",
     "url":""
   },
+  "790":{
+    "name":"活动报名",
+    "icon":"ic-signup",
+    "url":""
+  },
   "408":{
     "name":"公号列表",
     "icon":"ic-weixinfill",
@@ -297,6 +302,11 @@
   "379":{
     "name":"用户管理",
     "icon":"ic-usersetting",
+    "url":""
+  },
+  "785":{
+    "name":"智能客服",
+    "icon":"ic-customer",
     "url":""
   },
   "380":{

@@ -1,11 +1,15 @@
-
-'use strict'
+/*
+ * Created on 2016-06-29 10:27
+ *
+ * By Ao Zhen Zhen
+ */
+'use strict';
 import React from 'react';
 import ArticleContent from './ArticleContent';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import styles from './ArticleSearch.scss';
 
-let data = require("AssetsFolder/MockData/sourcecenter/source_center_data.json");
+let data = require("AssetsFolder/MockData/article/article_data.json");
 class ArticleSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -25,8 +29,8 @@ class ArticleSearch extends React.Component {
 //选中改变每页显示的个数和页数
   selectOnChange(e) {
     let selectDOM = e.target,
-        nextitemsForOnePage = selectDOM.options[selectDOM.options.selectedIndex].value,
-        nextPageIndex;
+      nextitemsForOnePage = selectDOM.options[selectDOM.options.selectedIndex].value,
+      nextPageIndex;
     const {pageIndex, itemsForOnePage} = this.state;
     nextitemsForOnePage = parseInt(nextitemsForOnePage, 10);
     nextPageIndex = Math.ceil((itemsForOnePage * (pageIndex - 1) + 1) / nextitemsForOnePage);
@@ -38,13 +42,13 @@ class ArticleSearch extends React.Component {
 
   render() {
     const {itemsForOnePage, pageIndex} = this.state,
-        totalPages = Math.ceil(data.length / itemsForOnePage);   //获取总页数
+      totalPages = Math.ceil(data.length / itemsForOnePage);   //获取总页数
     return (
-        <div className="ArticleSearch">
-          <ArticleContent data={data} itemsForOnePage={itemsForOnePage} pageIndex={pageIndex}/>
-          <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}
-                      selectOnChange={::this.selectOnChange}/>
-        </div>
+      <div className="ArticleSearch">
+        <ArticleContent data={data} itemsForOnePage={itemsForOnePage} pageIndex={pageIndex}/>
+        <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}
+                    selectOnChange={::this.selectOnChange}/>
+      </div>
     )
   }
 }

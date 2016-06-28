@@ -7,7 +7,7 @@ module.exports = {
       cb(null, require('./components/Resource'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
         require('./routes/Article'),

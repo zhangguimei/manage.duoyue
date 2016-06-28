@@ -1,14 +1,15 @@
+'use strict';
 import React, {PropTypes} from 'react';
-import styles from './recommend.scss';
-import Table from '../BookManage/BookSearch/Table/Table';
 import {reduxForm} from 'redux-form';
-import {InputTree} from '../PageTest/ValidationForm/ValidationComponents';
-import Pagination from '../UIComponent/Pagination/Pagination';
+import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import {InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
+import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import RecommendValidate from './Validate/RecommendValidate';
+import styles from './ArticleSearch.scss';
 
 const tableHead = {"recommend": "标题"};
-const data = require("../../assets/MockData/sourcecenter/related_recommend_data.json");
-let dataTree = require("../../assets/MockData/tree_data.json").menu;
+const data = require("AssetsFolder/MockData/article/related_recommend_data.json");
+let dataTree = require("AssetsFolder/MockData/tree_data.json").menu;
 const fields = ['keyword', 'category'];
 let lodash = require('lodash');
 
@@ -67,10 +68,9 @@ class Recommend extends React.Component {
   }
 
   searchFunc(keyword) {
-    const data = lodash.clone(require("../../assets/MockData/sourcecenter/related_recommend_data.json"));
+    const data = lodash.clone(require("AssetsFolder/MockData/article/related_recommend_data.json"));
     let len = data.length;
-    let i;
-    for (i = len - 1; i >= 0; i--) {
+    for (let i = len - 1; i >= 0; i--) {
       let item = data[i];
       if (item.recommend.indexOf(keyword) === -1) {
         data.splice(i, 1);
@@ -120,20 +120,15 @@ class Recommend extends React.Component {
             </td>
             <td className="td-fr">
               <div className="fr-main">
-                <form className="rec-top" onSubmit={::this.handleSearch}>
-                  <ul className="search">
-                    <li className="search-li">
-                      <InputTree className="tree" treeData={dataTree} field={category} label="所属分类" ref="category"/>
-                    </li>
-                    <li className="search-li">
-                      <span className="search-label">关键字</span>
-                      <input className="search-keyword" ref="filterName" type="text"
-                             defaultValue={this.state.filterName}/>
-                    </li>
-                    <li className="search-li">
-                      <input className="button-search" type="submit" value="搜索"/>
-                    </li>
-                  </ul>
+                <form className="rec-top form-inline" onSubmit={::this.handleSearch}>
+                  <div className="form-group form-group-sm">
+                    <InputTree className="tree" treeData={dataTree} field={category} label="所属分类" ref="category"/>
+                  </div>
+                  <div className="form-group form-group-sm ml10">
+                    <label>关键字&nbsp;&nbsp;</label>
+                    <input className="form-control" ref="filterName" defaultValue={this.state.filterName}/>
+                  </div>
+                  <input type="submit" className="btn btn-primary btn-sm w80 ml10"/>
                 </form>
                 <div className="table_main">
                   <Table headData={tableHead} contentData={searchData} isOptional={true}

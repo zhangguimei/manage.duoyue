@@ -1,0 +1,68 @@
+{
+  "tableHeadData": {
+    "id": "ID",
+    "name": "商户名称",
+    "WeChatName": "微信公众号",
+    "userWeChat": "关联相关用户",
+    "price": "分账单价",
+    "time":"分账有效期",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": "1",
+      "name": "222",
+      "WeChatName": "RAYS",
+      "userWeChat": "22rays",
+      "price": "23",
+      "time": "2016/5/30",
+      "operation": [
+
+      ]
+    },
+    {
+      "id": "2",
+      "name": "羊丁丁",
+      "WeChatName": "RAYS",
+      "userWeChat": "先森",
+      "price": "11",
+      "time": "2016/5/30",
+      "operation": [
+
+      ]
+    },
+    {
+      "id": "3",
+      "name": "羊丁丁",
+      "WeChatName": "RAYS",
+      "userWeChat": "先森",
+      "price": "33",
+      "time": "2016/5/30",
+      "operation": [
+
+      ]
+    },
+    {
+      "id": "4",
+      "name": "羊丁丁",
+      "WeChatName": "RAYS",
+      "userWeChat": "先森",
+      "price": "54",
+      "time": "2016/5/30",
+      "operation": [
+
+      ]
+    },
+    {
+      "id": "5",
+      "name": "羊丁丁",
+      "WeChatName": "RAYS",
+      "userWeChat": "先森",
+      "price": "12",
+      "time": "2016/5/30",
+      "operation": [
+
+      ]
+    }
+  ]
+}
