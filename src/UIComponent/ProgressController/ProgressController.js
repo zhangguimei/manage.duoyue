@@ -1,3 +1,9 @@
+/*
+ *  Project : Progress Controller
+ *  Date    : 2016.06.28
+ *  Author  : Paco
+ *  Declare : It can show percent of what you want to show, also, it is controlled, it provide three functions to be used.
+ */
 import React, {PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
 
