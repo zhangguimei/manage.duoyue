@@ -1,7 +1,39 @@
 @charset "UTF-8";
 @import '../../../../../assets/sass/function';
 
-.PageUserHome {
+.UserHome {
   padding: 20px;
   font-size: 18px;
+  .userhome-title {
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grayD;
+  }
+  .main {
+    padding: 40px 0 40px 80px;
+    .tips-box {
+      float: left;
+      width: 180px;
+      border: 1px solid $grayD;
+      margin-right: 10px;
+      span {
+        display: block;
+      }
+      .data-info {
+        padding: 20px 0;
+        text-align: center;
+        font-size: 24px;
+        line-height: 25px;
+        border-bottom: 1px solid $grayD;
+      }
+      .data-item {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 13px;
+        line-height: 20px;
+        background-color: $grayF;
+      }
+    }
+  }
+
 }
