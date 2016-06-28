@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import Validate from './Validate/BookMenuValidate';
-import {InputF, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
+import {InputF, InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
 
 const fields = ['parentMenu', 'name', 'tryRead', 'recommendRead', 'introduction'];
 const tryReadRadio = [{value: "no", content: "否"}, {value: "yes", content: "是"}];

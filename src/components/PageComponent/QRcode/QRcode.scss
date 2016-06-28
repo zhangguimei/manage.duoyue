@@ -3,23 +3,26 @@
 
 .QRcode {
   padding: 20px;
-  .item {
-    width: 180px;
-    margin: 5px;
-    border: 1px solid $grayD;
-    .pic {
-      padding: 10px;
-      width: 150px;
-      img {
+  .main-content {
+    @extend %clearfix;
+    .item {
+      width: 180px;
+      margin: 5px;
+      border: 1px solid $grayD;
+      .pic {
+        padding: 10px;
         width: 150px;
+        img {
+          width: 150px;
+        }
       }
-    }
-    .title {
-      border-top: 1px dashed $grayD;
-      text-align: center;
-      font-size: 16px;
-      height: 30px;
-      line-height: 30px;
+      .title {
+        border-top: 1px dashed $grayD;
+        text-align: center;
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+      }
     }
   }
 }

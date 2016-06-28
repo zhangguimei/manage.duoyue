@@ -1,7 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import Table from './Table/Table';
-import Pagination from '../../UIComponent/Pagination/Pagination';
+import Pagination from 'UIComponentFolder/Pagination/Pagination';
 
 const pageNumLists = [5, 10, 50];
 

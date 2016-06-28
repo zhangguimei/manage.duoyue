@@ -1,60 +1,11 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-
-import {fetchBookData} from 'ActionsFolder/BookActions';
-
 import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
-import Modal from 'UIComponentFolder/Modals/Modal';
-import ShowPage from 'UIComponentFolder/Modals/ShowPage';
-import Tab from 'UIComponentFolder/Tab/Tab';
-import BookSearchOperation from './BookSearchOperation';
-// import BookInfo from './BookInfo';
-// import BookForm from './BookForm';
-// import BookMenu from './BookMenu';
-// import BookArticle from './BookArticle';
-// import BookSource from './BookSource';
-// import BookAuthor from './BookAuthor';
-// import BookBrowseHistory from './BookBrowseHistory';
-// import BookSetFashion from './BookSetFashion';
-// import BookSalesHistory from './BookSalesHistory';
-// import BookRelatedRecommend from './BookRelatedRecommend';
-import Tag from 'PageComponentFolder/Tag/Tag';
-import QRcode from 'PageComponentFolder/QRcode/QRcode'
+import Modal from 'UIComponentFolder/Modals/Modal'
+import BookModify from './BookModify';
 import styles from './BookSearch.scss';
-
-const tableData = require("AssetsFolder/MockData/book/book_list_data.json"),
-  keyMaps = require("AssetsFolder/MockData/book/book_search_tab_data.json"),
-  bookInfo = require("AssetsFolder/MockData/book/book_info.json"),
-  classifyInfo = require("AssetsFolder/MockData/tree_data.json").menu,
-  menuTableData = require("AssetsFolder/MockData/book/book_article_table_data.json"),
-  menuTreeData = require("AssetsFolder/MockData/book/book_menu_tree_data.json"),
-  sourceTableData = require("AssetsFolder/MockData/book/book_source_table_data.json"),
-  tagData = require("AssetsFolder/MockData/book/book_tag_data.json"),
-  codeData = require("AssetsFolder/MockData/book/book_code_list_data.json"),
-  authorListData = require("AssetsFolder/MockData/book/book_author_list.json"),
-  browseHistoryTableData = require("AssetsFolder/MockData/book/book_browse_table_data.json"),
-  fashionTableData = require("AssetsFolder/MockData/book/book_fashion_table_data.json"),
-  salesHistoryTableData = require("AssetsFolder/MockData/book/book_sales_history_book.json"),
-  relatedTableData = require("AssetsFolder/MockData/book/book_related_table_data.json");
-
-const tabContent = keyMaps.map((item) => {
-    return Object.values(item)[0]
-  }),
-  routeKeys = keyMaps.map((item) => {
-    return Object.keys(item)[0]
-  });
-
-let TabItemsData = {
-  content: tabContent,
-  tabClass: {
-    tabBox: "book-tab-box clearfix",
-    tabItemOn: "book-item over left",
-    tabItemDefault: "book-item left"
-  }
-};
+const tableData = require("AssetsFolder/MockData/book/book_list_data.json");
 
 class BookSearch extends React.Component {
   constructor(props) {
@@ -62,10 +13,8 @@ class BookSearch extends React.Component {
     this.state = {
       pageIndex: 1,
       rowsForOnePage: 5,
-      showModal: false,
-      tabIndex: 0
+      showModal: false
     };
-    this.showPageData = {};
   }
 
   onPageClick(nextPageIndex) {
@@ -74,7 +23,7 @@ class BookSearch extends React.Component {
     });
   }
 
-  toggleModal(id) {
+  showBookDetail(id) {
     const {showModal} = this.state,
       {fetchBookData} = this.props;
     if (!showModal && id != undefined) {
@@ -83,12 +32,6 @@ class BookSearch extends React.Component {
     this.setState({
       showModal: !showModal
     });
-  }
-
-  componentDidMount() {
-    const {fetchBookData} = this.props;
-    fetchBookData && fetchBookData();
-    this.createShowPageData(0)
   }
 
   selectOnChange(e) {
@@ -104,79 +47,39 @@ class BookSearch extends React.Component {
     });
   }
 
-  onTypeChange(index) {
-    this.createShowPageData(index);
-    this.setState({
-      tabIndex: index
-    })
-  }
 
   submitChange() {
     const {tabIndex} = this.state;
     if (tabIndex == 0) {
       this.refs.BookForm.submit();
     } else {
-      ::this.toggleModal();
+      ::this.showBookDetail();
     }
   }
 
-  onShowClassify() {
-    this.setState({
-      showClassify: !this.state.showClassify
+  pluginTableData() {
+    tableData.tableContentData.forEach((item, i) => {
+      item.operation = <div className="BookSearchOperation clearfix">
+        <div className="operation-btn left">下架</div>
+        <div className="operation-btn left" onClick={() => this.showBookDetail(item.id)}>修改</div>
+        <div className="operation-btn left">删除</div>
+      </div>
     });
   }
 
-  submitForm(values) {
-    return new Promise((resolve) => {
-      resolve(values);
-      ::this.toggleModal();
-    });
-  }
-
-  createShowPageData(idx) {
-    let data = {
-      title: "修改书籍",
-      newPageHref: '',
-      closeShowPage: ::this.toggleModal,
-      submitForm: ::this.submitChange
-    };
-    if (idx === 0) {
-      data.ftChildren = <div><span className="submit-btn btn">确定新增</span>
-        <span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
-    } else if (idx === 10 || idx === 8 || idx === 5) {
-      data.ftChildren = <div><span className="cancel-btn btn" onClick={::this.toggleModal}>返回关闭</span></div>;
-    }
-    else {
-      data.showFooter = false;
-    }
-    this.showPageData = data;
+  componentWillMount() {
+    this.pluginTableData();
   }
 
   render() {
-
-    // <BookInfo bookInfo={bookInfo}/>
-    // <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
-    // { tabIndex == 0 &&
-    // <BookForm ref="BookForm" bookInfo={bookInfo} classifyInfo={classifyInfo} onSubmit={::this.submitForm}/>}
-    // { tabIndex == 1 &&
-    // <BookMenu menuTreeData={menuTreeData} classifyInfo={classifyInfo} menuTableData={menuTableData}/>}
-    // { tabIndex == 2 && <BookArticle menuTreeData={menuTreeData} menuTableData={menuTableData}/>}
-    // { tabIndex == 3 && <BookSource sourceTableData={sourceTableData}/>}
-    // { tabIndex == 4 && <Tag tagData={tagData}/>}
-    // { tabIndex == 5 && <QRcode/>}
-    // { tabIndex == 6 && <BookAuthor authorListData={authorListData}/>}
-    // { tabIndex == 7 && <BookBrowseHistory browseTableData={browseHistoryTableData}/>}
-    // { tabIndex == 8 && <BookSetFashion fashionTableData={fashionTableData}/>}
-    // { tabIndex == 9 && <BookSalesHistory salesHistoryTableData={salesHistoryTableData}/> }
-    // { tabIndex == 10 &&
-    // <BookRelatedRecommend relatedTableData={relatedTableData} classifyInfo={classifyInfo}/>}
-    const {rowsForOnePage, pageIndex, showModal, tabIndex} = this.state,
-      {showPageData} = this,
+    const {rowsForOnePage, pageIndex, showModal} = this.state,
       totalPages = Math.ceil(tableData.tableContentData.length / rowsForOnePage);
 
-    tableData.tableContentData.map((item, i) => {
-      item.operation = <BookSearchOperation index={i} linkOnClick={() => this.toggleModal(item.id)}/>
-    });
+    let bookDetailData = {
+      title: "修改书籍",
+      closeShowPage: ::this.showBookDetail,
+      submitForm: ::this.submitChange
+    };
     return (
       <div className="BookSearch">
         <Table headData={tableData.tableHeadData} contentData={tableData.tableContentData}
@@ -185,10 +88,8 @@ class BookSearch extends React.Component {
                     selectOnChange={::this.selectOnChange}/>
         {
           showModal &&
-          <Modal onModalClick={::this.toggleModal}>
-            <ShowPage {...showPageData}>
-            TODO
-            </ShowPage>
+          <Modal onModalClick={::this.showBookDetail}>
+            <BookModify showBookDetail={::this.showBookDetail} bookDetailData={bookDetailData} tabIndex={0}/>
           </Modal>
         }
       </div>
@@ -196,17 +97,4 @@ class BookSearch extends React.Component {
   }
 }
 
-function mapStateToProps() {
-  return {};
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchBookData: bindActionCreators(fetchBookData, dispatch)
-  };
-};
-
-module.exports = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BookSearch);
+module.exports = BookSearch;

@@ -1,0 +1,804 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.BookModify {
+  .ShowPage {
+    .BookInfo {
+      .modify-top-info {
+        padding: 10px 0 20px 0;
+        border-bottom: 1px solid $grayD;
+        .book-cover {
+          padding-left: 10px;
+          .book-img {
+            height: 90px;
+          }
+        }
+        .book-main-info {
+          padding-left: 60px;
+          .book-title {
+            font-size: 16px;
+          }
+          .book-price, .bool-update {
+            font-size: 13px;
+          }
+        }
+        .book-top-list {
+          padding-top: 20px;
+          border-right: 1px solid $grayD;
+          .book-top-item {
+            border-left: 1px solid $grayD;
+            width: 125px;
+            text-align: center;
+            font-size: 13px;
+            .num, .item-text {
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+    .book-tab-box {
+      padding: 20px 0 0 50px;
+      border-bottom: 1px solid $grayD;
+      position: relative;
+      .book-item {
+        cursor: pointer;
+        color: $gray5;
+        font-size: 14px;
+        padding: 5px 15px;
+        margin-right: 2px;
+        background-color: #f8f8f8;
+        border-left: 1px solid $grayD;
+        border-top: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+        margin-bottom: -1px;
+      }
+      .over {
+        background-color: $white;
+        border-bottom: 1px solid $white;
+      }
+    }
+    .BookForm {
+      position: relative;
+      padding: 35px 50px 20px 50px;
+      .book-pic-box {
+        border: 1px solid $grayD;
+        width: 280px;
+        .book-pic {
+          margin: 5px;
+        }
+        .book-img {
+          width: 270px;
+          height: 390px;
+        }
+        .upload-again {
+          width: 270px;
+          margin-top: 3px;
+        }
+      }
+      .book-main-right {
+        position: relative;
+        margin-left: 25px;
+        font-size: 14px;
+        .form-two-item {
+          width: 250px;
+        }
+      }
+      .InputTree {
+        font-size: 13px;
+        .tree-component {
+          top: 56px;
+        }
+      }
+      .Tree {
+        margin-top: 0;
+        border: 1px solid $grayD;
+        width: 300px;
+        z-index: 10000;
+        background-color: $white;
+        padding: 10px;
+      }
+      .form-list {
+        .form-item {
+          padding-top: 20px;
+          font-size: 14px;
+          .physical-item-width {
+            width: 20%;
+          }
+          .info-title {
+            font-weight: bold;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $grayD;
+          }
+          .response-cover {
+            width: 320px;
+            height: 190px;
+            border: 1px dashed $grayD;
+            margin-top: 10px;
+            padding: 10px;
+            .response-img {
+              width: 300px;
+              height: 170px;
+            }
+            .upload-again {
+              width: 300px;
+              overflow: hidden;
+              margin-top: 3px;
+            }
+          }
+          .sales-info {
+            padding-top: 10px;
+            .validity {
+              .DatePicker {
+                display: inline-block;
+                background-color: $white;
+                .date-input-wrap {
+                  background-color: $white;
+                }
+                .ic {
+                  text-align: center;
+                }
+              }
+            }
+          }
+          .virtual-book-info {
+            .virtual-item-width {
+              width: 30%;
+            }
+            .eBook {
+              .eBook-box {
+                display: inline-block;
+                margin-right: 5px;
+              }
+            }
+            .tryRead {
+              .tryRead-box {
+                display: inline-block;
+                margin-right: 5px;
+              }
+            }
+          }
+          .introduction-input {
+            width: 100%;
+            rows: 3;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid $grayD;
+            margin-top: 10px;
+          }
+        }
+      }
+      .footer {
+        position: fixed;
+        z-index: 11001;
+        width: 100%;
+        height: 50px;
+        background-color: $white;
+        border-top: 1px solid $grayD;
+        text-align: center;
+        line-height: 50px;
+        .btn {
+          padding: 5px 30px;
+          color: $white;
+        }
+        .submit-btn {
+          margin-right: 2px;
+          background-color: $blue;
+        }
+        .cancel-btn {
+          margin-left: 2px;
+          background-color: $gray9;
+        }
+      }
+    }
+    .BookMenu {
+      .add-book-data {
+        border-bottom: 1px solid $grayD;
+        height: 36px;
+        .upload-menu {
+          float: right;
+          padding: 0 20px;
+          margin: 8px 0;
+          border-left: 1px solid $grayD;
+          cursor: pointer;
+        }
+        .add-menu {
+          float: right;
+          padding: 0 20px;
+          margin: 8px 0;
+          cursor: pointer;
+        }
+      }
+      .Modal {
+        .ShowPage {
+          .upload-menu-content {
+            padding: 30px;
+            width: 400px;
+            margin: 0 auto;
+            .upload-menu-info {
+              font-size: 14px;
+              padding: 5px 0;
+              .item-font {
+                padding: 3px 0;
+                line-height: 20px;
+              }
+              .item-input {
+                height: 20px;
+              }
+            }
+            .preview-document-content-title {
+              font-size: 16px;
+              color: $gray3;
+            }
+            .preview-document-content {
+              border: 1px solid $grayD;
+              height: 250px;
+            }
+          }
+        }
+      }
+      .menu-content {
+        height: 100%;
+        .Tree {
+          float: left;
+          margin-top: 0px;
+          font-size: 12px;
+          padding: 20px;
+          border-right: 1px solid $grayD;
+          height: 100%;
+          width: 25%;
+          .TreeItem {
+            text-align: left;
+            .tree-item {
+              width: 250px;
+            }
+          }
+        }
+        .add-menu-box {
+          padding: 20px 50px;
+          .label-tree {
+            font-size: 14px;
+          }
+          .tree-component {
+            top: 56px;
+            .Tree {
+              background-color: $white;
+              width: 300px;
+              border: 1px solid $grayD;
+            }
+          }
+          .radio-area {
+            .InputF {
+              float: left;
+              width: 200px;
+              .tryRead-box, .recommendRead-box {
+                float: left;
+                padding-right: 10px;
+              }
+            }
+          }
+          .can-read-box {
+            border: 1px solid $grayD;
+            padding: 5px 5px 5px 10px;
+            span {
+              padding-right: 20px;
+            }
+          }
+          .introduction-textarea {
+            rows: 3;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid $grayD;
+            margin-top: 10px;
+          }
+        }
+        .maintain-catalog-text {
+          width: 75%;
+          padding: 100px 300px;
+        }
+      }
+    }
+    .BookArticle {
+      .add-book-data {
+        border-bottom: 1px solid $grayD;
+        height: 36px;
+        .upload-menu {
+          float: right;
+          padding: 0 20px;
+          margin: 8px 0;
+          border-left: 1px solid $grayD;
+          cursor: pointer;
+        }
+        .add-menu {
+          float: right;
+          padding: 0 20px;
+          margin: 8px 0;
+          cursor: pointer;
+        }
+      }
+      .BookArticleOperation {
+        .modify, .delete {
+          cursor: pointer;
+        }
+      }
+      .Tree {
+        float: left;
+        margin-top: 0px;
+        font-size: 12px;
+        padding: 20px;
+        border-right: 1px solid $grayD;
+        height: 100%;
+        width: 300px;
+        .TreeItem {
+          text-align: left;
+          .tree-item {
+            width: 250px;
+          }
+        }
+      }
+      .Table {
+        float: left;
+        width: 700px;
+        font-size: 12px;
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+      .Modal {
+        .real-modal {
+          z-index: 11010;
+        }
+        .ShowPage {
+          z-index: 11011;
+          .BookArticleForm {
+            padding: 40px 70px;
+            .tree-box {
+              float: left;
+              width: 420px;
+              .tree-component {
+                margin-top: 8px;
+                .Tree {
+                  background-color: $white;
+                  border-left: 1px solid $grayD;
+                  border-bottom: 1px solid $grayD;
+                }
+              }
+            }
+            .label-price {
+              .label-span {
+                height: 20px;
+                padding: 0;
+                font-size: 12px;
+              }
+            }
+            .label-tryRead {
+              .tryRead-box {
+                float: left;
+                padding-right: 10px;
+              }
+            }
+            .can-read-box {
+              border: 1px solid $grayD;
+              padding: 5px 5px 5px 10px;
+              span {
+                padding-right: 20px;
+              }
+            }
+          }
+        }
+        .upload-article {
+          line-height: 30px;
+          background-color: #f8f8f8;
+          border-bottom: 1px solid $grayD;
+          padding-left: 20px;
+        }
+        .upload-content {
+          width: 480px;
+          margin: auto;
+          padding: 40px;
+          .upload-big-title {
+            font-size: 16px;
+            color: $gray3;
+            line-height: 30px;
+          }
+          .line-info {
+            display: inline-block;
+            .label-span {
+              display: inline-block;
+            }
+          }
+          .preview-document-content {
+            border: 1px solid $grayD;
+            height: 250px;
+          }
+        }
+      }
+    }
+    .BookSource {
+      padding: 20px;
+      .source-left {
+        width: 20%;
+        margin-right: 1%;
+        border: 1px solid $grayD;
+        border-radius: 5px;
+        padding: 10px;
+        .source-list {
+          .checked-source-item {
+            padding: 10px;
+            border-bottom: 1px solid $grayD;
+          }
+          .checked-source-item:last-child {
+            border-bottom: 1px solid $white;
+          }
+          .source-name {
+            font-size: 14px;
+            padding: 5px 0;
+          }
+          .source-pic {
+            position: relative;
+            height: 120px;
+            overflow: hidden;
+            .source-img {
+              width: 100%;
+            }
+            .source-name-box {
+              position: absolute;
+              bottom: 0;
+              z-index: 10000;
+              background-color: $black;
+              opacity: 0.5;
+              width: 100%;
+              .source-box-name {
+                font-size: 14px;
+                line-height: 20px;
+                padding: 0 5px;
+                color: $white
+              }
+            }
+          }
+        }
+        .source-dtitle {
+          padding: 8px 0;
+          font-size: 12px;
+          color: $grayF;
+        }
+        .source-delete {
+          border-top: 1px dotted $grayE;
+          padding: 3px 0;
+          text-align: right;
+        }
+        .no-source {
+          text-align: center;
+        }
+      }
+      .source-table-area {
+        width: 79%;
+        padding: 20px;
+        border: 1px solid $grayD;
+        .keyword-area {
+          .related-search-box {
+            border-bottom: 1px solid $grayD;
+            padding-bottom: 10px;
+            .inline {
+              display: inline-block;
+            }
+          }
+        }
+        .source-list {
+          margin-top: 20px;
+          border-top: 1px solid $grayD;
+          border-left: 1px solid $grayD;
+          .source-item:nth-child(even) {
+            background-color: $white;
+          }
+          .source-item:nth-child(odd) {
+            background-color: $grayF;
+          }
+          .source-item:hover {
+            background-color: #fffce4;
+          }
+          .source-item-checkbox {
+            width: 8%;
+            text-align: center;
+            padding: 6px;
+            border-right: 1px solid $grayD;
+            border-bottom: 1px solid $grayD;
+            .checkbox-symbol:before {
+              left: 0;
+            }
+          }
+          .source-item-title {
+            width: 92%;
+            line-height: 30px;
+            padding-left: 10px;
+            border-right: 1px solid $grayD;
+            border-bottom: 1px solid $grayD;
+          }
+        }
+      }
+    }
+    .BookCode {
+      padding: 40px;
+      .book-code-list {
+        .book-item {
+          width: 21%;
+          margin: 0 2%;
+          border: 1px solid $grayD;
+          .code-pic {
+            border-bottom: 1px dashed $grayD;
+            padding: 10px;
+            .code-img {
+              width: 100%;
+            }
+          }
+          .code-title {
+            text-align: center;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+    .BookAuthor {
+      padding: 20px;
+      .author-area {
+        .author-item {
+          margin: 10px;
+          padding: 20px;
+          border: 1px solid $grayD;
+          border-radius: 5px;
+          width: 240px;
+          .author-name {
+            font-size: 16px;
+            height: 40px;
+            line-height: 20px;
+            text-align: center;
+          }
+          .author-photo {
+            width: 200px;
+            margin: 10px 0;
+          }
+          .author-delete {
+            padding: 10px 0;
+            border-top: 1px dashed $grayD;
+            .author-del-btn {
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .add-author-box {
+        padding: 20px;
+        .add-author-btn {
+          margin: 0 auto;
+          width: 120px;
+          cursor: pointer;
+        }
+      }
+      .Modal {
+        .real-modal {
+          z-index: 11010;
+        }
+        .ShowPage {
+          z-index: 11011;
+          .author-list {
+            margin: 40px 0;
+            padding: 20px;
+            border-top: 1px solid $grayD;
+            .add-author-item {
+              border: 1px solid $grayD;
+              padding: 5px 15px;
+              margin: 10px;
+              border-radius: 15px;
+              background-color: $grayF;
+              .CheckBox {
+                .checkbox-label {
+                  margin-bottom: -3px;
+                }
+              }
+            }
+            .add-author-name {
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+    .BookBrowseHistory {
+      padding: 20px;
+    }
+    .BookSetFashion {
+      padding: 20px;
+      .add-user-area {
+        padding: 10px 0;
+        .add-user-btn {
+          color: $gray3;
+          font-size: 14px;
+          line-height: 20px;
+          wid: 90px;
+        }
+      }
+      .Modal {
+        .real-modal {
+          z-index: 11010;
+        }
+        .ShowPage {
+          z-index: 11011;
+          .BookAddFashionUser {
+            padding: 40px;
+            .Dropdown {
+              width: 300px;
+              .dropdown-box {
+                position: relative;
+              }
+              .dropdown-list {
+                position: absolute;
+                background-color: $white;
+                z-index: 10000;
+                width: 300px;
+              }
+            }
+            .SelectF {
+              .select-merchantName {
+                width: 150px;
+                height: 34px;
+                padding: 5px;
+              }
+            }
+            .DatePicker {
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .BookArticleOperation {
+        .modify, .delete {
+          cursor: pointer;
+        }
+      }
+    }
+    .BookSalesHistory {
+      padding: 20px;
+    }
+    .BookRelatedRecommend {
+      padding: 20px;
+      .related-info {
+        border: 1px solid $grayD;
+        width: 20%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+        .article-info {
+          padding: 20px;
+          color: $gray7;
+        }
+        .related-article-list {
+          .related-article-item {
+            border-top: 1px solid $grayD;
+            padding: 5px 10px;
+            font-size: 12px;
+            .related-article-title {
+              line-height: 20px;
+              color: $gray3;
+              text-align: left;
+              padding: 10px 0;
+            }
+            .related-article-delete {
+              text-align: right;
+              border-top: 1px dotted $grayE;
+              padding: 5px 0;
+            }
+          }
+        }
+        .no-related {
+          padding: 20px;
+          color: $gray3;
+          border-top: 1px solid $grayD;
+        }
+      }
+      .related-table-box {
+        margin-left: 2%;
+        padding: 20px;
+        border: 1px solid $grayD;
+        width: 78%;
+        .related-search-box {
+          border-bottom: 1px solid $grayD;
+          padding-bottom: 10px;
+          .InputTree {
+            display: inline-block;
+            width: 350px;
+            .tree-box {
+              .label-tree {
+                display: inline-block;
+                padding-right: 10px;
+              }
+              .tree-component {
+                border: 1px solid $grayD;
+                top: 35px;
+                left: 34px;
+              }
+            }
+          }
+          .InputF {
+            display: inline-block;
+            .label-span {
+              display: inline-block;
+              padding-right: 10px;
+            }
+          }
+          .inline {
+            display: inline-block;
+          }
+        }
+        .Table {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .form-title {
+    padding: 5px 0;
+  }
+  .red {
+    color: $red;
+  }
+  .input {
+    color: $gray6;
+    margin: 5px 0;
+  }
+  .info-input {
+    border: 1px solid $grayD;
+    font-size: 16px;
+    padding: 8px;
+    height: 36px;
+  }
+  .order-font {
+    padding: 0 10px;
+  }
+  .w300 {
+    width: 300px;
+  }
+  .w200 {
+    width: 200px;
+  }
+  .w500 {
+    width: 500px;
+  }
+  .w100 {
+    width: 100px;
+  }
+  .w120 {
+    width: 120px;
+  }
+  .w150 {
+    width: 150px;
+  }
+  .w350 {
+    width: 350px;
+  }
+  .w450 {
+    width: 450px;
+  }
+  .w700 {
+    width: 700px;
+  }
+  .book-submit-btn {
+    background-color: #1c6fa8;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px;
+    width: 90px;
+    text-align: center;
+    border-radius: 5px;
+    border: 0;
+  }
+  .label-span {
+    font-size: 13px;
+    padding: 5px 0;
+  }
+  .validity-center-text {
+    padding: 0 10px;
+  }
+  .interval-margin {
+    margin: 0 5px;
+  }
+}

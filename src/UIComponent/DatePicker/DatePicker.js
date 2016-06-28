@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
-import {Map, is, fromJS} from 'immutable';
+import {Map, fromJS} from 'immutable';
 import classNames from 'classnames';
 import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 import styles from './DatePicker.scss';
@@ -647,14 +647,15 @@ class DatePicker extends React.Component {
   }
 }
 
+
 DatePicker.PropTypes = {
-  getPickDate: PropTypes.func.isRequired,
+  getPickDate: PropTypes.func.isRequired, //获得选择日期方法，返回选择日期
   data: PropTypes.shape({
-    format: PropTypes.string,  //显示日期的格式eg'yyyy-mm-dd hh:ii:ss'
+    format: PropTypes.string,  //显示日期的格式, 默认'yyyy-mm-dd hh:ii:ss'
     dateValue: PropTypes.string,  //已有日期，从后台读取到的
-    placeHolder: PropTypes.string,
-    showTimePanel: PropTypes.bool, //时候显示时分秒
-    calendarWrapClassName: PropTypes.string
+    placeHolder: PropTypes.string,  //和input的placeHolder用法一样
+    showTimePanel: PropTypes.bool, //是否显示时分秒（默认不显示）
+    calendarWrapClassName: PropTypes.string  //日历区div最外层className
   })
 };
 

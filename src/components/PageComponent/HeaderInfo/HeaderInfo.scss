@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.HeaderInfo {
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid $grayD;
+  @extend %clearfix;
+  .img-wrap {
+    padding-left: 10px;
+    .img {
+      height: 90px;
+    }
+  }
+  .main-info {
+    padding-left: 60px;
+    width: 40%;
+    .title {
+      font-size: 16px;
+    }
+    .price, .update, .type {
+      font-size: 13px;
+    }
+  }
+  .top-list {
+    padding-top: 20px;
+    border-right: 1px solid $grayD;
+    .top-item {
+      border-left: 1px solid $grayD;
+      width: 125px;
+      text-align: center;
+      font-size: 13px;
+      .num, .item-text {
+        padding: 5px;
+      }
+    }
+  }
+}

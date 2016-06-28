@@ -48,7 +48,7 @@ class ManagePage extends React.Component {
 
   componentWillMount() {
     const {username, actions:{fetchTreedata}} = this.props;
-    console.log('logged', username);
+    //console.log('logged', username);
     if (!username) {
       //this.context.router.push('/login');
     }
@@ -74,7 +74,7 @@ class ManagePage extends React.Component {
     const {children, route, path, routes} = this.props,
         {showWaitModal} = this.state;
     const depth = routes.length;
-    console.log("managePage", route, this.props.routes,this.props.location.pathname)
+    //console.log("managePage", route, this.props.routes,this.props.location.pathname)
     const treeData = this.tree;
     let sidebarLeft = route.length === 3 && getChildren(treeData.menu, route).length > 0 || route.length === 4 ? '360px' : '180px';
 

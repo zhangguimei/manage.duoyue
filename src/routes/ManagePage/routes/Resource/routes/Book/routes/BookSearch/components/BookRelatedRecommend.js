@@ -1,14 +1,16 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {reduxForm} from 'redux-form';
 import Table from './Table/Table';
 import Validate from './Validate/BookRelatedRecommendValidate';
-import {InputF, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
-import Pagination from '../../UIComponent/Pagination/Pagination';
+import {InputF, InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
+import Pagination from 'UIComponentFolder/Pagination/Pagination';
 
 const pageNumLists = [10, 20, 50];
-const fields = ['classify', 'keyword'];
-
+const field = {
+  onUpdate: function () {
+    
+  }
+}
 class BookRelatedRecommend extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +64,7 @@ class BookRelatedRecommend extends React.Component {
   }
 
   render() {
-    const {relatedTableData, classifyInfo, fields: {classify, keyword}} = this.props,
+    const {relatedTableData, classifyInfo} = this.props,
       {pageIndex, rowsForOnePage} = this.state,
       {articleList} = this,
       totalPages = Math.ceil(relatedTableData.tableContentData.length / rowsForOnePage);
@@ -96,8 +98,8 @@ class BookRelatedRecommend extends React.Component {
         </div>
         <div className="related-table-box left">
           <form className="related-search-box">
-            <InputTree className="info-input w200" treeData={classifyInfo} field={classify} label="分类"/>
-            <InputF field={keyword} className="info-input input w200" label="关键字"/>
+            <InputTree className="info-input w200" treeData={classifyInfo} label="分类" field={field}/>
+            <input className="info-input input w200" label="关键字"/>
             <div className="book-submit-btn inline interval-margin">搜索</div>
           </form>
           <Table headData={relatedTableData.tableHeadData} contentData={relatedTableData.tableContentData}
@@ -115,12 +117,4 @@ BookRelatedRecommend.propTypes = {
   classifyInfo: PropTypes.array
 };
 
-export default reduxForm({
-    form: 'bookform',
-    fields,
-    validate: Validate
-  },
-  state => ({
-    initialValues: state.book.toJS().bookData
-  })
-)(BookRelatedRecommend);
+export default BookRelatedRecommend;
