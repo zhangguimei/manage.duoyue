@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.UserSearch {
+  .user-list {
+    @include group-grid(7, 20px);
+    ul {
+      li {
+        text-align: center;
+        .inner {
+          border: 1px solid $grayD;
+        }
+        .pic {
+          width: 90px;
+          height:90px;
+          margin-top:10px;
+          margin-bottom:10px;
+          cursor: pointer;
+        }
+        .text {
+          padding:5px 0;
+          background-color: $colorBgLight;
+          .name {
+            @extend %ellipsis;
+          }
+          .city {
+            font-size:12px;
+            color:#777;
+            line-height: 1.5;
+          }
+        }
+        p {
+          padding:4px 0;
+          border-top:1px solid $grayD;
+          font-size:12px;
+          line-height: 16px;
+          .line{
+            margin-left: 5px;
+            margin-right: 5px;
+            color:#333;
+          }
+        }
+      }
+    }
+  }
+}

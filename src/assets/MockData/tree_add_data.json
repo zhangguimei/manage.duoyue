@@ -304,6 +304,11 @@
     "icon":"ic-usersetting",
     "url":""
   },
+  "387":{
+    "name":"用户查询",
+    "icon":"",
+    "url":"/operate/usersetting/usersearch"
+  },
   "785":{
     "name":"智能客服",
     "icon":"ic-customer",
@@ -373,6 +378,26 @@
     "name":"用户分析",
     "icon":"ic-users",
     "url":""
+  },
+  "433":{
+    "name":"热力图",
+    "icon":"",
+    "url":"/analysis/useranalysis/heat"
+  },
+  "434":{
+    "name":"聚合图",
+    "icon":"",
+    "url":"/analysis/useranalysis/assemble"
+  },
+  "435":{
+    "name":"海量图",
+    "icon":"",
+    "url":"/analysis/useranalysis/mass"
+  },
+  "436":{
+    "name":"男女分布",
+    "icon":"",
+    "url":"/analysis/useranalysis/malefamale"
   },
   "347":{
     "name":"资源分析",

@@ -22,7 +22,7 @@ i {
   font-style: normal;
 }
 
-label {
+label, dt {
   font-weight: normal;
 }
 
@@ -115,7 +115,6 @@ p {
 
 //form
 .form-control {
-  display: inline-block;
   width: 300px;
   border-radius: 0;
   border: 1px solid $grayD;

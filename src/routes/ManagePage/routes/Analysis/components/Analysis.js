@@ -16,4 +16,4 @@ Analysis.propTypes = {
   children: PropTypes.any
 }
 
-export default Analysis;
+module.exports = Analysis;
