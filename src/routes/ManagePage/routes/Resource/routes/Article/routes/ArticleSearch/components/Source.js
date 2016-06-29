@@ -1,12 +1,13 @@
+'use strict';
 import React, {PropTypes} from 'react';
-import styles from './recommend.scss';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import Table from '../BookManage/BookSearch/Table/Table';
-import Pagination from '../UIComponent/Pagination/Pagination';
-import Tab from '../UIComponent/Tab/Tab';
-import * as actions from '../../actions/ArticleActions';
-import {Map, is, fromJS} from 'immutable';
+import {fromJS} from 'immutable';
+import * as actions from 'ActionsFolder/ArticleActions';
+import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Pagination from 'UIComponentFolder/Pagination/Pagination';
+import Tab from 'UIComponentFolder/Tab/Tab';
+import styles from './ArticleSearch.scss';
 
 const headData = [{'books': '书籍'}, {'source': '资源'}, {'commodity': '商品'}, {'funding': '众筹'}];
 const tableHead = {"title": "标题"};
@@ -14,12 +15,12 @@ const tabContent = headData.map((item) => {
   return Object.values(item)[0]
 });
 
-let TabItemsData = {
+const TabItemsData = {
   content: tabContent,
   tabClass: {
-    tabBox: "article-nav clearfix",
-    tabItemOn: "over left",
-    tabItemDefault: "out left"
+    tabBox: "tab-nav",
+    tabItemOn: "active",
+    tabItemDefault: ""
   }
 };
 
@@ -54,7 +55,7 @@ class Source extends React.Component {
   }
 
   fetchData(index) {
-    const sourceData = require("../../assets/MockData/sourcecenter/source_item_data.json");
+    const sourceData = require("AssetsFolder/MockData/article/article_item_data.json");
     let IsourceData = fromJS(sourceData);
     let data;
     switch (index) {
@@ -108,8 +109,7 @@ class Source extends React.Component {
     const {index} = this.state;
     let data = this.fetchData(index);
     let len = data.length;
-    let i;
-    for (i = len - 1; i >= 0; i--) {
+    for (let i = len - 1; i >= 0; i--) {
       let item = data[i];
       if (item.title.indexOf(keyword) === -1) {
         data.splice(i, 1);
@@ -163,7 +163,7 @@ class Source extends React.Component {
           <div className="delete" onClick={() => this.deleteRelatedSource(item.id)}>删除</div>
         </div>
       )
-    })
+    });
     return (
       <div className="SourcePage">
         <table>
@@ -183,13 +183,12 @@ class Source extends React.Component {
               <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
               <div className="fr-main">
                 <div className="rec-top">
-                  <form action="" onSubmit={::this.handleSearch}>
-                    <ul className="search">
-                      <li className="search-li">
-                        <sapn className="search-label">关键字</sapn>
-                        <input className="search-keyword" type="text" ref="filterName"/></li>
-                      <input type="submit" className="submit" value="搜索"/>
-                    </ul>
+                  <form className="form-inline" action="" onSubmit={::this.handleSearch}>
+                    <div className="form-group form-group-sm">
+                      <label>关键字&nbsp;&nbsp;</label>
+                      <input type="text" className="form-control"/>
+                    </div>
+                    <input type="submit" className="btn btn-primary btn-sm ml10 w80"/>
                   </form>
                 </div>
                 <div className="table_main">
@@ -210,8 +209,7 @@ class Source extends React.Component {
 Source.PropTypes = {
   src: PropTypes.String,
   onChangeFunc: PropTypes.func.isRequired
-}
-
+};
 
 function mapStateToProps(state) {
   let {article:{resourceData}} = fromJS(state).toJS();

@@ -1,11 +1,8 @@
 "use strict";
-import { isUrl, require } from 'utilsFolder/validations';
+import { isUrl, require } from 'UtilsFolder/validations';
 
 const AccountValidate = (values) => {
   const errors = {};
-
-  require(values, errors, ['name']);
-  
   if(values.startDate && values.endDate) {
     if(new Date(values.startDate) > new Date(values.endDate)) {
       errors.startDate = "起始时间必须早于结束时间";

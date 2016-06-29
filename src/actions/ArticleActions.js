@@ -8,7 +8,7 @@ import {
 import Tag from '../models/tag';
 
 export const fetchArticleData = (id) => {
-  let data = require("../assets/MockData/sourcecenter/source_center_data.json");
+  let data = require("../assets/MockData/article/article_data.json");
   let json = data.filter(data => data.id == id);
   return (dispatch) => dispatch(receiveArticleData(json[0]));
 };
@@ -22,7 +22,7 @@ const receiveArticleData = (data) => {
 
 //tags
 export const fetchTagsArrData = () => {
-  let data = require('../assets/MockData/sourcecenter/article_tags_data.json');
+  let data = require('../assets/MockData/article/article_tags_data.json');
   return dispatch => {
     let arrData = data.map((item) => {
       return new Tag(item);
@@ -46,7 +46,7 @@ export const receiveAccountData = (data) => {
 };
 
 export const fetchResourceData = (type) => {
-  let data = require('../assets/MockData/sourcecenter/source_item_data.json');
+  let data = require('../assets/MockData/article/article_item_data.json');
   let json = data[type];
   return (dispatch) => dispatch(receiveResourceData(json));
 };
