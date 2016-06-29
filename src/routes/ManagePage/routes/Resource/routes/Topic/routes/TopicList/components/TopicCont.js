@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import Tab from 'UIComponentFolder/Tab/Tab';
-import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
@@ -283,7 +283,8 @@ class TopicCont extends React.Component {
                 {
                   showTable &&
                   <Table contentData={tableData.tableContentData} headData={tableData.tableHeadData} isOptional={true}
-                         rowsForOnePage={itemsForOnePage} pageIndex={pageIndex} selectArticle={::this.selectSource}/>
+                         rowsForOnePage={itemsForOnePage} pageIndex={pageIndex} checkBoxClick={::this.selectSource}
+                        initState={this.selectedList}/>
                 }
                 <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>
               </div>
