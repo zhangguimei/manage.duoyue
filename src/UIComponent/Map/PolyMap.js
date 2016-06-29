@@ -1,12 +1,12 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {openInfo, initialMap} from './Map';
+import {openInfo, initialMap} from './MapFun';
 import styles from './Map.scss';
 
 class PolyMap extends React.Component {
   static defaultProps = {
     id: 'allmap'
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ class PolyMap extends React.Component {
       this.marker.data = data;
       markers.push(this.marker);
     }
-    let markerClusterer = new BMapLib.MarkerClusterer(_this_map, {markers: markers});
+    new BMapLib.MarkerClusterer(_this_map, {markers: markers});
   }
 
   clickMarker(e) {

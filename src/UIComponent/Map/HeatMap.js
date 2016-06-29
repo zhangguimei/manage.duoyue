@@ -1,13 +1,14 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {initialMap} from './Map';
+import {initialMap} from './MapFun';
 import styles from './Map.scss';
+import {Map, is, fromJS} from 'immutable';
 
 class HeatMap extends React.Component {
   static defaultProps = {
     id: 'allmap',
     colors: ['blue', '#245ff5', '#4274f4', '#7398f5', '#9fb7f3', '#c6d3f3']
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -57,21 +58,22 @@ class HeatMap extends React.Component {
 
   getColorByNum(num) {
     let {colors} = this.props;
-    colors.push('#f5f3f0');
+    let Icolors = fromJS(colors);
+    Icolors.push('#f5f3f0');
     if (parseInt(num / this.numTolal) > 0.05) {
-      return colors[0];
+      return Icolors.get(0);
     } else if (parseInt(num) / this.numTolal > 0.04) {
-      return colors[1];
+      return Icolors.get(1);
     } else if (parseInt(num) / this.numTolal > 0.03) {
-      return colors[2];
+      return Icolors.get(2);
     } else if (parseInt(num) / this.numTolal > 0.02) {
-      return colors[3];
+      return Icolors.get(3);
     } else if (parseInt(num) / this.numTolal > 0.01) {
-      return colors[4];
+      return Icolors.get(4);
     } else if (parseInt(num) / this.numTolal > 0) {
-      return colors[5];
+      return Icolors.get(5);
     } else {
-      return colors[6];
+      return Icolors.get(6);
     }
   }
 

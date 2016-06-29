@@ -1,12 +1,12 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {openInfo, initialMap} from './Map';
+import {openInfo, initialMap} from './MapFun';
 import styles from './Map.scss';
 
 class MassiveMap extends React.Component {
   static defaultProps = {
     id: 'allmap'
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -41,7 +41,7 @@ class MassiveMap extends React.Component {
         size: BMAP_POINT_SIZE_BIG,
         shape: BMAP_POINT_SHAPE_WATERDROP,
         color: '#f51605'
-      }
+      };
       this.pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
       this.pointCollection.addEventListener('click', ::this.clickMarker);
       this._map.addOverlay(this.pointCollection);  // 添加Overlay

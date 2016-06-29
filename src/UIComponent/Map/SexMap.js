@@ -1,12 +1,12 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {openInfo, initialMap} from './Map';
+import {openInfo, initialMap} from './MapFun';
 import styles from './Map.scss';
 
 class SexMap extends React.Component {
   static defaultProps = {
     id: 'allmap'
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -23,8 +23,8 @@ class SexMap extends React.Component {
   }
 
   loadUserData(sex) {
-    const {data:{list}} = this.props;
-    this.showMarker(list, sex);
+    const {data} = this.props;
+    this.showMarker(data[sex].list, sex);
   }
 
   showMarker(list, sex) {
@@ -61,7 +61,7 @@ class SexMap extends React.Component {
         }
       }
       this.pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
-      this.pointCollection.addEventListener('click', ::this.clickMarker);
+      this.pointCollection.addEventListener('click', (e) => this.clickMarker(sex,e));
       this._map.addOverlay(this.pointCollection);  // 添加Overlay
     }
     else {
@@ -69,10 +69,10 @@ class SexMap extends React.Component {
     }
   }
 
-  clickMarker(e) {
-    const {data:{list:{key}}} = this.props;
-    const data = e.point.data;
-    let html = openInfo(data, key);
+  clickMarker(sex,e) {
+    const {data} = this.props;
+    let key = data[sex].list.key;
+    let html = openInfo(e.point.data, key);
     let infoWindow = new BMap.InfoWindow(html);  // 创建信息窗口对象
     this._map.openInfoWindow(infoWindow, e.point); //开启信息窗口
   }
@@ -82,7 +82,7 @@ class SexMap extends React.Component {
   }
 
   componentWillUnmount() {
-    this.pointCollection.removeEventListener('click', ::this.clickMarker);
+    this.pointCollection.removeEventListener('click', (e)=>this.clickMarker());
   }
 
   render() {
@@ -97,7 +97,7 @@ class SexMap extends React.Component {
 
 SexMap.propTypes = {
   id: PropTypes.string.isRequired,
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 }
 
 export default SexMap;
