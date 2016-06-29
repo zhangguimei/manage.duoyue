@@ -52,9 +52,11 @@ export const isNumber = (value) => {
 
 //验证必填（可验证数组）
 export const requiredValid = (value) => {
-  if(typeof(value) == "string") {
+  if(typeof(value) == "undefined") {
+    return false;
+  } else if(typeof(value) == "string") {
     return !!value;
-  }else if(value instanceof Array) {
+  }else if(Array.isArray(value)) {
     if(value.length === 0) { return false; }
     for(let item of value) {
       if(typeof(item) !== "number" && !item) {

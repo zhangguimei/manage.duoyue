@@ -27,6 +27,7 @@ class FormItem extends React.Component {
     className: "",              //表单自定义类名
     name: "",                   //表单名字
     title: "",                  //表单标题
+    desc: "",                   //表单详情描述
     type: "text",               //表单类型
     defaultValue: "",           //表单初始值
     value: "",                  //通过此属性可以给表单赋值
@@ -56,7 +57,7 @@ class FormItem extends React.Component {
     this.setState({
       value: value
     });
-    if(!['text', 'textarea'].includes(type)) {
+    if(!['text', 'number', 'textarea'].includes(type)) {
       ::this.validate(e, false, newValue);
     }
   }
@@ -89,6 +90,27 @@ class FormItem extends React.Component {
       valid: !error,
       error: error,
       touched: touched
+    });
+  }
+
+  numberOnChange(e) {
+    const value = e.target.value;
+    let strArray = value.split("");
+    let newValue = "";
+    for(let str of strArray) {
+      if(str >= "0" && str <= "9") {
+        newValue = newValue.concat(str);
+      }
+    }
+    ::this.onChange(null, newValue);
+  }
+
+  calculateNum(isAdd) {
+    const { value } = this.state;
+    let newValue = value ? Number(value) : 0;
+    newValue = isAdd ? newValue + 1 : newValue -1;
+    this.setState({
+      value: newValue
     });
   }
 
@@ -165,7 +187,7 @@ class FormItem extends React.Component {
   }
 
   createFormItem() {
-    const { type, className, name, options, defaultValue, placeholder, index, accept, title, disabled } = this.props,
+    const { type, className, name, options, defaultValue, placeholder, index, disabled } = this.props,
       { valid, value, touched } = this.state;
     let itemClassName = `${className} ${touched && !valid ? "error" : ""}`;
     let generalProps = {
@@ -179,6 +201,16 @@ class FormItem extends React.Component {
     switch (type) {
       case "text": {
         return <input {...generalProps} value={value} onChange={::this.onChange} placeholder={placeholder} onBlur={(e) => this.validate(e, false)} onClick={::this.onClick} />;
+      }
+
+      case "number": {
+        return (
+          <div className="number-box">
+            <input {...generalProps} ref="numberInput" type="text" value={value} placeholder={placeholder} onChange={::this.numberOnChange} onBlur={(e) => this.validate(e, false)} onClick={::this.onClick}/>
+            <em className="triangle up" onClick={() => this.calculateNum(true)} />
+            <em className="triangle down" onClick={() => this.calculateNum(false)} />
+          </div>
+        )
       }
 
       case "radio": {
@@ -336,13 +368,14 @@ class FormItem extends React.Component {
   }
 
   render() {
-    const { title, type, rules, requireError, itemClass } = this.props,
+    const { title, type, rules, requireError, itemClass, desc } = this.props,
       { value, valid, error, touched } = this.state;
     return (
-      <div className={`FormItem ${type}-item ${itemClass}`} data-value={value} data-valid={valid} data-error={error}>
-        <div className={`subtitle ${rules.required ? "required" : ""}`}>{title}</div>
+      <div className={`FormItem clearfix ${type}-item ${itemClass}`} data-value={value} data-valid={valid} data-error={error}>
+        <span className={`subtitle ${rules.required ? "required" : ""}`}>{title}</span>
+        <span className="desc right">{desc}</span>
         { this.createFormItem() }
-        { requireError && !valid && touched && <div className="error-detail">{error}</div> }
+        { requireError && !valid && touched && <span className="error-detail">{error}</span> }
       </div>
     )
   }
@@ -352,6 +385,7 @@ FormItem.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   title: PropTypes.string,
+  desc: PropTypes.string,
   className: PropTypes.string,
   itemClass: PropTypes.string,
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.number]),

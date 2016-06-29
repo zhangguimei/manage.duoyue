@@ -1,7 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
-import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import {InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import RecommendValidate from './Validate/RecommendValidate';
@@ -131,8 +131,8 @@ class Recommend extends React.Component {
                   <input type="submit" className="btn btn-primary btn-sm w80 ml10"/>
                 </form>
                 <div className="table_main">
-                  <Table headData={tableHead} contentData={searchData} isOptional={true}
-                         rowsForOnePage={rowsForOnePage} pageIndex={pageIndex} selectArticle={::this.selectSource}/>
+                  <Table headData={tableHead} contentData={searchData} isOptional={true} initState={["1", "2"]}
+                         rowsForOnePage={rowsForOnePage} pageIndex={pageIndex} checkBoxClick={::this.selectSource}/>
                   <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>
                 </div>
               </div>
