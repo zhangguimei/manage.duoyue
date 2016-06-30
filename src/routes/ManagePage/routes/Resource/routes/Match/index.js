@@ -13,7 +13,7 @@ module.exports = {
       cb(null, require('./components/Match'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
         require('./routes/MatchList'),

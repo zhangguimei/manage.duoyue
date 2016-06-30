@@ -130,7 +130,9 @@ textarea.form-control {
 select.form-control {
   width: auto;
 }
-
+.form-control[readonly]{
+  background-color: $white;
+}
 .form-group-sm {
   .form-control {
     border-radius: 0;
