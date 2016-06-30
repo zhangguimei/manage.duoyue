@@ -1,0 +1,20 @@
+[
+  {
+    "allOrder": "全部订单"
+  },
+  {
+    "toBePaid": "待支付"
+  },
+  {
+    "toShipGoods": "待发货"
+  },
+  {
+    "hasShipped": "已发货"
+  },
+  {
+    "applyRefund": "申请退货"
+  },
+  {
+    "hasCompleted": "已完成"
+  }
+]
