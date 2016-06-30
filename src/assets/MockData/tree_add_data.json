@@ -24,6 +24,21 @@
     "icon":"",
     "url":"/sales"
   },
+  "344":{
+    "name":"订单管理",
+    "icon":"",
+    "url":"/sales/order"
+  },
+  "771":{
+    "name":"订单查询",
+    "icon":"",
+    "url":"/sales/order/search"
+  },
+  "345":{
+    "name":"分销结算",
+    "icon":"ic-settlement",
+    "url":""
+  },
   "328":{
     "name":"分析引擎",
     "icon":"",
@@ -357,16 +372,6 @@
   "712":{
     "name":"静态页更新",
     "icon":"ic-page",
-    "url":""
-  },
-  "344":{
-    "name":"订单管理",
-    "icon":"ic-order",
-    "url":"/sales/orderform"
-  },
-  "345":{
-    "name":"分销结算",
-    "icon":"ic-settlement",
     "url":""
   },
   "773":{
