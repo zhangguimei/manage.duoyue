@@ -6,7 +6,7 @@
     z-index: 11100;
   }
   .add-user-area {
-    padding: 0;
+    margin: 20px 0 10px 20px;
     .add-user-btn {
       color: $gray3;
       font-size: 14px;
@@ -14,6 +14,7 @@
     }
   }
   .TablePage {
+    margin: 0 20px;
     padding: 0px;
     .Table {
       img {

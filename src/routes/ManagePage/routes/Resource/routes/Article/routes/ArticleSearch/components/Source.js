@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fromJS} from 'immutable';
 import * as actions from 'ActionsFolder/ArticleActions';
-import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import Tab from 'UIComponentFolder/Tab/Tab';
 import styles from './ArticleSearch.scss';
@@ -151,14 +151,14 @@ class Source extends React.Component {
               <div className="price">售价：
                 <sapn className="red">￥{item.price}</sapn>
               </div>
-              <div className="num">购买数量：<span className="add"><a className="add-a">-</a><a className="add-a">1</a><a className="add-a">+</a></span></div>
+              <div className="num">购买数量：<span className="add"><a className="add-a">-</a><a className="add-a">1</a><a
+                className="add-a">+</a></span></div>
               <div className="intro">{item.intro}</div>
               <div className="button">
                 <div className="buy-button">立即购买</div>
                 <div className="car-button">加入购物车</div>
               </div>
             </div>
-            <div className="clear"/>
           </div>
           <div className="delete" onClick={() => this.deleteRelatedSource(item.id)}>删除</div>
         </div>
@@ -193,7 +193,7 @@ class Source extends React.Component {
                 </div>
                 <div className="table_main">
                   <Table headData={tableHead} contentData={searchData} isOptional={true}
-                         rowsForOnePage={itemsForOnePage} pageIndex={pageIndex} selectArticle={::this.selectSource}/>
+                         rowsForOnePage={itemsForOnePage} pageIndex={pageIndex} checkBoxClick={::this.selectSource}/>
                   <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>
                 </div>
               </div>

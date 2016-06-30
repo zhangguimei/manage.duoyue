@@ -6,7 +6,7 @@ import AccountAdd from './AccountAdd';
 import {receiveAccountData} from 'ActionsFolder/ArticleActions';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
-import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import styles from './ArticleSearch.scss';
 
 const tableData = require('AssetsFolder/MockData/article/account_data.json');

@@ -60,7 +60,7 @@ class AssignMoneyModal extends React.Component {
       dateValue: showData.endDate || '',
       placeHolder: '请选择日期',
       showTimePanel: true
-    }
+    };
     return (
       <form className="AssignMoneyModal" onSubmit={handleSubmit}>
         <div className="tag-info-title require w150">请选择商户</div>

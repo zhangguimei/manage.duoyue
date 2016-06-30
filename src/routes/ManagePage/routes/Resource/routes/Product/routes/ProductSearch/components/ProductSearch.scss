@@ -82,20 +82,19 @@
         .base-info {
           padding-top: 10px;
         }
-        .InputTree {
-          font-size: 13px;
-          .tree-component {
-            top: 56px;
+        .tree-item {
+          .tree-wrap {
+            position: relative;
+            .tree-component {
+              z-index: 10000;
+              width: 200px;
+              height: 300px;
+              overflow: scroll;
+              position: absolute;
+              border: 1px solid $grayD;
+              background-color: $white;
+            }
           }
-
-        }
-        .Tree {
-          margin-top: 0;
-          border: 1px solid $grayD;
-          width: 200px;
-          z-index: 10000;
-          background-color: $white;
-          padding: 10px;
         }
         .info-title {
           font-size: 16px;
@@ -189,93 +188,6 @@
         }
       }
 
-    }
-  }
-  .BookRelatedRecommend {
-    padding: 20px;
-    .related-info {
-      border: 1px solid $grayD;
-      width: 20%;
-      text-align: center;
-      font-size: 14px;
-      line-height: 20px;
-      .article-info {
-        padding: 20px;
-        color: $gray7;
-      }
-      .related-article-list {
-        .related-article-item {
-          border-top: 1px solid $grayD;
-          padding: 5px 10px;
-          font-size: 12px;
-          .related-article-title {
-            line-height: 20px;
-            color: $gray3;
-            text-align: left;
-            padding: 10px 0;
-          }
-          .related-article-delete {
-            text-align: right;
-            border-top: 1px dotted $grayE;
-            padding: 5px 0;
-          }
-        }
-      }
-      .no-related {
-        padding: 20px;
-        color: $gray3;
-        border-top: 1px solid $grayD;
-      }
-    }
-    .related-table-box {
-      margin-left: 2%;
-      padding: 20px;
-      border: 1px solid $grayD;
-      width: 78%;
-      .related-search-box {
-        border-bottom: 1px solid $grayD;
-        padding-bottom: 10px;
-        .InputTree {
-          display: inline-block;
-          width: 350px;
-          .tree-box {
-            .label-tree {
-              display: inline-block;
-              padding-right: 10px;
-            }
-            .tree-component {
-              border: 1px solid $grayD;
-              top: 35px;
-              left: 34px;
-            }
-          }
-        }
-        .InputF {
-          display: inline-block;
-          .label-span {
-            display: inline-block;
-            padding-right: 10px;
-          }
-        }
-        .inline {
-          display: inline-block;
-        }
-      }
-      .Table {
-        margin-top: 10px;
-        .thead-column-0 {
-          width: 10% !important;
-        }
-        .thead-column-1 {
-          width: 5% !important;
-        }
-        .thead-column-2 {
-          width: 5% !important;
-        }
-        .thead-column-3 {
-          width: 5% !important;
-        }
-      }
     }
   }
   .product-pic-box {

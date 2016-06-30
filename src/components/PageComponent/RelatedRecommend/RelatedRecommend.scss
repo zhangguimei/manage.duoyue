@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.RelatedRecommend {
+  padding: 20px;
+  .related-info {
+    border: 1px solid $grayD;
+    width: 20%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    .title {
+      padding: 20px;
+      color: $gray7;
+    }
+    .related-list {
+      .related-item {
+        border-top: 1px solid $grayD;
+        padding: 5px 10px;
+        font-size: 12px;
+        .related-title {
+          line-height: 20px;
+          color: $gray3;
+          text-align: left;
+          padding: 10px 0;
+        }
+        .related-delete {
+          text-align: right;
+          border-top: 1px dotted $grayE;
+          padding: 5px 0;
+          .delete-btn:hover {
+            cursor: pointer;
+            color: $gray3;
+          }
+        }
+      }
+    }
+    .no-related {
+      padding: 20px;
+      color: $gray3;
+      border-top: 1px solid $grayD;
+    }
+  }
+  .related-table-box {
+    margin-left: 2%;
+    padding: 20px;
+    border: 1px solid $grayD;
+    width: 78%;
+    .related-search-box {
+      border-bottom: 1px solid $grayD;
+      padding-bottom: 10px;
+      .FormItem {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .tree-wrap {
+        position: relative;
+      }
+      .tree-component {
+        position: absolute;
+        z-index: 10000;
+        width: 200px;
+        height: 300px;
+        overflow: scroll;
+        background-color: $white;
+        border-left: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+        border-bottom: 1px solid $grayD;
+        padding: 10px;
+      }
+      .inline {
+        display: inline-block;
+      }
+      .tip-text {
+        padding-left: 10px;
+      }
+    }
+    .Table {
+      margin-top: 10px;
+    }
+  }
+}

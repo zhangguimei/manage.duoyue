@@ -240,13 +240,10 @@ class FormItem extends React.Component {
           return <option value={option.id} key={i}>{option.value}</option>;
         });
         return (
-          <div className="select-box">
-            <select  {...generalProps} value={value} onChange={::this.onChange} onClick={::this.onClick}>
-              <option value="">请选择</option>
-              { optionsCode }
-            </select>
-            <i className="ic ic-unfold" />
-          </div>
+          <select  {...generalProps} value={value} onChange={::this.onChange} onClick={::this.onClick}>
+            <option value="">请选择</option>
+            { optionsCode }
+          </select>
         )
       }
 

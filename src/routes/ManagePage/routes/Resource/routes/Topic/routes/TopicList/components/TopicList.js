@@ -5,7 +5,7 @@
  */
 'use strict';
 import React from 'react';
-import Table from '../../../../Book/routes/BookSearch/components/Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import TopicModify from './TopicModify';
 import styles from './TopicList.scss';
 

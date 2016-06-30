@@ -386,3 +386,14 @@ select.form-control {
   }
 }
 
+.required::before {
+  content: "*";
+  display: inline-block;
+  color: red;
+}
+
+#App {
+  height: 100%;
+}
+
+

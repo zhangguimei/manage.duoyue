@@ -87,31 +87,25 @@ class Tag extends React.Component {
   }
 
   submitChange(data) {
-    const {tagData} = this.props;
-    const {selectedTagArr, isModify} = this.state;
-    let parentData = tagData.tagTreeData.filter(v => v.id == data.parentId);
-    let name = data.parentId == 0 ? data.name : parentData[0].name + "-" + data.name;
-    let readPurpose = document.querySelector(".single-select").innerHTML;
-
-    let tempData = {
-      id: data.id,
-      name: name,
-      readPurpose: readPurpose
-    }
-    let selectedIdArr = selectedTagArr.map((item, i) => {
-      return item.id
-    })
-
-    let tempArr = this.updateArr(selectedTagArr, tempData);
+    const {tagData} = this.props,
+      {selectedTagArr} = this.state;
+    let parentData = tagData.tagTreeData.filter(v => v.id == data.parentId),
+      name = data.parentId == 0 ? data.name : parentData[0].name + "-" + data.name,
+      readPurpose = document.querySelector(".single-select").innerHTML,
+      tempData = {
+        id: data.id,
+        name: name,
+        readPurpose: readPurpose
+      };
 
     this.setState({
-      selectedTagArr: tempArr,
+      selectedTagArr: this.updateArr(selectedTagArr, tempData),
       showAddTagLayer: !this.state.showAddTagLayer
     });
   }
 
   render() {
-    const {showAddTagLayer, selectedTagArr=[], tagName = "", tagPurpose="", selectItem, optionData} = this.state,
+    const {showAddTagLayer, selectedTagArr=[], tagName = "", tagPurpose="", selectItem} = this.state,
       {tagData} = this.props;
     let pagedata = {
       width: "70%",
@@ -155,7 +149,8 @@ class Tag extends React.Component {
                   </div>
                   <div className="tag-info clearfix">
                     <div className="tag-info-title left w150">通用阅读目的：</div>
-                    <Dropdown option={tagData.tagReadPurpose} skin="blue" defaultContent={tagPurpose} exportUpdate={::this.getUpdate}/>
+                    <Dropdown option={tagData.tagReadPurpose} skin="blue" defaultContent={tagPurpose}
+                              exportUpdate={::this.getUpdate}/>
                   </div>
                 </div>
               </div>

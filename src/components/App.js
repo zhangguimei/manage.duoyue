@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
 class App extends React.Component {
   render(){
     return (
-        <div className="App">
+        <div className="App" style={{height:'100%'}}>
           {this.props.children}
         </div>
     );
