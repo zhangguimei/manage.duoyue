@@ -4,6 +4,7 @@
 .HeaderInfo {
   padding: 10px 0 20px 0;
   border-bottom: 1px solid $grayD;
+  min-width: 1200px;
   @extend %clearfix;
   .img-wrap {
     padding-left: 10px;
@@ -11,14 +12,28 @@
       height: 90px;
     }
   }
+  .info {
+    margin-top: 20px;
+  }
   .main-info {
     padding-left: 60px;
     width: 40%;
-    .title {
+    h4 {
+      float: left;
+      width: 100%;
+      margin: 2px;
+    }
+    .info-name-name {
       font-size: 16px;
     }
-    .price, .update, .type {
+    .info-name-desc {
+      display: none;
+    }
+    .info-price-name, .info-update-name {
       font-size: 13px;
+    }
+    .info-price-desc, .info-update-desc {
+      margin-right: 10px;
     }
   }
   .top-list {
