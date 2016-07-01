@@ -4,40 +4,21 @@
 $blueColor: #1c6fa8;
 $pinkColor: #da0351;
 
+.block {
+  display: block;
+}
+
+.w130 {
+  width: 130px;
+}
+
 .search-area {
   padding: 15px;
   border-bottom: 1px solid $grayD;
-  .search-form {
-    margin: 0;
-    padding: 0;
-    .input-area {
-      .input-name {
-        display: inline-block;
-        width: 100px;
-        text-align: left;
-      }
-      .input-text {
-        margin: 0 10px;
-      }
-      .search-button {
-        margin-left: 20px;
-        padding: 5px 30px;
-        font-size: 14px;
-        border-radius: 5px;
-        border: 1px solid $blueColor;
-        background-color: $blueColor;
-        color: $white;
-        cursor: pointer;
-      }
-    }
-    .start-button {
-      padding: 5px 30px;
-      font-size: 14px;
-      border: 1px solid $blueColor;
-      border-radius: 5px;
-      background-color: $blueColor;
-      color: $white;
-      cursor: pointer;
+  .FormItem {
+    .subtitle {
+      display: inline-block;
+      width: 100px;
     }
   }
 }
@@ -46,10 +27,14 @@ $pinkColor: #da0351;
   padding: 20px 20px 10px 20px;
   margin: 20px;
   border: 1px solid $grayD;
+  .result-tips {
+    margin: 50px;
+    text-align: center;
+  }
   .left-area {
     width: 300px;
     .item-img {
-      width: 300px;
+      width: 100%;
     }
     .item-info {
       padding: 5px 0;
@@ -86,14 +71,16 @@ $pinkColor: #da0351;
     }
     .user-count {
       height: 50px;
-      border: 1px solid $grayD;
-      border-right: 0;
+      border-left: 1px solid $grayD;
       .count-num {
         display: inline-block;
-        width: 153px;
-        border-right: 1px solid $grayD;
-        line-height: 25px;
+        width: 150px;
+        border: 1px solid $grayD;
+        border-left: 0;
+        padding: 5px 0;
+        line-height: 20px;
         text-align: center;
+        cursor: pointer;
         span {
           display: inline-block;
           width: 148px;
@@ -127,6 +114,18 @@ $pinkColor: #da0351;
   width: 100%;
   height: 100%;
   padding: 20px 50px;
+  .ml45 {
+    margin-left: 45px;
+  }
+  .ml60 {
+    margin-left: 60px;
+  }
+  .FormItem {
+    .subtitle {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
   .group-title {
     font-size: 16px;
     padding: 5px 0;
@@ -141,22 +140,8 @@ $pinkColor: #da0351;
   .DatePicker .date-input-wrap .date-input {
     width: 90px;
   }
-  .red {
-    color: $red;
-  }
-  .input-container {
-    padding: 5px 0;
-    color: $gray6;
-  }
-  .padding-vertical {
-    padding: 5px 0;
-  }
-  .dw170 {
+  .w170 {
     width: 170px;
-  }
-  .pic-upload {
-    width: 230px;
-    height: 140px;
   }
   .info-left {
     width: 550px;
@@ -182,28 +167,40 @@ $pinkColor: #da0351;
 }
 
 .FundingRepay {
-  .title-span {
-    display: block;
-    padding: 5px 0;
-    a {
-      color: $gray3;
-    }
-    .gray-span {
-      color: $gray7;
-    }
-  }
-  .upload-area {
-    margin-right: 10px;
-    width: 232px;
+  a {
+    color: $gray3;
+    cursor: pointer;
   }
   .input-area {
-    width: 530px;
-    .input-span {
-      display: block;
-      width: 130px;
+    vertical-align: top;
+    .FormItem {
+      .subtitle {
+        display: block;
+        margin-bottom: 5px;
+      }
     }
-    .w140 {
-      width: 140px;
+    .people-limit {
+      position: relative;
+      .desc {
+        position: absolute;
+        top: 0;
+        right: -53px;
+      }
+    }
+    .repay-detail {
+      .subtitle {
+        display: inline-block;
+        width: 60px;
+      }
+      .desc {
+        float: none;
+        color: $gray7;
+      }
+      .repay-textarea {
+        width: 550px;
+        height: 163px;
+      }
     }
   }
 }
+

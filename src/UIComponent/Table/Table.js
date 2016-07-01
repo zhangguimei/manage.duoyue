@@ -1,9 +1,9 @@
-"use strict";
 /*
  *  Last Modify Date: 2016.06.29
  *  Author  : CastileMan
  *  Declare : 优化表格功能
  * */
+"use strict";
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import {Map, is, fromJS} from 'immutable';
@@ -396,7 +396,7 @@ class Table extends React.Component {
           tdContent = item.imgLink ?
             <Link to={item.imgLink}><img src={item.imgSrc} alt="图片"/></Link>
             :
-            <img src={item.imgSrc} alt="图片"/>;
+            <img className="img" src={item.imgSrc} alt="图片"/>;
         } else if(key == "link") {
           tdContent = <Link to="item.href">{item[key]}</Link>
         }
