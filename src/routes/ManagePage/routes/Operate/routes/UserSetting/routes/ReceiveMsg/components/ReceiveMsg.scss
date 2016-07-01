@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.ReceiveMsg {
+  padding: 20px;
+  .msg-list {
+    ul {
+      position: relative;
+      margin-left: -20px;
+      li {
+        float: left;
+        width: 282px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        border: 1px solid $grayD;
+        border-radius: 5px;
+        .heading {
+          padding: 20px;
+          .replay {
+            height: 150px;
+          }
+          .user {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed $grayD;
+            .pic {
+              float: left;
+              width: 40px;
+              height: 40px;
+            }
+            .text {
+              margin-left: 50px;
+            }
+          }
+        }
+        .delete {
+          padding: 5px;
+          border-top: 1px solid $grayD;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,10 @@
 /*
- * Created on 2016/6/29
- * 
- * by Melody Yuen
+ *  Project : User Setting
+ *  Date    : 2016/6/30
+ *  Author  : Melody Yuen
  */
 'use strict';
 import React from 'react';
-import styles from './UserSetting.scss';
 
 class UserSetting extends React.Component {
   render() {

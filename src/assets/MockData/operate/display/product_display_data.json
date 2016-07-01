@@ -1,0 +1,59 @@
+{
+  "tableHeadData": {
+    "id": "ID",
+    "ranko": "排序",
+    "displayName": "橱窗名称",
+    "displayCode": "橱窗代码",
+    "comNumOp": "包含商品",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": "55",
+      "rank": "0",
+      "displayName": "车展",
+      "displayCode": "a",
+      "comNum": "7",
+      "type":"car",
+      "operation": [
+      ],
+      "describe": ""
+    },
+    {
+      "id": "66",
+      "rank": "0",
+      "displayName": "吃喝",
+      "displayCode": "b",
+      "comNum": "2",
+      "type":"eat",
+      "operation": [
+
+      ],
+      "describe": ""
+    },
+    {
+      "id": "77",
+      "rank": "0",
+      "displayName": "电脑",
+      "displayCode": "c",
+      "comNum": "3",
+      "type":"computer",
+      "operation": [
+
+      ],
+      "describe": ""
+    },
+    {
+      "id": "88",
+      "rank": "1",
+      "displayName": "首饰",
+      "displayCode": "d",
+      "comNum": "1",
+      "type":"ornaments",
+      "operation": [
+
+      ],
+      "describe": ""
+    }
+  ]
+}

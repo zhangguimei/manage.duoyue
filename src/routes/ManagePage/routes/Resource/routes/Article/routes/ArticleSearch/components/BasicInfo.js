@@ -35,7 +35,7 @@ class BasicInfo extends React.Component {
     const {data, fields: { category, color, original, cover}} = this.props;
     const dataTree = require("AssetsFolder/MockData/tree_data.json").menu;
     return (
-      <form className="BasicInfo article-content">
+      <form className="BasicInfo article-content form-default">
         <div className="form-group pull-left w300">
           <div className="tree-wrap">
             <InputTree className="tree" className="input" treeData={dataTree} field={category} label="所属分类"
