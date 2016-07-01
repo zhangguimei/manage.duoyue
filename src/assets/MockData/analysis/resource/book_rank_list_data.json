@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "三体",
+    "detail": "三体人在利用魔法般的科技锁死了地球人的科学之后，庞大的宇宙舰队杀气腾腾地直扑太阳系，意欲清除地球文明。面对前所未有的危局，经历过无数磨难的地球人组建起同样庞大的太空舰队，同时，利用三体人思维透明的致命缺陷，制订了神秘莫测的“面壁计划”，精选出四位“面壁者”。秘密展开对三体人的反击。",
+    "pic": "http://file.duoyue.me/upload/book/book/20160616/2016_06_16_094348673_cut_c.jpg",
+    "readTimes": "86次"
+  },
+  {
+    "id": 2,
+    "title": "JavaScript忍者秘籍",
+    "detail": "本书针对JavaScript初学者，帮助读者掌握JavaScript开发的精髓。每一章从教授语言的一个主题开始，给出了实践以及解决实际缺陷的指南，然后深入到相关的信息。本书帮助入门的程序员理解基础知识，掌握核心实践，甚至",
+    "pic": "http://file.duoyue.me/upload/book/book/20160624/2016_06_24_102911802_cut_c.jpg",
+    "readTimes": "75次"
+  },
+  {
+    "id": 3,
+    "title": "前端开发规范手册",
+    "detail": "书籍",
+    "pic": "http://file.duoyue.me/upload/source/20160616/2016_06_16_095735579_c.png",
+    "readTimes": "45次"
+  },
+  {
+    "id": 4,
+    "title": "Backbone.js应用程序开发",
+    "detail": "",
+    "pic": "http://file.duoyue.me/upload/book/book/20160615/2016_06_15_200139478_cut_c.jpg",
+    "readTimes": "35次"
+  },
+  {
+    "id": 5,
+    "title": "HTML5 Canvas：网站本地化交互和动画设计(第2版 影印版)",
+    "detail": "《HTML5 Canvas：网站本地化交互和动画设计（第2版 影印版）》为你展示了如何创建互动多媒体应用，带你上手HTML5Canvas。你将学到如何绘图、渲染文本、操纵图像和创建动画。这一切都包含在《HTML5 Canvas：网站本地化交互和动画设计（第2版）（影印版）》中构建交互网站游戏的课程。",
+    "pic": "http://file.duoyue.me/upload/book/book/20160621/2016_06_21_191731472_cut_c.jpg",
+    "readTimes": "25次"
+  },
+  {
+    "id": 6,
+    "title": "React：引领未来的用户界面开发框架",
+    "detail": "2014 年横空出世的由Facebook 推出的开源框架React.js，基于Virtual DOM 重新定义了用户界面的开发方式，彻底革新了大家对前端框架的认识，将PHP 风格的开发方式迁移到客户端应用开发。其优势在于可以与各种类库、框架搭配使用。《React：引领未来的用户界面开发框架》是这一领域的首作，由多位一线专家精心撰写，采用一个全程实例全面介绍和剖析了ReactReact.js 的方方面面，适合广大前端开发者、设计人员，及所有对未来技术趋势感兴趣者阅读。",
+    "pic": "http://file.duoyue.me/upload/book/book/20160624/2016_06_24_094606401.jpg",
+    "readTimes": "5次"
+  }
+]
