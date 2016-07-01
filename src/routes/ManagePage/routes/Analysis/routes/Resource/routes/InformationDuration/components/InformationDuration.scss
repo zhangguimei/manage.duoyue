@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.InformationDuration {
+  .read-duration-item {
+    border-bottom: 1px solid $grayD;
+    line-height: 20px;
+    padding: 5px;
+    span {
+      display: inline-block;
+    }
+    .number {
+      padding: 0 10px;
+      width: 2%;
+    }
+    .title {
+      width:88%;
+    }
+    .read-duration {
+      text-align: right;
+      width: 10%;
+    }
+  }
+}
+
+
+
+
+        

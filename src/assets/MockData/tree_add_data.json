@@ -407,31 +407,26 @@
   "347":{
     "name":"资源分析",
     "icon":"ic-resourcefill",
-    "url":""
+    "url":"/analysis/resource"
   },
-  "348":{
-    "name":"销售分析",
-    "icon":"ic-sales",
-    "url":""
+  "440":{
+    "name":"资讯排行",
+    "icon":"",
+    "url":"/analysis/resource/inforank"
   },
-  "749":{
-    "name":"时段分析",
-    "icon":"ic-timefill",
-    "url":""
+  "441":{
+    "name":"资讯时长",
+    "icon":"",
+    "url":"/analysis/resource/infoduration"
   },
-  "431":{
-    "name":"员工账号",
-    "icon":"ic-staff",
-    "url":""
+  "442":{
+    "name":"书籍排行",
+    "icon":"",
+    "url":"/analysis/resource/bookrank"
   },
-  "432":{
-    "name":"角色权限",
-    "icon":"ic-authority",
-    "url":""
-  },
-  "725":{
-    "name":"系统帐号",
-    "icon":"ic-staffmanage",
-    "url":""
+  "443":{
+    "name":"书籍时长",
+    "icon":"",
+    "url":"/analysis/resource/bookduration"
   }
 }
