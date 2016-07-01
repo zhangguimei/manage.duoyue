@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.PhotoMaterial {
+  .photo-list {
+    padding: 0 20px;
+    ul {
+      position: relative;
+      margin-left: -20px;
+      li {
+        float: left;
+        width: 302px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid $grayD;
+        .date {
+          margin-bottom: 5px;
+          color: $gray9;
+        }
+        .link {
+          display: block;
+          h4 {
+            margin-bottom: 5px;
+            @extend %ellipse;
+          }
+          .pic {
+            position: relative;
+            height: 140px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            img {
+              width: 100%;
+            }
+          }
+          p {
+            @extend %ellipse;
+            color: $gray7;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

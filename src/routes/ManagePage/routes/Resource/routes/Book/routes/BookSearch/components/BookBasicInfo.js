@@ -53,12 +53,12 @@ class BookBasicInfo extends React.Component {
       showTimePanel: true
     };
     return (
-      <div className="BookBasicInfo">
+      <div className="BookBasicInfo form-default">
         <div className="clearfix">
           <ImageUpload name="image" className="reload-pic left" defaultSrc={bookInfo.img}/>
           <div className="book-main-right left">
             <FormItem type="tree" treeData={classifyInfo} title="所属分类" name="classify" defaultValue={bookInfo.classify} rules={{required: true}}
-                      className="form-control tree-input w300"/>
+                      className="form-control inline-block tree-input w300"/>
             <FormItem type="text" title="书籍名称" name="classify" className="form-control w300" defaultValue={bookInfo.name} rules={{required: true}}/>
             <div className="clearfix">
               <div className="form-two-item left">

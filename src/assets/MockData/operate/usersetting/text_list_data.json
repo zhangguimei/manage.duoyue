@@ -1,0 +1,25 @@
+{
+  "tableHeadData": {
+    "id": "#",
+    "content": "文本内容",
+    "createDate": "创建日期",
+    "updateDate": "更新日期",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 21,
+      "content": "音乐",
+      "createDate": "2016/6/16 10:23:10",
+      "updateDate": "",
+      "operation": []
+    },
+    {
+      "id": 22,
+      "content": "视频",
+      "createDate": "2016/6/16 9:44:52",
+      "updateDate": "",
+      "operation": []
+    }
+  ]
+}

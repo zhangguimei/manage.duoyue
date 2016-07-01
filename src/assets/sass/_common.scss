@@ -113,8 +113,17 @@ p {
   float: right;
 }
 
+.inline-block {
+  display: inline-block !important;
+}
+
+.text-danger{
+  color:#f00;
+}
+
 //form
 .form-control {
+  display: inline-block;
   width: 300px;
   border-radius: 0;
   border: 1px solid $grayD;
@@ -160,6 +169,12 @@ select.form-control {
   }
 }
 
+.form-default {
+  .form-control {
+    display: block;
+  }
+}
+
 .form-horizontal {
   .form-group {
     margin-left: 0;
@@ -194,55 +209,63 @@ select.form-control {
 
 //width
 .w60 {
-  width: 60px;
+  width: 60px !important;
 }
 
 .w80 {
-  width: 80px;
+  width: 80px !important;
 }
 
 .w100 {
-  width: 100px;
+  width: 100px !important;
 }
 
 .w120 {
-  width: 120px;
+  width: 120px !important;
 }
 
 .w140 {
-  width: 140px;
+  width: 140px !important;
 }
 
 .w160 {
-  width: 160px;
+  width: 160px !important;
 }
 
 .w180 {
-  width: 180px;
+  width: 180px !important;
 }
 
 .w190 {
-  width: 190px;
+  width: 190px !important;
 }
 
 .w200 {
-  width: 200px;
+  width: 200px !important;
 }
 
 .w240 {
-  width: 240px;
+  width: 240px !important;
 }
 
 .w300 {
-  width: 300px;
+  width: 300px !important;
 }
 
 .w400 {
-  width: 400px;
+  width: 400px !important;
 }
 
 .w500 {
-  width: 500px;
+  width: 500px !important;
+}
+
+.w600 {
+  width: 600px !important;
+}
+
+.w700 {
+  width: 700px !important;
 }
 
 .w100per {
@@ -264,6 +287,10 @@ select.form-control {
 
 .mb30 {
   margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
 }
 
 .ml10 {
@@ -401,3 +428,18 @@ select.form-control {
 }
 
 
+//搜索栏
+.search-bar{
+  @extend %clearfix;
+  margin-bottom:20px;
+  padding:15px 20px;
+  border-bottom:1px solid $grayD;
+  .form-inline{
+    .form-group{
+      margin-right:20px;
+      label{
+        margin-right:5px;
+      }
+    }
+  }
+}

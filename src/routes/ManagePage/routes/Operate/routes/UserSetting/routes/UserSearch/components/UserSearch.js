@@ -1,66 +1,70 @@
 /*
- * Created on 2016/6/29
- * 
- * by Melody Yuen
- * User Search
+ *  Project : User Setting
+ *  Date    : 2016/6/30
+ *  Author  : Melody Yuen
+ *  Declare : User Search
  */
 
 'use strict';
 import React from 'react';
-import Modal from 'UIComponentFolder/Modals/Modal';
-import ShowPage from 'UIComponentFolder/Modals/ShowPage';
-import LocationMap from 'UIComponentFolder/Map/LocationMap';
+import UserMaterial from './UserMaterial';
 import styles from './UserSearch.scss';
 
-const UserListData = require("AssetsFolder/MockData/usersetting/user_list_data.json");
+const userListData = require("AssetsFolder/MockData/operate/usersetting/user_list_data.json");
 
 class UserSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
-      userData: {}
+      showLayer: false,
+      userID: -1
     }
   }
 
-  toggleModal() {
+  onPicClick(id) {
     this.setState({
-      showModal: !this.state.showModal
+      userID: id,
+      showLayer: true
     });
   }
 
-  picClick(id) {
-    let userData = this.fetchUserData(UserListData, id);
+  onCloseClick() {
     this.setState({
-      userData: userData,
-      showModal: true
+      showLayer: false
     });
-  }
-
-  fetchUserData(data, id) {
-    return data.filter((item)=> {
-      return item.id == id;
-    })[0];
   }
 
   render() {
-    const {showModal, userData} = this.state;
-    const pagedata = {
-      title: "用户视图",
-      width: '90%',
-      height: '95%',
-      closeShowPage: ::this.toggleModal
-    };
+    const {showLayer, userID} = this.state;
     return (
       <div className="UserSearch">
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>群组：</label>
+              <select className="form-control">
+                <option>全部</option>
+              </select>
+            </div>
+            <div className="form-group form-group-sm">
+              <label>关键字：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <span>粉丝总数：16</span>
+            <input type="button" className="btn btn-primary btn-sm w100 ml20" value="同步用户"/>
+          </div>
+        </div>
         <div className="user-list">
           <ul>
             {
-              UserListData && UserListData.map((item, i)=> {
+              userListData && userListData.map((item, i)=> {
                 return (
                   <li key={i}>
                     <div className="inner">
-                      <img className="pic" src={item.headimgurl} onClick={() => this.picClick(item.id)}/>
+                      <img className="pic" src={item.headimgurl} onClick={() => this.onPicClick(item.id)}/>
                       <div className="text">
                         <div className="name">{item.nickname}</div>
                         <div className="city">{item.province}.{item.city}</div>
@@ -75,13 +79,7 @@ class UserSearch extends React.Component {
           </ul>
         </div>
         {
-          showModal &&
-          <Modal onModalClick={::this.toggleModal}>
-            <ShowPage {...pagedata}>
-              <h5 className="mb5 ml10">最近地理位置</h5>
-              <LocationMap id="LocationMap" data={userData} style={{height:350,border:'1px solid #ddd'}}/>
-            </ShowPage>
-          </Modal>
+          showLayer && <UserMaterial userID={userID} onCloseClick={() => this.onCloseClick()}/>
         }
       </div>
     );
