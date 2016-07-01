@@ -1,4 +1,3 @@
-"use strict";
 /*
  *  Date    : 2016.06.28
  *  Author  : CastileMan
@@ -9,10 +8,11 @@
  *  tips={{required: "请填写您的年龄", pattern: "请您填写正确的年龄"}} requireError={true} value="blabla" defaultValue="18"
  *  placeholder="请填写年龄" />
  * */
-
+"use strict";
 import React, {PropTypes} from 'react';
 import { fromJS } from 'immutable';
 import CheckBox from '../Table/CheckBox';
+import Radio from '../Radio/Radio';
 import DatePicker from '../DatePicker/DatePicker';
 import Tree from '../Tree/Tree';
 import CascadeSelect from '../CascadeSelect/CascadeSelect';
@@ -114,6 +114,11 @@ class FormItem extends React.Component {
     });
   }
 
+  radioOnClick(newValue) {
+    ::this.onChange(null, newValue);
+    ::this.onClick(newValue);
+  }
+
   //二级选择的change事件
   dblSelectOnChange(e) {
     this.getSubOptions(e);
@@ -181,9 +186,9 @@ class FormItem extends React.Component {
     getSelectInfo && getSelectInfo(data);
   }
 
-  onClick() {
+  onClick(index) {
     const { onClick } = this.props;
-    onClick && onClick();
+    onClick && onClick(index);
   }
 
   createFormItem() {
@@ -218,16 +223,8 @@ class FormItem extends React.Component {
           <div className="radio-box">
             {
               options.map((option, i) => {
-                let uniqCode = Math.random();
                 return (
-                  <div className="radio" key={i}>
-                    { option.id == value ?
-                      <input id={`radio-${uniqCode}`} {...generalProps} defaultValue={option.id} defaultChecked onChange={::this.onChange} onClick={::this.onClick} />
-                      :
-                      <input id={`radio-${uniqCode}`} {...generalProps} defaultValue={option.id} onChange={::this.onChange} onClick={::this.onClick}/>
-                    }
-                    <label className="radio-label" htmlFor={`radio-${uniqCode}`}>{option.value}</label>
-                  </div>
+                  <Radio {...generalProps} checked={option.id === value} defaultChecked={option.id === value} radioOnClick={::this.radioOnClick} index={option.id} value={option.id} title={option.value} key={i} />
                 )
               })
             }
@@ -266,20 +263,14 @@ class FormItem extends React.Component {
         }
         return (
           <div className="dblSelect-box">
-            <div className="select-box">
-              <select ref="dblSelect1" {...generalProps} value={value[0]} onChange={::this.dblSelectOnChange} onClick={::this.onClick} >
-                <option value="">请选择</option>
-                { optionsCode }
-              </select>
-              <i className="ic ic-unfold" />
-            </div>
-            <div className="select-box">
-              <select ref="dblSelect2" {...generalProps} value={value[1]} onChange={(e) => this.onChange(e, [this.refs["dblSelect1"].value, e.target.value])}>
-                <option value="">请选择</option>
-                { this[`subOptionsCode`] }
-              </select>
-              <i className="ic ic-unfold" />
-            </div>
+            <select ref="dblSelect1" {...generalProps} value={value[0]} onChange={::this.dblSelectOnChange} onClick={::this.onClick} >
+              <option value="">请选择</option>
+              { optionsCode }
+            </select>
+            <select ref="dblSelect2" {...generalProps} value={value[1]} onChange={(e) => this.onChange(e, [this.refs["dblSelect1"].value, e.target.value])}>
+              <option value="">请选择</option>
+              { this[`subOptionsCode`] }
+            </select>
           </div>
         )
       }

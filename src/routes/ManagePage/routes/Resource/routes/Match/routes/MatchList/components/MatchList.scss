@@ -204,24 +204,18 @@
               padding: 0 5px;
             }
           }
-          .select-box {
-            display: inline-block;
-            select {
-              height: 34px;
-              cursor: pointer;
-              min-width: 60px;
-              line-height: 30px !important;
-              padding-left: 10px;
-              margin-right: 5px;
-              option {
-                padding: 3px 0 3px 12px;
-                line-height: 28px;
-                font-size: 13px;
-                background-color: $colorBase;
-              }
-            }
-            .ic {
-              display: none;
+          select {
+            height: 34px;
+            cursor: pointer;
+            min-width: 60px;
+            line-height: 30px !important;
+            padding-left: 10px;
+            margin-right: 5px;
+            option {
+              padding: 3px 0 3px 12px;
+              line-height: 28px;
+              font-size: 13px;
+              background-color: $colorBase;
             }
           }
         }

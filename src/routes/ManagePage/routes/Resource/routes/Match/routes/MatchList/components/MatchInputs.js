@@ -119,7 +119,7 @@ class MatchInputs extends React.Component {
         <div className="input-container">
           {
             checkData[0].isSelected &&
-            <FormItem type="radio" name="sex" title="性别" defaultValue="1" options={sexRadio}/>
+            <FormItem type="radio" name="sex" title="性别" defaultValue={11} options={sexRadio}/>
           }
           {
             checkData[1].isSelected &&

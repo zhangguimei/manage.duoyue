@@ -1,17 +1,16 @@
-'use strict';
 /*
- *  Date    : 2016.06.28
+ *  Date    : 2016.07.01
  *  Author  : CC
  *  Declare : crowdfunding manage
  */
-
+'use strict';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-
 import { fetchCrowdFundingList } from 'ActionsFolder/CrowdFundingActions';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
+import FormItem from 'UIComponentFolder/FormComponent/FormItem';
 import FundingItem from './FundingItem';
 import FundingDetail from './FundingDetail';
 import styles from './CrowdFunding.scss';
@@ -32,8 +31,8 @@ class CrowdFunding extends React.Component {
   }
 
   onDelete(id) {
-    let {list} = this.props;
-    let index;
+    let {list} = this.props,
+      index;
     for (let i = 0; i < list.length; i++) {
       if(list[i].id == id) {
         index = i;
@@ -44,44 +43,44 @@ class CrowdFunding extends React.Component {
     this.forceUpdate();
   }
 
+  componentWillMount() {
+    this.pagedata = {
+      title: "发起项目",
+      width: '90%',
+      height: '95%',
+      closeShowPage: ::this.toggleModal
+    };
+  }
+
   componentDidMount() {
     const { fetchCrowdFundingList } = this.props;
     fetchCrowdFundingList();
   }
 
   render() {
-    const {list} = this.props;
-    const {showModal} = this.state;
-    let pagedata = {
-      title: "发起项目",
-      width: '90%',
-      height: '95%',
-      closeShowPage: ::this.toggleModal
-    };
-    let contentData = list.map((item, index) => {
-      return <FundingItem data={item} onDelete={::this.onDelete} key={index}/>
+    const {list} = this.props,
+      {showModal} = this.state;
+    let contentCode = list.map((item, index) => {
+      return <FundingItem data={item} onDelete={::this.onDelete} key={index}/>;
     });
     return (
       <div className="CrowdFunding">
-        <div className="search-area">
-          <form className="search-form clearfix" method="get" action="">
-            <div className="input-area left">
-              <span className="input-name">项目名称</span>
-              <input type="text" className="form-control w200"/>
-              <input type="button" className="search-button" value="搜索"/>
-            </div>
-            <input type="button" className="start-button right" value="发起项目" onClick={() => this.toggleModal()}/>
-          </form>
-          {
-            showModal &&
-            <Modal>
-              <ShowPage {...pagedata} >
-                <FundingDetail />
-              </ShowPage>
-            </Modal>
-          }
-        </div>
-        {contentData}
+        <form className="search-area form-inline clearfix" method="get" action="">
+          <FormItem type="text" title="项目名称" name="name" itemClass="inline-block" className="form-control input-sm w200"
+                    rules={{required: false}}/>
+          <input type="button" className="btn btn-primary btn-sm ml20 w80" value="搜索"/>
+          <input type="button" className="btn btn-primary btn-sm ml20 w120 right" value="发起项目"
+                 onClick={() => this.toggleModal()}/>
+        </form>
+        {contentCode}
+        {
+          showModal &&
+          <Modal>
+            <ShowPage {...this.pagedata} >
+              <FundingDetail />
+            </ShowPage>
+          </Modal>
+        }
       </div>
     );
   }

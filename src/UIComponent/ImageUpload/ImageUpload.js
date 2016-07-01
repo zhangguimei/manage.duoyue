@@ -1,4 +1,3 @@
-"use strict";
 /*
  *  Date    : 2016.06.28
  *  Author  : CastileMan
@@ -9,7 +8,7 @@
  * 若要修改图片高宽，请直接在img-box类名中设置
  * 若要修改上传按钮样式，在upload-btn类名中设置
  * */
-
+"use strict";
 import React, {PropTypes} from 'react';
 import styles from './ImageUpload.scss';
 
@@ -37,7 +36,7 @@ class ImageUpload extends React.Component {
 
   //文件上传的change事件
   fileOnChange(e) {
-    let file = e ? e.target.files[0] : {},
+    let file = (e && e.target.files.length) ? e.target.files[0] : {},
       isImage = file.type && file.type.includes("image"),
       _this = this,
       tip = "",

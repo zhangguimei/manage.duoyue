@@ -1,14 +1,28 @@
+/*
+ *  Date    : 2016.07.01
+ *  Author  : CC
+ */
 'use strict';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { fromJS } from 'immutable';
 import DatePicker from 'UIComponentFolder/DatePicker/DatePicker';
-
+import FormItem from 'UIComponentFolder/FormComponent/FormItem';
 import FundingRepay from './FundingRepay';
 
-class FundingDetail extends React.Component {
+const datePickerStart = {
+    format: 'yyyy-mm-dd hh:ii:ss ',
+    placeHolder: '请选择日期',
+    showTimePanel: true
+  },
+  datePickerEnd = {
+    format: 'yyyy-mm-dd hh:ii:ss ',
+    placeHolder: '请选择日期',
+    showTimePanel: true
+  };
 
+class FundingDetail extends React.Component {
   static defaultProps = {
     data: {repayList: []}
   };
@@ -56,7 +70,7 @@ class FundingDetail extends React.Component {
   }
 
   addRepay() {
-    let { repayArray } = this.state;
+    const { repayArray } = this.state;
     this.setState({
       repayArray: repayArray.length > 0 ? repayArray.concat(repayArray[repayArray.length - 1] + 1) : [1]
     });
@@ -72,8 +86,8 @@ class FundingDetail extends React.Component {
   }
 
   render() {
-    let {data} = this.props;
-    const { repayArray } = this.state;
+    const { data } = this.props,
+      { repayArray } = this.state;
     let RepayArea = [];
     for (let index of repayArray) {
       let repayData = data.repayList.filter((item) => {
@@ -82,79 +96,46 @@ class FundingDetail extends React.Component {
       RepayArea = RepayArea.concat(<FundingRepay data={repayData} deleteFunc={() => this.deleteRepay(index)}
                                                  key={index}/>);
     }
-    let datePickerStart = {
-        format: 'yyyy-mm-dd hh:ii:ss ',
-        dateValue: data.startTime,
-        placeHolder: '请选择日期',
-        showTimePanel: true
-      },
-      datePickerEnd = {
-        format: 'yyyy-mm-dd hh:ii:ss ',
-        dateValue: data.endTime,
-        placeHolder: '请选择日期',
-        showTimePanel: true
-      };
+    datePickerStart.dateValue = data.startTime;
+    datePickerEnd.dateValue = data.endTime;
     return (
       <div className="FundingDetail">
-        <form className="form-inline" id="myform" name="myform" method="get" action="">
+        <form id="myform" name="myform" method="get" action="">
           <div className="group-title">项目基本信息</div>
           <div className="clearfix">
             <div className="info-left left">
-              <label className="control-label"><span className="red">*</span>项目标题</label>
-              <div className="input-container">
-                <input type="text" className="form-control w500" defaultValue={data.title}/>
-              </div>
-              <div className="clearfix">
-                <div className="dw170 left">
-                  <label className="control-label"><span className="red">*</span>需要的筹集额</label>
-                  <div className="input-container">
-                    <input type="text" className="form-control w100" defaultValue={data.wantedNum}/><span> 元</span>
-                  </div>
-                </div>
-                <div className="dw170 left">
-                  <label className="control-label">开始日期</label>
-                  <div className="input-container">
-                    <DatePicker data={datePickerStart} getPickDate={::this.getPickDate} className="w100"/>
-                  </div>
-                </div>
-                <div className="dw170 left">
-                  <label className="control-label">结束日期</label>
-                  <div className="input-container">
-                    <DatePicker data={datePickerEnd} getPickDate={::this.getPickDateEnd} className="w100"/>
-                  </div>
-                </div>
-              </div>
-              <label className="control-label">项目简介（200字以内）</label>
-              <div className="input-container">
-                <textarea className="form-control w500" defaultValue={data.desc}/>
-              </div>
+              <FormItem type="text" title="项目标题" name="detail" itemClass="mb10" className="form-control w500"
+                        rules={{required: true}} tips={{required:"请输入标题"}} defaultValue={data.title}/>
+              <FormItem type="text" title="需要的筹集额" name="detail" itemClass="w100 mb10 inline-block"
+                        className="form-control w100"
+                        rules={{required: true}} tips={{required:"请输入需要的筹集额"}} defaultValue={data.wantedNum}/> 元
+              <FormItem type="datePicker" title="开始日期" name="startTime" itemClass="inline-block w170 ml60"
+                        rules={{required: false}} data={datePickerStart} getPickDate={::this.getPickDate}/>
+              <FormItem type="datePicker" title="结束日期" name="endTime" itemClass="w170 inline-block"
+                        rules={{required: false}} data={datePickerEnd} getPickDate={::this.getPickDate}/>
+              <FormItem type="textarea" title="项目简介（200字以内）" name="detail" className="form-control w500 mb5"
+                        rules={{required: false}} defaultValue={data.desc}/>
             </div>
             <div className="info-right left">
-              <label className="control-label">发起人姓名</label>
-              <div className="input-container">
-                <input type="text" className="form-control w100" defaultValue={data.userName}/>
-              </div>
-              <label className="control-label">身份证号</label>
-              <div className="input-container">
-                <input type="text" className="form-control w200" defaultValue={data.userID}/>
-              </div>
-              <label className="control-label">联系手机</label>
-              <div className="input-container">
-                <input type="text" className="form-control w200" defaultValue={data.cellPhone}/>
-              </div>
+              <FormItem type="text" title="发起人姓名" name="name" itemClass="mb10" className="form-control w100"
+                        rules={{required: false}} defaultValue={data.userName}/>
+              <FormItem type="text" title="身份证号" name="name" itemClass="mb10" className="form-control w200"
+                        rules={{required: false}} defaultValue={data.userID}/>
+              <FormItem type="text" title="联系手机" name="name" itemClass="mb10" className="form-control w200"
+                        rules={{required: false}} defaultValue={data.cellPhone}/>
             </div>
           </div>
-          <div className="padding-vertical">项目图片</div>
-          <img className="pic-upload" alt="请上传图片" src={data.pic}/>
+          <FormItem type="imageUpload" name="pic1" title="项目图片" itemClass="inline-block" defaultValue={data.pic1}/>
+          <FormItem type="imageUpload" name="pic2" itemClass="inline-block ml20" defaultValue={data.pic2}/>
+          <FormItem type="imageUpload" name="pic3" itemClass="inline-block ml20" defaultValue={data.pic3}/>
 
           <div className="group-title">项目回报</div>
           {RepayArea}
           <div className="add-container"><span className="add-btn" onClick={::this.addRepay}>+增加回报项</span></div>
 
           <div className="group-title">*详细信息</div>
-          <div className="input-container">
-            <textarea className="editor" defaultValue={data.detail}/>
-          </div>
+          <FormItem type="textarea" name="editor" className="editor" rules={{required: false}}
+                    defaultValue={data.detail}/>
         </form>
       </div>
     );
