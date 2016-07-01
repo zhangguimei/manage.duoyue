@@ -93,3 +93,17 @@ export const minLengthValid = (value, minLength) => {
 export const patternValid = (value, pattern) => {
   return pattern && new RegExp(pattern).test(value);
 };
+
+export const require = (values, errors, fieldNames) => {
+  let fieldNamesArray = [];
+  if(typeof(fieldNames) == "string") {
+    fieldNamesArray = [fieldNames];
+  } else if(fieldNames instanceof Array) {
+    fieldNamesArray = fieldNames;
+  }
+  for(let fieldName of fieldNamesArray) {
+    if(!values[fieldName]) {
+      errors[fieldName] = "必填";
+    }
+  }
+};

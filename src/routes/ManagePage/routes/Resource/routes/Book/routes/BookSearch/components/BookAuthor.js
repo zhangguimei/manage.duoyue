@@ -1,3 +1,8 @@
+/*
+ *  Date    : 2016.6.30
+ *  Author  : Zhang-Guimei
+ *  Declare : 书籍修改作者Tab
+ */
 'use strict';
 import React, {PropTypes} from 'react';
 import Modal from 'UIComponentFolder/Modals/Modal'
@@ -20,13 +25,6 @@ class BookAuthor extends React.Component {
     this.dataForShow = [];
   }
 
-  componentWillMount() {
-    const {authorListData} = this.props;
-    if (authorListData.length > 0) {
-      this.dataForShow = authorListData.slice(0, numsForOnePage);
-    }
-  }
-
   onPageClick(nextPageIndex) {
     const {authorListData} = this.props;
     this.dataForShow = authorListData.slice((nextPageIndex - 1) * numsForOnePage, nextPageIndex * numsForOnePage);
@@ -43,24 +41,31 @@ class BookAuthor extends React.Component {
 
   selectAuthor(id) {
     const {authorList} = this;
-    const {authorListData} = this.props;
+    console.log(authorList, id)
     if (authorList.indexOf(id) < 0) {
       this.authorList = authorList.concat(id);
     } else {
-      authorList.splice(authorList.indexOf(id), 1)
+      authorList.splice(authorList.indexOf(id), 1);
     }
     this.forceUpdate();
   }
 
   deleteAuthor(id) {
     const {authorList} = this;
-    authorList.splice(authorList.indexOf(id), 1)
+    authorList.splice(authorList.indexOf(id), 1);
     this.forceUpdate();
   }
 
+  componentWillMount() {
+    const {authorListData} = this.props;
+    if (authorListData.length > 0) {
+      this.dataForShow = authorListData.slice(0, numsForOnePage);
+    }
+  }
+  
   render() {
     const {authorListData} = this.props,
-      {showAuthorLayer, checkBoxState, selectAuthorArr, pageIndex} = this.state,
+      {showAuthorLayer, pageIndex} = this.state,
       {authorList} = this,
       totalPages = Math.ceil(authorListData.length / numsForOnePage);
     let pagedata = {
@@ -70,13 +75,13 @@ class BookAuthor extends React.Component {
       showFooter: false,
       closeShowPage: ::this.addAuthorModal
     };
-    let listCode = [];
-    authorList.map((item, i) => {
-      listCode = listCode.concat(authorListData.filter((dataItem) => {
+    let tempArr = [], listCode;
+    authorList.map((item) => {
+      tempArr = tempArr.concat(authorListData.filter((dataItem) => {
         return dataItem.id == item;
       }))
     });
-    listCode = listCode.map((item, i) => {
+    listCode = tempArr.map((item, i) => {
       return (
         <li className="author-item left" key={i}>
           <div className="author-name">{item.name}</div>
@@ -86,7 +91,7 @@ class BookAuthor extends React.Component {
           </div>
         </li>
       )
-    })
+    });
     return (
       <div className="BookAuthor">
         <ul className="author-area clearfix">
@@ -107,7 +112,7 @@ class BookAuthor extends React.Component {
                     return (
                       <li className="add-author-item left clearfix" key={i}>
                         <CheckBox title={item.name} checked={authorList.indexOf(item.id) >= 0} index={item.id}
-                                                        value={item.id} checkBoxOnClick={::this.selectAuthor}/>
+                                  value={item.id} checkBoxOnClick={::this.selectAuthor}/>
                       </li>
                     )
                   })
@@ -122,7 +127,9 @@ class BookAuthor extends React.Component {
     )
   }
 }
+
 BookAuthor.propTypes = {
   authorListData: PropTypes.array
 };
+
 export default BookAuthor;

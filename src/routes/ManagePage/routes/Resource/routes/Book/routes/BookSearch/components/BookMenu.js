@@ -1,12 +1,15 @@
+/*
+ *  Date    : 2016.6.30
+ *  Author  : Zhang-Guimei
+ *  Declare : 书籍修改目录Tab
+ */
 'use strict';
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {fetchMenuInfoData} from '../../../../../../../../../actions/BookActions';
-import BookMenuInfo from './BookMenuInfo'
+
 import Tree from 'UIComponentFolder/Tree/Tree';
 import Modal from 'UIComponentFolder/Modals/Modal'
 import ShowPage from 'UIComponentFolder/Modals/ShowPage'
+import FormItem from 'UIComponentFolder/FormComponent/FormItem'
 
 class BookMenu extends React.Component {
   constructor(props) {
@@ -23,31 +26,19 @@ class BookMenu extends React.Component {
     });
   }
 
-  clickItem(data) {
-    // console.log(data)
-    data && this.props.fetchMenuInfoData(data)
+  clickItem() {
     this.setState({
       showModifyLayer: true
     });
   }
-
-  submitFunc(values) {
-    return new Promise((resolve) => {
-      resolve(values);
-      this.setState({
-        showModifyLayer: false
-      });
-    });
-  }
-
+  
   render() {
-    const { menuTreeData } = this.props,
+    const {menuTreeData} = this.props,
       {showUploadMenuLayer, showModifyLayer} = this.state;
     let pagedata = {
       width: "50%",
       height: "50%",
       title: "批量上传目录 ",
-      newPageHref: 'http://www.baidu.com',
       closeShowPage: ::this.showUploadMenu
     };
     return (
@@ -60,26 +51,37 @@ class BookMenu extends React.Component {
           showUploadMenuLayer &&
           <Modal>
             <ShowPage {...pagedata}>
-              <div className="upload-menu-content">
+              <form className="upload-menu-content">
                 <div className="upload-menu-info clearfix">
-                  <div className="item-font left w100">分界字符：</div>
-                  <div className="item-input left"><input type="text" className="w100" placeholder="......"/></div>
-                  <div className="item-font left w100">（默认 ……）</div>
+                  <FormItem type="text" className="form-control input-sm w100 inline" title="分界字符:"/>
                 </div>
                 <div className="upload-menu-info clearfix">
-                  <div className="item-font left w100">文档上传：</div>
+                  <span className="item-font left w100">文档上传：</span>
+                  <input type="file"/>
                 </div>
                 <div className="preview-document-content-title">文档内容预览</div>
                 <div className="preview-document-content"></div>
-              </div>
+              </form>
             </ShowPage>
           </Modal>
         }
         <div className="menu-content clearfix">
-          <Tree data={menuTreeData} clickItem={::this.clickItem}/>
+          <div className="tree-left left">
+            <Tree data={menuTreeData} clickItem={::this.clickItem}/>
+          </div>
           {
             showModifyLayer ?
-              <BookMenuInfo menuTreeData={menuTreeData} onSubmit={::this.submitFunc}/>
+              <form className="add-menu-box left" onSubmit={this.handleSubmit}>
+                <FormItem type="tree" className="form-control tree-input input-sm w300" treeData={menuTreeData} title="父级目录"
+                          required={true}/>
+                <FormItem type="text" className="form-control input-sm w300" title="目录名称" rules={{required: true}}/>
+                <div className="radio-area clearfix">
+                  <FormItem type="radio" name="isProbation" options={[{value:'否'},{value:'是'}]} title="允许试读"/>
+                  <FormItem type="radio" name="isRecommendMenu" options={[{value:'否'},{value:'是'}]} title="推荐阅读目录"/>
+                </div>
+                  <FormItem name="introduction" title="简介" type="textarea" className="form-control w400 mb10"/>
+                <button type="submit" className="btn btn-primary btn-sm w80">确定</button>
+              </form>
               :
               <div className="maintain-catalog-text left">请点击左侧目录节点进行维护！</div>
           }
@@ -93,18 +95,5 @@ BookMenu.propTypes = {
   menuTreeData: PropTypes.array
 };
 
-function mapStateToProps(state) {
-  return {
-    data: state
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchMenuInfoData: bindActionCreators(fetchMenuInfoData, dispatch)
-  };
-};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BookMenu);
+export default BookMenu;
 

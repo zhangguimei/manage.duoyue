@@ -1,17 +1,16 @@
+/*
+ *  Date    : 2016.6.30
+ *  Author  : Han-Shuangli
+ *  Declare : 相关推荐页
+ */
 'use strict';
 import React, {PropTypes} from 'react';
-import Table from './Table/Table';
-import Validate from './Validate/BookRelatedRecommendValidate';
-import {InputF, InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
+import FormItem from 'UIComponentFolder/FormComponent/FormItem'
+import Table from 'UIComponentFolder/Table/Table';
+import styles from './RelatedRecommend.scss';
 
-const pageNumLists = [10, 20, 50];
-const field = {
-  onUpdate: function () {
-    
-  }
-}
-class BookRelatedRecommend extends React.Component {
+class RelatedRecommend extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +41,6 @@ class BookRelatedRecommend extends React.Component {
 
   selectArticle(id, isSelected) {
     const {articleList} = this;
-    const {relatedTableData} = this.props;
     if (isSelected) {
       if (articleList.indexOf(id) < 0) {
         this.articleList = articleList.concat(id);
@@ -64,57 +62,69 @@ class BookRelatedRecommend extends React.Component {
   }
 
   render() {
-    const {relatedTableData, classifyInfo} = this.props,
+    const {relatedTableData, classifyData} = this.props,
       {pageIndex, rowsForOnePage} = this.state,
       {articleList} = this,
       totalPages = Math.ceil(relatedTableData.tableContentData.length / rowsForOnePage);
-    let listCode = [];
-    articleList.map((item, i) => {
-      listCode = listCode.concat(relatedTableData.tableContentData.filter((dataItem) => {
+    let listCode, tempArr = [];
+    articleList.map((item) => {
+      tempArr = tempArr.concat(relatedTableData.tableContentData.filter((dataItem) => {
         return dataItem.id == item;
       }))
     });
-    listCode = listCode.map((item, i) => {
+    listCode = tempArr.map((item, i) => {
       return (
-        <li className="related-article-item" key={i}>
-          <div className="related-article-title">{item.article}</div>
-          <div className="related-article-delete"><span className="delete-btn"
-                                                        onClick={() => this.deleteRelatedArticle(item.id)}>删除</span>
+        <li className="related-item" key={i}>
+          <div className="related-title">{item.article}</div>
+          <div className="related-delete">
+            <span className="delete-btn" onClick={() => this.deleteRelatedArticle(item.id)}>删除</span>
           </div>
         </li>
       )
-    })
+    });
     return (
-      <div className="BookRelatedRecommend clearfix">
-        <div className="related-info left">
-          <div className="article-info">这里是文章信息...（略   ）</div>
-          <ul className="related-article-list">
+      <div className="RelatedRecommend clearfix">
+        <aside className="related-info left">
+          <header className="title">这里是文章信息...（略   ）</header>
+          <ul className="related-list">
             { listCode }
           </ul>
           {
             listCode.length == 0 &&
-            <div className="no-related">还没有任何关联信息...</div>
+            <p className="no-related">还没有任何关联信息...</p>
           }
-        </div>
+        </aside>
         <div className="related-table-box left">
-          <form className="related-search-box">
-            <InputTree className="info-input w200" treeData={classifyInfo} label="分类" field={field}/>
-            <input className="info-input input w200" label="关键字"/>
-            <div className="book-submit-btn inline interval-margin">搜索</div>
+          <form className="related-search-box form-inline">
+            <div className="input-wrap">
+              <span className="tip-text">分类</span>
+              <FormItem type="tree" treeData={classifyData} className="form-control w200 input-sm"/>
+              <span className="tip-text">关键字</span>
+              <FormItem type="text" className="keyword-input form-control w160 input-sm"/>
+              <button className="btn btn-primary w80 btn-sm">搜索</button>
+            </div>
           </form>
           <Table headData={relatedTableData.tableHeadData} contentData={relatedTableData.tableContentData}
                  isOptional={true} rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}
-                 selectArticle={::this.selectArticle}/>
+                 checkBoxClick={::this.selectArticle}/>
           <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}
-                      selectOnChange={::this.selectOnChange} pageNumLists={pageNumLists}/>
+                      selectOnChange={::this.selectOnChange}/>
         </div>
       </div>
     )
   }
 }
-BookRelatedRecommend.propTypes = {
+
+/**
+ *
+ * @type {{
+ * relatedTableData: 相关推荐表格数据,
+ * classifyData: 推荐分类树形数据
+ * }}
+ */
+RelatedRecommend.propTypes = {
   relatedTableData: PropTypes.object,
-  classifyInfo: PropTypes.array
+  classifyData: PropTypes.array
 };
 
-export default BookRelatedRecommend;
+export default RelatedRecommend;

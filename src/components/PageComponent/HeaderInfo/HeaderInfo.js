@@ -8,7 +8,6 @@ import React, {PropTypes} from 'react';
 
 import styles from './HeaderInfo.scss';
 
-
 let showItem = {
   "browse": "浏览",
   "scan": "扫一扫",

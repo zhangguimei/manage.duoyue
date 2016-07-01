@@ -169,7 +169,7 @@ Pagination.propTypes = {
   onPageClick: PropTypes.func,
   requireSelect: PropTypes.bool,
   selectOnChange: PropTypes.func,
-  pageNumsLists: PropTypes.array,
+  pageNumLists: PropTypes.array,
   requireTurn: PropTypes.bool
 };
 
