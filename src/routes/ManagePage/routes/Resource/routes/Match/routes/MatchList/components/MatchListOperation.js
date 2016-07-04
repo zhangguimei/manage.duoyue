@@ -11,10 +11,10 @@ const OperationData = ["查看链接", "修改信息", "删除活动", "选项�
 
 class MatchListOperation extends React.Component {
   render() {
-    const {linkOnClick} = this.props;
+    const {linkOnClick,index} = this.props;
     let operationItem = OperationData.map((item, i)=> {
       return (
-        <span className="btn btn-operate" key={i} onClick={() => linkOnClick(i)}>{item}</span>
+        <span className="btn btn-operate" key={i} onClick={() => linkOnClick(i,index)}>{item}</span>
       )
     });
     return (

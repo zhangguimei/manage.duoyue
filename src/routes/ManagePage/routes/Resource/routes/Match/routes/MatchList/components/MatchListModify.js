@@ -47,7 +47,6 @@ const headerData = {
 };
 
 class MatchListModify extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -67,22 +66,22 @@ class MatchListModify extends React.Component {
     let data = {
       title: tabValue[idx] || "",
       newPageHref: '',
-      closeShowPage: this.props.toggleModal,
+      closeShowPage: this.props.toggleLayer,
       submitForm: this.submitChange
     };
-    const {toggleModal} = this.props;
+    const {toggleLayer} = this.props;
     data.title = "周杰伦2016地表最强世界巡回演唱会-" + data.title;
     switch (idx) {
       case 0:
       case 2:
       case 3:
       case 4:
-        data.ftChildren = <div><span className="cancel-btn btn" onClick={toggleModal}>返回关闭</span></div>;
+        data.ftChildren = <div><span className="cancel-btn btn" onClick={toggleLayer}>返回关闭</span></div>;
         break;
       case 1:
         data.ftChildren =
           <div className="btn-wrap"><span className="submit-btn btn" onClick={::this.submitForm}>确定修改</span><span
-            className="cancel-btn btn" onClick={toggleModal}>返回关闭</span></div>;
+            className="cancel-btn btn" onClick={toggleLayer}>返回关闭</span></div>;
         break;
       default:
         data.showFooter = false;
@@ -92,22 +91,22 @@ class MatchListModify extends React.Component {
   }
 
   submitChange() {
-    this.props.toggleModal();
+    this.props.toggleLayer();
   }
 
   submitForm(values) {
     return new Promise((resolve) => {
       resolve(values);
-      this.props.toggleModal();
+      this.props.toggleLayer();
     });
   }
 
   render() {
     const {tabIndex} = this.state,
-      {toggleModal} = this.props,
+      {toggleLayer} = this.props,
       {showPageData} = this;
     return (
-      <Modal onModalClick={toggleModal}>
+      <Modal onModalClick={toggleLayer}>
         <ShowPage {...showPageData}>
           <HeaderInfo data={headerData}/>
           <Tab TabItemsData={TabItemsData} typeIndex={tabIndex} onTypeChange={::this.onTypeChange}/>
@@ -142,7 +141,7 @@ class MatchListModify extends React.Component {
 }
 
 MatchListModify.propTypes = {
-  toggleModal: PropTypes.func.isRequired
+  toggleLayer: PropTypes.func.isRequired
 };
 
 export default MatchListModify;

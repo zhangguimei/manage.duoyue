@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.page-body{
+  position: relative;
+}
+
+.MatchSort{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  .MatchSort-left{
+    padding: 20px;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .MatchSort-right{
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    width: 75%;
+    padding: 20px 50px 0;
+    border-left: 1px solid $grayD;
+    .default-info{
+      margin: 160px 0;
+      width: 100%;
+      text-align: center;
+    }
+    .form-control {
+      display: inline-block;
+    }
+    .tree-component {
+      position: absolute;
+      background-color: $white;
+      z-index: 100;
+      border: 1px solid $grayD;
+      border-top: none;
+      width: 300px;
+    }
+    .submit-area{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 8px 0;
+      background-color: $colorBgLight;
+      border-top: 1px solid $grayD;
+      .submit-btn{
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}

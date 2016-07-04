@@ -22,7 +22,7 @@
           display: block;
           h4 {
             margin-bottom: 5px;
-            @extend %ellipse;
+            @extend %ellipsis;
           }
           .pic {
             position: relative;
@@ -34,7 +34,7 @@
             }
           }
           p {
-            @extend %ellipse;
+            @extend %ellipsis;
             color: $gray7;
             font-size: 12px;
           }
