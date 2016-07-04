@@ -28,7 +28,8 @@ class MatchList extends React.Component {
     this.state = {
       pageIndex: 1,
       rowsForOnePage: 5,
-      showModal: false,
+      tableContentData: tableData.tableContentData,
+      showModifyModal: false,
       showCreateModal: false
     };
     this.tabIndex = 0;
@@ -53,46 +54,49 @@ class MatchList extends React.Component {
     });
   }
 
-  createMatch() {
+  toggleCreareLayer() {
     const {showCreateModal} = this.state;
     this.setState({
       showCreateModal: !showCreateModal
     });
   }
 
-  toggleModal() {
-    const {showModal} = this.state;
+  toggleModifyLayer() {
+    const {showModifyModal} = this.state;
     this.setState({
-      showModal: !showModal
+      showModifyModal: !showModifyModal
     });
   }
 
-  createPage(id) {
-    switch (id) {
+  handleOperationClick(type,id) {
+    switch (type) {
       case 0:
       case 1:
-        this.toggleModal();
-        this.tabIndex = id;
+        this.toggleModifyLayer();
+        this.tabIndex = type;
         break;
       case 3:
-        this.toggleModal();
+        this.toggleModifyLayer();
         this.tabIndex = 2;
         break;
       case 4:
-        this.toggleModal();
+        this.toggleModifyLayer();
         this.tabIndex = 5;
         break;
       case 2:
+        this.setState({
+            tableContentData: this.state.tableContentData.filter(v => v.id != id)
+          });
       default:
         break;
     }
   }
 
   render() {
-    const {pageIndex, rowsForOnePage, showModal, showCreateModal} = this.state,
-      totalPages = Math.ceil(tableData.tableContentData.length / rowsForOnePage);
-    tableData.tableContentData.map((item, i) => {
-      item.operation = <MatchListOperation index={i} linkOnClick={::this.createPage}/>
+    const {pageIndex, rowsForOnePage, showModifyModal, showCreateModal, tableContentData} = this.state,
+      totalPages = Math.ceil(tableContentData.length / rowsForOnePage);
+    tableContentData.map((item, i) => {
+      item.operation = <MatchListOperation index={item.id} linkOnClick={::this.handleOperationClick}/>
     });
     return (
       <div className="MatchList">
@@ -104,24 +108,24 @@ class MatchList extends React.Component {
               <span className="inline">名称</span>
               <input className="form-control"/>
               <input type="button" className="btn btn-primary w80 ml10" value="查询"/>
-              <span className="right btn btn-primary w120" onClick={::this.createMatch}>新增活动报名</span>
+              <span className="right btn btn-primary w120" onClick={::this.toggleCreareLayer}>新增活动报名</span>
             </div>
           </div>
         </div>
         <div className="matchList-table">
-          <Table headData={tableData.tableHeadData} contentData={tableData.tableContentData}
+          <Table headData={tableData.tableHeadData} contentData={tableContentData}
                  rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}/>
           <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}
                       selectOnChange={::this.selectOnChange}/>
         </div>
         {
-          showModal &&
-          <MatchListModify toggleModal={::this.toggleModal} tabIndex={this.tabIndex}/>
+          showModifyModal &&
+          <MatchListModify toggleLayer={::this.toggleModifyLayer} tabIndex={this.tabIndex}/>
         }
         {
           showCreateModal &&
-          <Modal onModalClick={::this.createMatch}>
-            <ShowPage closeShowPage={::this.createMatch} width="70%">
+          <Modal onModalClick={::this.toggleCreareLayer}>
+            <ShowPage closeShowPage={::this.toggleCreareLayer} width="70%">
               <BasicInfo matchInfo={matchNullInfo} treeData={treeData}/>
             </ShowPage>
           </Modal>

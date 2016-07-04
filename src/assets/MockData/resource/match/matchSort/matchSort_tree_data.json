@@ -1,0 +1,481 @@
+[ 
+  {
+    "id": "324",
+    "parentid": "323",
+    "name": "用户中心",
+    "url": "",
+    "target": "",
+    "icon_min": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200716368.png",
+    "icon_min_light": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200718586.png",
+    "icon_max": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200528883.png",
+    "icon_max_light": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200532430.png",
+    "data": [
+      {
+        "id": "329",
+        "parentid": "324",
+        "name": "用户管理",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "349",
+            "parentid": "329",
+            "name": "用户查询",
+            "url": "/manage/iuser/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "361",
+            "parentid": "329",
+            "name": "用户图片",
+            "url": "/manage/comment/image/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "719",
+            "parentid": "329",
+            "name": "用户视频",
+            "url": "/manage/comment/video/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "720",
+            "parentid": "329",
+            "name": "群组管理",
+            "url": "/manage/user_groups/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "331",
+        "parentid": "324",
+        "name": "咨询/评论",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "353",
+            "parentid": "331",
+            "name": "书籍咨询",
+            "url": "",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "354",
+            "parentid": "331",
+            "name": "文章评论",
+            "url": "/manage/comment/sitecolumn/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "355",
+            "parentid": "331",
+            "name": "书籍评论",
+            "url": "/manage/comment/book/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "356",
+            "parentid": "331",
+            "name": "资源评论",
+            "url": "",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "357",
+            "parentid": "331",
+            "name": "商品咨询",
+            "url": "/manage/comment/consult/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "710",
+            "parentid": "331",
+            "name": "微信直播",
+            "url": "/manage/comment/weixinqiang/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "325",
+    "parentid": "323",
+    "name": "资源中心",
+    "url": "",
+    "target": "",
+    "icon_min": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200725899.png",
+    "icon_min_light": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200728071.png",
+    "icon_max": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200517899.png",
+    "icon_max_light": "http://file.duoyue.me/upload/menu/20160321/2016_03_21_200520930.png",
+    "data": [
+      {
+        "id": "334",
+        "parentid": "325",
+        "name": "文章资讯",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "409",
+            "parentid": "334",
+            "name": "文章查询",
+            "url": "/manage/sitecolumninfo/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185521322.png",
+            "icon_max_light": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185524775.png",
+            "data": []
+          },
+          {
+            "id": "410",
+            "parentid": "334",
+            "name": "文章分类",
+            "url": "/manage/website/columntree/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "335",
+        "parentid": "325",
+        "name": "书籍管理",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "375",
+            "parentid": "335",
+            "name": "书籍查询",
+            "url": "/manage/book/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185353572.png",
+            "icon_max_light": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185356447.png",
+            "data": []
+          },
+          {
+            "id": "715",
+            "parentid": "335",
+            "name": "书籍分类",
+            "url": "/manage/book/booktype/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "336",
+        "parentid": "325",
+        "name": "期刊管理",
+        "url": "/manage/magazine/",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "713",
+            "parentid": "336",
+            "name": "期刊查询",
+            "url": "/manage/magazine/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "714",
+            "parentid": "336",
+            "name": "期刊分类",
+            "url": "/manage/magazine/magazinetype/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "337",
+        "parentid": "325",
+        "name": "电子资源",
+        "url": "/manage/source/",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "372",
+            "parentid": "337",
+            "name": "资源查询",
+            "url": "/manage/source/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185340009.png",
+            "icon_max_light": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185342384.png",
+            "data": []
+          },
+          {
+            "id": "373",
+            "parentid": "337",
+            "name": "资源统计",
+            "url": "",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "374",
+            "parentid": "337",
+            "name": "流量趋势",
+            "url": "",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "762",
+            "parentid": "337",
+            "name": "资源分类",
+            "url": "/manage/source/type/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "338",
+        "parentid": "325",
+        "name": "商品管理",
+        "url": "/manage/product/",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "721",
+            "parentid": "338",
+            "name": "商品查询",
+            "url": "/manage/product/",
+            "target": "",
+            "icon_min": "http://file.duoyue.me/upload/menu/20160504/2016_05_04_091516909.png",
+            "icon_min_light": "",
+            "icon_max": "http://file.duoyue.me/upload/menu/20160504/2016_05_04_091547086.png",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "722",
+            "parentid": "338",
+            "name": "商品分类",
+            "url": "/manage/productType/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "339",
+        "parentid": "325",
+        "name": "众筹管理",
+        "url": "/manage/project/",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": []
+      },
+      {
+        "id": "716",
+        "parentid": "325",
+        "name": "视频管理",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "717",
+            "parentid": "716",
+            "name": "视频列表",
+            "url": "/manage/video/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "718",
+            "parentid": "716",
+            "name": "视频分类",
+            "url": "/manage/videotype/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      },
+      {
+        "id": "723",
+        "parentid": "325",
+        "name": "验证码商品",
+        "url": "/manage/identifycode/",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": []
+      },
+      {
+        "id": "727",
+        "parentid": "325",
+        "name": "标签体系",
+        "url": "",
+        "target": "",
+        "icon_min": "",
+        "icon_min_light": "",
+        "icon_max": "",
+        "icon_max_light": "",
+        "data": [
+          {
+            "id": "728",
+            "parentid": "727",
+            "name": "标签结构",
+            "url": "/manage/label/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          },
+          {
+            "id": "729",
+            "parentid": "727",
+            "name": "扩展属性",
+            "url": "/manage/label/attribute/",
+            "target": "",
+            "icon_min": "",
+            "icon_min_light": "",
+            "icon_max": "",
+            "icon_max_light": "",
+            "data": []
+          }
+        ]
+      }
+    ]
+  }
+]

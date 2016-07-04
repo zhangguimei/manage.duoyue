@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.OptionLibrary{
+  .search-area{
+    border-bottom: 1px solid $grayD;
+    padding: 10px 20px;
+  }
+  .list-area{
+    padding: 10px 20px;
+  }
+  .OptionLibraryForm{
+    padding: 20px 50px;
+  }
+}
