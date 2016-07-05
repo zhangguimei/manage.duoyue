@@ -25,5 +25,5 @@ export const compareData = (data, compare, value,  propety) => {
 //得到当前的menu的主Index
 export const getMainIndex = (data, path) => {
   return data.reduce((acc, item, index) =>
-    item.accessPath == `/${path.slice(1).split("/")[0]}` ? index : acc, -1);
+    item.accessPath == `/${path.slice(1).split("/")[0]}` ? index : acc, 0);
 };

@@ -13,7 +13,7 @@ import Modal from 'UIComponentFolder/Modals/Modal'
 import BookModify from './BookModify';
 import styles from './BookSearch.scss';
 
-const tableData = require("AssetsFolder/MockData/book/book_list_data.json");
+const tableData = require("AssetsFolder/MockData/sourcecenter/book/book_list_data.json");
 
 class BookSearch extends React.Component {
   constructor(props) {

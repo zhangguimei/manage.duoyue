@@ -8,7 +8,7 @@ import RecommendValidate from './Validate/RecommendValidate';
 import styles from './ArticleSearch.scss';
 
 const tableHead = {"recommend": "标题"};
-const data = require("AssetsFolder/MockData/article/related_recommend_data.json");
+const data = require("AssetsFolder/MockData/sourcecenter/article/related_recommend_data.json");
 let dataTree = require("AssetsFolder/MockData/tree_data.json").menu;
 const fields = ['keyword', 'category'];
 let lodash = require('lodash');
@@ -68,7 +68,7 @@ class Recommend extends React.Component {
   }
 
   searchFunc(keyword) {
-    const data = lodash.clone(require("AssetsFolder/MockData/article/related_recommend_data.json"));
+    const data = lodash.clone(require("AssetsFolder/MockData/sourcecenter/article/related_recommend_data.json"));
     let len = data.length;
     for (let i = len - 1; i >= 0; i--) {
       let item = data[i];

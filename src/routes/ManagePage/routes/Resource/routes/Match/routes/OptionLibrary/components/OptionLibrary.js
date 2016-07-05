@@ -17,7 +17,7 @@ import OptionLibraryForm from './OptionLibraryForm';
 
 import styles from './OptionLibrary.scss';
 
-const tableData = require("AssetsFolder/MockData/resource/match/optionLibrary/optionLibrary_table_data.json"),
+const tableData = require("AssetsFolder/MockData/sourcecenter/match/optionLibrary/optionLibrary_table_data.json"),
   formData = {
     title:"性别",
     dtitle:"呵呵",

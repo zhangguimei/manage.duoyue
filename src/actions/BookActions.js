@@ -2,7 +2,7 @@
 import { RECEIVE_BOOK_DATA, RECEIVE_ARTICLE_INFO_DATA, RECEIVE_MENU_INFO_DATA, RECEIVE_FASHION_INFO_DATA } from '../constants/constants';
 
 export const fetchBookData = (id) => {
-  let data = require("../assets/MockData/book/book_info.json");
+  let data = require("../assets/MockData/sourcecenter/book/book_info.json");
   return (dispatch) => dispatch(receiveBookData(data));
 };
 
@@ -14,7 +14,7 @@ const receiveBookData = (data) => {
 };
 
 export const fetchArticleInfoData = (id) => {
-  let data = require("../assets/MockData/book/book_article_table_data.json").tableContentData;
+  let data = require("../assets/MockData/sourcecenter/book/book_article_table_data.json").tableContentData;
   let json = data.filter(item => item.id == id);
   return (dispatch) => dispatch(receiveArticleInfoData(json[0]));
 };
@@ -38,7 +38,7 @@ export const fetchMenuInfoData = (data) => {
 };
 
 export const fetchFashionInfoData = (id) => {
-  let data = require("../assets/MockData/book/book_fashion_table_data.json").tableContentData;
+  let data = require("../assets/MockData/sourcecenter/book/book_fashion_table_data.json").tableContentData;
   let json = data.filter(item => item.id == id);
   console.log(json)
   return (dispatch) => dispatch(receiveFashionInfoData(json[0]));

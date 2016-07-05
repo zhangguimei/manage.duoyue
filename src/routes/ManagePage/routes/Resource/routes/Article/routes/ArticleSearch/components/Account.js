@@ -9,7 +9,7 @@ import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import Table from 'UIComponentFolder/Table/Table';
 import styles from './ArticleSearch.scss';
 
-const tableData = require('AssetsFolder/MockData/article/account_data.json');
+const tableData = require('AssetsFolder/MockData/sourcecenter/article/account_data.json');
 
 class Account extends React.Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class Account extends React.Component {
 }
 
 function mapStateToProps() {
-  const data = require('AssetsFolder/MockData/article/account_data.json');
+  const data = require('AssetsFolder/MockData/sourcecenter/article/account_data.json');
   return {
     data
   };

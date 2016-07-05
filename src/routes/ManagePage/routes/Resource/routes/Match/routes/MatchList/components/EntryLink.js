@@ -8,7 +8,6 @@ import React, {PropTypes} from 'react';
 import MatchInputs from './MatchInputs';
 
 class EntryLink extends React.Component {
-
   constructor(props) {
     super(props);
     this.inputShowID = [];

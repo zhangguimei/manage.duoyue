@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.UserSearch {
+  padding-bottom: 60px;
+  .header {
+    padding: 15px 20px;
+    border-bottom: 1px solid $grayD;
+  }
+  .content-wrap {
+    padding: 20px;
+    .user-name {
+      cursor: pointer;
+    }
+  }
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid $grayD;
+    background-color: $white;
+    .Pagination {
+      margin: 10px 0;
+    }
+  }
+}

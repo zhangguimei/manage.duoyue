@@ -12,10 +12,10 @@ import Account from './Account';
 import TablePage from 'PageComponentFolder/TablePage/TablePage'
 import styles from './ArticleSearch.scss';
 
-const tagData = require("AssetsFolder/MockData/book/book_tag_data.json"),
+const tagData = require("AssetsFolder/MockData/sourcecenter/book/book_tag_data.json"),
   navData = [{'info': '基本信息'}, {'source': '资源'}, {'tag': '标签'}, {'maxCard': '二维码'}, {'Cookies': '浏览记录'}, {'account': '分账设置'}, {'recommend': '相关推荐'}],
-  qrcodeData = require("AssetsFolder/MockData/article/code_data.json"),
-  historyData = require('AssetsFolder/MockData/article/cookies_data.json');
+  qrcodeData = require("AssetsFolder/MockData/sourcecenter/article/code_data.json"),
+  historyData = require('AssetsFolder/MockData/sourcecenter/article/cookies_data.json');
 const tabContent = navData.map((item) => {
   return Object.values(item)[0]
 });

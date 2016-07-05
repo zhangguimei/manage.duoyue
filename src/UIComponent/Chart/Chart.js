@@ -71,7 +71,7 @@ class Chart extends React.Component {
   }
 
   componentDidMount() {
-    this.initMyChart(this.props)
+    this.initMyChart(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -86,10 +86,10 @@ class Chart extends React.Component {
   }
 
   render() {
-    const {width, height} = this.props;
+    const {width, height, className} = this.props;
     return (
       <div className="Chart">
-        <canvas className="chart-cvs" ref="myChartCvs" width={width} height={height}></canvas>
+        <canvas className="chart-cvs" ref="myChartCvs" width={width} height={height} className={className}></canvas>
       </div>
     );
   }
@@ -98,7 +98,8 @@ class Chart extends React.Component {
 Chart.PropTypes = {
   type: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired,
-  options: PropTypes.object.isRequired
+  options: PropTypes.object.isRequired,
+  className: PropTypes.string
 };
 
 export default Chart;

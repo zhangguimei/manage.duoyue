@@ -16,4 +16,4 @@ Website.propTypes = {
   children: PropTypes.any
 }
 
-export default Website;
+module.exports = Website;

@@ -27,8 +27,8 @@ const tableHeadData = {
     startDate: "开始日期",
     endDate: "结束日期"
   },
-  tableContentData = require("../../../assets/MockData/table_list_data.json"),
-  tableContentData2 = require("../../../assets/MockData/table_list_data_2.json"),
+  tableContentData = require("../../../assets/MockData/testpage/table_list_data.json"),
+  tableContentData2 = require("../../../assets/MockData/testpage/table_list_data_2.json"),
   thClass = ["head-0", "head-1", "head-2", "head-3", "head-4", "head-5", "head-6", "head-7"],
   tdClass = ["body-0", "body-1", "body-2", "body-3", "body-4", "body-5", "body-6", "body-7"],
   pageNumLists = [5, 10, 20];

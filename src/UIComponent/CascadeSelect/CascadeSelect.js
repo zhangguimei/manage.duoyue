@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {findDOMNode} from 'react-dom';
-import {Map, List, is, fromJS} from 'immutable';
+import {Map, fromJS} from 'immutable';
 import classNames from 'classnames';
 import shouldComponentUpdate from '../../utils/shouldComponentUpdate';
 import styles from './CascadeSelect.scss';
@@ -125,7 +125,7 @@ class CascadeSelect extends React.Component {
     this.togglePanel(index);
     this.exportSelectInfo()
 
-    if(fields[index] && data) {
+    if (fields[index] && data) {
       fields[index].onUpdate(name || defaultItemVaule);
     }
   }
@@ -192,7 +192,8 @@ class CascadeSelect extends React.Component {
               <div className="select-wrap" key={i}>
                 <div className="select-input-box">
                   <input className={`select-input ${fieldsClassName[i]}`} defaultValue={defaultItemVaule} type="text"
-                         {...fields[i]} value={fromJS(pickedDate).getIn(['name', i])} readOnly onClick={(e)=>{::this.onClickInput(i, e)}}/>
+                    {...fields[i]} value={fromJS(pickedDate).getIn(['name', i])} readOnly
+                         onClick={(e)=>{::this.onClickInput(i, e)}}/>
                   <em className="triangle"></em>
                   {
                     showPanelIndex === i &&
@@ -228,11 +229,11 @@ class CascadeSelect extends React.Component {
 
 CascadeSelect.PropTypes = {
   data: PropTypes.shape({
-    showGenre: PropTypes.array.isRequired,
+    showGenre: PropTypes.array,
     defaultItemVaule: PropTypes.string,
     addressValue: PropTypes.array
   }).isRequired,
-  getSelectInfo: PropTypes.func.isRequired
+  getSelectInfo: PropTypes.func
 };
 
 export default CascadeSelect;
