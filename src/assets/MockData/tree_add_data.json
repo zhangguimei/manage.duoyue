@@ -19,6 +19,11 @@
     "icon":"",
     "url":"/website"
   },
+  "412":{
+    "name":"广告管理",
+    "icon":"ic-ad",
+    "url":"/website/bannermanage"
+  },
   "327":{
     "name":"销售结算",
     "icon":"",
@@ -87,37 +92,57 @@
   "354":{
     "name":"文章评论",
     "icon":"",
-    "url":"/user/comment/sitecolumn"
+    "url":"/user/comment/article"
   },
   "355":{
     "name":"书籍评论",
     "icon":"",
     "url":"/user/comment/book"
   },
+  "710":{
+    "name":"圈子评论",
+    "icon":"",
+    "url":"/user/comment/group"
+  },
   "356":{
     "name":"资源评论",
     "icon":"",
     "url":"/user/comment/source"
+  },
+  "804":{
+    "name":"专题评论",
+    "icon":"",
+    "url":"/user/comment/topic"
   },
   "357":{
     "name":"商品咨询",
     "icon":"",
     "url":"/user/comment/consult"
   },
-  "710":{
-    "name":"微信直播",
-    "icon":"",
-    "url":"/user/comment/weixinqiang"
-  },
   "332":{
     "name":"作者管理",
     "icon":"ic-author",
     "url":"/user/author"
   },
+  "358":{
+    "name":"作者查询",
+    "icon":"",
+    "url":"/user/author/search"
+  },
+  "359":{
+    "name":"作者分类",
+    "icon":"",
+    "url":"/user/author/sort"
+  },
   "333":{
     "name":"圈子管理",
     "icon":"ic-circle",
-    "url":"/user/circle"
+    "url":"/user/group"
+  },
+  "364":{
+    "name":"圈子查询",
+    "icon":"",
+    "url":"/user/group/search"
   },
   "759":{
     "name":"活动管理",
@@ -372,11 +397,6 @@
   "411":{
     "name":"网站列表",
     "icon":"ic-website",
-    "url":""
-  },
-  "412":{
-    "name":"广告管理",
-    "icon":"ic-ad",
     "url":""
   },
   "413":{

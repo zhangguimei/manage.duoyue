@@ -7,7 +7,7 @@
   border: 8px solid $grayD;
   border-radius: 5px;
   background-color: $white;
-  .header {
+  .showpage-header {
     position: relative;
     width: 100%;
     color: $white;
@@ -29,7 +29,7 @@
       color: $white;
     }
   }
-  .content {
+  .showpage-content {
     position: absolute;
     top: 30px;
     right: 0;
@@ -41,7 +41,7 @@
   .show-footer {
     margin-bottom: 50px;
   }
-  .footer {
+  .showpage-footer {
     position: absolute;
     left: 0;
     bottom: 0;

@@ -420,7 +420,7 @@ class DatePicker extends React.Component {
 
   exportPickedDate(date) {
     const {getPickDate} = this.props;
-    getPickDate(date);
+    getPickDate && getPickDate(date);
   }
 
   componentWillMount() {
@@ -488,7 +488,7 @@ class DatePicker extends React.Component {
     const {[lang]: {daysMockData=[], monthsMockData, todayMockData}} = dateData;
     return (
       <div className="DatePicker">
-        <div className={`date-input-wrap ${Map(data).get('calendarWrapClassName') || ''}`}>
+        <div className={`date-input-wrap ${Map(data).get('className') || ''}`}>
           <input ref="input" className={`date-input ${className}`} type="text" readOnly="readonly"
                  placeholder={Map(data).get('placeHolder')} {...field}
                  onClick={()=>{::this.toggleCalendar(true)}}/>
@@ -649,13 +649,13 @@ class DatePicker extends React.Component {
 
 
 DatePicker.PropTypes = {
-  getPickDate: PropTypes.func.isRequired, //获得选择日期方法，返回选择日期
+  getPickDate: PropTypes.func, //获得选择日期方法，返回选择日期
   data: PropTypes.shape({
     format: PropTypes.string,  //显示日期的格式, 默认'yyyy-mm-dd hh:ii:ss'
     dateValue: PropTypes.string,  //已有日期，从后台读取到的
     placeHolder: PropTypes.string,  //和input的placeHolder用法一样
     showTimePanel: PropTypes.bool, //是否显示时分秒（默认不显示）
-    calendarWrapClassName: PropTypes.string  //日历区div最外层className
+    className: PropTypes.string  //日历区div最外层className
   })
 };
 

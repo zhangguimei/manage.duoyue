@@ -1,0 +1,350 @@
+{
+  "tableHeadData": {
+    "id": "编号",
+    "sortNum": "排序值",
+    "imgName": "图片名称",
+    "areaName": "所在区域",
+    "columnName": "所属栏目",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1111,
+      "sortNum": "0",
+	    "imgName": "前端开发工具箱",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141025871_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "热门展示",
+      "columnValue": 3,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1112,
+      "sortNum": "0",
+	    "imgName": "奔跑吧，兄弟",
+	    "areaName": "吉品印象-资源",
+      "areaValue": 3,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141030711_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "新窗口",
+      "targetValue": 1,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2013-2-10 00:10:12",
+	    "endDate": "2016-3-20 00:12:10",
+	    "operation": ""
+    },
+    {
+      "id": 1113,
+      "sortNum": "0",
+	    "imgName": "三体",
+	    "areaName": "吉品印象-书城",
+      "areaValue": 1,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141036656_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "顶级窗口",
+      "targetValue": 2,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1114,
+      "sortNum": "0",
+	    "imgName": "车",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141025871_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "新窗口",
+      "targetValue": 1,
+	    "columnName": "隐藏文章",
+      "columnValue": 1,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1115,
+      "sortNum": "0",
+	    "imgName": "魔戒",
+	    "areaName": "吉品印象-资源",
+      "areaValue": 3,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141030711_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "热门展示",
+      "columnValue": 3,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1116,
+      "sortNum": "0",
+	    "imgName": "权利的游戏",
+	    "areaName": "吉品印象-资源",
+      "areaValue": 3,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141036656_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1117,
+      "sortNum": "0",
+	    "imgName": "资讯图1",
+	    "areaName": "吉品印象-资源",
+      "areaValue": 3,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141032663_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1118,
+     "sortNum": "0",
+	    "imgName": "资讯图2",
+	    "areaName": "吉品印象-资源",
+      "areaValue": 3,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141030711_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1119,
+     "sortNum": "0",
+	    "imgName": "车",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141025871_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "煮酒风云",
+      "wechatValue": 2,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1120,
+      "sortNum": "0",
+	    "imgName": "车",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141036656_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "热门展示",
+      "columnValue": 3,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },{
+      "id": 1121,
+      "sortNum": "0",
+	    "imgName": "前端开发工具箱",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141032663_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "热门展示",
+      "columnValue": 3,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1122,
+      "sortNum": "0",
+	    "imgName": "前端开发工具箱",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141032663_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "隐藏文章",
+      "columnValue": 1,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1123,
+      "sortNum": "0",
+	    "imgName": "前端开发工具箱",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141025871_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "热门展示",
+      "columnValue": 3,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    },
+    {
+      "id": 1124,
+      "sortNum": "0",
+	    "imgName": "前端开发工具箱",
+	    "areaName": "吉品印象-商城",
+      "areaValue": 2,
+      "imgSrc": "http://file.duoyue.me/upload/product/20160617/2016_06_17_141036656_d.jpg",
+      "addressSrc": "http://file.duoyue.me/upload/product",
+      "targetWindow": "默认",
+      "targetValue": 0,
+	    "columnName": "微信阅读",
+      "columnValue": 2,
+      "wechatName": "吉品印象",
+      "wechatValue": 1,
+	    "startDate": "2016-6-29 00:10:12",
+	    "endDate": "2019-5-29 00:10:12",
+	    "operation": ""
+    }
+  ],
+  "areaOption": [
+    {
+      "id": 0,
+      "value": "--全部--",
+      "content": "--全部--"
+    },
+    {
+      "id": 1,
+      "value": "吉品印象-书城",
+      "content": "吉品印象-书城"
+    },
+    {
+      "id": 2,
+      "value": "吉品印象-商城",
+      "content": "吉品印象-商城"
+    },
+    {
+      "id": 3,
+      "value": "吉品印象-资源",
+      "content": "吉品印象-资源"
+    },
+    {
+      "id": 4,
+      "value": "吉品印象-资讯",
+      "content": "吉品印象-资讯"
+    }
+  ],
+  "wechatOption": [
+     {
+      "id": 0,
+      "value": "--所有微信公众号--",
+      "content": "--所有微信公众号--"
+    },
+    {
+      "id": 1,
+      "value": "吉品印象",
+      "content": "吉品印象"
+    },
+    {
+      "id": 2,
+      "value": "煮酒风云",
+      "content": "煮酒风云"
+    },
+    {
+      "id": 3,
+      "value": "洛克西尼",
+      "content": "洛克西尼"
+    }
+  ],
+  "columnOption": [
+     {
+      "id": 0,
+      "value": "--所有网站栏目--",
+      "content": "--所有网站栏目--"
+    },
+    {
+      "id": 1,
+      "value": "隐藏文章",
+      "content": "隐藏文章"
+    },
+    {
+      "id": 2,
+      "value": "微信阅读",
+      "content": "微信阅读"
+    },
+    {
+      "id": 3,
+      "value": "热门展示",
+      "content": "热门展示"
+    }
+  ],
+  "targetOption": [
+    {
+      "id": 0,
+      "value": "默认"
+    },
+    {
+      "id": 1,
+      "value": "新窗口"
+    },
+    {
+      "id": 2,
+      "value": "顶级窗口"
+    }
+  ]
+}

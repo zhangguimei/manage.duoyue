@@ -12,7 +12,7 @@ import Tree from 'UIComponentFolder/Tree/Tree';
 
 import styles from './MatchSort.scss';
 
-const treeData = require("AssetsFolder/MockData/resource/match/matchSort/matchSort_tree_data.json");
+const treeData = require("AssetsFolder/MockData/sourcecenter/match/matchSort/matchSort_tree_data.json");
 
 class MatchSort extends React.Component {
   constructor(props) {

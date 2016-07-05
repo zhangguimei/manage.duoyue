@@ -12,8 +12,8 @@ import QRcode from 'PageComponentFolder/QRcode/QRcode';
 import styles from './TopicList.scss';
 
 const navData = [{'link': '入口链接'}, {'infor': '基本信息'}, {'cover': '封面图片'}, {'content': '栏目内容'}, {'tag': '标签'}, {'maxCard': '二维码'}];
-const tagData = require("AssetsFolder/MockData/book/book_tag_data.json");
-const qrcodeData = require("AssetsFolder/MockData/article/code_data.json");
+const tagData = require("AssetsFolder/MockData/sourcecenter/book/book_tag_data.json");
+const qrcodeData = require("AssetsFolder/MockData/sourcecenter/article/code_data.json");
 const tabContent = navData.map((item) => {
   return Object.values(item)[0]
 });

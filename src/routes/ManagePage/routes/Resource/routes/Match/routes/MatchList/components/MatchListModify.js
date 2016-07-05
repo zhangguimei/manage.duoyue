@@ -19,13 +19,13 @@ import Register from './RegisterList';
 import EntryLink from './EntryLink';
 import BasicInfo from './BasicInfo';
 
-const matchInfo = require("AssetsFolder/MockData/resource/match/matchlist/match_info.json"),
-  matchRegisterTable = require("AssetsFolder/MockData/resource/match/matchlist/match_register_table.json"),
-  matchConfigTable = require("AssetsFolder/MockData/resource/match/matchlist/match_config_table.json"),
-  tagData = require("AssetsFolder/MockData/resource/match/matchlist/match_tag_data.json"),
+const matchInfo = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_info.json"),
+  matchRegisterTable = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_register_table.json"),
+  matchConfigTable = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_config_table.json"),
+  tagData = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_tag_data.json"),
   codeData = require("AssetsFolder/MockData/sourcecenter/code_data.json"),
-  treeData = require("AssetsFolder/MockData/resource/match/matchlist/match_tree_data.json").menu,
-  tabContent = require("AssetsFolder/MockData/resource/match/matchlist/match_showpage_tab.json");
+  treeData = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_tree_data.json").menu,
+  tabContent = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_showpage_tab.json");
 
 const tabValue = tabContent.map((item) => {
   return Object.values(item)[0]

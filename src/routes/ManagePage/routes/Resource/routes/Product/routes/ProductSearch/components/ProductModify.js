@@ -14,7 +14,7 @@ import ProductBaseInfo from './ProductBasicInfo';
 
 const keyMaps = require("AssetsFolder/MockData/sourcecenter/product/product_search_tab_data.json"),
   productInfo = require("AssetsFolder/MockData/sourcecenter/product/product_info.json"),
-  tagData = require("AssetsFolder/MockData/book/book_tag_data.json"),
+  tagData = require("AssetsFolder/MockData/sourcecenter/book/book_tag_data.json"),
   classifyInfo = require("AssetsFolder/MockData/tree_data.json").menu,
   browseHistoryTableData = require("AssetsFolder/MockData/sourcecenter/product/product_browse_table_data.json"),
   salesHistoryTableData = require("AssetsFolder/MockData/sourcecenter/product/product_sales_history.json"),
@@ -28,9 +28,8 @@ const keyMaps = require("AssetsFolder/MockData/sourcecenter/product/product_sear
 let TabItemsData = {
   content: tabContent,
   tabClass: {
-    tabBox: "product-tab-box clearfix",
-    tabItemOn: "product-item over left",
-    tabItemDefault: "product-item left"
+    tabBox: "tab-nav",
+    tabItemOn: "active"
   }
 };
 

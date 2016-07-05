@@ -5,7 +5,7 @@ import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import CoverAdd from './CoverAdd';
 
-const tableData = require("AssetsFolder/MockData/topic/topic_cover_data.json");
+const tableData = require("AssetsFolder/MockData/sourcecenter/topic/topic_cover_data.json");
 const OperData = [
   {
     'type': 'modify',

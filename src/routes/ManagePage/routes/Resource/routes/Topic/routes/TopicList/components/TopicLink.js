@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 
-const LinkData = require("AssetsFolder/MockData/topic/topic_link_data.json");
+const LinkData = require("AssetsFolder/MockData/sourcecenter/topic/topic_link_data.json");
 
 class TopicLink extends React.Component {
   render() {

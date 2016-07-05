@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import "../../../../../../../assets/sass/function";
+
+.ModelManage {
+	font-size: 13px;
+	.search-area {
+		border-bottom: 1px solid $grayD;
+	  padding: 10px 15px;
+	  display: block;
+	  label {
+	  	padding: 0 5px;
+	  }
+	}
+	.TablePage {
+		margin: 20px;
+		.order-font {
+			margin: 6px 0;
+			color: $gray6;
+		}
+	  .thead-column-0 {
+      width: 5% !important;
+    }
+    .thead-column-1 {
+      width: 5% !important;
+    }
+    .thead-column-2 {
+      width: 20% !important;
+    }
+    .thead-column-3 {
+      width: 20% !important;
+    }
+    .thead-column-4 {
+      width: 20% !important;
+    }
+    .thead-column-5 {
+      width: 10% !important;
+    }
+	}
+}

@@ -13,7 +13,6 @@ class ShowPage extends React.Component {
     height: '90%',
     title: '新增',
     className: '',
-    newPageHref: 'javascript:void(0)',
     showFooter: true
   };
 
@@ -82,19 +81,19 @@ class ShowPage extends React.Component {
     };
     return (
       <div className={`ShowPage ${ className}${fullScreen?' full-screen':''}`} style={contentStyle} ref="ShowPage">
-        <header className="header clearfix" ref="Header">
+        <header className="showpage-header clearfix" ref="Header">
           <span className="title left">{title}</span>
           <i className="ic ic-close right" onClick={::this.closePage}/>
           <i className={`ic ${fullScreen?'ic-backFullScreen':'ic-fullScreen'} right`} onClick={::this.toggleFullScreen}/>
         </header>
-        <div className={`content${showFooter?' show-footer':''}`}>
+        <div className={`showpage-content${showFooter?' show-footer':''}`}>
           <Scrollbars autoHide={true} style={{height:'100%'}}>
             {children}
           </Scrollbars>
         </div>
         {
           showFooter &&
-          <footer className="footer">
+          <footer className="showpage-footer">
             {
               ftChildren ?
                 ftChildren :

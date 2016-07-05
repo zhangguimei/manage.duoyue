@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import "../../../../../../../assets/sass/function";
+
+.AdvertisingArea {
+	font-size: 13px;
+	.search-area {
+		border-bottom: 1px solid $grayD;
+	  padding: 10px 15px;
+	  display: block;
+	  label {
+	  	padding: 0 5px;
+	  }
+	}
+	.TablePage {
+		margin: 20px;
+	  .order-font {
+			margin: 6px 0;
+			color: $gray6;
+		}
+	  .thead-column-0 {
+      width: 5% !important;
+    }
+    .thead-column-1 {
+      width: 10% !important;
+    }
+    .thead-column-2 {
+      width: 10% !important;
+    }
+    .thead-column-3 {
+      width: 10% !important;
+    }
+    .thead-column-4 {
+      width: 10% !important;
+    }
+    .thead-column-5 {
+      width: 10% !important;
+    }
+    .thead-column-6 {
+      width: 10% !important;
+    }
+    .thead-column-7 {
+      width: 10% !important;
+    }
+	}
+	.AdvertiseEditor {
+		padding: 20px 30px;
+		.form-group {
+			span {
+				padding-left: 5px;
+				color: $gray6;
+			}
+		}
+	  .input-title {
+	    margin: 5px 0;
+	    display: block;
+	  }
+	  .require {
+	    &:before {
+	      content: "*";
+	      color: #f00;
+	      margin-right: 5px;
+	    }
+	  }
+	  .show-num-box {
+	  	margin-bottom: 15px;
+	  	.show-num {
+	  		margin: 5px;
+	  	}
+	  	&:after {
+	  		content: "（当区域内出现多张图时是否显示数字）";
+	  		padding-left: 10px;
+	  		color: $gray6;
+	  	}
+	  }
+	}
+}

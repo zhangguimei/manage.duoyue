@@ -55,7 +55,7 @@ class Source extends React.Component {
   }
 
   fetchData(index) {
-    const sourceData = require("AssetsFolder/MockData/article/article_item_data.json");
+    const sourceData = require("AssetsFolder/MockData/sourcecenter/article/article_item_data.json");
     let IsourceData = fromJS(sourceData);
     let data;
     switch (index) {
