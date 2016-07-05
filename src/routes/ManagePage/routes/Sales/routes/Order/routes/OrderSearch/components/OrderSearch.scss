@@ -1,0 +1,228 @@
+/*
+ *  Date    : 2016.6.28
+ *  Author  : Zhang Guimei
+ *  Declare : 订单管理订单查询样式
+ */
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.OrderSearch {
+  .search-area {
+    padding: 10px 15px;
+    border-bottom: 1px solid $grayD;
+    .search-item-name {
+      display: inline-block;
+      padding: 0 10px;
+    }
+    .inline {
+      display: inline-block;
+    }
+    .select-box {
+      padding: 6px 10px;
+    }
+    .goods-box {
+      display: inline-block;
+      border: 1px solid $grayD;
+      width: 150px;
+      height: 34px;
+      line-height: 35px;
+      margin-bottom: -12px;
+      overflow: hidden;
+      padding: 0 5px;
+      cursor: pointer;
+    }
+    .clear-goods {
+      display: inline-block;
+      border: 1px solid $grayD;
+      background-color: $colorBase;
+      padding: 6px;
+      cursor: pointer;
+      margin-right: 15px;
+      margin-left:-1px;
+    }
+    .DatePicker {
+      display: inline-block;
+      margin: 0 7px;
+      .date-input-wrap {
+        .date-input {
+          width: 150px;
+          line-height: 34px;
+          font-size: 14px;
+        }
+        .ic {
+          height: 34px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+  .OrderList {
+    padding: 15px;
+    .OrderItem {
+      padding: 5px;
+      .order-item-head {
+        padding: 5px;
+        background-color: #f0f0f0;
+        border: 1px solid $grayD;
+        .item-content {
+          padding: 0 20px 0 3px;
+        }
+      }
+      .order-item-content {
+        width: 100%;
+        .sub-table-content {
+          width: 50%;
+          .order-sub-content {
+            width: 100%;
+            .order-sub-content-tr {
+              border-left: 1px solid $grayD;
+              border-bottom: 1px solid $grayD;
+              .item-sub-table-content {
+                border-right: 1px solid $grayD;
+                text-align: center;
+              }
+              .book-pic {
+                padding: 10px;
+                width: 20%;
+                .book-img {
+                  width: 60px;
+                  cursor: pointer;
+                }
+              }
+              .book-title {
+                vertical-align: top;
+                text-align: left;
+                padding: 10px;
+              }
+              .book-price, .book-count {
+                width: 13%;
+              }
+            }
+          }
+        }
+        .item-table-content {
+          border-bottom: 1px solid $grayD;
+          border-right: 1px solid $grayD;
+          text-align: center;
+          width: 10%;
+          .to-send-goods-text {
+            display: block;
+          }
+          .click-send-goods {
+            display: block;
+            cursor: pointer;
+          }
+        }
+        .user-pic-area {
+          .user-pic {
+            .user-img {
+              width: 30px;
+              cursor: pointer;
+            }
+          }
+        }
+        .book-price-red {
+          color: $red;
+        }
+      }
+      .Modal {
+        .OrderDetail {
+          .ShowPage {
+            .content {
+              padding: 20px;
+              .order-detail-title {
+                border-bottom: 1px solid $grayD;
+                padding: 10px 0;
+                font-size: 16px;
+              }
+              .detail-info {
+                padding: 20px 0;
+                .detail-title {
+                  display: inline-block;
+                  padding: 5px;
+                  width: 100px;
+                }
+                .detail-content {
+                  display: inline-block;
+                  padding: 5px;
+                  width: 250px;
+                  .click-ship-goods {
+                    padding: 0 10px;
+                    cursor: pointer;
+                  }
+                }
+                .Table {
+                  td {
+                    text-align: center;
+                  }
+                  img {
+                    width: 60px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .PostGoodsModal {
+          .ShowPage {
+            .content {
+              padding: 20px;
+              .ship-goods-title {
+                font-size: 16px;
+                border-bottom: 1px solid $grayD;
+                padding: 20px 0 10px 0;
+              }
+              .ship-goods-info {
+                padding: 30px;
+                border-left: 1px solid $grayD;
+                border-right: 4px solid $grayD;
+                border-bottom: 4px solid $grayD;
+                .ship-goods-list {
+                  padding-bottom: 20px;
+                  .ship-goods-item-title {
+                    display: inline-block;
+                    padding: 5px 0;
+                    width: 100px;
+                  }
+                  .ship-goods-item-content {
+                    display: inline-block;
+                    padding: 5px;
+                    width: 250px;
+                  }
+                }
+                .ship-other-info {
+                  padding-top: 20px;
+                }
+              }
+              .logistics-ways {
+                padding: 20px 0;
+                .logistics-ways-item {
+                  display: inline-block;
+                  padding-right: 40px;
+                  .logistics-ways-radio {
+                    margin-right: 5px;
+                  }
+                }
+              }
+              .logistics-info {
+                padding: 10px 0;
+              }
+              .logistics-info-title {
+                display: inline-block;
+                width: 100px;
+                padding-bottom: 5px;
+              }
+              .logistics-info-content {
+                padding: 5px;
+                width: 300px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .red {
+    color: $red;
+  }
+}

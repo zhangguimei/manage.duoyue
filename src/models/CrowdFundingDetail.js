@@ -8,7 +8,9 @@ class CrowdFundingDetail {
     this.startTime = json.startTime || '';
     this.endTime = json.endTime || '';
     this.detail = json.detail || '';
-    this.pic = json.pic || json.img || json.url || "";
+    this.pic1 = json.pic1 || json.img1 || json.url1 || "";
+    this.pic2 = json.pic2 || json.img2 || json.url2 || "";
+    this.pic3 = json.pic3 || json.img3 || json.url3 || "";
     this.wantedNum = json.wantedNum || 0;
     this.remainDay = json.remainDay || 0;
     this.title = json.title || "";

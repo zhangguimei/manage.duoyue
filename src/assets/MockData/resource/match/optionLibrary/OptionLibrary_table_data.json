@@ -1,0 +1,103 @@
+{
+  "tableHeadData": {
+    "id":"ID (降序)",
+    "title": "选项标题",
+    "dtitle": "选项说明",
+    "type": "选项类型",
+    "datatype": "数据类型",
+    "desc": "备注说明",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 76,
+      "title": "性别",
+      "dtitle": "",
+      "type": "单选按钮",
+      "datatype": "不限",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 77,
+      "title": "年龄",
+      "dtitle": "",
+      "type": "文本域",
+      "datatype": "数字",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 78,
+      "title": "详情",
+      "dtitle": "",
+      "type": "多行文本域",
+      "datatype": "不限",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 79,
+      "title": "头像",
+      "dtitle": "个人头像",
+      "type": "文本域",
+      "datatype": "不想",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 80,
+      "title": "爱好",
+      "dtitle": "",
+      "type": "复选框",
+      "datatype": "不限",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 81,
+      "title": "地址",
+      "dtitle": "",
+      "type": "2级选择（列表/菜单）",
+      "datatype": "数字",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 82,
+      "title": "手机号",
+      "dtitle": "",
+      "type": "文本域",
+      "datatype": "手机",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 83,
+      "title": "姓名",
+      "dtitle": "",
+      "type": "文本域",
+      "datatype": "不限",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 84,
+      "title": "职业",
+      "dtitle": "",
+      "type": "选择（列表/菜单）",
+      "datatype": "不限",
+      "desc": "",
+      "operation": ""
+    },
+    {
+      "id": 85,
+      "title": "人数",
+      "dtitle": "参加活动的人数",
+      "type": "文本域",
+      "datatype": "数字",
+      "desc": "",
+      "operation": ""
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.MatchList {
+  .info-name-desc {
+    display: none;
+  }
+  .matchList-top {
+    margin: 10px 0;
+  }
+  .matchList-table {
+    padding: 20px;
+  }
+  .FormItem {
+    display: inline-block;
+    .tree-component {
+      position: absolute;
+      background-color: $white;
+      z-index: 100;
+      border: 1px solid $grayD;
+      border-top: none;
+      width: 196px;
+    }
+    .clear-tree {
+      color: $gray6;
+      cursor: pointer;
+      padding-left: 5px;
+      display: none;
+    }
+  }
+  .keyword-area {
+    border-bottom: 1px solid $grayD;
+    .related-search-box {
+      padding: 0 20px 10px 10px;
+      .inline {
+        display: inline-block;
+        padding: 0 10px;
+      }
+      .sub-btn {
+        margin-left: 10px;
+        background-color: $blueDark;
+        color: $white;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid $blueDark;
+        padding: 5px 30px 5px 30px;
+        cursor: pointer;
+      }
+    }
+  }
+  .Table {
+    img {
+      height: 50px;
+    }
+
+    .MatchListOperation {
+      .operation-info {
+        margin: 5px;
+        cursor: pointer;
+        span {
+          padding: 0 5px;
+        }
+        span:hover {
+          color: $blueLight;
+        }
+      }
+    }
+  }
+  .Modal {
+    .MatchInfo {
+      padding: 20px;
+      border-bottom: 1px solid $grayD;
+      .match-top-title {
+        line-height: 20px;
+        font-size: 14px;
+        padding: 20px 0;
+      }
+      .match-top-list {
+        border-right: 1px solid $grayD;
+        .match-top-item {
+          border-left: 1px solid $grayD;
+          width: 125px;
+          text-align: center;
+          .num, .item-text {
+            padding: 5px;
+          }
+        }
+      }
+    }
+    .match-tab-box {
+      padding: 20px 0 0 50px;
+      border-bottom: 1px solid $grayD;
+      position: relative;
+      .match-item {
+        cursor: pointer;
+        color: $gray5;
+        font-size: 14px;
+        padding: 5px 15px;
+        margin-right: 2px;
+        background-color: $colorBase;
+        border-left: 1px solid $grayD;
+        border-top: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+        margin-bottom: -1px;
+      }
+      .over {
+        background-color: $white;
+        border-bottom: 1px solid $white;
+      }
+    }
+    .EntryLink {
+      margin-top: 23px;
+      padding-left: 10px;
+      height: 900px;
+      .entryLink-pic {
+        width: 300px;
+        height: 900px;
+        img {
+          width: 300px;
+          height: 400px;
+          margin: 150px 0;
+        }
+        .entry-btn {
+          width: 200px;
+          padding: 10px 0;
+          margin: auto;
+          color: $colorBg;
+          background-color: $greenLight;
+          border: 1px solid $greenLight;
+          border-radius: 5px;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+      .entryLink-inputs {
+        width: 362px;
+        border-left: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+      }
+      .entryLink-url {
+        .entryLink-url-item {
+          padding: 20px 10px;
+        }
+      }
+    }
+    .OptionsConfig {
+      .config-left {
+        width: 340px;
+        height: 900px;
+      }
+      .MatchInputs {
+        border-right: 1px solid $grayD;
+      }
+      .config-right {
+        width: 800px;
+        padding: 10px 0;
+        .related-search-box {
+          padding: 0 20px;
+        }
+        .config-table {
+          padding: 10px 20px;
+        }
+      }
+      .showPageTable {
+        padding: 20px;
+        .input-content {
+          padding: 5px 0;
+          .inline-block {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .MatchInputs {
+      .inputs-header {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid $grayD;
+      }
+      .input-container {
+        min-height: 850px;
+        padding: 20px;
+        .FormItem {
+          padding: 10px 0;
+          display: block;
+          input[type="radio"] {
+            margin-left: 0;
+          }
+          .subtitle {
+            display: block;
+            margin-bottom: 5px;
+          }
+          .radio {
+            display: inline-block;
+            margin-right: 10px;
+          }
+          textarea, input[type="text"] {
+            width: 100%;
+          }
+          .CheckBox {
+            display: inline-block;
+            padding-right: 5px;
+            .checkbox-title {
+              padding: 0 5px;
+            }
+          }
+          select {
+            height: 34px;
+            cursor: pointer;
+            min-width: 60px;
+            line-height: 30px !important;
+            padding-left: 10px;
+            margin-right: 5px;
+            option {
+              padding: 3px 0 3px 12px;
+              line-height: 28px;
+              font-size: 13px;
+              background-color: $colorBase;
+            }
+          }
+        }
+      }
+    }
+    .BasicInfo {
+      .DatePicker {
+        display: inline-block;
+      }
+      padding: 20px 50px;
+      .form-control {
+        display: inline-block;
+      }
+      .tree-component {
+        width: 300px;
+      }
+      .clear-tree{
+        display: inline-block;
+      }
+      .control-body{
+        input[type="radio"]{
+          margin: 10px 5px 0 5px;
+        }
+      }
+    }
+    .RegisterList {
+      padding: 20px;
+      .output-excel {
+        padding-bottom: 10px;
+        cursor: pointer;
+        display: block;
+      }
+      .output-excel:hover {
+        color: $blueLight;
+      }
+    }
+  }
+}

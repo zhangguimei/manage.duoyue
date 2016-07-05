@@ -24,6 +24,21 @@
     "icon":"",
     "url":"/sales"
   },
+  "344":{
+    "name":"订单管理",
+    "icon":"ic-order",
+    "url":"/sales/order"
+  },
+  "771":{
+    "name":"订单查询",
+    "icon":"",
+    "url":"/sales/order/search"
+  },
+  "345":{
+    "name":"分销结算",
+    "icon":"ic-settlement",
+    "url":""
+  },
   "328":{
     "name":"分析引擎",
     "icon":"",
@@ -104,14 +119,14 @@
     "icon":"ic-circle",
     "url":"/user/circle"
   },
-  "790":{
+  "759":{
     "name":"活动管理",
     "icon":"ic-activity",
     "url":"/resource/match"
   },
   "791":{
     "name":"活动列表",
-    "icon":"ic-activity",
+    "icon":"",
     "url":"/resource/match/list"
   },
   "793":{
@@ -126,7 +141,7 @@
   },
   "799":{
     "name":"专题管理",
-    "icon":"",
+    "icon":"ic-news",
     "url":"/resource/topic"
   },
   "800":{
@@ -214,6 +229,11 @@
     "icon":"ic-tagfill",
     "url":""
   },
+  "790":{
+    "name":"活动报名",
+    "icon":"ic-signup",
+    "url":""
+  },
   "408":{
     "name":"公号列表",
     "icon":"ic-weixinfill",
@@ -299,6 +319,36 @@
     "icon":"ic-usersetting",
     "url":""
   },
+  "387":{
+    "name":"用户查询",
+    "icon":"",
+    "url":"/operate/usersetting/usersearch"
+  },
+  "388":{
+    "name":"收到的消息",
+    "icon":"",
+    "url":"/operate/usersetting/receivemsg"
+  },
+  "389":{
+    "name":"图文素材",
+    "icon":"",
+    "url":"/operate/usersetting/photomaterial"
+  },
+  "783":{
+    "name":"文本素材",
+    "icon":"",
+    "url":"/operate/usersetting/textmaterial"
+  },
+  "796":{
+    "name":"标签查询",
+    "icon":"",
+    "url":"/operate/usersetting/labelsearch"
+  },
+  "785":{
+    "name":"智能客服",
+    "icon":"ic-customer",
+    "url":""
+  },
   "380":{
     "name":"应用管理",
     "icon":"ic-app",
@@ -344,16 +394,6 @@
     "icon":"ic-page",
     "url":""
   },
-  "344":{
-    "name":"订单管理",
-    "icon":"ic-order",
-    "url":"/sales/orderform"
-  },
-  "345":{
-    "name":"分销结算",
-    "icon":"ic-settlement",
-    "url":""
-  },
   "773":{
     "name":"购物车管理",
     "icon":"ic-cartfill",
@@ -364,10 +404,30 @@
     "icon":"ic-users",
     "url":""
   },
+  "433":{
+    "name":"热力图",
+    "icon":"",
+    "url":"/analysis/useranalysis/heat"
+  },
+  "434":{
+    "name":"聚合图",
+    "icon":"",
+    "url":"/analysis/useranalysis/assemble"
+  },
+  "435":{
+    "name":"海量图",
+    "icon":"",
+    "url":"/analysis/useranalysis/mass"
+  },
+  "436":{
+    "name":"男女分布",
+    "icon":"",
+    "url":"/analysis/useranalysis/malefamale"
+  },
   "347":{
     "name":"资源分析",
     "icon":"ic-resourcefill",
-    "url":""
+    "url":"/analysis/resource"
   },
   "348":{
     "name":"销售分析",
@@ -393,5 +453,25 @@
     "name":"系统帐号",
     "icon":"ic-staffmanage",
     "url":""
+  },
+  "440":{
+    "name":"资讯排行",
+    "icon":"",
+    "url":"/analysis/resource/inforank"
+  },
+  "441":{
+    "name":"资讯时长",
+    "icon":"",
+    "url":"/analysis/resource/infoduration"
+  },
+  "442":{
+    "name":"书籍排行",
+    "icon":"",
+    "url":"/analysis/resource/bookrank"
+  },
+  "443":{
+    "name":"书籍时长",
+    "icon":"",
+    "url":"/analysis/resource/bookduration"
   }
 }

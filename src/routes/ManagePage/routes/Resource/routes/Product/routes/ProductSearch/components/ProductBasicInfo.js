@@ -1,7 +1,8 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import {InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
 import DatePicker from 'UIComponentFolder/DatePicker/DatePicker';
+import FormItem from 'UIComponentFolder/FormComponent/FormItem'
+import ImageUpload from 'UIComponentFolder/ImageUpload/ImageUpload'
 
 class ProductForm extends React.Component {
   constructor(props) {
@@ -61,8 +62,8 @@ class ProductForm extends React.Component {
             <div className="clearfix">
               <div className="base-info">
                 <div className="input-model w400 left">
-                  <InputTree className="info-input w200" treeData={classifyInfo} label="商品分类"
-                             required={true}/>
+                  <FormItem type='tree' className="info-input w200" treeData={classifyInfo} title="商品分类"
+                            rules={{required: true}}/>
                 </div>
                 <div className="input-model marginL40 left">
                   <div className="input-title">商品推荐度(越小推荐度越高,最小为0)</div>

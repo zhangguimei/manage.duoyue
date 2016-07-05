@@ -52,10 +52,11 @@ export const isNumber = (value) => {
 
 //验证必填（可验证数组）
 export const requiredValid = (value) => {
-  if(typeof(value) === 'undefined') { return false; }
-  if(typeof(value) == "string") {
+  if(typeof(value) == "undefined") {
+    return false;
+  } else if(typeof(value) == "string") {
     return !!value;
-  }else if(value instanceof Array) {
+  }else if(Array.isArray(value)) {
     if(value.length === 0) { return false; }
     for(let item of value) {
       if(typeof(item) !== "number" && !item) {
@@ -91,4 +92,18 @@ export const minLengthValid = (value, minLength) => {
 //验证指定正则
 export const patternValid = (value, pattern) => {
   return pattern && new RegExp(pattern).test(value);
+};
+
+export const require = (values, errors, fieldNames) => {
+  let fieldNamesArray = [];
+  if(typeof(fieldNames) == "string") {
+    fieldNamesArray = [fieldNames];
+  } else if(fieldNames instanceof Array) {
+    fieldNamesArray = fieldNames;
+  }
+  for(let fieldName of fieldNamesArray) {
+    if(!values[fieldName]) {
+      errors[fieldName] = "必填";
+    }
+  }
 };

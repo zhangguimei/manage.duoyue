@@ -3,13 +3,14 @@ import React, {PropTypes} from 'react';
 
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import Tab from 'UIComponentFolder/Tab/Tab';
-import ProductBaseInfo from './ProductBasicInfo';
 import Tag from 'PageComponentFolder/Tag/Tag'
 import QRcode from 'PageComponentFolder/QRcode/QRcode'
 import HeaderInfo from 'PageComponentFolder/HeaderInfo/HeaderInfo'
 import AssignMoney from 'PageComponentFolder/AssignMoney/AssignMoney'
-import BookRelatedRecommend from '../../../../Book/routes/BookSearch/components/BookRelatedRecommend';
 import TablePage from 'PageComponentFolder/TablePage/TablePage'
+import RelatedRecommend from 'PageComponentFolder/RelatedRecommend/RelatedRecommend'
+
+import ProductBaseInfo from './ProductBasicInfo';
 
 const keyMaps = require("AssetsFolder/MockData/sourcecenter/product/product_search_tab_data.json"),
   productInfo = require("AssetsFolder/MockData/sourcecenter/product/product_info.json"),
@@ -87,7 +88,7 @@ class ProductModify extends React.Component {
           { tabIndex == 4 && <TablePage data={browseHistoryTableData}/>}
           { tabIndex == 5 && <AssignMoney data={fashionTableData}/>}
           { tabIndex == 6 &&
-          <BookRelatedRecommend relatedTableData={relatedTableData} classifyInfo={classifyInfo}/>}
+          <RelatedRecommend relatedTableData={relatedTableData} classifyData={classifyInfo}/>}
         </from>
       </ShowPage>
     )

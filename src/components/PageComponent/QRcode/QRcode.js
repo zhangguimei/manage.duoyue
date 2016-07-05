@@ -5,14 +5,13 @@
  */
 'use strict';
 import React, {PropTypes} from 'react';
-
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import styles from './QRcode.scss';
 
 class QRcode extends React.Component {
   static defaultProps = {
     count: 5
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -38,20 +37,20 @@ class QRcode extends React.Component {
 
   render() {
     const {pageIndex, totalPage} = this.state,
-      {count, data} = this.props;
-    let showData = data.slice((pageIndex - 1) * count, (pageIndex - 1) * count + count);
-    let QRcodeContent = showData.map((item, index) => {
-      return (
-        <div className="item left" key={index}>
-          <div className="pic">
-            <img src={item.pic} alt="二维码"/>
+      {count, data, className=''} = this.props;
+    let showData = data.slice((pageIndex - 1) * count, (pageIndex - 1) * count + count),
+      QRcodeContent = showData.map((item, index) => {
+        return (
+          <div className="item left" key={index}>
+            <div className="pic">
+              <img src={item.pic} alt="二维码"/>
+            </div>
+            <div className="title">{item.title + item.id}</div>
           </div>
-          <div className="title">{item.title + item.id}</div>
-        </div>
-      )
-    });
+        )
+      });
     return (
-      <div className="QRcode">
+      <div className={`QRcode ${className}`}>
         <div className="main-content">{QRcodeContent}</div>
         <Pagination index={pageIndex} totalPages={totalPage} onPageClick={::this.onPageClick}/>
       </div>
@@ -69,6 +68,8 @@ class QRcode extends React.Component {
 QRcode.propTypes = {
   data: PropTypes.array,
   count: PropTypes.number,
-  fetchData: PropTypes.func
+  fetchData: PropTypes.func,
+  className: PropTypes.string
 };
+
 export default QRcode;

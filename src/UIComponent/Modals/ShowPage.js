@@ -87,7 +87,7 @@ class ShowPage extends React.Component {
           <i className="ic ic-close right" onClick={::this.closePage}/>
           <i className={`ic ${fullScreen?'ic-backFullScreen':'ic-fullScreen'} right`} onClick={::this.toggleFullScreen}/>
         </header>
-        <div className={`content${(showFooter||ftChildren)?' show-footer':''}`}>
+        <div className={`content${showFooter?' show-footer':''}`}>
           <Scrollbars autoHide={true} style={{height:'100%'}}>
             {children}
           </Scrollbars>

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.BookDuration {
+  .book-item {
+    width: 50%;
+    border-bottom: 1px solid $grayD;
+    padding: 10px;
+    .number {
+      width: 10%;
+      padding-top: 47px;
+      line-height: 20px;
+    }
+    .book-pic {
+      width: 18%;
+      .book-img {
+        width: 80px;
+      }
+    }
+    .book-info {
+      width: 70%;
+      .book-title {
+        font-size: 16px;
+        line-height: 24px;
+        padding-bottom: 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .book-detail {
+        font-size: 12px;
+        line-height: 16px;
+        color: $gray7;
+        height: 48px;
+        overflow: hidden;
+      }
+      .book-read-duration {
+        display: block;
+        padding-top: 18px;
+      }
+    }
+  }
+}
+
+
+
+
+        

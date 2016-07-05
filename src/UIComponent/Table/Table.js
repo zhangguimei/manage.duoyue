@@ -1,3 +1,8 @@
+/*
+ *  Last Modify Date: 2016.06.29
+ *  Author  : CastileMan
+ *  Declare : 优化表格功能
+ * */
 "use strict";
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
@@ -41,12 +46,13 @@ import styles from './Table.scss';
 
 class Table extends React.Component {
   static defaultProps = {
-    headData: [],
-    isOptional: false,
-    CheckBox: DefaultCheckBox,
-    pageIndex: 0,
-    editable: false,
-    deletable: false
+    headData: [],                   //表头数据
+    isOptional: false,              //表格是否可选
+    CheckBox: DefaultCheckBox,      //可传自定义checkbox组件
+    pageIndex: 0,                   //表格当前页数
+    editable: false,                //表格是否可双击进行编辑
+    deletable: false,               //表格数据是否可删除
+    initState: []                   //表格checkbox初始状态数据
   };
 
   constructor(props) {
@@ -66,69 +72,21 @@ class Table extends React.Component {
     this.headKeyList = [];
   }
 
-  componentWillMount() {
-    let { isOptional, headData, contentData, pageIndex, rowsForOnePage } = this.props;
-    for (let key in headData) {
-      this.headNameList.push(headData[key]);
-      this.headKeyList.push(key);
-    }
-    this.contentDataForShow = (pageIndex && rowsForOnePage)
-      ? contentData.slice(this.startIndex, this.endIndex)
-      : contentData;
-    if(isOptional && this.contentDataForShow.length > 0) {
-      ::this.initCheckBoxState(this.contentDataForShow);
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    let { isOptional } = this.props,
-        { checkBoxState } = this.state,
-        { headData, pageIndex, rowsForOnePage, contentData } = nextProps;
-    if(this.headNameList.length == 0) {
-      for (let key in headData) {
-        this.headNameList.push(headData[key]);
-        this.headKeyList.push(key);
-      }
-    }
-    //表格翻页
-    if(pageIndex) {
-      if((this.props.rowsForOnePage != rowsForOnePage) || (this.props.pageIndex != pageIndex)
-        || !is(this.props.contentData, contentData)  || this.contentDataForShow.length < 1) {
-        this.startIndex = (pageIndex - 1) * rowsForOnePage;
-        this.endIndex = pageIndex * rowsForOnePage;
-        this.contentDataForShow = contentData.slice(this.startIndex, this.endIndex);
-        ::this.initCheckBoxState(this.contentDataForShow);
-      }
-    } else if(!pageIndex) {
-      this.contentDataForShow = contentData;
-    }
-    if(isOptional && !checkBoxState && this.contentDataForShow.length > 0) {
-      ::this.initCheckBoxState(this.contentDataForShow);
-    }
-  }
-
-  componentWillUnmount() {
-    this.contentDataForShow = null;
-  }
-
   //初始化checkBox的状态
   initCheckBoxState(data) {
+    const { initState } = this.props;
     const checkBoxState = this.state.checkBoxState || {selectAll: false};
-    let isNewPage = false,
-        IcheckBoxState = fromJS(checkBoxState),
-        key;
+    let IcheckBoxState = fromJS(checkBoxState),
+        key,
+        checked = false;
     data.map((item) => {
       key = item.id;
       if(IcheckBoxState.get(key.toString()) == undefined) {
-        isNewPage = true;
-        IcheckBoxState = IcheckBoxState.set(key.toString(), false);
+        checked = initState.indexOf(key) >= 0;
+        IcheckBoxState = IcheckBoxState.set(key.toString(), checked);
       }
     });
-    if(isNewPage) {
-      IcheckBoxState = IcheckBoxState.set("selectAll", false);
-    } else {
-      IcheckBoxState = IcheckBoxState.set("selectAll", this.checkBoxStateIterator(IcheckBoxState.toJS(), data));
-    }
+    IcheckBoxState = IcheckBoxState.set("selectAll", this.checkBoxStateIterator(IcheckBoxState.toJS(), data));
     this.setState({
       checkBoxState: IcheckBoxState.toJS()
     });
@@ -147,13 +105,16 @@ class Table extends React.Component {
 
   //checkBox click事件
   checkBoxClick(id) {
-    const { checkBoxState } = this.state;
+    const { checkBoxState } = this.state,
+      { checkBoxClick } = this.props;
     let IcheckBoxState = fromJS(checkBoxState);
     IcheckBoxState = IcheckBoxState.set(id.toString(), !IcheckBoxState.get(id.toString()));
     if(IcheckBoxState.get(id.toString())) {
       IcheckBoxState = IcheckBoxState.set("selectAll", this.checkBoxStateIterator(IcheckBoxState.toJS(), this.contentDataForShow));
+      checkBoxClick && checkBoxClick(id, true);
     } else {
       IcheckBoxState = IcheckBoxState.set("selectAll", false);
+      checkBoxClick && checkBoxClick(id, false);
     }
     this.setState({
       checkBoxState: IcheckBoxState.toJS()
@@ -163,7 +124,8 @@ class Table extends React.Component {
   //全选click事件
   selectAllClick() {
     const { checkBoxState } = this.state,
-          data = this.contentDataForShow;
+          data = this.contentDataForShow,
+          { checkBoxClick } = this.props;
     let IcheckBoxState = fromJS(checkBoxState);
     if(!IcheckBoxState) {
       return;
@@ -171,6 +133,7 @@ class Table extends React.Component {
     let nextSelectAll = !IcheckBoxState.get("selectAll");
     data.map((item) => {
       IcheckBoxState = IcheckBoxState.set(item.id.toString(), nextSelectAll);
+      checkBoxClick && checkBoxClick(item.id, nextSelectAll);
     });
     IcheckBoxState = IcheckBoxState.set("selectAll", nextSelectAll);
     this.setState({
@@ -183,13 +146,12 @@ class Table extends React.Component {
     if(data.length == 0) {
       return false;
     }
-    let result = true;
-    data.map((item) => {
+    for(let item of data) {
       if(checkBoxState[item.id] == false) {
-        result = false;
+        return false;
       }
-    });
-    return result;
+    }
+    return true;
   }
 
   //表格排序
@@ -357,6 +319,51 @@ class Table extends React.Component {
     }
   }
 
+  componentWillMount() {
+    let { isOptional, headData, contentData, pageIndex, rowsForOnePage } = this.props;
+    for (let key in headData) {
+      this.headNameList.push(headData[key]);
+      this.headKeyList.push(key);
+    }
+    this.contentDataForShow = (pageIndex && rowsForOnePage)
+      ? contentData.slice(this.startIndex, this.endIndex)
+      : contentData;
+    if(isOptional && this.contentDataForShow.length > 0) {
+      ::this.initCheckBoxState(this.contentDataForShow);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let { isOptional } = this.props,
+      { checkBoxState } = this.state,
+      { headData, pageIndex, rowsForOnePage, contentData } = nextProps;
+    if(this.headNameList.length == 0) {
+      for (let key in headData) {
+        this.headNameList.push(headData[key]);
+        this.headKeyList.push(key);
+      }
+    }
+    //表格翻页
+    if(pageIndex) {
+      if((this.props.rowsForOnePage != rowsForOnePage) || (this.props.pageIndex != pageIndex)
+        || !is(this.props.contentData, contentData)  || this.contentDataForShow.length < 1) {
+        this.startIndex = (pageIndex - 1) * rowsForOnePage;
+        this.endIndex = pageIndex * rowsForOnePage;
+        this.contentDataForShow = contentData.slice(this.startIndex, this.endIndex);
+        ::this.initCheckBoxState(this.contentDataForShow);
+      }
+    } else if(!pageIndex) {
+      this.contentDataForShow = contentData;
+    }
+    if(isOptional && !checkBoxState && this.contentDataForShow.length > 0) {
+      ::this.initCheckBoxState(this.contentDataForShow);
+    }
+  }
+
+  componentWillUnmount() {
+    this.contentDataForShow = null;
+  }
+
   render() {
     const { thClass, tdClass, isOptional, CheckBox, deletable } = this.props,
           { contentDataForShow } = this,
@@ -389,7 +396,7 @@ class Table extends React.Component {
           tdContent = item.imgLink ?
             <Link to={item.imgLink}><img src={item.imgSrc} alt="图片"/></Link>
             :
-            <img src={item.imgSrc} alt="图片"/>;
+            <img className="img" src={item.imgSrc} alt="图片"/>;
         } else if(key == "link") {
           tdContent = <Link to="item.href">{item[key]}</Link>
         }
@@ -447,7 +454,9 @@ Table.propTypes = {
   pageIndex: PropTypes.number,
   editable: PropTypes.bool,
   deletable: PropTypes.bool,
-  deleteDataFunc: PropTypes.func
+  deleteDataFunc: PropTypes.func,
+  checkBoxClick: PropTypes.func,
+  initState: PropTypes.array
 };
 
 export default Table;

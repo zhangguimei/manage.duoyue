@@ -17,7 +17,8 @@ import styles from "./Tree.scss";
 class Tree extends React.Component {
 
   static defaultProps = {
-    checkable: false //默认为有checkbox,可多选
+    checkable: false, //默认为有checkbox,可多选
+    addContent: {} //是否有新增选项
   };
 
   constructor(props, context) {
@@ -40,18 +41,31 @@ class Tree extends React.Component {
     });
   }
 
+  addContent() {
+    const {addContent = {}} = this.props;
+    addContent.callback && addContent.callback();
+  }
+
   componentWillReceiveProps() {
     this.freeOpen = false;
   }
 
   render() {
-    const {open} = this.state;
+    const {open} = this.state, {addContent} = this.props;
+    const ifAddContent = !!addContent.content;
     return (
       <div className="Tree">
         <div className="control-open" >
           <span className="open-tree" onClick={() => this.toggleOpen(true)}>展开节点</span>
           <i>|</i>
           <span className="close-tree" onClick={() => this.toggleOpen(false)}>关闭节点</span>
+          {
+            ifAddContent && <i>|</i>
+          }
+          {
+            ifAddContent &&
+            <span className="add-tree" onClick={::this.addContent}>{addContent.content}</span>
+          }
         </div>
         <TreeList clickItem={::this.clickItem} {...this.props} open={open} freeOpen={this.freeOpen}/>
       </div>

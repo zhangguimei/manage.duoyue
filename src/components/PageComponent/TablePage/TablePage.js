@@ -37,11 +37,11 @@ class TablePage extends React.Component {
   }
 
   render() {
-    const {data, headData, contentData} = this.props,
+    const {data, headData, contentData, className=""} = this.props,
       {rowsForOnePage, pageIndex} = this.state,
       totalPages = Math.ceil(data.tableContentData.length / rowsForOnePage);
     return (
-      <div className="TablePage">
+      <div className={`TablePage ${className}`}>
         <Table headData={headData||data.tableHeadData} contentData={contentData||data.tableContentData}
                rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}/>
         {
@@ -61,13 +61,16 @@ class TablePage extends React.Component {
  * data: Table所有数据,
  * headData: Table头部数据,
  * contentData: Table内容数据,
- * rowsForOnePage: 每页显示几条
+ * rowsForOnePage: 每页显示几条,
+ * className: 顶层div类名
  * }}
  */
 TablePage.propTypes = {
   data: PropTypes.object,
   headData: PropTypes.array,
   contentData: PropTypes.array,
-  rowsForOnePage: PropTypes.object
+  rowsForOnePage: PropTypes.object,
+  className: PropTypes.string
 };
+
 export default TablePage;

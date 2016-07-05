@@ -46,6 +46,7 @@
 .ic-alignleft:before { content: "\e636"; }
 .ic-alignright:before { content: "\e637"; }
 .ic-ad:before { content: "\e649"; }
+.ic-usersetting:before { content: "\e65f"; }
 .ic-template:before { content: "\e653"; }
 .ic-back:before { content: "\e613"; }
 .ic-right:before { content: "\e614"; }
@@ -70,6 +71,7 @@
 .ic-calendar:before { content: "\e61f"; }
 .ic-order:before { content: "\e655"; }
 .ic-loading:before { content: "\e620"; }
+.ic-customer:before { content: "\e660"; }
 .ic-upload:before { content: "\e621"; }
 .ic-doc:before { content: "\e633"; }
 .ic-folderempty:before { content: "\e629"; }
@@ -87,11 +89,13 @@
 .ic-periodical:before { content: "\e642"; }
 .ic-staffmanage:before { content: "\e662"; }
 .ic-activity:before { content: "\e643"; }
+.ic-fullScreen:before { content: "\e656"; }
+.ic-backFullScreen:before { content: "\e658"; }
 .ic-template1:before { content: "\e63a"; }
 .ic-statistics:before { content: "\e64b"; }
 .ic-message:before { content: "\e64c"; }
 .ic-code:before { content: "\e644"; }
-.ic-usersetting:before { content: "\e64d"; }
+.ic-usermanage:before { content: "\e64d"; }
 .ic-roundright:before { content: "\e625"; }
 .ic-basic:before { content: "\e64e"; }
 .ic-download:before { content: "\e626"; }
@@ -112,5 +116,4 @@
 .ic-sales:before { content: "\e65c"; }
 .ic-goods:before { content: "\e646"; }
 .ic-page:before { content: "\e650"; }
-.ic-fullScreen:before { content: "\e656"; }
-.ic-backFullScreen:before { content: "\e658"; }
+.ic-signup:before { content: "\e664"; }

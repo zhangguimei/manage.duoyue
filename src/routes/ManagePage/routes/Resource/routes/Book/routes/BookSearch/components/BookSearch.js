@@ -1,10 +1,18 @@
+/*
+ *  Date    : 2016.6.30
+ *  Author  : Zhang-Guimei
+ *  Declare : 书籍查询入口页
+ */
 'use strict';
 import React, {PropTypes} from 'react';
+
 import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import Modal from 'UIComponentFolder/Modals/Modal'
+
 import BookModify from './BookModify';
 import styles from './BookSearch.scss';
+
 const tableData = require("AssetsFolder/MockData/book/book_list_data.json");
 
 class BookSearch extends React.Component {
@@ -60,9 +68,9 @@ class BookSearch extends React.Component {
   pluginTableData() {
     tableData.tableContentData.forEach((item, i) => {
       item.operation = <div className="BookSearchOperation clearfix">
-        <div className="operation-btn left">下架</div>
-        <div className="operation-btn left" onClick={() => this.showBookDetail(item.id)}>修改</div>
-        <div className="operation-btn left">删除</div>
+        <button className="operation-btn left">下架</button>
+        <button className="operation-btn left" onClick={() => this.showBookDetail(item.id)}>修改</button>
+        <button className="operation-btn left">删除</button>
       </div>
     });
   }

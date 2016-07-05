@@ -3,38 +3,41 @@
 
 $paddingSmall:                    5px  !default;
 .ArticleSearch {
-  @include props-dpr(padding line-height, 20px 18px);
+  padding:20px;
+  line-height:18px;
   @extend %f14;
   width: 100%;
   .ArticleItem {
-    @include props-dpr(width, 280px);
+    width:280px;
     float: left;
     border: 1px solid $grayD;
-    @include props-dpr(margin, 10px);
+    margin:10px;
     .source-title {
-      @include props-dpr(width, 258px);
+      width:258px;
       @extend %f16;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      @include props-dpr(padding-top padding-left, $basePadding $basePadding);
+      padding-top:$basePadding;
+      padding-left:$basePadding;
     }
     .source-content {
-      @include props-dpr(padding padding-top, 10px 2px);
+      padding:2px 10px 10px 10px;
       .publish-desc {
-        @include props-dpr(height, 95px);
+        height:95px;
         overflow: hidden;
-        @include props-dpr(padding-top padding-bottom, $paddingSmall $paddingSmall);
+        padding-top:$paddingSmall;
+        padding-bottom:$paddingSmall;
         .publish {
           @extend %f12;
           color: $colorPlaceholder;
         }
       }
       .pic {
-        @include props-dpr(height, 145px);
+        height:145px;
         overflow: hidden;
         .img {
-          @include props-dpr(width, 260px);
+          width:260px;
         }
       }
     }
@@ -48,7 +51,8 @@ $paddingSmall:                    5px  !default;
       border-collapse: collapse;
       border: 0;
       .fl {
-        @include props-dpr(height line-height, 30px 30px);
+        height:30px;
+        line-height:30px;
         float: left;
         width: 33.3%;
         border-right: 1px solid $grayD;
@@ -64,7 +68,8 @@ $paddingSmall:                    5px  !default;
       }
     }
     .code {
-      @include props-dpr(height line-height, 30px 30px);
+      height:30px;
+      line-height:30px;
       width: 100%;
       border-top: 1px solid $grayD;
     }
@@ -72,5 +77,468 @@ $paddingSmall:                    5px  !default;
   .clear {
     clear: both;
   }
+}
+
+.w720{
+  width:720px !important;
+}
+
+%input {
+  padding: 5px 0;
+  @extend %f16;
+  width: 200px;
+  height: 30px;
+  text-indent: 5px;
+  border: 1px solid $grayD;
+}
+
+.ArticleModify {
+  .InputTree .tree-input{
+    border: 1px solid $grayD;
+  }
+  line-height: 20px;
+  text-align: left;
+  .top {
+    padding:10px;
+    border-bottom: 1px solid $grayD;
+    .fl {
+      float: left;
+    }
+    .fr {
+      float: right;
+    }
+    .pic {
+      float: left;
+      width: 100px;
+      margin-right:15px;
+      padding:0;
+      img {
+        width: 100px;
+      }
+    }
+    .title-time {
+      padding-top: 10px;
+      width: 220px;
+      float: left;
+      .title {
+        @extend %f16;
+        margin-bottom:5px;
+      }
+    }
+    .fr {
+      padding: 10px 0;
+      float: right;
+      .article-fl {
+        height: 60px;
+        padding: 5px;
+        float: left;
+        width: 100px;
+        text-align: center;
+        border-left: 1px solid $grayD;
+        .explain {
+          padding-top: 10px;
+        }
+      }
+    }
+    .clear {
+      clear: both;
+    }
+  }
+  .article-nav {
+    height: 51px;
+    padding: 20px 0 0 50px;
+    border-bottom: 1px solid $grayD;
+    .out {
+      margin-right: 2px;
+      padding: 5px 15px 4px 15px;
+      float: left;
+      border: 1px solid $grayD;
+      background-color: $colorBgLight;
+      color: $gray5;
+      @extend %f14;
+      cursor: pointer;
+    }
+    .over {
+      margin-right: 2px;
+      padding: 5px 15px 4px 15px;
+      border: 1px solid $grayD;
+      border-bottom: 1px solid $colorBg;
+      cursor: pointer;
+    }
+  }
+  .article-content {
+    padding: 20px 50px;
+    text-align: left;
+    .tr01 {
+      background-color: $grayF;
+    }
+    //
+    .label-span, .label-tree {
+      display: block;
+      padding: 5px 0;
+      height: 30px;
+    }
+    .modify {
+      width: 360px;
+      float: left;
+      .InputTree {
+        position: relative;
+        .tree-component {
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 200px;
+          z-index: 10001;
+          background-color: $colorBg;
+          border: 1px solid $grayD;
+        }
+      }
+      .original-box {
+        display: inline-block;
+      }
+
+    }
+    .InputF {
+      .input {
+        //@extend %input;
+      }
+      .title-input {
+        width: 750px;
+      }
+    }
+    .label-original {
+      .original-box {
+        display: inline-block;
+        padding-right: $basePadding;
+      }
+    }
+    .radio-color {
+      height: 50px;
+      line-height: 50px;
+      .color {
+        .label-span {
+          display: inline-block;
+          height: 50px;
+          line-height: 50px;
+        }
+        .color-box {
+          display: inline-block;
+          .color-radio {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 30px;
+            margin-left: 5px;
+            border-radius: 50%;
+            vertical-align: bottom;
+            border: 1px solid $grayC;
+          }
+        }
+      }
+    }
+  }
+  .clear {
+    clear: both;
+  }
+  .w700 {
+    width: 750px;
+    height: 70px;
+    padding: 8px;
+    border: 1px solid $grayD;
+    @extend %f16;
+  }
+  .tit-input {
+    padding: 5px 0;
+  }
+  .pic{
+    img {
+      width:300px;
+    }
+  }
+  .editor_bottom {
+    width: 750px;
+    padding: 3px;
+    overflow: hidden;
+    border: 1px solid $grayD;
+    .path {
+      display: inline-block;
+      width: 20%;
+    }
+    .statistics {
+      display: inline-block;
+      width: 80%;
+      text-align: right;
+    }
+  }
+  //code
+  .code-content {
+    padding: 20px;
+    height: 100%;
+    .code-item {
+      float: left;
+      width: 180px;
+      margin-bottom: 10px;
+      border: 1px solid $grayD;
+      .code-pic {
+        padding: 10px;
+        width: 150px;
+        img {
+          width: 150px;
+        }
+      }
+      .code-title {
+        border-top: 1px dashed $grayD;
+        text-align: center;
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+    .clear {
+      clear: both;
+    }
+  }
+}
+
+.Account,.TablePage {
+  padding:20px;
+}
+.AccountAdd {
+  padding: 10px;
+  .InputF {
+    margin-bottom: 10px;
+    .label-span {
+      padding: 5px 0;
+    }
+  }
+  .title {
+    .price {
+      display: inline-block;
+    }
+    .name-input {
+      padding-left: 5px;
+      border:1px solid $grayD;
+      height:30px;
+      display: block;
+      margin-top: 3px;
+    }
+    .unit {
+      padding-left: 5px;
+    }
+  }
+  .to {
+    padding: 0 5px;
+  }
+  .DatePicker {
+    display: inline-block;
+  }
+}
+.Table {
+  margin-top: 10px;
+  .modify,.delete{
+    cursor: pointer;
+    padding:0 3px;
+  }
+
+  th{
+    font-weight: normal;
+    text-align: left !important;
+    padding-left: 5px;
+  }
+}
+
+table {
+  text-align: left;
+  .td-lf {
+    width: 330px;
+    vertical-align: top;
+    width: 330px;
+    padding-right: 10px;
+    overflow: hidden;
+    .lf-main {
+      border: 1px solid $grayD;
+      width: 300px;
+      .td1 {
+        padding: 20px;
+        text-align: center;
+        color: #777;
+      }
+      .td2 {
+        padding: 20px;
+        border-top: 1px solid $grayD;
+        text-align: center;
+      }
+      .rec-item {
+        border-top: 1px solid $grayD;
+        padding: 5px 10px 5px 10px;
+        .rec-title {
+          padding: 5px 0px 8px 0px;
+          @extend %f12;
+        }
+        .rec-delete {
+          text-align: right;
+          border-top: 1px dotted $grayE;
+        }
+      }
+      .source-item {
+        border-top: 1px solid $grayD;
+        padding: 5px 10px 5px 10px;
+        .title {
+          padding: 5px 2px 8px 2px;
+          border-bottom: 1px solid $grayD;
+          @extend %f16;
+        }
+        .main {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid $grayD;
+          .pic {
+            width: 110px;
+            float: left;
+            img {
+              width: 100px;
+              display: block;
+            }
+          }
+          .fr {
+            width: 320px;
+            height: auto;
+            .price {
+              line-height: 30px;
+              .red {
+                color: red;
+              }
+            }
+            .num {
+              line-height: 30px;
+              .add {
+                display: inline-block;
+                width: 85px;
+                height: 22px;
+                line-height: 20px;
+                border-top: 1px solid $grayD;
+                border-bottom: 1px solid $grayD;
+                border-right: 1px solid $grayD;
+                margin-left: 10px;
+                text-align: center;
+                .add-a {
+                  display: inline-block;
+                  width: 28px;
+                  border-left: 1px solid $grayD;
+                }
+              }
+            }
+            .intro {
+              @extend %f12;
+              width: 190px;
+              padding: 0px 20px 0px 0px;
+              margin-top: 5px;
+              line-height: 18px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-height: 36px;
+            }
+            .button {
+              padding: 10px 0px 5px 0px;
+              .buy-button, .car-button {
+                display: inline-block;
+                width: 80px;
+                color: #fff;
+                padding: 5px 0px 5px 0px;
+                text-align: center;
+                margin-right: 10px;
+              }
+              .buy-button {
+                background-color: #F00;
+              }
+              .car-button {
+                background-color: #F60;
+              }
+            }
+          }
+          .clear {
+            clear: both;
+          }
+        }
+      }
+      .delete {
+        text-align: right;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  .td-fr {
+    vertical-align: top;
+    width: 100%;
+    border: 1px solid $grayD;
+  }
+}
+
+//标签
+.addtags {
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+.RelatedRecommend,.SourcePage {
+  padding: 20px;
+  .rec-top {
+    border-bottom: 1px solid $grayD;
+    margin:20px 20px 0 20px;
+    padding-bottom:10px;
+    .search {
+      .search-li {
+        display: inline-block;
+        padding-right: 5px;
+        .search-label {
+          padding-right: 5px;
+        }
+        .search-keyword {
+          height: 34px;
+          padding-left: 5px;
+          border:1px solid $grayD;
+        }
+      }
+    }
+    //recommend search
+    .button-search {
+      background-color: #1c6fa8;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #1c6fa8;
+      padding: 5px 30px 5px 30px;
+      cursor: pointer;
+    }
+    .InputTree {
+      position: relative;
+      .tree-box {
+        .label-tree {
+          display: inline-block;
+          margin-right: 5px;
+        }
+        .tree-input {
+          //height: 30px;
+          //padding:0 12px;
+        }
+        .tree-component {
+          left: 61px;
+        }
+      }
+    }
+  }
+  //资源-search
+  .source-search {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grayD;
+  }
+  .table_main {
+    margin-top:10px;
+    padding:0 20px;
+  }
+}
+.Pagination {
+  margin-top: 10px;
 }
 

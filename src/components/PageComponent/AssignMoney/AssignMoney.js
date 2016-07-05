@@ -5,12 +5,12 @@
  */
 'use strict';
 import React, {PropTypes} from 'react';
-
-import Modal from 'UIComponentFolder/Modals/Modal'
-import ShowPage from 'UIComponentFolder/Modals/ShowPage'
+import Modal from 'UIComponentFolder/Modals/Modal';
+import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import AssignMoneyModal from './AssignMoneyModal';
-import TablePage from 'PageComponentFolder/TablePage/TablePage'
+import TablePage from 'PageComponentFolder/TablePage/TablePage';
 import styles from './AssignMoney.scss';
+
 class AssignMoney extends React.Component {
   constructor(props) {
     super(props);
@@ -79,7 +79,7 @@ class AssignMoney extends React.Component {
             </ShowPage>
           </Modal>
         }
-        <TablePage data={data} contentData={tableContent}/>
+        <TablePage data={data} className="assign-money-table" contentData={tableContent}/>
       </div>
     )
   }

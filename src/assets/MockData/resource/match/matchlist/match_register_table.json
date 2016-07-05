@@ -1,0 +1,26 @@
+{
+  "tableHeadData": {
+    "id": "ID (降序)",
+    "name": "昵称",
+    "registrationTime": "报名时间",
+    "phoneNum": "手机号",
+    "sex": "性别",
+    "details": "详情",
+    "avatar": "头像",
+    "hobby": "爱好",
+    "address": "地址"
+  },
+  "tableContentData": [
+    {
+      "id": 30,
+      "name": "陈旭源",
+      "registrationTime": "2016/6/19 16:15:22",
+      "phoneNum": "15387150929",
+      "sex": "男",
+      "details": "哈哈哈",
+      "avatar": "http://file.duoyue.me/upload/20160621/2016_06_21_161129146.jpg",
+      "hobby": "哈哈",
+      "address": "武汉理工大学"
+    }
+  ]
+}

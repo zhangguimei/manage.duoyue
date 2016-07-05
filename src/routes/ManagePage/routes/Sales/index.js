@@ -1,3 +1,8 @@
+/*
+ * Created on 2016-06-30 10:00
+ *
+ * By Zhang-Guimei
+ */
 'use strict';
 module.exports = {
   path: 'sales',
@@ -7,10 +12,10 @@ module.exports = {
       cb(null, require('./components/Sales'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/OrderForm')
+        require('./routes/Order')
       ])
     })
   }

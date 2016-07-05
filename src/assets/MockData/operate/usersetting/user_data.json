@@ -1,0 +1,343 @@
+{
+  "headInfo": {
+    "basic": {
+      "nickname": "Melody Yuen",
+      "headimgurl": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicIHLv15SBY8MLQEmenALojTmdeBXM13icAgzhhdicsl6pISMCj472Nye9LX07JQDltGq1WREt0XMkRhJVBMjUq8uR/132",
+      "country": "中国",
+      "province": "湖北",
+      "city": "武汉",
+      "tag": ""
+    },
+    "extra": [
+      {
+        "count": 3297,
+        "title": "时长(秒)"
+      },
+      {
+        "count": 110,
+        "title": "浏览"
+      },
+      {
+        "count": 11,
+        "title": "评论"
+      },
+      {
+        "count": 27,
+        "title": "标签"
+      },
+      {
+        "count": 7,
+        "title": "收藏"
+      },
+      {
+        "count": 0,
+        "title": "位置"
+      },
+      {
+        "count": 1,
+        "title": "订单"
+      }
+    ]
+  },
+  "info": {
+    "chartData": {
+      "labels": [
+        "06-01",
+        "06-02",
+        "06-03",
+        "06-04",
+        "06-05",
+        "06-06",
+        "06-07",
+        "06-08",
+        "06-09",
+        "06-10",
+        "06-11",
+        "06-12",
+        "06-13",
+        "06-14",
+        "06-15",
+        "06-16",
+        "06-17",
+        "06-18",
+        "06-19",
+        "06-20",
+        "06-21",
+        "06-22",
+        "06-23",
+        "06-24",
+        "06-25",
+        "06-26",
+        "06-27",
+        "06-28",
+        "06-29",
+        "06-30",
+        "07-01"
+      ],
+      "data": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36,
+        1,
+        5,
+        0,
+        0,
+        2,
+        4,
+        1,
+        0,
+        61,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "mapData": {
+      "x": "30.766684",
+      "y": "114.4243"
+    },
+    "extend": {
+      "mark": "oXwQavzfnUzmVSiyc8UZcq0C0k58>oXwQavzfnUzmVSiyc8UZcq0C0k58",
+      "focuseTime": "2016/6/15 15:45:42",
+      "phone": "",
+      "group": [
+        {
+          "id": 1,
+          "value": "未分组(5)"
+        },
+        {
+          "id": 2,
+          "value": "黑名单(2)"
+        },
+        {
+          "id": 3,
+          "value": "星际组(1)"
+        }
+      ]
+    }
+  },
+  "article": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "文章/资讯",
+      "viewTime": "浏览时长（秒）",
+      "viewCount": "浏览次数",
+      "datatime": "最近浏览"
+    },
+    "tableContentData": [
+      {
+        "id": 1,
+        "title": "《欢乐颂》阶层差别下的残酷与温暖",
+        "viewTime": 63,
+        "viewCount": 5,
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 2,
+        "title": "困境难解！曾经风口上的HTC为什么没有飞起来？",
+        "viewTime": 317,
+        "viewCount": 6,
+        "datatime": "2016/6/24 10:01:19"
+      },
+      {
+        "id": 3,
+        "title": "科技大事件：希拉里获科技界支持",
+        "viewTime": 11,
+        "viewCount": 1,
+        "datatime": "2016/6/24 9:39:28"
+      },
+      {
+        "id": 4,
+        "title": "MOOC 介绍",
+        "viewTime": 94,
+        "viewCount": 2,
+        "datatime": "2016/6/24 9:20:33"
+      }
+    ]
+  },
+  "source": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "资源名称",
+      "viewTime": "浏览时长（秒）",
+      "viewCount": "浏览次数",
+      "datatime": "最近浏览"
+    },
+    "tableContentData": [
+      {
+        "id": 1,
+        "title": "React入门视频",
+        "viewTime": 63,
+        "viewCount": 5,
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 2,
+        "title": "项链",
+        "viewTime": 317,
+        "viewCount": 6,
+        "datatime": "再见"
+      }
+    ]
+  },
+  "book": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "书籍名称",
+      "viewTime": "浏览时长（秒）",
+      "viewCount": "浏览次数",
+      "datatime": "最近浏览"
+    },
+    "tableContentData": [
+      {
+        "id": 1,
+        "title": "Backbone.js应用程序开发",
+        "viewTime": 63,
+        "viewCount": 5,
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 2,
+        "title": "React：引领未来的用户界面开发框架",
+        "viewTime": 317,
+        "viewCount": 6,
+        "datatime": "2016/6/24 10:01:19"
+      },
+      {
+        "id": 3,
+        "title": "前端开发规范手册",
+        "viewTime": 11,
+        "viewCount": 1,
+        "datatime": "2016/6/24 9:39:28"
+      },
+      {
+        "id": 4,
+        "title": "深入理解JavaScript",
+        "viewTime": 94,
+        "viewCount": 2,
+        "datatime": "2016/6/24 9:20:33"
+      }
+    ]
+  },
+  "product": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "商品名称",
+      "viewTime": "浏览时长（秒）",
+      "viewCount": "浏览次数",
+      "datatime": "最近浏览"
+    },
+    "tableContentData": [
+      {
+        "id": 1,
+        "title": "布加迪威龙Super Sport",
+        "viewTime": 63,
+        "viewCount": 5,
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 2,
+        "title": "施华洛世奇2016情人节定制Dear Medium双心形项链锁骨链",
+        "viewTime": 317,
+        "viewCount": 6,
+        "datatime": "2016/6/24 10:01:19"
+      },
+      {
+        "id": 3,
+        "title": "Apple iPad Air 2 平板电脑 9.7英寸（64G WLAN版/A8X 芯片/Retina显示屏/Touch ID技术 MH182CH）金色",
+        "viewTime": 11,
+        "viewCount": 1,
+        "datatime": "2016/6/24 9:39:28"
+      },
+      {
+        "id": 4,
+        "title": "Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)",
+        "viewTime": 94,
+        "viewCount": 2,
+        "datatime": "2016/6/24 9:20:33"
+      }
+    ]
+  },
+  "qrcode": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "二维码名称",
+      "viewCount": "扫描次数",
+      "datatime": "最近扫描"
+    },
+    "tableContentData": [
+      {
+        "id": 1,
+        "title": "一起HAPPY吧",
+        "viewCount": 5,
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 2,
+        "title": "下午茶",
+        "viewCount": 6,
+        "datatime": "2016/6/24 10:01:19"
+      }
+    ]
+  },
+  "location": {
+    "count": "0",
+    "key": {
+      "id": "0",
+      "uid": "1",
+      "openid": "2",
+      "imei": "3",
+      "lat": "4",
+      "lng": "5",
+      "type": "6",
+      "datetime": "7",
+      "radius": "8"
+    },
+    "values": []
+  },
+  "tag": {
+    "tableHeadData": {
+      "id": "编号",
+      "title": "标签",
+      "datatime": "时间"
+    },
+    "tableContentData": [
+      {
+        "id": 651580,
+        "title": "娱乐",
+        "datatime": "2016/6/24 15:33:15"
+      },
+      {
+        "id": 651533,
+        "title": "娱乐",
+        "datatime": "2016/6/24 10:01:19"
+      },
+      {
+        "id": 651531,
+        "title": "娱乐",
+        "datatime": "2016/6/24 9:39:28"
+      },
+      {
+        "id": 651518,
+        "title": "娱乐",
+        "datatime": "2016/6/24 9:20:33"
+      }
+    ]
+  }
+}

@@ -5,57 +5,99 @@
  */
 'use strict';
 import React, {PropTypes} from 'react';
+
 import styles from './HeaderInfo.scss';
+
+let showItem = {
+  "browse": "浏览",
+  "scan": "扫一扫",
+  "collection": "收藏",
+  "comment": "评论",
+  "orderList": "订单",
+  "position": "位置",
+  "time": "时长",
+  "signUp": "报名"
+};
+
+let info = {
+  "name": "名称",
+  "nickname": "昵称",
+  "sex": "性别",
+  "city": "城市",
+  "tag": "标签",
+  "price": "价格",
+  "update": "更新时间"
+};
+
+let headUrl = {
+  "img": "头像"
+};
 
 class HeaderInfo extends React.Component {
 
   render() {
-    const {data:{img, name, price, update, type, browse, scan, collection, comment}} = this.props;
+    const {data} = this.props;
     return (
-      <div className="HeaderInfo">
-        <div className="img-wrap left">
-          <img src={img} className="img"/>
-        </div>
-        <div className="main-info left">
-          <p className="title">{name}</p>
-          <h4 className="price">售价：{price}</h4>
-          <h4 className="update">更新：{update}</h4>
-          {type && <h4 className="type">类型：{type}</h4>}
-        </div>
-        <ul className="top-list right clearfix">
-          <li className="top-item left">
-            <span className="num">{browse}</span>
-            <h4 className="item-text">浏览</h4>
-          </li>
-          <li className="top-item left">
-            <span className="num">{scan}</span>
-            <h4 className="item-text">扫一扫</h4>
-          </li>
-          <li className="top-item left">
-            <span className="num">{collection}</span>
-            <h4 className="item-text">收藏</h4>
-          </li>
-          <li className="top-item left">
-            <span className="num">{comment}</span>
-            <h4 className="item-text">评论</h4>
-          </li>
-        </ul>
-      </div>
+      <header className="HeaderInfo">
+        <section className="common-hd">
+          <div className="title">
+            <div className="img-wrap left">
+              {
+                Object.keys(headUrl).map((item, index) => {
+                  if(headUrl[item] == "头像" && data[item]) {
+                    return <img src={data[item]} key={index} className="img"/>
+                  }
+                })
+              }
+            </div>
+            <div className="main-info left">
+              {
+                Object.keys(info).map((item, index) => {
+                  if(info[item] && data[item]) {
+                    return <h4 className={` info-${item}-name`} key={index}><span className={`info-${item}-desc`}>{info[item]}</span>{data[item]}</h4>
+                  }
+                })
+              }
+            </div>
+          </div>
+
+          <ul className="info">
+            {
+              Object.keys(showItem).map((item, index) => {
+                if(showItem[item] && (data[item] || data[item] == 0)) {
+                  return (
+                    <li key={index} className={`show show-${item}`}>
+                      <h5>{data[item]}</h5>
+                      <p>{showItem[item]}</p>
+                    </li>
+                  )
+                }
+              })
+            }
+          </ul>
+        </section>
+      </header>
     )
   }
 }
 
 HeaderInfo.propTypes = {
   data: PropTypes.shape({
-    img: PropTypes.string,
+    browse: PropTypes.number,
+    scan: PropTypes.number,
+    collection: PropTypes.number,
+    comment: PropTypes.number,
+    orderList: PropTypes.number,
+    position: PropTypes.string,
+    time: PropTypes.number,
+    signUp: PropTypes.number,
     name: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    update: PropTypes.string,
-    type: PropTypes.string,
-    browse: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    scan: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    collection: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    comment: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    nickname: PropTypes.string,
+    sex: PropTypes.string,
+    city: PropTypes.string,
+    tag: PropTypes.string,
+    price: PropTypes.string,
+    update: PropTypes.string
   }).isRequired
 };
 

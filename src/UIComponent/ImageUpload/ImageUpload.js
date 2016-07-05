@@ -1,4 +1,3 @@
-"use strict";
 /*
  *  Date    : 2016.06.28
  *  Author  : CastileMan
@@ -6,10 +5,10 @@
 
  * examples:
  * <ImageUpload name="image" className="blabla" defaultSrc="yourImageUrl" />
- * 若要修改图片高宽，请直接在ImageUpload类名中设置
+ * 若要修改图片高宽，请直接在img-box类名中设置
  * 若要修改上传按钮样式，在upload-btn类名中设置
  * */
-
+"use strict";
 import React, {PropTypes} from 'react';
 import styles from './ImageUpload.scss';
 
@@ -18,9 +17,10 @@ const imageFormats = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'swf', 'tiff', 'psd', 
 class ImageUpload extends React.Component {
 
   static defaultProps = {
-    name: "",           //input的name属性
-    className: "",      //按钮外层自定义类名
-    defaultSrc: ""      //默认图片的src
+    name: "",             //input的name属性
+    className: "",        //按钮外层自定义类名
+    defaultSrc: "",       //默认图片的src
+    requireDelete: false  //是否需要清空按钮
   };
 
   constructor(props) {
@@ -36,7 +36,7 @@ class ImageUpload extends React.Component {
 
   //文件上传的change事件
   fileOnChange(e) {
-    let file = e.target.files[0] || {},
+    let file = (e && e.target.files.length) ? e.target.files[0] : {},
       isImage = file.type && file.type.includes("image"),
       _this = this,
       tip = "",
@@ -69,9 +69,15 @@ class ImageUpload extends React.Component {
     this.props.onChange && this.props.onChange(isImage ? "图片已选择" : "");
   }
 
+  //清空所选图片
+  deleteClick() {
+    this.refs.input.value = "";
+    ::this.fileOnChange(null);
+  }
+
   render() {
     const { isImage, tip, dataURL, imgTip } = this.state,
-      { name, className } = this.props;
+      { name, className, requireDelete } = this.props;
     let uniqCode = Math.random(),
       fileContentCode = isImage ?
         <img className="file-img" src={dataURL} alt="image"/>
@@ -82,7 +88,11 @@ class ImageUpload extends React.Component {
         <div className="img-box">
           { fileContentCode }
         </div>
-        <input className="input-file" type="file" name={name} accept="image/*" id={`file-${uniqCode}`}
+        {
+          requireDelete &&
+            <span className="delete-btn" onClick={::this.deleteClick}>删除</span>
+        }
+        <input ref="input" className="input-file" type="file" name={name} accept="image/*" id={`file-${uniqCode}`}
                onChange={::this.fileOnChange}/>
         <label className="wrapper-label clearfix" htmlFor={`file-${uniqCode}`}>
           <span className="upload-btn right">选择图片</span>
@@ -97,7 +107,8 @@ ImageUpload.propTypes = {
   name: PropTypes.string.isRequired,
   className: PropTypes.string,
   defaultSrc: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  requireDelete: PropTypes.bool
 };
 
 export default ImageUpload;

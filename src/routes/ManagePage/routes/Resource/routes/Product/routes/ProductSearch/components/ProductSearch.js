@@ -9,6 +9,7 @@ import React, {PropTypes} from 'react';
 import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import Modal from 'UIComponentFolder/Modals/Modal';
+
 import ProductModify from './ProductModify'
 import styles from './ProductSearch.scss';
 

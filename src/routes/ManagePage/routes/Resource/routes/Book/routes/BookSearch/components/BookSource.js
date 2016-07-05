@@ -1,6 +1,11 @@
+/*
+ *  Date    : 2016.6.30
+ *  Author  : Zhang-Guimei
+ *  Declare : 书籍修改资源Tab
+ */
 'use strict';
 import React, {PropTypes} from 'react';
-import Table from './Table/Table';
+import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 
 const pageNumLists = [5, 10, 50];
@@ -37,7 +42,6 @@ class BookSource extends React.Component {
 
   selectSource(id, isSelected) {
     const {sourceList} = this;
-    const {sourceTableData} = this.props;
     if (isSelected) {
       if (sourceList.indexOf(id) < 0) {
         this.sourceList = sourceList.concat(id);
@@ -60,11 +64,11 @@ class BookSource extends React.Component {
 
   render() {
     const {sourceTableData} = this.props,
-      {pageIndex, rowsForOnePage, showModifyLayer, checkBoxState} = this.state,
+      {pageIndex, rowsForOnePage} = this.state,
       totalPages = Math.ceil(sourceTableData.tableContentData.length / rowsForOnePage),
       {sourceList} = this;
     let listCode = [];
-    sourceList.map((item, i) => {
+    sourceList.map((item) => {
       listCode = listCode.concat(sourceTableData.tableContentData.filter((dataItem) => {
         return dataItem.id == item;
       }))
@@ -85,7 +89,7 @@ class BookSource extends React.Component {
           </div>
         </li>
       )
-    })
+    });
 
     return (
       <div className="BookSource clearfix">
@@ -106,13 +110,13 @@ class BookSource extends React.Component {
           <div className="keyword-area">
             <div className="related-search-box">
               <span className="interval-margin">关键字</span>
-              <input className="info-input interval-margin w200"/>
-              <div className="book-submit-btn inline interval-margin">搜索</div>
+              <input className="form-control input-sm inline w200"/>
+              <div className="btn btn-primary btn-sm ml10 w80">搜索</div>
             </div>
           </div>
           <Table headData={sourceTableData.tableHeadData} contentData={sourceTableData.tableContentData}
                  isOptional={true} rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}
-                 selectArticle={::this.selectSource}/>
+                 checkBoxClick={::this.selectSource}/>
           <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}
                       selectOnChange={::this.selectOnChange} pageNumLists={pageNumLists}/>
         </div>
@@ -120,7 +124,9 @@ class BookSource extends React.Component {
     )
   }
 }
+
 BookSource.propTypes = {
   sourceTableData: PropTypes.object
 };
+
 export default BookSource;

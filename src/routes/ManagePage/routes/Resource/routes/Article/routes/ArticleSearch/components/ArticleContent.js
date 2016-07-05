@@ -1,11 +1,9 @@
-'use strict'
+'use strict';
 import React, {PropTypes} from 'react';
-import {Map, is, fromJS} from 'immutable';
-
+import {is} from 'immutable';
 import ArticleItem from './ArticleItem';
 
 class ArticleContent extends React.Component {
-
   static defaultProps = {
     pageIndex: 0
   };
@@ -83,19 +81,20 @@ class ArticleContent extends React.Component {
 
   render() {
     const {contentDataForShow} = this;
-    let contentCodes = contentDataForShow.map((item, index) => {
-      return <ArticleItem data={item} key={index} onDelete={::this.onDelete}/>
-    })
     return (
       <div className="ArticleContent clearfix">
-        { contentCodes }
+        {
+          contentDataForShow.map((item, index) => {
+            return <ArticleItem data={item} key={index} onDelete={::this.onDelete}/>
+          })
+        }
       </div>
     )
   }
 }
 
 ArticleContent.propTypes = {
-  data:PropTypes.array
-}
+  data: PropTypes.array
+};
 
 export default ArticleContent;
