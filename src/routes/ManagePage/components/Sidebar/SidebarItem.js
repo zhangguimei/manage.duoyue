@@ -11,41 +11,46 @@ class SidebarItem extends React.Component {
     }
   }
 
-  toggleClick() {
+  toggleClick(e) {
+    e.preventDefault();
     this.setState({
       open: !this.state.open
     });
   }
 
   render() {
-    const {menuData:{name, data, icon_font, url}, route, changeRoutes, parent, selectTitle} = this.props,
-      {open} = this.state;
-    let routeFirst = route[0];
+    const {menuData:{permissionName, children, icon_min, accessPath}, path, changeRoute, parent} = this.props,
+      {open} = this.state, ITEM_HEIGHT = 30;
     return (
       <div className="SidebarItem item">
         <h5>
           {
-            data.length > 0 ?
-              <a className={selectTitle ? 'cur' : null} onClick={() => this.toggleClick()}><i
-                className={`ic ${icon_font} ic1`}/>{name}<i
-                className={open ? 'ic ic-move ic2' :'ic ic-add ic2'}/></a> :
-              <Link to={`${url}`} className={selectTitle ? 'cur' : null}
-                    onClick={() => changeRoutes(`${parent}`)}><i className={`ic ${icon_font} ic1`}/>{name}</Link>
+            children && children.length > 0 ?
+              <a onClick={::this.toggleClick} >
+                <i className={`ic ${icon_min} ic1`}/>{permissionName}
+                <i className={open ? 'ic ic-move ic2' :'ic ic-add ic2'}/>
+              </a>
+              :
+              <Link to={accessPath} className={path.indexOf(accessPath) > -1 ? 'cur' : null} onClick={() => changeRoute(parent.split(".").slice(0,-1))}>
+                <i className={`ic ${icon_min} ic1`}/>
+                {permissionName}
+              </Link>
           }
+          {
+            children && children.length > 0 &&
+            <ul className="transitioned" style={{height: open ? children.length * ITEM_HEIGHT : 0 }}>
+              {
+                children.map((item, index) => {
+                  return (
+                    <SidebarItemList key={index}  menuData={item} parent={`${parent}${index}`} changeRoute={changeRoute} path={path}/>
+                  );
+                })
+              }
+            </ul>
+          }
+
         </h5>
-        {
-          data.length > 0 && <ul className="transitioned" style={{height: open ? (data.length*30+'px'): 0 }}>
-            {
-              data.map((item, i) => {
-                let select = route.slice(1, 3).join('.') === `${parent}.${i}`;
-                return (
-                  <SidebarItemList key={i} select={select} menuData={item} route={`${routeFirst}.${parent}.${i}`}
-                                   onClick={() => changeRoutes(`${parent}.${i}`, item, `${parent}.${i}`)}/>
-                );
-              })
-            }
-          </ul>
-        }
+
       </div>
     );
   }
@@ -53,9 +58,9 @@ class SidebarItem extends React.Component {
 
 SidebarItem.propTypes = {
   menuData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    data: PropTypes.array.isRequired
+    permissionName: PropTypes.string.isRequired,
+    accessPath: PropTypes.string.isRequired,
+    children: PropTypes.array
   }).isRequired
 };
 

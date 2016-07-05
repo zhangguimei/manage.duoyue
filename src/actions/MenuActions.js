@@ -1,12 +1,5 @@
 'use strict';
-import {CHANGE_MENU_ROUTE, CHOOSED_TREE_LEAVES} from '../constants/constants';
-
-export const changeRoute  = (route) => {
-  return {
-    type: CHANGE_MENU_ROUTE,
-    route
-  }
-};
+import {CHOOSED_TREE_LEAVES} from '../constants/constants';
 
 export const chooseTreeLeaves  = (id, allchoose) => {
   return {

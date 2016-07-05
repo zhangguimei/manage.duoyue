@@ -6,7 +6,7 @@
 
 'use strict';
 module.exports = {
-  path: 'soucetypesetting',
+  path: 'sourcetypesetting',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/SouceTypeSetting'))
