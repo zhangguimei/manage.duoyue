@@ -1,22 +1,20 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import {Link, withRouter} from 'react-router';
-import options from './ConstantOfFast';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Map, is, fromJS} from 'immutable';
-import * as actions from 'ActionsFolder/LoginActions';
+import {fromJS} from 'immutable';
+import * as loginActions from 'ActionsFolder/LoginActions';
 import {animations} from 'UtilsFolder/animation';
-import auth from 'APIFolder/auth';
+import options from './ConstantOfFast';
 
 @withRouter
 class FastMenu extends React.Component {
 
   handleLogout(){
-    let {actions:{logOut}} = this.props;
-    auth.logout();
-    logOut();
     if(confirm('确定退出管理平台吗？')){
+      let {actions:{doLogOut}} = this.props;
+      doLogOut();
       this.props.router.replace('/login');
     }
   }
@@ -64,10 +62,10 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch =>{
   return {
-    actions: bindActionCreators(actions, dispatch)
-  };
+    actions: bindActionCreators(loginActions, dispatch)
+  }
 }
 
 export default connect(

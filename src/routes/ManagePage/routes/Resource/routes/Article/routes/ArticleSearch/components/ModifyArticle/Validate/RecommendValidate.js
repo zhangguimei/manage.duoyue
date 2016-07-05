@@ -1,5 +1,5 @@
 "use strict";
-import { isUrl, require } from '../../../../../../../../../../../utils/validations';
+import { isUrl, require } from '../../../../../../../../../../../utils/formValidations';
 
 const RecommendValidate = (values) => {
   const errors = {};

@@ -5,12 +5,15 @@ const config = {
   BASE_API_ROOT: 'http://localhost:8058', //development api addredss
   debug: process.env.NODE_ENV !== 'production',
   host: process.env.HOST || 'localhost',
-  port: process.env.NODE_ENV !== 'production' ? 8058 : 8055,
+  port: process.env.NODE_ENV !== 'production' ? 8050 : 8055,
   COOKIE: 'spaceInfo',
   username: null,
   tenantId: 0,
   systemId: 0,
-  userId: 0
+  userId: 0,
+  spaceId: 1018,
+  weixinId: 3021,
+  unionId: 8
 };
 
 module.exports = config;

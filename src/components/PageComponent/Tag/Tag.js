@@ -1,3 +1,8 @@
+/*
+ *  Date    : 2016.6.28
+ *  Author  : Han-Shuangli
+ *  Declare : 标签页
+ */
 'use strict';
 import React, {PropTypes} from 'react';
 import {fromJS} from 'immutable';

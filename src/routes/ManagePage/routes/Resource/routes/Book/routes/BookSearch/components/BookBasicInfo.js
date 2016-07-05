@@ -2,9 +2,9 @@
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import Validate from './Validate/BookFormValidate';
-import {InputF, InputTree} from '../../PageTest/ValidationForm/ValidationComponents';
-import DatePicker from '../../UIComponent/DatePicker/DatePicker';
-import Utils from '../../../utils/utils';
+import {InputF, InputTree} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
+import DatePicker from 'UIComponentFolder/DatePicker/DatePicker';
+import toolMethods from 'UtilsFolder/toolMethods';
 
 const fields = ['classify', 'title', 'publish', 'bookNumber', 'author', 'publishDate', 'link', 'inventory', 'startDate', 'endDate', 'price',
   'discount', 'salesPrice', 'sharing', 'eBook', 'eBookPrice', 'tryRead', 'introduction', 'cover'];
@@ -25,7 +25,7 @@ class BookForm extends React.Component {
   }
 
   checkDate(start, end) {
-    console.log('时间',Utils.compareTime(start, end))
+    console.log('时间',toolMethods.compareTime(start, end))
   }
 
   getPickDate(date) {

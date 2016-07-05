@@ -2,14 +2,13 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchArticleInfoData} from '../../../actions/BookActions';
-import {InputF} from '../../PageTest/ValidationForm/ValidationComponents';
-import Tree from '../../UIComponent/Tree/Tree';
+import {fetchArticleInfoData} from '../../../../../../../../../actions/BookActions';
+import {InputF} from '../../../../../../../../../components/PageTest/ValidationForm/ValidationComponents';
+import Tree from 'UIComponentFolder/Tree/Tree';
 import Table from './Table/Table';
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage'
-import BookOperation from './BookOperation';
-import BookArticleForm from './BookArticleForm';
+import Modal from 'UIComponentFolder/Modals/Modal'
+import ShowPage from 'UIComponentFolder/Modals/ShowPage'
+import BookArticleModify from './BookArticleModify';
 
 const pageIndex = 1, rowsForOnePage = 15;
 class BookArticle extends React.Component {
@@ -25,8 +24,8 @@ class BookArticle extends React.Component {
   }
 
   articleOperation(id, type) {
-    const {menuTableData, fetchArticleInfoData} = this.props;
-    fetchArticleInfoData && this.props.fetchArticleInfoData(id);
+    const {fetchArticleInfoData} = this.props;
+    fetchArticleInfoData && fetchArticleInfoData(id);
     this.setState({
       optionId: id,
       showModifyLayer: !this.state.showModifyLayer,
@@ -55,20 +54,11 @@ class BookArticle extends React.Component {
 
   submitModify(id) {
     this.refs.BookArticleForm.submit();
-    const {tableContent} = this.state;
-    let parentMenu = document.querySelector(".tree-input").value,
-      price = document.querySelector(".price-input").value,
+    let price = document.querySelector(".price-input").value,
       article = document.querySelector(".article-input").value;
-    let tempData = {
-      code: id,
-      parentMenu: parentMenu,
-      article: article,
-      price: price
-    }
     this.setState({
       showModifyLayer: false
     });
-
   }
 
   submitForm(values) {
@@ -78,10 +68,24 @@ class BookArticle extends React.Component {
     });
   }
 
+  pluginTableData() {
+    const {menuTableData} = this.props;
+    menuTableData.tableContentData.forEach((item, i) => {
+      item.operation = <div className="BookArticleOperation clearfix">
+        <div className="modify left" onClick={() => this.articleOperation(item.id,1)}>修改</div>
+        <div className="order-font left">|</div>
+        <div className="delete left" onClick={() => this.deleteOperation(item.id)}>删除</div>
+      </div>
+    });
+  }
+
+  componentWillMount() {
+    this.pluginTableData();
+  }
 
   render() {
-    const {showModifyLayer, showUploadLayer, operationTitle, tableContent, optionId} = this.state;
-    const {menuTreeData, menuTableData, handleSubmit} = this.props;
+    const {showModifyLayer, showUploadLayer, operationTitle, tableContent, optionId} = this.state,
+      {menuTreeData, menuTableData} = this.props;
     let pagedata = {
       width: "50%",
       title: operationTitle,
@@ -92,10 +96,6 @@ class BookArticle extends React.Component {
       title: "批量上传文章",
       closeShowPage: ::this.showUploadArticle
     };
-    menuTableData.tableContentData.map((item, i) => {
-      item.operation =
-        <BookOperation index={item.id} modify={::this.articleOperation} deleteOperation={::this.deleteOperation}/>;
-    });
     return (
       <div className="BookArticle">
         <div className="add-book-data">
@@ -114,7 +114,7 @@ class BookArticle extends React.Component {
           showModifyLayer &&
           <Modal>
             <ShowPage {...pagedata} submitChange={() => this.submitModify(optionId)}>
-              <BookArticleForm ref="BookArticleForm" menuTreeData={menuTreeData} onSubmit={::this.submitForm}/>
+              <BookArticleModify ref="BookArticleForm" menuTreeData={menuTreeData} onSubmit={::this.submitForm}/>
 
             </ShowPage>
           </Modal>

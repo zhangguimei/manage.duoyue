@@ -6,7 +6,7 @@
 
 'use strict';
 
-const Utils = {
+const toolMethods = {
   bindMethods(thisObject, ...methods) {
     methods.forEach((method)=> {
       thisObject[method] = thisObject[method].bind(thisObject);
@@ -46,4 +46,4 @@ const Utils = {
   }
 };
 
-export default Utils;
+export default toolMethods;

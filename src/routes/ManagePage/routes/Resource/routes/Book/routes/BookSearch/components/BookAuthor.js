@@ -1,9 +1,9 @@
 'use strict';
 import React, {PropTypes} from 'react';
-import Modal from '../../UIComponent/Modals/Modal'
-import ShowPage from '../../UIComponent/Modals/ShowPage'
-import CheckBox from '../../UIComponent/Table/CheckBox';
-import Pagination from '../../UIComponent/Pagination/Pagination';
+import Modal from 'UIComponentFolder/Modals/Modal'
+import ShowPage from 'UIComponentFolder/Modals/ShowPage'
+import CheckBox from 'UIComponentFolder/Table/CheckBox';
+import Pagination from 'UIComponentFolder/Pagination/Pagination';
 
 const numsForOnePage = 50;
 

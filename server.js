@@ -39,6 +39,12 @@ app.use(viewDir, express.static(path.join(__dirname, viewDir)));
 //   });
 //
 // }
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, viewDir, 'index.html'));
 });

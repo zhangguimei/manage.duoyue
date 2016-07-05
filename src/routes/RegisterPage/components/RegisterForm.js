@@ -3,37 +3,9 @@ import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 
 class RegisterForm extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
 
-  submit(values, dispatch) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (!values.invitecode) {
-          reject({invitecode: '请填写邀请码'})
-        }
-        if (!values.loginname) {
-          reject({loginname: '请填写用户名'})
-        } else if (['fyy'].includes(values.loginname)) {
-          reject({loginname: '用户名已经被占用'})
-        }
-        if (!values.companyname) {
-          reject({companyname: '请填写机构名称'})
-        }
-        if (!values.password) {
-          reject({password: '请填写密码'})
-        }
-        if (!values.repassword) {
-          reject({repassword: '请再次填写密码'})
-        } else if (values.repassword != values.password) {
-          reject({repassword: '两次输入的密码不一致'})
-        } else {
-          resolve();
-          this.context.router.push('/login');
-        }
-      }, 300)
-    })
+  submit(values) {
+    this.props.handleRegister(values);
   }
 
   render() {
@@ -102,14 +74,12 @@ class RegisterForm extends React.Component {
   }
 }
 
-RegisterForm.contextTypes = {
-  router: PropTypes.object.isRequired
-};
 
 RegisterForm.PropTypes = {
   fields: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  submitting: PropTypes.bool.isRequired
+  submitting: PropTypes.bool.isRequired,
+  handleRegister: PropTypes.func.isRequired
 }
 
 RegisterForm = reduxForm({

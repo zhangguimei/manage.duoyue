@@ -4,34 +4,35 @@ import {createReducer} from 'redux-immutablejs';
 import {Map, fromJS} from 'immutable';
 import * as cookie from '../utils/cookie';
 
-const actionFunc = {
-  [LOG_IN]: (state, action) => {
-    let {username} = action;
-    cookie.set('username', username);
-    return Map({
-      username
-    })
-  },
-  [LOG_OUT]: () => {
-    cookie.remove('username');
-    return Map({
-      username: null
-    })
-  },
-  [LOGGED_IN]: (state, action) => {
-    let {username, tree} = action;
-    return Map({
-      username,
-      tree
-    })
-  }
-};
-
-export default createReducer(Map({
-  username: cookie.get('username'),
+const initialState = Map({
+  token: cookie.get('token') || null,
+  permissions: [],
   tree: {
     "user": "",
     "fast": [],
     "menu": []
   }
-}), actionFunc);
+});
+
+const actionFunc = {
+  [LOG_IN]: (state, action) => {
+    return state.merge({
+      token: action.token,
+      userName: action.userName,
+      permissions: action.permissions
+
+    })
+  },
+
+  [LOG_OUT]: (state,action)=> initialState.set('token',null),
+
+  [LOGGED_IN]: (state, action) => {
+    let {userName, tree} = action;
+    return Map({
+      userName,
+      tree
+    })
+  }
+};
+
+export default createReducer(initialState, actionFunc);

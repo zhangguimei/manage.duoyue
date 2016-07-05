@@ -1,8 +1,36 @@
 'use strict';
-import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
+import { push } from 'react-router-redux';
+import {LOG_IN, LOG_OUT, LOGGED_IN, GET_USERINFO} from '../constants/constants';
 import {parseJson} from 'UtilsFolder/getDataInfo';
 import auth from '../api/auth';
 import { getBookType } from '../api/axiosServices';
+import usercenterapi from 'APIFolder/UserCenter';
+import {showMsg} from './commonActions';
+
+export const doLogin = (loginInfo, callback) => {
+  return (dispatch)  => {
+    return usercenterapi.login(loginInfo)
+        .then(response => ({json: response.data, status: response.statusText})) //所有axios返回值都有data和statusText, 在data里面真正后台返回来的数据
+        .then(({json,status}) => {
+          if(status !== 'OK'){
+            return dispatch(showMsg(json.message || '登录失败'));
+          }
+
+          let returnData = json.data;
+          //得到token,并存储
+          auth.setToken('token',returnData.token);
+          auth.setToken('userName',returnData.userName);
+
+          dispatch(logIn(returnData.userName, returnData.token, returnData.permissions));
+         // fetchTreedata(returnData.userName);
+          console.log("操作员是 ", returnData.userName, returnData.list);
+          
+          callback && callback();
+        }).catch(err=>{
+          callback && callback(err.data, err.status);
+        })
+  }
+}
 
 export const fetchTreedata = (username) => {
   //getBookType();
@@ -47,25 +75,37 @@ export const fetchTreedata = (username) => {
   }
 }
 
-const loggedIn = (username, tree) => {
+//退出登录
+export const doLogOut = () => {
+  return dispatch => {
+    // usercenterapi.loginOut();  //登出API还有问题??
+    auth.logout();
+    return dispatch(logOut());
+  }
+}
+
+const loggedIn = (userName, tree) => {
   return {
     type: LOGGED_IN,
-    username,
+    userName,
     tree
   }
 }
 
-export const logIn = (username, pwd)=> {
-  auth.login()
+//登录
+export const logIn = (userName, token, permissions)=> {
   return {
     type: LOG_IN,
-    username
+    userName,
+    token,
+    permissions
   }
 }
 
-export const logOut = (username)=> {
+export const logOut = ()=> {
   return {
-    type: LOG_OUT,
-    username
+    type: LOG_OUT
   }
 }
+
+

@@ -1,13 +1,12 @@
 "use strict";
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import {Map, is, fromJS} from 'immutable';
+import {is, fromJS} from 'immutable';
 import { Link } from 'react-router';
-import shouldComponentUpdate from '../../../../utils/shouldComponentUpdate';
+import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
-import defaultTable from '../../../UIComponent/Table/Table';
+import defaultTable from 'UIComponentFolder/Table/Table';
 
-import DefaultCheckBox from '../../../UIComponent/Table/CheckBox';
 
 class Table extends defaultTable {
   constructor(props) {

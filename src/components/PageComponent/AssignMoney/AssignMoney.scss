@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.AssignMoney {
+  .ShowPage {
+    z-index: 11100;
+  }
+  .add-user-area {
+    padding: 0;
+    .add-user-btn {
+      color: $gray3;
+      font-size: 14px;
+      width: 90px;
+    }
+  }
+  .TablePage {
+    padding: 0px;
+    .Table {
+      img {
+        height: 50px;
+      }
+      .thead-column-0 {
+        width: 5% !important;
+      }
+      .thead-column-1 {
+        width: 5% !important;
+      }
+      .thead-column-2 {
+        width: 5% !important;
+      }
+      .thead-column-3 {
+        width: 5% !important;
+      }
+      .thead-column-4 {
+        width: 5% !important;
+      }
+      .thead-column-5 {
+        width: 10% !important;
+      }
+      .thead-column-6 {
+        width: 5% !important;
+      }
+      .product-desc, .product-sales {
+        font-size: 12px;
+        color: $gray6;
+      }
+      .ProductSearchOperation {
+        .operation-btn {
+          background: #f5f5f5;
+          color: $gray5;
+          @extend %f12;
+          padding: 0 12px;
+          line-height: 24px;
+          border-radius: 15px;
+          border: 1px solid $grayD;
+          margin: 0 5px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .operation-btn:hover {
+          background: #00aee8;
+          color: $white;
+          border: 1px solid #00aee8;
+        }
+      }
+      .ProductSearchTableTitleContent {
+        .product-title {
+          padding-bottom: 10px;
+        }
+        .valid-time, .create-time {
+          color: $gray9;
+        }
+      }
+    }
+  }
+  .ProductOperation {
+    .modify, .delete {
+      cursor: pointer;
+    }
+  }
+  .AssignMoneyModal {
+    padding: 20px;
+    .tag-info-title {
+      margin: 5px 0;
+      display: block;
+    }
+    .form-title {
+      margin-top: 10px;
+      div {
+        margin-top: 5px;
+      }
+      span{
+        padding: 0 5px;
+      }
+      .DatePicker {
+        display: inline-block;
+        background-color: $white;
+        .date-input-wrap {
+          background-color: $white;
+        }
+        .ic {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

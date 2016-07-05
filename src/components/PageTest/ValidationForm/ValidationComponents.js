@@ -1,7 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import ErrorShow from './ErrorShow';
-import Tree from '../../../UIComponent/Tree/Tree';
+import Tree from 'UIComponentFolder/Tree/Tree';
 /*
 * 1. InputF must have props: field. This is the flag of this input.
 * 2. InputF can not be used as type: file.
@@ -189,8 +189,8 @@ export class InputTree extends React.Component {
 }
 
 InputTree.propTypes = {
-  field: PropTypes.object.isRequired,
-  treeData: PropTypes.array.isRequired,
+  field: PropTypes.object,
+  treeData: PropTypes.array,
   defaultPrompt: PropTypes.string,
   label: PropTypes.string
 };

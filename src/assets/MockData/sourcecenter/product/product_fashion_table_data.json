@@ -1,0 +1,216 @@
+{
+  "tableHeadData": {
+    "id": "ID",
+    "merchantName": "商户名称",
+    "wechatNum": "微信公号",
+    "relatedUser": "关联微信用户",
+    "unitPrice": "分账单价",
+    "fashionableValidity": "分账有效期",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1122,
+      "merchantName": "传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "111",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "2010-2-20至2013-2-20",
+      "operation": ""
+    },
+    {
+      "id": 1233,
+      "merchantName": "公司",
+      "wechatNum": "数字传播",
+      "relatedUser": "54",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "2010-1-25至2016-4-11",
+      "operation": ""
+    },
+    {
+      "id": 1322,
+      "merchantName": "武汉理工",
+      "wechatNum": "数字传播",
+      "relatedUser": "fs",
+      "unitPrice": "1.0",
+      "startDate": "2001-6-3 11:20:33",
+      "endDate": "2019-9-12 15:16:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 1413,
+      "merchantName": "数字中心",
+      "wechatNum": "数字传播",
+      "relatedUser": "dd",
+      "unitPrice": "2.0",
+      "startDate": "2016-2-12 12:12:12",
+      "endDate": "2022-2-12 12:12:12",
+      "fashionableValidity": "2016-2-12至2022-2-12",
+      "operation": ""
+    },
+    {
+      "id": 11220,
+      "merchantName": "传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "111",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 12330,
+      "merchantName": "公司",
+      "wechatNum": "数字传播",
+      "relatedUser": "54",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 13220,
+      "merchantName": "武汉理工",
+      "wechatNum": "数字传播",
+      "relatedUser": "fs",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 14130,
+      "merchantName": "数字中心",
+      "wechatNum": "数字传播",
+      "relatedUser": "dd",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 11221,
+      "merchantName": "传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "111",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 12331,
+      "merchantName": "公司",
+      "wechatNum": "数字传播",
+      "relatedUser": "54",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 13221,
+      "merchantName": "武汉理工",
+      "wechatNum": "数字传播",
+      "relatedUser": "fs",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 14131,
+      "merchantName": "数字中心",
+      "wechatNum": "数字传播",
+      "relatedUser": "dd",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 11222,
+      "merchantName": "传播",
+      "wechatNum": "数字传播",
+      "relatedUser": "111",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 12332,
+      "merchantName": "公司",
+      "wechatNum": "数字传播",
+      "relatedUser": "54",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 13222,
+      "merchantName": "武汉理工",
+      "wechatNum": "数字传播",
+      "relatedUser": "fs",
+      "unitPrice": "1.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    },
+    {
+      "id": 14132,
+      "merchantName": "数字中心",
+      "wechatNum": "数字传播",
+      "relatedUser": "dd",
+      "unitPrice": "2.0",
+      "startDate": "2016-6-29 00:10:12",
+      "endDate": "2019-5-29 00:10:12",
+      "fashionableValidity": "1990-3-20至1996-5-20",
+      "operation": ""
+    }
+  ],
+  "userOption": [
+    {
+      "id": 0,
+      "value": "0",
+      "content": "无"
+    },
+    {
+      "id": 1,
+      "value": "1",
+      "content": "传播"
+    },
+    {
+      "id": 2,
+      "value": "2",
+      "content": "公司"
+    },
+    {
+      "id": 3,
+      "value": "3",
+      "content": "武汉理工"
+    },
+    {
+      "id": 4,
+      "value": "4",
+      "content": "数字中心"
+    }
+  ] 
+}
