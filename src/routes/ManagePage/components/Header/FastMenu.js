@@ -3,8 +3,12 @@ import React, {PropTypes} from 'react';
 import {Link, withRouter} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+<<<<<<< HEAD
 import {fromJS} from 'immutable';
 import * as loginActions from 'ActionsFolder/LoginActions';
+=======
+import * as actions from 'ActionsFolder/LoginActions';
+>>>>>>> 01b67b2a7f1b3a18fae517aad16cd73c8800f624
 import {animations} from 'UtilsFolder/animation';
 import options from './ConstantOfFast';
 
@@ -20,7 +24,7 @@ class FastMenu extends React.Component {
   }
 
   render() {
-    let {fastData, changeRoute} = this.props;
+    let {fastData} = this.props;
     return (
       <div className="FastMenu">
         <a className="title" href="javascript:;">三</a>
@@ -30,11 +34,11 @@ class FastMenu extends React.Component {
           <div className="list">
             {
               fastData.map((item, i) => {
-                let {name, url, icon_max} = item;
+                let {permissionName, accessPath, icon_max} = item;
                 return (
-                  <Link to={`${url}`} key={i} onClick={() => changeRoute(options[item.id])}>
-                    <img src={icon_max} alt={name} className="hvr-pop"/>
-                    <span>{name}</span>
+                  <Link to={accessPath} key={i}>
+                    <img src={icon_max} alt={permissionName} className="hvr-pop"/>
+                    <span>{permissionName}</span>
                   </Link>
                 );
               })
@@ -49,14 +53,14 @@ class FastMenu extends React.Component {
 
 FastMenu.propTypes = {
   fastData: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    permissionName: PropTypes.string.isRequired,
+    accessPath: PropTypes.string.isRequired,
     icon_max: PropTypes.string.isRequired
   })).isRequired
-}
+};
 
 function mapStateToProps(state) {
-  let {login:{username}} = fromJS(state).toJS();
+  let {login:{username}} = state;
   return {
     username
   }

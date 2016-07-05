@@ -7,7 +7,7 @@ import { getBookType } from '../api/axiosServices';
 import usercenterapi from 'APIFolder/UserCenter';
 import {showMsg} from './commonActions';
 
-export const doLogin = (loginInfo, callback) => {
+export const loginByAccount = (loginInfo, callback) => {
   return (dispatch)  => {
     return usercenterapi.login(loginInfo)
         .then(response => ({json: response.data, status: response.statusText})) //所有axios返回值都有data和statusText, 在data里面真正后台返回来的数据
@@ -18,15 +18,37 @@ export const doLogin = (loginInfo, callback) => {
 
           let returnData = json.data;
           //得到token,并存储
-          auth.setToken('token',returnData.token);
-          auth.setToken('userName',returnData.userName);
+          auth.setToken(returnData.token);
 
-          dispatch(logIn(returnData.userName, returnData.token, returnData.permissions));
+          dispatch(loginSuccess(returnData));
          // fetchTreedata(returnData.userName);
-          console.log("操作员是 ", returnData.userName, returnData.list);
-          
+          console.log("操作员是 ", returnData.userName, returnData.permissions);
+
           callback && callback();
         }).catch(err=>{
+          callback && callback(err.data, err.status);
+        })
+  }
+}
+
+export const loginByToken = (callback) => {
+  return (dispatch)  => {
+    return usercenterapi.getInfoByToken()
+        .then(response => ({json: response.data, status: response.statusText})) //所有axios返回值都有data和statusText, 在data里面真正后台返回来的数据
+        .then(({json,status}) => {
+          if(status !== 'OK'){
+            return dispatch(showMsg(json.message || '登录失败'));
+          }
+
+          let returnData = json.data;
+
+          dispatch(loginSuccess(returnData));
+          // fetchTreedata(returnData.userName);
+         // console.log("操作员是 ", returnData.userName, returnData.permissions);
+
+          callback && callback();
+        }).catch(err=>{
+          auth.logout();
           callback && callback(err.data, err.status);
         })
   }
@@ -92,13 +114,11 @@ const loggedIn = (userName, tree) => {
   }
 }
 
-//登录
-export const logIn = (userName, token, permissions)=> {
+//通过账号登录
+export const loginSuccess = (login)=> {
   return {
     type: LOG_IN,
-    userName,
-    token,
-    permissions
+    login
   }
 }
 

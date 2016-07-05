@@ -4,12 +4,11 @@ import {connect} from 'react-redux';
 import {Map, is, fromJS} from 'immutable';
 import {bindActionCreators} from 'redux';
 import {Scrollbars} from 'react-custom-scrollbars';
-import {Link} from 'react-router';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 
 import * as actions from 'ActionsFolder/LoginActions';
-import {getTitle, getChildren} from 'UtilsFolder/getDataInfo';
+import {compareData} from 'UtilsFolder/getDataInfo';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import LoadingRect from 'UIComponentFolder/Loading/LoadingRect';
 import {animations} from 'UtilsFolder/animation';
@@ -25,7 +24,8 @@ class ManagePage extends React.Component {
       showWaitModal: false
     };
     this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
-    this.tree = null
+    this.asideWidth = 180;
+    //this.tree = null
   }
 
   tempCloseWaitModal() {
@@ -47,9 +47,18 @@ class ManagePage extends React.Component {
   }
 
   componentWillMount() {
+<<<<<<< HEAD
     const {userName, tree, permissions, actions:{fetchTreedata}} = this.props;
     console.log('logged', userName, tree, permissions);
     this.tree = fetchTreedata(userName).tree;
+=======
+    // const {username, actions:{fetchTreedata}} = this.props;
+    // //console.log('logged', username);
+    // if (!username) {
+    //   //this.context.router.push('/login');
+    // }
+    // this.tree = fetchTreedata(username).tree;
+>>>>>>> 01b67b2a7f1b3a18fae517aad16cd73c8800f624
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,7 +69,12 @@ class ManagePage extends React.Component {
   }
 
   componentDidUpdate() {
+    const tAsideWidth = this.asideWidth, getWidth = this.refs.sidebar.getWidth();
     animations(this.refs.headerText, 'bounceInLeft');
+    if(tAsideWidth != getWidth) {
+      this.asideWidth = getWidth;
+      this.forceUpdate();
+    }
   }
 
   componentWillUnmout() {
@@ -68,21 +82,17 @@ class ManagePage extends React.Component {
   }
 
   render() {
-    const {children, route, path, routes} = this.props,
+    const {children, path} = this.props,
         {showWaitModal} = this.state;
-    const depth = routes.length;
-    //console.log("managePage", route, this.props.routes,this.props.location.pathname)
-    const treeData = this.tree;
-    let sidebarLeft = route.length === 3 && getChildren(treeData.menu, route).length > 0 || route.length === 4 ? '360px' : '180px';
-
+    const treeData = require('AssetsFolder/MockData/menu_data.json');
     return (
         <div className="ManagePage">
-          <Header treeData={treeData}/>
-          <Sidebar treeData={treeData} path={path}/>
-          <main className="Main" style={{left : sidebarLeft}}>
+          <Header treeData={treeData} path={path}/>
+          <Sidebar treeData={treeData} path={path} ref="sidebar"/>
+          <main className="Main" style={{left : this.asideWidth}}>
             <Scrollbars style={{height:'100%'}}>
               <header className="page-title">
-                <span ref="headerText">{getTitle(treeData.menu, route)}</span>
+                <span ref="headerText">{compareData(treeData.permissions, 'accessPath', path, 'permissionName')}</span>
               </header>
               <section className="page-body">
                 {children}
@@ -102,7 +112,6 @@ class ManagePage extends React.Component {
 
 ManagePage.propTypes = {
   children: PropTypes.node,
-  route: PropTypes.array.isRequired,
   username: PropTypes.string
 };
 
@@ -111,10 +120,14 @@ function mapStateToProps(state, ownProps) {
   let {login, menu} = fromJS(state).toJS();
   return {
     path: ownProps && ownProps.location.pathname || '/',
+<<<<<<< HEAD
     route: menu,
     userName: login.userName,
     permissions: login.permissions,
     tree: login.tree
+=======
+    username
+>>>>>>> 01b67b2a7f1b3a18fae517aad16cd73c8800f624
   }
 }
 

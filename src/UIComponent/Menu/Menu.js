@@ -8,10 +8,8 @@
  */
 'use strict';
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as actions from 'ActionsFolder/MenuActions';
 import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
+import {getMainIndex} from 'UtilsFolder/getDataInfo';
 
 import MenuList from './MenuList';
 import styles from "./Menu.scss";
@@ -19,8 +17,9 @@ import styles from "./Menu.scss";
 class Menu extends React.Component {
   constructor(props, context) {
     super(props, context);
+    const {path, menuData} = this.props;
     this.state = {
-      mainIndex: 0,  //Menu主页的显示index
+      mainIndex: getMainIndex(menuData, path),
       route: [] //当前鼠标滑过的路线
     };
     this.shouldComponentUpdate = shouldComponentUpdate.bind(this)
@@ -35,24 +34,20 @@ class Menu extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    //接受外部改变Menu的mainIndex
-    const {mainIndex} = this.state;
-    if(nextProps.route && nextProps.route[0] != mainIndex) {
-      this.setState({
-        mainIndex: nextProps.route[0]
-      })
-    }
+    //接受外部路由改变mainIndex
+    const {menuData} = this.props, {path} = nextProps;
+    this.setState({
+      mainIndex: getMainIndex(menuData, path)
+    });
+    //console.log(getMainIndex(menuData, path), path);
   }
 
   clickItem(e) {
     e.stopPropagation();
     e.preventDefault();
-    let {route} = this.state, {actions:{changeRoute}} = this.props;
     this.setState({
-      mainIndex: route[0].toString(),
       route: []
     });
-    changeRoute && changeRoute(route.slice(0, route.length - 1));
   }
 
   leaveMenu() {
@@ -80,26 +75,9 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  actions: PropTypes.shape({
-    changeRoute: PropTypes.func
-  }),
   menuData: PropTypes.array,
   parent: PropTypes.string
 };
 
-function mapStateToProps(state) {
-  return {
-    route: state.menu.toJS()
-  }
-}
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Menu);
+export default Menu;

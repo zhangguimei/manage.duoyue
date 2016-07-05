@@ -4,18 +4,16 @@ import {Link} from 'react-router';
 
 class SidebarSubItem extends React.Component {
   render() {
-    const {subData:{name, data}, route, parent, changeRoutes} = this.props;
+    const {subData:{ permissionName, children}, path} = this.props;
     return (
       <div className="SidebarSubItem">
-        <h5>{name}</h5>
+        <h5>{permissionName}</h5>
         <ul>
           {
-            data.map((item, i) => {
-              let select = route.join(".").slice(2) == `${parent}.${i}`;
+            children && children.map((item, i) => {
               return (
                 <li key={i}>
-                  <Link to={`${item.url}`} className={select ? 'cur': ''}
-                        onClick={() => changeRoutes(`${parent}.${i}`)}>{item.name}</Link>
+                  <Link to={item.accessPath} className={item.accessPath == path ? 'cur' : ""} >{item.permissionName}</Link>
                 </li>
               );
             })
@@ -28,12 +26,12 @@ class SidebarSubItem extends React.Component {
 
 SidebarSubItem.propTypes = {
   subData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    data: PropTypes.arrayOf(PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+    permissionName: PropTypes.string.isRequired,
+    children: PropTypes.arrayOf(PropTypes.shape({
+      accessPath: PropTypes.string.isRequired,
+      permissionName: PropTypes.string.isRequired
     })).isRequired
   }).isRequired
-}
+};
 
 export default SidebarSubItem;
