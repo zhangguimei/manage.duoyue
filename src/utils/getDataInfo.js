@@ -1,59 +1,29 @@
-//获取title
-export const getTitle = (data, route, url) => {
-  let getData = data;
-  if(route.length === 0) return "Rays";
-  for (let i = 0, l = route.length; i < l; i++) {
-    if(i != l - 1) {
-      getData = getData[parseInt(route[i], 10)].data;
-    } else {
-      getData = getData[parseInt(route[i], 10)];
-    }
-  }
-  return getData.name;
-};
-
-//获取children
-export const getChildren = (data, route) => {
-  let getData = data;
-  if(route.length === 0) return [];
-  for (let i = 0, l = route.length; i < l; i++) {
-    if(i < l) {
-      getData = getData[parseInt(route[i], 10)].data;
-    }
-  }
-  return getData;
-};
-
-//给tree_data添加数据
-export const parseJson = (data, route) => {
-  const data_custom = require("AssetsFolder/MockData/tree_add_data.json");
-  if(!data.length) return;
-  route += '';
-  data.forEach(function(item, i) {
-    let temp = route + i + '.';
-    item.route = temp.slice(0, temp.length - 1);
-    item.url = data_custom[item.id] ? data_custom[item.id].url : '/404';
-    item.icon_font = data_custom[item.id] ? data_custom[item.id].icon : '';
-    if(item.data) {
-      parseJson(item.data, temp);
-    }
-  });
-};
-
-//通过url，匹配路由数组
-export const getUrlRoute = (data, url) => {
-  if(!data || !data.length) return;
+/*
+*  data: 要匹配的数据,
+*  compare: 要比较的属性,
+*  value: 要比较属性的值
+*  property: 要取得的属性值，没有，则默认返回匹配项
+*/
+export const compareData = (data, compare, value,  propety) => {
+  if(!data || !data.length) return null;
   let stack = [], item;
-  for (var i = 0, len = data.length; i < len; i++) {
+  for (let i = 0, len = data.length; i < len; i++) {
     stack.push(data[i]);
   }
   while (stack.length) {
     item = stack.shift();
-    if(item.url === url) {
-      return item.route;
+    if(item[compare] === value) {
+      return propety ? item[propety] : item;
     }
-    if(item.data && item.data.length) {
-      stack = item.data.concat(stack);
+    if(item.children && item.children.length) {
+      stack = item.children.concat(stack);
     }
   }
+  return null;
+};
+
+//得到当前的menu的主Index
+export const getMainIndex = (data, path) => {
+  return data.reduce((acc, item, index) =>
+    item.accessPath == `/${path.slice(1).split("/")[0]}` ? index : acc, -1);
 };

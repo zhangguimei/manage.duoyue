@@ -4,11 +4,14 @@ import {Link} from 'react-router';
 
 class SidebarItemList extends React.Component {
   render() {
-    const {menuData:{name, url}, onClick, select} = this.props;
+    const {menuData:{permissionName, accessPath}, changeRoute, parent, menuData, path} = this.props;
+    let selected = path.indexOf(accessPath) == 0;
     return (
-      <li>
-        <Link to={`${url}`} className={select?"cur":"hvr-shutter-out-horizontal"}
-              onClick={onClick}>{name}</Link>
+      <li className="">
+        <Link to={accessPath} className={selected ? "cur":"hvr-shutter-out-horizontal"}
+              onClick={() => changeRoute(parent.split(".").slice(0,-1), menuData)}>
+          {permissionName}
+        </Link>
       </li>
     );
   }
@@ -16,9 +19,9 @@ class SidebarItemList extends React.Component {
 
 SidebarItemList.propTypes = {
   menuData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    data: PropTypes.array.isRequired
+    permissionName: PropTypes.string.isRequired,
+    accessPath: PropTypes.string.isRequired,
+    children: PropTypes.array
   }).isRequired
 };
 

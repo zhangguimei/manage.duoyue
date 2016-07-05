@@ -1,6 +1,5 @@
 'use strict';
 import {LOG_IN, LOG_OUT, LOGGED_IN} from '../constants/constants';
-import {parseJson} from 'UtilsFolder/getDataInfo';
 import auth from '../api/auth';
 import { getBookType } from '../api/axiosServices';
 
@@ -11,7 +10,7 @@ export const fetchTreedata = (username) => {
 
     case 'admin':
       tree = require("../assets/MockData/tree_data.json");
-        console.log(tree.menu);
+        //console.log(tree.menu);
 
       const dataMap = tree.menu.reduce(function (map, category) {
         category.itemsMap = category.data.reduce(function (itemsMap, item) {
@@ -30,7 +29,7 @@ export const fetchTreedata = (username) => {
         return map;
       }, {});
 
-      console.log("susan" ,dataMap);
+      //console.log("susan" ,dataMap);
 
       break;
     case 'admin2':
@@ -39,8 +38,6 @@ export const fetchTreedata = (username) => {
     default:
       tree = require("../assets/MockData/tree_data.json");
   }
-  parseJson(tree.menu,'');
-  parseJson(tree.fast,'');
   //console.log(tree);
   return dispatch => {
     return dispatch(loggedIn(username, tree));
