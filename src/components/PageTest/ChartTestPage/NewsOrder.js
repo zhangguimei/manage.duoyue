@@ -50,8 +50,8 @@ class NewsOrder extends React.Component {
         ]
       },
       options: {
-        tooltips: false,
         responsive: true,
+        legend: true,
         scales: {
           xAxes: [{
             categoryPercentage: 0.2

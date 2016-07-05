@@ -444,6 +444,21 @@
     "icon":"",
     "url":"/analysis/useranalysis/malefamale"
   },
+  "437":{
+    "name":"阅读排行",
+    "icon":"",
+    "url":"/analysis/useranalysis/read"
+  },
+  "438":{
+    "name":"时长分析",
+    "icon":"",
+    "url":"/analysis/useranalysis/duration"
+  },
+  "439":{
+    "name":"用户增长",
+    "icon":"",
+    "url":"/analysis/useranalysis/user"
+  },
   "347":{
     "name":"资源分析",
     "icon":"ic-resourcefill",
@@ -452,12 +467,12 @@
   "348":{
     "name":"销售分析",
     "icon":"ic-sales",
-    "url":""
+    "url":"/analysis/sales"
   },
   "749":{
     "name":"时段分析",
     "icon":"ic-timefill",
-    "url":""
+    "url":"/analysis/period"
   },
   "431":{
     "name":"员工账号",
@@ -493,5 +508,61 @@
     "name":"书籍时长",
     "icon":"",
     "url":"/analysis/resource/bookduration"
+  },
+  "444":{
+    "name":"热销商品",
+    "icon":"",
+    "url":"/analysis/sales/hot"
+  },
+  "445":{
+    "name":"销售统计",
+    "icon":"",
+    "url":"/analysis/sales/statistics"
+  },
+
+  "750":{
+    "name":"全部内容",
+    "icon":"",
+    "url":"/analysis/period/all"
+  },
+  "751":{
+    "name":"自然关注",
+    "icon":"",
+    "url":"/analysis/period/natureattention"
+  },
+  "752":{
+    "name":"扫码关注",
+    "icon":"",
+    "url":"/analysis/period/scanattention"
+  },
+  "753":{
+    "name":"取消关注",
+    "icon":"",
+    "url":"/analysis/period/cancelattention"
+  },
+  "754":{
+    "name":"扫一扫",
+    "icon":"",
+    "url":"/analysis/period/scan"
+  },
+  "755":{
+    "name":"浏览阅读",
+    "icon":"",
+    "url":"/analysis/period/browse"
+  },
+   "756":{
+    "name":"订单支付",
+    "icon":"",
+    "url":"/analysis/period/pay"
+  },
+  "757":{
+    "name":"参与评论",
+    "icon":"",
+    "url":"/analysis/period/comment"
+  },
+  "758":{
+    "name":"分享内容",
+    "icon":"",
+    "url":"/analysis/period/share"
   }
 }

@@ -19,7 +19,10 @@ module.exports = {
         require('./routes/HotMap'),
         require('./routes/AssembleMap'),
         require('./routes/MassMap'),
-        require('./routes/MaleFamaleMap')
+        require('./routes/MaleFamaleMap'),
+        require('./routes/ReadRank'),
+        require('./routes/DurationAnalysis'),
+        require('./routes/UserGrowth')
       ])
     })
   }
