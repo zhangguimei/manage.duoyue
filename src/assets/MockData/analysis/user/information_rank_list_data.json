@@ -1,0 +1,336 @@
+{
+  "timesRank" :[
+  {
+    "id": 1,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "50次"
+  },
+  {
+    "id": 2,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "times": "48次"
+  },
+  {
+    "id": 3,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "times": "42次"
+  },
+  {
+    "id": 4,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "40次"
+  },
+  {
+    "id": 5,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "34次"
+  },
+  {
+    "id": 6,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "times": "30次"
+  },
+  {
+    "id": 7,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "times": "22次"
+  },
+  {
+    "id": 8,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "20次"
+  },
+  {
+    "id": 9,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "times": "18次"
+  },
+  {
+    "id": 10,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "times": "18次"
+  },
+  {
+    "id": 11,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "16次"
+  },
+  {
+    "id": 12,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "15次"
+  },
+  {
+    "id": 13,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "times": "13次"
+  },
+  {
+    "id": 14,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "times": "13次"
+  },
+  {
+    "id": 15,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "12次"
+  },
+  {
+    "id": 16,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "times": "11次"
+  },
+  {
+    "id": 17,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "times": "10次"
+  },
+  {
+    "id": 18,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "8次"
+  },
+  {
+    "id": 19,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "times": "8次"
+  },
+  {
+    "id": 20,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "times": "7次"
+  },
+  {
+    "id": 21,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "times": "6次"
+  }
+],
+"durationRank": [
+  {
+    "id": 1,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "11110秒"
+  },
+  {
+    "id": 2,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "duration": "11100秒"
+  },
+  {
+    "id": 3,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "duration": "11000秒"
+  },
+  {
+    "id": 4,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "10000秒"
+  },
+  {
+    "id": 5,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "1111秒"
+  },
+  {
+    "id": 6,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "duration": "1110秒"
+  },
+  {
+    "id": 7,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "duration": "1110秒"
+  },
+  {
+    "id": 8,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "1101秒"
+  },
+  {
+    "id": 9,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "duration": "1100秒"
+  },
+  {
+    "id": 10,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "duration": "1001秒"
+  },
+  {
+    "id": 11,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "1000秒"
+  },
+  {
+    "id": 12,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "645秒"
+  },
+  {
+    "id": 13,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "duration": "521秒"
+  },
+  {
+    "id": 14,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "duration": "400秒"
+  },
+  {
+    "id": 15,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOHWD0znCWmYcLicEMKHBLJziaeEFHXdKooEwTeib8dzgpia4tkW32zKqvJbIAuP1bsb5BOrIKTUWxicOy/64",
+    "nickname": "AND ONE",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "350秒"
+  },
+  {
+    "id": 16,
+    "pic": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM5C4q8Il0XgaQgibbN8wibhoGvQtAoSaFpu4hnNXHn5AfxSfdkhJZK5oJUEttiayP1bJsE5u9icxniadF4JOa7rWQHljbMKuKtelUag/64",
+    "nickname": "羊丁丁",
+    "region": "湖北 武汉",
+    "officialAccounts": "洛克里尼",
+    "duration": "300秒"
+  },
+  {
+    "id": 17,
+    "pic": "http://wx.qlogo.cn/mmopen/SlSQkiaX8nZFQseyHrvwKxkohZTC2gySgHuBLyxhpiabE0mbKriaYbGcNjc83qoFrD0iaMkKicIhulZgZfrKZ9GKcNuIQxwaBQywS/64",
+    "nickname": "胡益铭",
+    "region": "江西 南昌",
+    "officialAccounts": "洛克里尼",
+    "duration": "255秒"
+  },
+  {
+    "id": 18,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOBHOwic2AcLopSbDXic4ciaLiae9vPDQickOI4y1ZSIaFEZndEO0Wy8dHkAkfwZvwoKh8IHP0VeBcv0OX/64",
+    "nickname": "DreamFor",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "243秒"
+  },
+  {
+    "id": 19,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicLsnRHdKDevSHzAQ2T3Hm0x5sYTytRse4syXJgjAQCsKLxx6lRPI2icDZkKEvlbdvRVtc3iba1ZDLzEFcV4CRYhYP/64",
+    "nickname": "陈旭源",
+    "region": "湖北 武汉",
+    "officialAccounts": "吉品印象",
+    "duration": "240秒"
+  },
+  {
+    "id": 20,
+    "pic": "http://wx.qlogo.cn/mmopen/6oPEJV1SUicJeElic4y7ZE1hx8eGCicIWlbMhdWWYpzUDWr9C8SiaiaT8lD7ialhV5Y6CBevicFeDNgciar6ibbngfEDJv2jKcBD8E40b/64",
+    "nickname": "懵懂#一刻",
+    "region": "广东 广州",
+    "officialAccounts": "吉品印象",
+    "duration": "155秒"
+  },
+  {
+    "id": 21,
+    "pic": "http://wx.qlogo.cn/mmopen/4ialibVLLqGtib2icbX6QgAzOFmsd8NrCibsy7lbWbh7JylYdf0j7o37MTesh6moBwUyXLLfTT3xkobJxA5R4SwTdqYxt1Ojl1dy0/64",
+    "nickname": "豆蘼",
+    "officialAccounts": "吉品印象",
+    "duration": "111秒"
+  }
+]
+}

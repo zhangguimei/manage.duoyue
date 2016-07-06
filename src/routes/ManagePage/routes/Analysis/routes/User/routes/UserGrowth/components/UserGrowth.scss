@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.UserGrowth {
+  .tab-wrap {
+    .tab-type {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .tab-box {
+      display: inline-block;
+      .tab {
+        display: inline-block;
+        font-size: 16px;
+        padding-left: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .active {
+        color: $blue;
+      }
+    }
+  }
+  .search-wrap {
+    padding-top: 20px;
+    margin-bottom: 40px;
+    .FormItem {
+      display: inline-block;
+    }
+    .select-item {
+      .subtitle {
+        padding-right: 10px;
+      }
+    }
+    .datePicker-item {
+      .subtitle {
+        padding: 0 10px;
+      }
+      .DatePicker {
+        display: inline-block;
+        .date-input-wrap {
+          line-height: 28px;
+          .date-input {
+            line-height: 28px;
+          }
+          .ic {
+            line-height: 28px;
+          }
+        }
+      }
+    }
+    .search-btn {
+      margin-bottom: 2px;
+    }
+  }
+}

@@ -50,6 +50,7 @@ class UserAnalysis extends React.Component {
 
   render() {
     const {chartData} = this.state;
+    console.log(chartData)
     let TabData = {
       content: ['7日', '14日', '30日'],
       tabClass: {

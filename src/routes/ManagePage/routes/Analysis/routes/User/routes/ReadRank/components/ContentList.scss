@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.ContentList {
+  .rank-item {
+    padding: 5px;
+    border-bottom: 1px solid $grayD;
+    .rank-serial {
+      width: 6%;
+      text-align: center;
+    }
+    .user-pic {
+      width: 10%;
+      .user-img {
+        width: 40px;
+      }
+    }
+    .user-info {
+      width: 37%;
+      vertical-align: middle;
+      .user-name {
+        display: block;
+        line-height: 20px;
+      }
+      .user-region {
+        display: block;
+        font-size: 12px;
+        color: $gray7;
+        line-height: 20px;
+      }
+    }
+    .official-accounts {
+      width: 37%;
+      vertical-align: middle;
+    }
+    .times {
+      width: 10%;
+      vertical-align: middle;
+    }
+  }
+}

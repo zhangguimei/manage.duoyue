@@ -6,20 +6,18 @@
 
 'use strict';
 module.exports = {
-  path: 'analysis',
+  path: 'sales',
   indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/Analysis'))
+      cb(null, require('./components/Sales'))
     })
   },
   getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/User'),
-        require('./routes/Resource'),
-        require('./routes/Sales'),
-        require('./routes/Period')
+        require('./routes/HotProduct'),
+        require('./routes/SalesStatistics')
       ])
     })
   }

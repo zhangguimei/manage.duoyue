@@ -1,0 +1,52 @@
+{
+  "tableHeadData": {
+    "id": "序号",
+    "title": "物品名称",
+    "salesVolume": "销售量",
+    "salesAmount": "销售金额"
+  },
+  "tableContentData": [
+    {
+      "id": 1,
+      "title": "程序员为啥要听着音乐写代码？",
+      "salesVolume": 15,
+      "salesAmount": "34元"
+    },
+    {
+      "id": 2,
+      "title": "0512测试新建成功后修改error",
+      "salesVolume": 14,
+      "salesAmount": "23元"
+    },
+    {
+      "id": 3,
+      "title": "MOOC 介绍",
+      "salesVolume": 13,
+      "salesAmount": "18元"
+    },
+    {
+      "id": 4,
+      "title": "FAKER传？",
+      "salesVolume": 10,
+      "salesAmount": "17元"
+    },
+    {
+      "id": 5,
+      "title": "疯狂年代",
+      "salesVolume": 8,
+      "salesAmount": "13元"
+    },
+    {
+      "id": 6,
+      "title": "《欢乐颂》阶层差别下的残酷与温暖",
+      "salesVolume": 7,
+      "salesAmount": "12元"
+    },
+    {
+      "id": 7,
+      "title": "Web 研发模式演变？",
+      "salesVolume": 5,
+      "salesAmount": "10元"
+    }
+  ]
+}
