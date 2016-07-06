@@ -84,11 +84,6 @@
     "icon":"ic-comment",
     "url":"/user/comment"
   },
-  "353":{
-    "name":"书籍咨询",
-    "icon":"",
-    "url":"/user/comment/bookconsult"
-  },
   "354":{
     "name":"文章评论",
     "icon":"",
@@ -319,7 +314,7 @@
     "icon":"",
     "url":"/operate/display/showrange/sourcetypesetting"
   },
-  "792":{
+  "795":{
     "name":"报名设置",
     "icon":"",
     "url":"/operate/display/showrange/matchsetting"
@@ -332,17 +327,52 @@
   "780":{
     "name":"栏目设置",
     "icon":"",
-    "url":"/operate/display/viewrange"
+    "url":"/operate/display/columnsetting"
+  },
+  "781":{
+    "name":"风格模板",
+    "icon":"",
+    "url":"/operate/display/styletemplate"
   },
   "378":{
     "name":"基础配置",
     "icon":"ic-basic",
     "url":""
   },
+  "382":{
+    "name":"公号授权",
+    "icon":"",
+    "url":"/operate/basic/publicauthority"
+  },
+  "383":{
+    "name":"运营设置",
+    "icon":"",
+    "url":"/operate/basic/operatesetting"
+  },
+  "385":{
+    "name":"响应消息",
+    "icon":"",
+    "url":"/operate/basic/responsemsg"
+  },
+  "386":{
+    "name":"自定义菜单",
+    "icon":"",
+    "url":"/operate/basic/custommenu"
+  },
+  "390":{
+    "name":"群组管理",
+    "icon":"",
+    "url":"/operate/basic/groupmanage"
+  },
   "379":{
     "name":"用户管理",
     "icon":"ic-usersetting",
     "url":""
+  },
+  "357":{
+    "name":"用户查询",
+    "icon":"",
+    "url":"/operate/usersetting/bookconsult"
   },
   "387":{
     "name":"用户查询",

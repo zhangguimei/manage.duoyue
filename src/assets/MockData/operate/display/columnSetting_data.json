@@ -1,0 +1,55 @@
+{
+  "TreeData":
+  [
+    {
+      "id": 1,
+      "parentId": 0,
+      "name": "隐藏文章",
+      "data": [],
+      "checked": false
+    },
+    {
+      "id": 8,
+      "parentId": 0,
+      "name": "微信阅读",
+      "data": [
+        {
+          "id": 9,
+          "parentId": 9,
+          "name": "热门资讯",
+          "data": [],
+          "checked": false
+        },
+        {
+          "id": 10,
+          "parentId": 9,
+          "name": "好书推荐",
+          "data": [],
+          "checked": false
+        },
+        {
+          "id": 11,
+          "parentId": 9,
+          "name": "TEST",
+          "data": [],
+          "checked": false
+        },
+        {
+          "id": 12,
+          "parentId": 9,
+          "name": "说",
+          "data": [],
+          "checked": false
+        },
+        {
+            "id": 13,
+          "parentId": 9,
+          "name": "最新动态",
+          "data": [],
+          "checked": false
+        }
+      ],
+      "checked": true
+    }
+  ]
+}

@@ -3,6 +3,7 @@
  *  Date    : 2016/6/30
  *  Author  : Melody Yuen
  */
+
 'use strict';
 import React from 'react';
 

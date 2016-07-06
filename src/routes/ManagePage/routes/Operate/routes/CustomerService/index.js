@@ -6,19 +6,17 @@
 
 'use strict';
 module.exports = {
-  path: 'usermanage',
+  path: 'customerservice',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/UserManage'))
+      cb(null, require('./components/CustomerService'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/UserSearch'),
-        require('./routes/UserImage'),
-        require('./routes/UserVideo'),
-        require('./routes/GroupManage')
+        require('./routes/ChattingRecords'),
+        require('./routes/CustomerList')
       ])
     })
   },

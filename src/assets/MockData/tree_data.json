@@ -936,6 +936,18 @@
           "icon_max_light": "",
           "data": [
             {
+              "id": "357",
+              "parentid": "331",
+              "name": "书籍咨询",
+              "url": "/manage/comment/consult/",
+              "target": "",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "data": []
+            },
+            {
               "id": "387",
               "parentid": "379",
               "name": "用户查询",

@@ -31,8 +31,8 @@ class CheckBoxItem extends React.Component {
   }
 
   showItem() {
-    const {data:{children = [], id}, chooseTreeLeaves} = this.props;
-    if(children.length > 0) {
+    const {data:{data = [], id}, chooseTreeLeaves} = this.props;
+    if(data.length > 0) {
       this.setState({
         showItem: !this.state.showItem
       })
@@ -40,25 +40,25 @@ class CheckBoxItem extends React.Component {
   }
 
   getChooseClass() {
-    const {data:{id, children = []}, route} = this.props;
+    const {data:{id, data = []}, route} = this.props;
     let isChoosed = false;
-    if(children.length > 0) {
-      isChoosed = this.alChoosed(children, route);
+    if(data.length > 0) {
+      isChoosed = this.alChoosed(data, route);
     }else {
       isChoosed = route.findIndex(v => v == id) > -1;
     }
     return isChoosed;
   }
 
-  alChoosed(children, route) {
+  alChoosed(data, route) {
     let isAllChoose = true;
-    children.forEach(item => {
-      if(!item.children || item.children.length == 0 ) {
+    data.forEach(item => {
+      if(!item.data || item.data.length == 0 ) {
         if(route.findIndex(v => v == item.id) < 0) {
           isAllChoose = false;
         }
       }else {
-        if(!this.alChoosed(item.children, route)) {
+        if(!this.alChoosed(item.data, route)) {
           isAllChoose = false;
         }
       }
@@ -67,36 +67,48 @@ class CheckBoxItem extends React.Component {
   }
 
   chooseAllChild() {
-    const {data:{id, children = []}, chooseTreeLeaves, route} = this.props;
-    let child = children.length > 0 ? this.child.length > 0 ? this.child : this.getChildIds(children) : id;
-    let alChoosed = this.alChoosed(children, route);
+    const {data:{id, data = []}, chooseTreeLeaves, route} = this.props;
+    let child = data.length > 0 ? this.child.length > 0 ? this.child : this.getChildIds(data) : id;
+    let alChoosed = this.alChoosed(data, route);
     chooseTreeLeaves && chooseTreeLeaves(child, !alChoosed);
   }
 
-  getChildIds(children) {
+  getChildIds(data) {
     let childArr = this.child;
-    children.forEach( item => {
-      if(!item.children || item.children.length == 0 ) {
+    data.forEach( item => {
+      if(!item.data || item.data.length == 0 ) {
         childArr.push(item.id);
       }else {
-        this.getChildIds(item.children);
+        this.getChildIds(item.data);
       }
     });
     return childArr;
   }
 
   render() {
-    const {data: {title, children = []}, route, parent, ...props} = this.props, {showItem} = this.state;
+    const {data: {name, data = []}, route, parent, ...props} = this.props, {showItem} = this.state;
     const level = parent.split(".").length - 2;
     const chooseClass = this.getChooseClass();
     return (
       <li className="CheckBoxItem text-center" style={{marginLeft: `${level*10}` }}  >
         <div className="tree-item">
           {
-            children.length > 0 ?
+            data.length > 0 ?
               <i className={`triangle-${showItem ? "down" : "right"}`}  onClick={::this.showItem}/>
               :
               <i className="triangle-replace"/>
+          }
+          {
+            data.length > 0 && showItem &&
+            <i className="ic ic-folderopenempty"/>
+          }
+          {
+            data.length > 0 && !showItem &&
+            <i className="ic ic-folderempty"/>
+          }
+          {
+            data.length == 0 &&
+            <i className="ic ic-folderempty"/>
           }
           <span className="choose" onClick={::this.chooseAllChild}>
             {
@@ -106,11 +118,11 @@ class CheckBoxItem extends React.Component {
               <input type="checkbox" />
             }
           </span>
-          <span className="item-title" onClick={::this.chooseAllChild}>{title}</span>
+          <span className="item-title" onClick={::this.chooseAllChild}>{name}</span>
         </div>
         {
-          children.length > 0 && showItem &&
-          <TreeList data={children} parent={parent} route={route} {...props}/>
+          data.length > 0 && showItem &&
+          <TreeList data={data} parent={parent} route={route} {...props}/>
         }
       </li>
     );

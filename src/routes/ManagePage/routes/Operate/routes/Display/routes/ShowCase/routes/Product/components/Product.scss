@@ -17,7 +17,7 @@
     }
   }
   .ProductAdd {
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px;
   }
   .subtitle {
     display: inline-block;
@@ -29,7 +29,7 @@
   .error-detail {
     display: block;
     margin-top: 5px;
-    @extend %f12;
+    font-size: 12px;
   }
   .ProductSetup {
     .Table {

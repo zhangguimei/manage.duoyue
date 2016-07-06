@@ -29,11 +29,8 @@ class TextMaterial extends React.Component {
   onDeleteClick(id) {
     if (confirm('您确定要删除？')) {
       const {tableContent} = this.state;
-      const tableData = tableContent.filter((item) => {
-        return item.id !== id;
-      });
       this.setState({
-        tableContent: tableData
+        tableContent: tableContent.filter((item) => item.id !== id)
       })
     }
   }
@@ -45,11 +42,8 @@ class TextMaterial extends React.Component {
       typeLayer: type
     });
     if (type == 'modify') {
-      const tableData = tableContent.filter((item) => {
-        return item.id == id;
-      });
       this.setState({
-        modifyData: tableData[0]
+        modifyData: tableContent.filter((item) => item.id == id)[0]
       })
     } else {
       this.setState({
@@ -64,8 +58,7 @@ class TextMaterial extends React.Component {
     });
   }
 
-  submitForm(){
-
+  submitForm() {
   }
 
   render() {
@@ -107,7 +100,7 @@ class TextMaterial extends React.Component {
           showLayer &&
           <Modal>
             <ShowPage {...pagedata}>
-              <TextModify data={modifyData} submitForm={::this.submitForm}/>
+              <TextModify data={modifyData}/>
             </ShowPage>
           </Modal>
         }

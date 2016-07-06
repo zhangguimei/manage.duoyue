@@ -1,0 +1,55 @@
+{
+  "TreeData":
+  [
+    {
+      "id": 33,
+      "parentId": 0,
+      "name": "网络文学",
+      "data": [],
+      "checked": false
+    },
+    {
+      "id": 34,
+      "parentId": 0,
+      "name": "职场人生",
+      "data": [],
+      "checked": true
+    },
+    {
+      "id": 35,
+      "parentId": 0,
+      "name": "青春文学",
+      "data": [],
+      "checked": false
+    },
+    {
+      "id": 36,
+      "parentId": 0,
+      "name": "专业理论",
+      "data": [],
+      "checked": true
+    },
+    {
+      "id": 37,
+      "parentId": 0,
+      "name": "考前辅导",
+      "data": [
+        {
+          "id": 38,
+          "parentId": 37,
+          "name": "数学",
+          "data": [],
+          "checked": false
+        },
+        {
+          "id": 39,
+          "parentId": 37,
+          "name": "英语",
+          "data": [],
+          "checked": true
+        }
+      ],
+      "checked": false
+    }
+  ]
+}
