@@ -6,7 +6,7 @@
 
 'use strict';
 module.exports = {
-  path: 'topicTypesetting',
+  path: 'topictypesetting',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./components/TopicTypeSetting'))

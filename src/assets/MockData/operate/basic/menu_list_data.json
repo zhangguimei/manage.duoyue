@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "请点我",
+    "type": 2,
+    "website": "http://v2.duoyue.me/wechat/11356/5631/books/",
+    "key":"",
+    "zIndex": 1,
+    "children": [
+      {
+        "id": 2,
+        "title": "子菜单",
+        "type": 1,
+        "website":"",
+        "key": "CLICKITEM",
+        "zIndex": 2,
+        "children":[]
+      },
+      {
+        "id": 3,
+        "title": "子菜单2",
+        "type": 1,
+        "website":"",
+        "key": "CLICKITEM2",
+        "zIndex": 3,
+        "children":[]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "前端",
+    "type": 1,
+    "website":"",
+    "key": "CLICKME",
+    "zIndex": 4,
+    "children": []
+  }
+]

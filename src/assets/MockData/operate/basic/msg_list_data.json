@@ -1,0 +1,66 @@
+[
+  {
+    "id":1,
+    "title":"前端图文",
+    "isClickEvent":true,
+    "selectedID":1,
+    "selectedValue":"前端",
+    "createTime":"2016/6/15 17:03:44",
+    "startTime":"2016/6/14 0:00:00",
+    "endTime":"2016/6/30 0:00:00",
+    "weixinList":[
+      {
+        "id": 1,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160621/2016_06_21_185902118_d.jpg",
+        "title": "MOOC 介绍"
+      },
+      {
+        "id": 2,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_103521859_d.jpg",
+        "title": "程序员为啥要听着音乐写代码？"
+      },
+      {
+        "id": 3,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160511/2016_05_11_225430049_d.jpg",
+        "title": "FAKER传"
+      },
+      {
+        "id": 4,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160621/2016_06_21_185902118_d.jpg",
+        "title": "MOOC 介绍"
+      },
+      {
+        "id": 5,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_103521859_d.jpg",
+        "title": "程序员为啥要听着音乐写代码？"
+      }
+    ]
+  },
+  {
+    "id":2,
+    "title":"后端图文",
+    "isClickEvent":false,
+    "selectedID":2,
+    "selectedValue":"后端",
+    "createTime":"2016/6/15 17:03:44",
+    "startTime":"2016/6/14 0:00:00",
+    "endTime":"2016/6/30 0:00:00",
+    "weixinList":[
+      {
+        "id": 6,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160511/2016_05_11_225430049_d.jpg",
+        "title": "FAKER传"
+      },
+      {
+        "id": 7,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160621/2016_06_21_185902118_d.jpg",
+        "title": "MOOC 介绍"
+      },
+      {
+        "id": 8,
+        "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_103521859_d.jpg",
+        "title": "程序员为啥要听着音乐写代码？"
+      }
+    ]
+  }
+]

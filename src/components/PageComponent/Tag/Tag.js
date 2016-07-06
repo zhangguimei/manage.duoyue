@@ -132,7 +132,7 @@ class Tag extends React.Component {
           }
         </ul>
         <div className="add-tag-box">
-          <div className="add-tag-btn" onClick={::this.toggleModal}>【增加标签】</div>
+          <a href="javascript:;" className="add-tag-btn" onClick={::this.toggleModal}>【增加标签】</a>
         </div>
         {
           showAddTagLayer &&

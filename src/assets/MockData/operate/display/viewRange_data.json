@@ -1,0 +1,67 @@
+{
+  "tableContentData": [
+    {
+      "id": 1,
+      "columnName":"书城",
+      "definedName":"书城",
+      "rank": "0",
+      "whetherShow":"关闭",
+      "detailPagesState":"关闭",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/books/"
+    },
+    {
+      "id": 2,
+      "columnName":"商城",
+      "definedName":"商城",
+      "rank": "0",
+      "whetherShow":"展开",
+      "detailPagesState":"关闭",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/shangcheng/"
+    },
+    {
+      "id": 3,
+      "columnName":"资源",
+      "definedName":"资源",
+      "rank": "0",
+      "whetherShow":"关闭",
+      "detailPagesState":"展开",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/source/"
+    },
+    {
+      "id": 4,
+      "columnName":"资讯",
+      "definedName":"资讯",
+      "rank": "1",
+      "whetherShow":"展开",
+      "detailPagesState":"关闭",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/wenzhang/"
+    },
+    {
+      "id": 5,
+      "columnName":"众筹",
+      "definedName":"众筹",
+      "rank": "1",
+      "whetherShow":"展开",
+      "detailPagesState":"关闭",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/zhongchou/"
+    },
+    {
+      "id": 6,
+      "columnName":"专题",
+      "definedName":"专题",
+      "rank": "1",
+      "whetherShow":"关闭",
+      "detailPagesState":"展开",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/topic/"
+    },
+    {
+      "id": 4,
+      "columnName":"活动",
+      "definedName":"活动",
+      "rank": "1",
+      "whetherShow":"关闭",
+      "detailPagesState":"展开",
+      "colunmUrl":"http://v2.duoyue.me/wechat/11356/5631/match/"
+    }
+  ]
+}

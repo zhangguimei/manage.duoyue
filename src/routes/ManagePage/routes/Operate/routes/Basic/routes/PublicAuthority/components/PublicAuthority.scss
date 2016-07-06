@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.PublicAuthority {
+  padding: 20px 40px;
+  .auth-column {
+    margin-bottom: 30px;
+    @extend %clearfix;
+    .cont {
+      float: left;
+      width: 405px;
+      h4 {
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $grayD;
+      }
+      p {
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: $gray7;
+      }
+    }
+    .info {
+      float: left;
+      width: 415px;
+      margin-top: 45px;
+      margin-left: 10px;
+      h6 {
+        margin-bottom: 10px;
+        padding-left: 47px;
+      }
+    }
+  }
+  .radio-box {
+    @extend %clearfix;
+    margin-bottom: 15px;
+    .Radio {
+      float: left;
+      width: 86px;
+      height: 34px;
+      padding: 6px;
+      margin-right: -1px;
+      border: 1px solid $grayD;
+      text-align: center;
+      .radio-title {
+        margin-right: 0;
+      }
+    }
+    .FormItem {
+      float: left;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 8;
+      .subtitle {
+        display: none;
+      }
+    }
+  }
+}
+

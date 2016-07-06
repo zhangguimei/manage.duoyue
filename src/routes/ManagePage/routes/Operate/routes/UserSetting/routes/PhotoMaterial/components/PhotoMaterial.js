@@ -30,7 +30,7 @@ class PhotoMaterial extends React.Component {
         <div className="photo-list">
           <ul className="clearfix">
             {
-              photoListData && photoListData.map((item,i) => {
+              photoListData && photoListData.map((item, i) => {
                 return (
                   <li key={i}>
                     <div className="date">{item.datetime}</div>

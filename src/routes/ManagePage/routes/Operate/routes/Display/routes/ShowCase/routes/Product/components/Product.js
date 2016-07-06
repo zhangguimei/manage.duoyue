@@ -4,65 +4,59 @@
  *  Declare : 展示设置-橱窗管理-商品橱窗
  */
 'use strict';
-import React,{PropTypes} from 'react';
-import {Map, is, fromJS} from 'immutable';
-import Table from 'UIComponentFolder/Table/Table';
+import React, {PropTypes} from 'react';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
+import Table from 'UIComponentFolder/Table/Table';
 import ProductAdd from './ProductAdd';
 import ProductSetup from './ProductSetup';
 import styles from './Product.scss';
-const tableData = require("AssetsFolder/MockData/operate/display/product_display_data.json");
+
+const tableHeadData = {
+  "id": "ID",
+  "ranko": "排序",
+  "displayName": "橱窗名称",
+  "displayCode": "橱窗代码",
+  "comNumOp": "包含商品",
+  "operation": "操作"
+};
+
 class Product extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showAddLayer: false,
-      showProductLayer: false,
+      showSetupLayer: false,
       item: {},
       type: "",
-      tableContent: tableData.tableContentData,
-      productListData: []
+      tableContent: this.getData().tableContentData
     };
   }
 
-  toggleModal(data) {
-    const {showAddLayer} = this.state;
+  getData() {
+    return require("AssetsFolder/MockData/operate/display/product_display_data.json");
+  }
+
+  toggleAddModal(item) {
     this.setState({
-      showAddLayer: !showAddLayer,
-      item: data
+      showAddLayer: !this.state.showAddLayer,
+      item: item
     });
   }
 
-  setupWindow(type) {
-    console.log("tableContent",this.state.tableContent);
-    const { showProductLayer } = this.state;
-    if(!showProductLayer && type != undefined) {
-      this.setState({
-        type: type,
-        showProductLayer: !showProductLayer,
-        productListData: this.fetchData(type)
-      })
-    } else {
-      this.setState({
-        showProductLayer: !showProductLayer
-      })
-    }
+  toggleSetupModal(type) {
+    this.setState({
+      showSetupLayer: !this.state.showSetupLayer,
+      type: type,
+      tableContent: this.getData().tableContentData
+    });
   }
 
-  fetchData(type) {
-    const productData = require("AssetsFolder/MockData/operate/display/product_list_data.json"),
-      IproductData = fromJS(productData),
-      data = IproductData.get(type).toJS();
-    let typeData = {
-      'type': type,
-      'list': data
-    }
-    return typeData;
+  onSetup(type) {
   }
 
   onDeleteProductType(id) {
-    if(confirm("确定要删除吗？")) {
+    if (confirm("确定要删除吗？")) {
       const {tableContent} = this.state;
       this.setState({
         tableContent: tableContent.filter(v => v.id != id)
@@ -71,45 +65,29 @@ class Product extends React.Component {
     }
   }
 
-  onDeleteProductList(type, id) {
-    let productTypes = this.state.tableContent;
-    for (let i = 0; i < productTypes.length; i++) {
-      let item = productTypes[i];
-      if(item.type == type) {
-        item.comNum--;
-        productTypes[i] = item;
-        break;
-      }
-    }
-    this.setState({
-      tableContent: productTypes
-    })
-  }
-
   render() {
-    const {tableContent,showAddLayer,item,showProductLayer,productListData} = this.state,
-      pagedata = {
-        title: '修改橱窗',
-        width: '40%',
-        height: '55%',
-        closeShowPage: ::this.toggleModal
-      },
-      setupdata = {
-        title: '设置橱窗商品',
-        width: '90%',
-        height: '90%',
-        closeShowPage: ::this.setupWindow
-      };
+    const {tableContent, showAddLayer, showSetupLayer, item, type} = this.state;
+    let pagedata = {
+      title: '修改橱窗',
+      width: '40%',
+      height: '50%',
+      closeShowPage: ::this.toggleAddModal
+    };
+    let setupdata = {
+      title: '设置橱窗商品',
+      width: '90%',
+      height: '90%',
+      closeShowPage: ::this.toggleSetupModal
+    };
     tableContent.map((item) => {
       item.ranko = <input type="text" className="form-control input-sm w60" defaultValue={item.rank}/>;
-      item.comNumOp = <a href="javascript:;" onClick={() => this.setupWindow(item.type)}>设置（{item.comNum}）</a>;
+      item.comNumOp = <a href="javascript:;" onClick={() => this.toggleSetupModal(item.type)}>设置（{item.comNum}）</a>;
       item.operation = <div className="clearfix">
-        <div className="left modify cursor" onClick={() => this.toggleModal(item)}>修改</div>
+        <a href="javascript:;" className="left modify couser" onClick={() => this.toggleAddModal(item)}>修改</a>
         <div className="left">&nbsp;|&nbsp;</div>
-        <div className="left delete cursor" onClick={() => this.onDeleteProductType(item.id)}>删除</div>
+        <a href="javascript:;" className="left delete couser" onClick={() => this.onDeleteProductType(item.id)}>删除</a>
       </div>
     });
-
     return (
       <div className="Product">
         <form className="form-inline form">
@@ -118,11 +96,11 @@ class Product extends React.Component {
             <input type="text" className="form-control"/>
           </div>
           <input type="submit" className="btn btn-primary btn-sm ml10 w80"/>
-          <input type="button" className="btn btn-primary btn-sm ml10 w80 right" onClick={::this.toggleModal}
+          <input type="button" className="btn btn-primary btn-sm ml10 w100 right" onClick={::this.toggleAddModal}
                  value="新增橱窗"/>
         </form>
         <div className="product-table">
-          <Table contentData={tableContent} headData={tableData.tableHeadData}/>
+          <Table contentData={tableContent} headData={tableHeadData}/>
         </div>
         {
           showAddLayer &&
@@ -133,10 +111,10 @@ class Product extends React.Component {
           </Modal>
         }
         {
-          showProductLayer &&
+          showSetupLayer &&
           <Modal>
             <ShowPage {...setupdata}>
-              <ProductSetup data={productListData} onDeleteFun={::this.onDeleteProductList}/>
+              <ProductSetup type={type} onSetup={::this.onSetup}/>
             </ShowPage>
           </Modal>
         }
@@ -144,9 +122,12 @@ class Product extends React.Component {
     );
   }
 }
-Product.propsType = {
-  contentData: PropTypes.object,
+
+ProductSetup.propsType = {
+  contentData: PropTypes.array,
+  headData: PropTypes.array,
   data: PropTypes.object,
-  onDeleteFun: PropTypes.func
+  type: PropTypes.string
 };
+
 module.exports = Product;

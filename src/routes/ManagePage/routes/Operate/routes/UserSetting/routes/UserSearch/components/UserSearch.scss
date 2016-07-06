@@ -3,7 +3,7 @@
 
 .UserSearch {
   .user-list {
-    @include group-grid(7, 20px);
+    @extend %group-grid-7;
     padding: 0 20px;
     ul {
       li {

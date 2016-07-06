@@ -9,7 +9,7 @@ module.exports = {
   path: 'sourcetypesetting',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/SouceTypeSetting'))
+      cb(null, require('./components/SourceTypeSetting'))
     })
   }
 }

@@ -31,7 +31,7 @@ class UserInfo extends React.Component {
           ]
         },
         options: {
-          responsive:true,
+          responsive: true,
           barShowStroke: false,
           maintainAspectRatio: false
         }

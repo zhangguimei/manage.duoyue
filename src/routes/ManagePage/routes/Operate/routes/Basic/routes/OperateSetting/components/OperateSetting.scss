@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.OperateSetting {
+  .w750, textarea.w750 {
+    width: 750px;
+  }
+  padding: 20px 40px;
+  .operate-cont {
+    @extend %clearfix;
+    .left1 {
+      width: 330px;
+    }
+    .left2 {
+      width: 420px;
+      textarea.form-control {
+        height: 80px;
+      }
+    }
+  }
+  .error-detail {
+    margin-left: 5px;
+  }
+  .Radio .radio-title {
+    color: $gray7;
+  }
+}

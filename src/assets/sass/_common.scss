@@ -32,6 +32,11 @@ ul, ol {
   padding: 0;
 }
 
+hr {
+  margin: 0;
+  border-top: 1px solid $grayD;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: inherit;
@@ -117,8 +122,8 @@ p {
   display: inline-block !important;
 }
 
-.text-danger{
-  color:#f00;
+.text-danger {
+  color: #f00;
 }
 
 //form
@@ -139,9 +144,11 @@ textarea.form-control {
 select.form-control {
   width: auto;
 }
-.form-control[readonly]{
+
+.form-control[readonly] {
   background-color: $white;
 }
+
 .form-group-sm {
   .form-control {
     border-radius: 0;
@@ -170,8 +177,17 @@ select.form-control {
 }
 
 .form-default {
-  .form-control {
-    display: block;
+  .form-group {
+    > label {
+      display: block;
+    }
+  }
+  .FormItem {
+    margin-bottom: 15px;
+    .subtitle {
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -427,18 +443,17 @@ select.form-control {
   display: inline-block;
 }
 
-
 //搜索栏
-.search-bar{
+.search-bar {
   @extend %clearfix;
-  margin-bottom:20px;
-  padding:15px 20px;
-  border-bottom:1px solid $grayD;
-  .form-inline{
-    .form-group{
-      margin-right:20px;
-      label{
-        margin-right:5px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-bottom: 1px solid $grayD;
+  .form-inline {
+    .form-group {
+      margin-right: 20px;
+      label {
+        margin-right: 5px;
       }
     }
   }

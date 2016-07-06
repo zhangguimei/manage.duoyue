@@ -13,13 +13,14 @@ module.exports = {
       cb(null, require('./components/Display'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
         require('./routes/ShowCase'),
         require('./routes/Invoice'),
         require('./routes/ShowRange'),
-        require('./routes/ViewRange')
+        require('./routes/ColumnSetting'),
+        require('./routes/StyleTemplate')
       ])
     })
   },
