@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
   }
 
   componentWillReceiveProps(np) {
-    const {treeData:{permissions}} = this.props;
+    const {permissions} = this.props;
     let subData = {}, pathArr = np.path.split("/"), path;
     if(pathArr.length >= 4) {
       pathArr.length = 4;
@@ -48,8 +48,10 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const {treeData:{permissions}, path} = this.props,
+    const {permissions, path} = this.props,
       {fold, subData} = this.state;
+    debugger;
+    
     const menuData = permissions[getMainIndex(permissions, path)].children;
     let foldClass = fold ? 'fold' : '';
     const hasSubItem = !!(subData && subData.children && subData.children.length > 0);

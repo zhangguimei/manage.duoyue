@@ -30,6 +30,7 @@ const operData = [
 
 const tableData = require("AssetsFolder/MockData/sourcecenter/topic/topic_list_data.json");
 
+
 class TopicList extends React.Component {
   constructor(props) {
     super(props);

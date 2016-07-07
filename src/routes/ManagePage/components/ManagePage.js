@@ -7,7 +7,7 @@ import {Scrollbars} from 'react-custom-scrollbars';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 
-import * as actions from 'ActionsFolder/LoginActions';
+import * as loginActions from 'ActionsFolder/LoginActions';
 import {compareData} from 'UtilsFolder/getDataInfo';
 import Modal from 'UIComponentFolder/Modals/Modal';
 import LoadingRect from 'UIComponentFolder/Loading/LoadingRect';
@@ -47,6 +47,12 @@ class ManagePage extends React.Component {
   }
 
   componentWillMount() {
+    const {token, actions:{loginByToken}} = this.props;
+    console.log('logged', token);
+    if(token) {
+      loginByToken();
+    }
+    //this.tree = fetchTreedata(userName).tree;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -70,17 +76,17 @@ class ManagePage extends React.Component {
   }
 
   render() {
-    const {children, path} = this.props,
+    const {children, path, permissions, fast} = this.props,
         {showWaitModal} = this.state;
-    const treeData = require('AssetsFolder/MockData/menu_data.json');
+    //       <Sidebar path={path} permissions={permissions} {...others} ref="sidebar"/>
     return (
         <div className="ManagePage">
-          <Header treeData={treeData} path={path}/>
-          <Sidebar treeData={treeData} path={path} ref="sidebar"/>
-          <main className="Main" style={{left : this.asideWidth}}>
+          <Header path={path} permissions={permissions} fast={fast}/>
+          <Sidebar path={path} permissions={permissions} fast={fast} ref="sidebar"/>
+          <main className="Main" style={{left: this.asideWidth}}>
             <Scrollbars style={{height:'100%'}}>
               <header className="page-title">
-                <span ref="headerText">{compareData(treeData.permissions, 'accessPath', path, 'permissionName')}</span>
+                <span ref="headerText">{compareData(permissions, 'accessPath', path, 'permissionName')}</span>
               </header>
               <section className="page-body">
                 {children}
@@ -105,16 +111,19 @@ ManagePage.propTypes = {
 
 
 function mapStateToProps(state, ownProps) {
-  let {login:{username}, menu} = fromJS(state).toJS();
+  let { login }= fromJS(state).toJS();
   return {
     path: ownProps && ownProps.location.pathname || '/',
-    username
+    token: login.token,
+    userName: login.userName,
+    fast: login.fast,
+    permissions: login.permissions
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(loginActions, dispatch)
   };
 }
 

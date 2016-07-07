@@ -9,7 +9,7 @@ import styles from './Header.scss';
 
 class Header extends React.Component {
   render() {
-    const {treeData:{login, user, fast, permissions}, path} = this.props;
+    const {userName, fast, permissions, path} = this.props;
     const imgsrc = 'http://www.sangbuzhahuwai.com/admin/do/pic/2015103017301207.jpg';
     return (
       <header className="Header">
@@ -21,19 +21,18 @@ class Header extends React.Component {
         <div className="fast-menu right">
           <FastMenu fastData={fast}/>
         </div>
-        <div className="name right">{login && user}</div>
+        <div className="name right">{userName}</div>
       </header>
     );
   }
 }
 
-Header.propTypes = {
-  treeData: PropTypes.shape({
-    login: PropTypes.bool.isRequired,
-    user: PropTypes.string.isRequired,
-    fast: PropTypes.array.isRequired,
-    permissions: PropTypes.array.isRequired
-  }).isRequired
-};
+// Header.propTypes = {
+//   treeData: PropTypes.shape({
+//     userName: PropTypes.string.isRequired,
+//     fast: PropTypes.array.isRequired,
+//     permissions: PropTypes.array.isRequired
+//   }).isRequired
+// };
 
 export default Header;
