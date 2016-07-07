@@ -67,18 +67,18 @@ class Product extends React.Component {
 
   render() {
     const {tableContent, showAddLayer, showSetupLayer, item, type} = this.state;
-    let pagedata = {
-      title: '修改橱窗',
-      width: '40%',
-      height: '50%',
-      closeShowPage: ::this.toggleAddModal
-    };
-    let setupdata = {
-      title: '设置橱窗商品',
-      width: '90%',
-      height: '90%',
-      closeShowPage: ::this.toggleSetupModal
-    };
+    const pagedata = {
+        title: '修改橱窗',
+        width: '40%',
+        height: '50%',
+        closeShowPage: ::this.toggleAddModal
+      },
+      setupdata = {
+        title: '设置橱窗商品',
+        width: '90%',
+        height: '90%',
+        closeShowPage: ::this.toggleSetupModal
+      };
     tableContent.map((item) => {
       item.ranko = <input type="text" className="form-control input-sm w60" defaultValue={item.rank}/>;
       item.comNumOp = <a href="javascript:;" onClick={() => this.toggleSetupModal(item.type)}>设置（{item.comNum}）</a>;
@@ -90,17 +90,21 @@ class Product extends React.Component {
     });
     return (
       <div className="Product">
-        <form className="form-inline form">
-          <div className="form-group form-group-sm">
-            <label>关键字&nbsp;&nbsp;</label>
-            <input type="text" className="form-control"/>
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>关键字：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="submit" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <input type="button" className="btn btn-primary btn-sm w100 ml20" value="新增橱窗"
+                   onClick={::this.toggleAddModal}/>
           </div>
-          <input type="submit" className="btn btn-primary btn-sm ml10 w80"/>
-          <input type="button" className="btn btn-primary btn-sm ml10 w100 right" onClick={::this.toggleAddModal}
-                 value="新增橱窗"/>
-        </form>
+        </div>
         <div className="product-table">
-          <Table contentData={tableContent} headData={tableHeadData}/>
+          <Table className="table-left" contentData={tableContent} headData={tableHeadData}/>
         </div>
         {
           showAddLayer &&

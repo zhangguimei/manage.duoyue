@@ -6,10 +6,10 @@
 
 'use strict';
 module.exports = {
-  path: 'image',
+  path: 'keyword',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/UserImage'))
+      cb(null, require('./components/KeywordApp'))
     })
   }
 }

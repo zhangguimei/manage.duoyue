@@ -1,18 +1,18 @@
 'use strict';
 import React, {PropTypes} from 'react';
 
-class UserManage extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="UserManage">
+      <div className="App">
         {this.props.children}
       </div>
     );
   }
 }
 
-UserManage.propTypes = {
+App.propTypes = {
   children: PropTypes.any
-}
+};
 
-module.exports =  UserManage;
+module.exports =  App;

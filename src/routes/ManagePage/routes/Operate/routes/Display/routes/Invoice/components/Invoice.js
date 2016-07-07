@@ -66,17 +66,21 @@ class Invoice extends React.Component {
     });
     return (
       <div className="Invoice">
-        <form className="form-inline form">
-          <div className="form-group form-group-sm">
-            <label>关键字&nbsp;&nbsp;</label>
-            <input type="text" className="form-control"/>
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>关键字：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <input type="button" className="btn btn-primary btn-sm w120 ml20" onClick={::this.toggleAddModal}
+                   value="新增发票选项"/>
           </div>
-          <input type="submit" className="btn btn-primary btn-sm ml10 w80"/>
-          <input type="button" className="btn btn-primary btn-sm ml10 w100 right" onClick={::this.toggleAddModal}
-                 value="新增发票选项"/>
-        </form>
+        </div>
         <div className="invoice-table">
-          <Table contentData={tableContent} headData={tableHeadData}/>
+          <Table className="table-left" contentData={tableContent} headData={tableHeadData}/>
         </div>
         {
           showAddLayer &&

@@ -33,46 +33,13 @@
   padding: 20px 0 20px 50px;
 }
 
-.oper-btn {
-  display: inline-block;
-  margin: 5px;
-  float: left;
-  padding: 3px 12px 3px 12px;
-  border: 1px solid $grayD;
-  background-color: $grayF;
-  color: $gray5;
-  font-size: 12px;
-  border-radius: 12px;
-  text-decoration: none;
-}
-
-.oper-btn:hover {
-  background: $blueLight;
-  color: $white;
-  border: 1px solid $blueLight;
-}
-
 .TopicList {
-  padding: 20px;
-  .Table {
-    text-align: left;
-    img {
-      height: 50px;
-    }
-    th {
-      padding: 5px;
-      white-space: nowrap;
-      text-align: left;
-      font-weight: normal;
-    }
-    .thead-column-0 {
-      width: 50px !important;
-    }
-    .thead-column-8 {
-      width: 350px !important;
-    }
-    img {
-      height: 50px;
+  .table-wrap {
+    padding: 20px;
+    .Table {
+      img {
+        height: 50px;
+      }
     }
   }
   .TopicTop {
@@ -130,13 +97,8 @@
   //cover
   .TopicCover {
     padding: 20px;
-    .btn {
-      //padding: 5px 30px;
-      //margin-bottom: 10px;
-    }
     .Table {
       padding: 20px;
-
     }
   }
   .CoverAdd {
@@ -156,6 +118,10 @@
   }
   //cont
   .TopicCont {
+    position: absolute;
+    left:0;
+    top:153px;
+    bottom:0;
     width: 100%;
     .choose-title {
       padding: 10px;

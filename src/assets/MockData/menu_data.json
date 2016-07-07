@@ -777,7 +777,7 @@
               "id": "382",
               "parentPermissionId": "378",
               "permissionName": "公号授权",
-              "accessPath": "/operate/basic/publicauthority",
+              "accessPath": "/operate/basic/authority",
               "icon_min": "",
               "icon_min_light": "",
               "icon_max": "",
@@ -840,6 +840,17 @@
           "icon_max": "",
           "icon_max_light": "",
           "children": [
+            {
+              "id": "357",
+              "parentPermissionId": "379",
+              "permissionName": "书籍咨询",
+              "accessPath": "/operate/usersetting/bookconsult",
+              "icon_min": "",
+              "icon_min_light": "",
+              "icon_max": "",
+              "icon_max_light": "",
+              "children": []
+            },
             {
               "id": "387",
               "parentPermissionId": "379",

@@ -14,17 +14,17 @@ const photoListData = require("AssetsFolder/MockData/operate/usersetting/photo_l
 class PhotoMaterial extends React.Component {
   render() {
     return (
-      <div className="PhotoMaterial">
+      <div className="PhotoMaterial photo">
         <div className="search-bar">
           <form className="form-inline left">
-            <div className="form-group">
+            <div className="form-group form-group-sm">
               <label>文章标题：</label>
               <input type="text" className="form-control"/>
             </div>
-            <input type="button" className="btn btn-primary w80" value="搜索"/>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
           </form>
           <div className="right">
-            <input type="button" className="btn btn-primary w120" value="图文素材同步"/>
+            <input type="button" className="btn btn-primary btn-sm w120" value="图文素材同步"/>
           </div>
         </div>
         <div className="photo-list">

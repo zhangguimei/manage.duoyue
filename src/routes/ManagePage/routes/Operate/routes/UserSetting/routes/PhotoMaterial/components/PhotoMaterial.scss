@@ -1,9 +1,10 @@
 @charset "UTF-8";
 @import "../../../../../../../../../assets/sass/function";
 
-.PhotoMaterial {
+.PhotoMaterial.photo {
+  padding:0;
   .photo-list {
-    padding: 0 20px;
+    padding:20px;
     ul {
       position: relative;
       margin-left: -20px;

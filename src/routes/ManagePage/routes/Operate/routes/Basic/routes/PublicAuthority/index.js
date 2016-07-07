@@ -7,7 +7,7 @@
 
 'use strict';
 module.exports = {
-  path: 'publicauthority',
+  path: 'authority',
   indexRoute: { onEnter: redirectToLogin},
   getComponent(nextState, cb) {
     require.ensure([], (require) => {

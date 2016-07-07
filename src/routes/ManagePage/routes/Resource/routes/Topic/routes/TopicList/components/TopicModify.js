@@ -46,7 +46,6 @@ class TopicModify extends React.Component {
     const {list} = this.props, {index} = this.state;
     const pagedata = {
       title: "修改信息",
-      newPageHref: 'http://www.baidu.com',
       width: '90%',
       height: '95%',
       closeShowPage: ::this.toggleModal

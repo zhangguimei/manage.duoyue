@@ -45,6 +45,19 @@ class ArticleSearch extends React.Component {
       totalPages = Math.ceil(data.length / itemsForOnePage);   //获取总页数
     return (
       <div className="ArticleSearch">
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>关键字：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <input type="button" className="btn btn-primary btn-sm w120 ml20"
+                   value="新增响应消息"/>
+          </div>
+        </div>
         <ArticleContent data={data} itemsForOnePage={itemsForOnePage} pageIndex={pageIndex}/>
         <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}
                     selectOnChange={::this.selectOnChange}/>

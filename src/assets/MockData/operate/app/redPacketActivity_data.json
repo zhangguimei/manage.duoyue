@@ -1,0 +1,40 @@
+[
+  {
+    "id":1,
+    "img":"http://file.duoyue.me/upload/group/logo/20160428/2016_04_28_111655100.jpg",
+    "title":"买买买",
+    "greetings":"6.18狂欢",
+    "providerName":"吉品",
+    "senderName":"吉品小阮",
+    "remarks":"猜越多得越多，快来抢！",
+    "explain":"",
+    "totalAmount":"100",
+    "totalNum":"10",
+    "relevantPacket":"6.18狂欢",
+    "limitNum":"10",
+    "maximumMoney":"10",
+    "minimumMoney":"10",
+    "startData":"2016/6/24 0:00:00",
+    "endData":"2016/6/29 0:00:00",
+    "operation":[]
+  },
+  {
+    "id":2,
+    "img":"http://file.duoyue.me/upload/group/logo/20160428/2016_04_28_111655100.jpg",
+    "title":"买买买",
+    "greetings":"6.18狂欢",
+    "providerName":"吉品",
+    "senderName":"吉品小阮",
+    "remarks":"猜越多得越多，快来抢！",
+    "explain":"",
+    "totalAmount":"100",
+    "totalNum":"10",
+    "relevantPacket":"6.18狂欢",
+    "limitNum":"3",
+    "maximumMoney":"10",
+    "minimumMoney":"10",
+    "startData":"2016/6/24 0:00:00",
+    "endData":"2016/6/24 0:00:00",
+    "operation":[]
+  }
+]

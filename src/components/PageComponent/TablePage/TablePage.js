@@ -42,7 +42,7 @@ class TablePage extends React.Component {
       totalPages = Math.ceil(data.tableContentData.length / rowsForOnePage);
     return (
       <div className={`TablePage ${className}`}>
-        <Table headData={headData||data.tableHeadData} contentData={contentData||data.tableContentData}
+        <Table className="table-left" headData={headData||data.tableHeadData} contentData={contentData||data.tableContentData}
                rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}/>
         {
           totalPages > 1 &&

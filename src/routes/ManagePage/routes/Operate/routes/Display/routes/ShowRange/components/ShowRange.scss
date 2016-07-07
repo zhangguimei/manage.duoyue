@@ -1,0 +1,20 @@
+
+.ShowRange {
+  padding: 40px;
+  .cursor {
+    cursor: pointer;
+  }
+  .Tree{
+    .CheckBoxItem {
+      width: 300px;
+      text-align: left;
+      .tree-item {
+        display: block;
+        width: 100%;
+        .item-title {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
