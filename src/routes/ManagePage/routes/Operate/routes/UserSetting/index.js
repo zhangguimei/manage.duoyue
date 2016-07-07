@@ -16,6 +16,7 @@ module.exports = {
   getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
+        require('./routes/BookConsult'),
         require('./routes/UserSearch'),
         require('./routes/ReceiveMsg'),
         require('./routes/PhotoMaterial'),

@@ -28,7 +28,7 @@ const operData = [
   }
 ];
 
-const tableData = require("AssetsFolder/MockData/topic/topic_list_data.json");
+const tableData = require("AssetsFolder/MockData/sourcecenter/topic/topic_list_data.json");
 
 
 class TopicList extends React.Component {

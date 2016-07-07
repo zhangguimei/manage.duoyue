@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.HotProduct {
+  .tab-wrap {
+    margin: 10px 0 20px;
+    .tab-type {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .tab-box {
+      display: inline-block;
+      .tab {
+        display: inline-block;
+        font-size: 16px;
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .active {
+        color: $red;
+      }
+    }
+  }
+  .chart-wrap {
+    width: 900px;
+    margin: 20px 0;
+  }
+  .table-wrap {
+    padding: 20px;
+    .Table {
+      thead {
+        tr {
+          th {
+            background-color: #d7d7d7;
+            border: none;
+          }
+        }
+      }
+      tbody {
+        tr:nth-of-type(-n+5) {
+          background-color: #f0f0f0;
+          td:nth-child(1) {
+            color: $red;
+          }
+        }
+        tr:nth-of-type(n+6) {
+          background-color: $white;
+        }
+        td {
+          text-align: center;
+          border: none;
+        }
+        td:nth-of-type(2) {
+          text-align: left;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+        

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.CustomMenu {
+  padding: 20px;
+  .menu-left {
+    float: left;
+    width: 342px;
+    height: 602px;
+    border: 1px solid $grayD;
+    .item {
+      h4 {
+        padding: 8px 10px 8px 20px;
+        line-height: 20px;
+        background-color: #f0f0f0;
+        @extend %clearfix;
+        .title {
+          float: left;
+        }
+        .add-submenu {
+          float: right;
+          font-size: 12px;
+        }
+      }
+      ul {
+        padding: 5px 30px;
+        li {
+          padding: 2px 0;
+        }
+      }
+    }
+    .add-menu {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px dashed #ddd;
+      background-color: #f8f8f8;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .btn-menu {
+      display: block;
+      width: 300px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      border: 1px dotted #d80552;
+      background-color: #e40f5f;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+  .menu-main {
+    height: 602px;
+    padding: 20px 40px;
+    overflow: hidden;
+    border: 1px solid $grayD;
+    border-left: 0;
+    .error-detail {
+      margin-left: 5px;
+    }
+    .menu-title {
+      @extend %clearfix;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $grayD;
+      .title {
+        float: left;
+      }
+      .delete {
+        float: right;
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ import ArticleContent from './ArticleContent';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import styles from './ArticleSearch.scss';
 
-let data = require("AssetsFolder/MockData/article/article_data.json");
+let data = require("AssetsFolder/MockData/sourcecenter/article/article_data.json");
 class ArticleSearch extends React.Component {
   constructor(props) {
     super(props);

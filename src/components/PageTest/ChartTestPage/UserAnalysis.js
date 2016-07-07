@@ -6,7 +6,7 @@ import styles from './UserAnalysis.scss';
 import Chart from '../../../UIComponent/Chart/Chart';
 import Tab from '../../../UIComponent/Tab/Tab';
 
-export  const rand = (max, min, num) => {
+export const rand = (max, min, num) => {
   let rtn = [];
   while (rtn.length < num) {
     rtn.push((Math.random() * (max - min)).toFixed(2));
@@ -50,6 +50,7 @@ class UserAnalysis extends React.Component {
 
   render() {
     const {chartData} = this.state;
+    console.log(chartData)
     let TabData = {
       content: ['7日', '14日', '30日'],
       tabClass: {
@@ -73,6 +74,7 @@ class UserAnalysis extends React.Component {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           time: {},
           xAxes: [{

@@ -26,19 +26,19 @@ import BookSource from './BookSource';
 import BookAuthor from './BookAuthor';
 import styles from './BookModify.scss';
 
-const keyMaps = require("AssetsFolder/MockData/book/book_search_tab_data.json"),
-  bookInfo = require("AssetsFolder/MockData/book/book_info.json"),
+const keyMaps = require("AssetsFolder/MockData/sourcecenter/book/book_search_tab_data.json"),
+  bookInfo = require("AssetsFolder/MockData/sourcecenter/book/book_info.json"),
   classifyInfo = require("AssetsFolder/MockData/tree_data.json").menu,
-  menuTableData = require("AssetsFolder/MockData/book/book_article_table_data.json"),
-  menuTreeData = require("AssetsFolder/MockData/book/book_menu_tree_data.json"),
-  sourceTableData = require("AssetsFolder/MockData/book/book_source_table_data.json"),
-  tagData = require("AssetsFolder/MockData/book/book_tag_data.json"),
+  menuTableData = require("AssetsFolder/MockData/sourcecenter/book/book_article_table_data.json"),
+  menuTreeData = require("AssetsFolder/MockData/sourcecenter/book/book_menu_tree_data.json"),
+  sourceTableData = require("AssetsFolder/MockData/sourcecenter/book/book_source_table_data.json"),
+  tagData = require("AssetsFolder/MockData/sourcecenter/book/book_tag_data.json"),
   codeData = require("AssetsFolder/MockData/sourcecenter/code_data.json"),
-  authorListData = require("AssetsFolder/MockData/book/book_author_list.json"),
-  browseHistoryTableData = require("AssetsFolder/MockData/book/book_browse_table_data.json"),
+  authorListData = require("AssetsFolder/MockData/sourcecenter/book/book_author_list.json"),
+  browseHistoryTableData = require("AssetsFolder/MockData/sourcecenter/book/book_browse_table_data.json"),
   fashionTableData = require("AssetsFolder/MockData/sourcecenter/product/product_fashion_table_data.json"),
-  salesHistoryTableData = require("AssetsFolder/MockData/book/book_sales_history_book.json"),
-  relatedTableData = require("AssetsFolder/MockData/book/book_related_table_data.json"),
+  salesHistoryTableData = require("AssetsFolder/MockData/sourcecenter/book/book_sales_history_book.json"),
+  relatedTableData = require("AssetsFolder/MockData/sourcecenter/book/book_related_table_data.json"),
   tabContent = keyMaps.map((item) => {
     return Object.values(item)[0]
   });

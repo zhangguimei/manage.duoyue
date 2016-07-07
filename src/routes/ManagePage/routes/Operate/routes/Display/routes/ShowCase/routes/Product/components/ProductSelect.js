@@ -7,38 +7,43 @@
 import React, {PropTypes} from 'react';
 import {fromJS} from 'immutable';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
+import Radio from 'UIComponentFolder/Radio/Radio';
+
 const itemForOnePage = 10;
+const selectProducData = require("AssetsFolder/MockData/operate/display/product_list_data.json");
+
 class ProductSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageIndex: 1
+      pageIndex: 1,
+      selectProductArr: selectProducData
     };
-    this.totalPages = "";
     this.itemsForShow = [];
   }
 
   componentWillMount() {
-    let Idata = fromJS(this.props.data.list);
-    let tempObj = Idata.slice(0, itemForOnePage);
+    let IselectProducData = fromJS(this.state.selectProductArr);
+    let tempObj = IselectProducData.slice(0, itemForOnePage);
     this.itemsForShow = tempObj.toJS();
   }
 
   onPageClick(nextPageIndex) {           //点击切换页数
-    this.itemsForShow = this.props.data.list.slice((nextPageIndex - 1) * itemForOnePage, nextPageIndex * itemForOnePage);
+    this.itemsForShow = this.state.selectProductArr.slice((nextPageIndex - 1) * itemForOnePage, nextPageIndex * itemForOnePage);
     this.setState({
       pageIndex: nextPageIndex
     });
   }
 
   cilckSelectItem(item) {
+    this.props.setupProduct(item)
   }
 
   render() {
-    const {data} = this.props, {pageIndex} = this.state;
-    const totalPages = Math.ceil(data.list.length / itemForOnePage),
+    const {pageIndex, selectProductArr} = this.state;
+    const totalPages = Math.ceil(selectProducData.length / itemForOnePage),
       {itemsForShow} = this,
-      radioStatusArr = data.list.filter((v =>v.selected)),
+      radioStatusArr = selectProductArr.filter(v =>v.selected),
       selectIdArr = radioStatusArr.map((item) => {
         return item.id
       });
@@ -65,11 +70,7 @@ class ProductSelect extends React.Component {
                     <div className="select-radio">
                       {
                         selectIdArr.indexOf(item.id) >= 0 ? <span >已选择</span> :
-                          <div className="radio">
-                            <label>
-                              <input type="radio" onClick={() => this.cilckSelectItem(item)} name="radio"/>请选择
-                            </label>
-                          </div>
+                          <Radio radioOnClick={() => this.cilckSelectItem(item)} title="请选择"/>
                       }
                     </div>
                   </li>
@@ -86,10 +87,12 @@ class ProductSelect extends React.Component {
     )
   }
 }
+
 ProductSelect.propsType = {
   totalPages: PropTypes.number,
   index: PropTypes.number,
   name: PropTypes.object,
   price: PropTypes.object
 };
+
 export default ProductSelect;

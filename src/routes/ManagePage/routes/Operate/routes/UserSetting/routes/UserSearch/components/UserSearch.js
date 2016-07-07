@@ -64,7 +64,8 @@ class UserSearch extends React.Component {
                 return (
                   <li key={i}>
                     <div className="inner">
-                      <img className="pic" src={item.headimgurl} onClick={() => this.onPicClick(item.id)}/>
+                      <img className="pic" src={item.headimgurl} alt={item.nickname}
+                           onClick={() => this.onPicClick(item.id)}/>
                       <div className="text">
                         <div className="name">{item.nickname}</div>
                         <div className="city">{item.province}.{item.city}</div>

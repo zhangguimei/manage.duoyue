@@ -19,6 +19,11 @@
     "icon":"",
     "url":"/website"
   },
+  "412":{
+    "name":"广告管理",
+    "icon":"ic-ad",
+    "url":"/website/bannermanage"
+  },
   "327":{
     "name":"销售结算",
     "icon":"",
@@ -79,45 +84,60 @@
     "icon":"ic-comment",
     "url":"/user/comment"
   },
-  "353":{
-    "name":"书籍咨询",
-    "icon":"",
-    "url":"/user/comment/bookconsult"
-  },
   "354":{
     "name":"文章评论",
     "icon":"",
-    "url":"/user/comment/sitecolumn"
+    "url":"/user/comment/article"
   },
   "355":{
     "name":"书籍评论",
     "icon":"",
     "url":"/user/comment/book"
   },
+  "710":{
+    "name":"圈子评论",
+    "icon":"",
+    "url":"/user/comment/group"
+  },
   "356":{
     "name":"资源评论",
     "icon":"",
     "url":"/user/comment/source"
+  },
+  "804":{
+    "name":"专题评论",
+    "icon":"",
+    "url":"/user/comment/topic"
   },
   "357":{
     "name":"商品咨询",
     "icon":"",
     "url":"/user/comment/consult"
   },
-  "710":{
-    "name":"微信直播",
-    "icon":"",
-    "url":"/user/comment/weixinqiang"
-  },
   "332":{
     "name":"作者管理",
     "icon":"ic-author",
     "url":"/user/author"
   },
+  "358":{
+    "name":"作者查询",
+    "icon":"",
+    "url":"/user/author/search"
+  },
+  "359":{
+    "name":"作者分类",
+    "icon":"",
+    "url":"/user/author/sort"
+  },
   "333":{
     "name":"圈子管理",
     "icon":"ic-circle",
-    "url":"/user/circle"
+    "url":"/user/group"
+  },
+  "364":{
+    "name":"圈子查询",
+    "icon":"",
+    "url":"/user/group/search"
   },
   "759":{
     "name":"活动管理",
@@ -294,7 +314,7 @@
     "icon":"",
     "url":"/operate/display/showrange/sourcetypesetting"
   },
-  "792":{
+  "795":{
     "name":"报名设置",
     "icon":"",
     "url":"/operate/display/showrange/matchsetting"
@@ -307,17 +327,52 @@
   "780":{
     "name":"栏目设置",
     "icon":"",
-    "url":"/operate/display/viewrange"
+    "url":"/operate/display/columnsetting"
+  },
+  "781":{
+    "name":"风格模板",
+    "icon":"",
+    "url":"/operate/display/styletemplate"
   },
   "378":{
     "name":"基础配置",
     "icon":"ic-basic",
     "url":""
   },
+  "382":{
+    "name":"公号授权",
+    "icon":"",
+    "url":"/operate/basic/publicauthority"
+  },
+  "383":{
+    "name":"运营设置",
+    "icon":"",
+    "url":"/operate/basic/operatesetting"
+  },
+  "385":{
+    "name":"响应消息",
+    "icon":"",
+    "url":"/operate/basic/responsemsg"
+  },
+  "386":{
+    "name":"自定义菜单",
+    "icon":"",
+    "url":"/operate/basic/custommenu"
+  },
+  "390":{
+    "name":"群组管理",
+    "icon":"",
+    "url":"/operate/basic/groupmanage"
+  },
   "379":{
     "name":"用户管理",
     "icon":"ic-usersetting",
     "url":""
+  },
+  "357":{
+    "name":"用户查询",
+    "icon":"",
+    "url":"/operate/usersetting/bookconsult"
   },
   "387":{
     "name":"用户查询",
@@ -374,11 +429,6 @@
     "icon":"ic-website",
     "url":""
   },
-  "412":{
-    "name":"广告管理",
-    "icon":"ic-ad",
-    "url":""
-  },
   "413":{
     "name":"模版管理",
     "icon":"ic-template",
@@ -424,6 +474,21 @@
     "icon":"",
     "url":"/analysis/useranalysis/malefamale"
   },
+  "437":{
+    "name":"阅读排行",
+    "icon":"",
+    "url":"/analysis/useranalysis/read"
+  },
+  "438":{
+    "name":"时长分析",
+    "icon":"",
+    "url":"/analysis/useranalysis/duration"
+  },
+  "439":{
+    "name":"用户增长",
+    "icon":"",
+    "url":"/analysis/useranalysis/user"
+  },
   "347":{
     "name":"资源分析",
     "icon":"ic-resourcefill",
@@ -432,12 +497,12 @@
   "348":{
     "name":"销售分析",
     "icon":"ic-sales",
-    "url":""
+    "url":"/analysis/sales"
   },
   "749":{
     "name":"时段分析",
     "icon":"ic-timefill",
-    "url":""
+    "url":"/analysis/period"
   },
   "431":{
     "name":"员工账号",
@@ -473,5 +538,61 @@
     "name":"书籍时长",
     "icon":"",
     "url":"/analysis/resource/bookduration"
+  },
+  "444":{
+    "name":"热销商品",
+    "icon":"",
+    "url":"/analysis/sales/hot"
+  },
+  "445":{
+    "name":"销售统计",
+    "icon":"",
+    "url":"/analysis/sales/statistics"
+  },
+
+  "750":{
+    "name":"全部内容",
+    "icon":"",
+    "url":"/analysis/period/all"
+  },
+  "751":{
+    "name":"自然关注",
+    "icon":"",
+    "url":"/analysis/period/natureattention"
+  },
+  "752":{
+    "name":"扫码关注",
+    "icon":"",
+    "url":"/analysis/period/scanattention"
+  },
+  "753":{
+    "name":"取消关注",
+    "icon":"",
+    "url":"/analysis/period/cancelattention"
+  },
+  "754":{
+    "name":"扫一扫",
+    "icon":"",
+    "url":"/analysis/period/scan"
+  },
+  "755":{
+    "name":"浏览阅读",
+    "icon":"",
+    "url":"/analysis/period/browse"
+  },
+   "756":{
+    "name":"订单支付",
+    "icon":"",
+    "url":"/analysis/period/pay"
+  },
+  "757":{
+    "name":"参与评论",
+    "icon":"",
+    "url":"/analysis/period/comment"
+  },
+  "758":{
+    "name":"分享内容",
+    "icon":"",
+    "url":"/analysis/period/share"
   }
 }

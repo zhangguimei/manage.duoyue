@@ -30,9 +30,8 @@ class Sidebar extends React.Component {
     })
   }
 
-  changeRoute(routes, data) {
+  changeSubData(data) {
     this.setState({
-      routes: routes,
       subData: data
     })
   }
@@ -63,7 +62,7 @@ class Sidebar extends React.Component {
             {
               menuData.map((item, i)=> {
                 return (
-                  <SidebarItem key={i} menuData={item} parent={`${i}.`} path={path} changeRoute={::this.changeRoute}/>
+                  <SidebarItem key={i} menuData={item} path={path} changeSubData={::this.changeSubData}/>
                 );
               })
             }

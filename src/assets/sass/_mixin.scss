@@ -287,7 +287,7 @@
 }
 
 //group column
-@mixin group-grid($grid: 2, $margin: $basePadding) {
+@mixin group-grid($grid: 2, $margin: $baseMargin) {
   & {
     ul {
       margin-left: -$margin / 2;
@@ -310,6 +310,10 @@
 
 %group-grid-3 {
   @include group-grid($grid: 3);
+}
+
+%group-grid-7 {
+  @include group-grid($grid: 7);
 }
 
 //Image

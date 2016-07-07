@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@import "../../../assets/sass/function";
+
+.CommentPage {
+  .red {
+    color: red;
+  }
+  .header {
+    padding: 15px 20px;
+    border-bottom: 1px solid $grayD;
+    .search-btn {
+      line-height: 16px;
+    }
+  }
+  .content-wrap {
+    padding: 20px;
+    .head-pic {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+    .comment-content-wrap {
+      padding: 10px;
+      .comment-wrap {
+        .img-wrap {
+          width: 150px;
+          .img {
+            width: 100%;
+          }
+        }
+        .at-where {
+          font-size: 12px;
+          color: $gray7;
+        }
+      }
+      .reply-wrap {
+        border: 1px solid $grayD;
+        padding: 20px;
+        margin-top: 20px;
+        .reply-item {
+          position: relative;
+          border-bottom: 1px solid $grayD;
+          padding-bottom: 15px;
+          .img-wrap {
+            width: 150px;
+            .img {
+              width: 100%;
+            }
+          }
+          .time {
+            font-size: 12px;
+            color: $gray7;
+          }
+          .delete-btn {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            background-color: transparent;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  .reply-layer-wrap {
+    padding: 20px 50px;
+    .FormItem {
+      position: relative;
+      .subtitle {
+        @extend %center-translate-y;
+      }
+      .text-area {
+        width: 60%;
+        margin-left: 100px;
+      }
+    }
+    .img-wrap {
+      @extend .FormItem;
+      .img-box {
+        width: 100%;
+      }
+    }
+  }
+}

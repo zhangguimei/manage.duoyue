@@ -1,0 +1,22 @@
+{
+	"headData": {
+		"id": "编码",
+		"name": "分类名称",
+		"desc": "分类简介",
+		"operation": "操作"
+	},
+	"contentData": [
+		{
+			"id": 1,
+			"name": "散文作家",
+			"desc": "散文作家散文作家散文作家",
+			"operation": ""
+		},
+		{
+			"id": 2,
+			"name": "青年作家",
+			"desc": "",
+			"operation": ""
+		}
+	]
+}

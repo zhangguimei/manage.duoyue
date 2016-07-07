@@ -1,5 +1,6 @@
 'use strict';
 import React from 'react';
+import {fromJS} from 'immutable';
 import Tab from 'UIComponentFolder/Tab/Tab';
 import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
@@ -7,7 +8,7 @@ import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import ContAdd from './ContAdd';
 import styles from './TopicList.scss';
-import {fromJS} from 'immutable';
+
 
 const navData = [
     {'article': '文章'},
@@ -172,7 +173,7 @@ class TopicCont extends React.Component {
   }
 
   fetchData(index) {
-    const columnData = require('AssetsFolder/MockData/topic/topic_column_cont_data.json');
+    const columnData = require('AssetsFolder/MockData/sourcecenter/topic/topic_column_cont_data.json');
     let IcolumnData = fromJS(columnData);
     return IcolumnData.get(keyRoute[index]).toJS();
   }
@@ -284,7 +285,7 @@ class TopicCont extends React.Component {
                   showTable &&
                   <Table contentData={tableData.tableContentData} headData={tableData.tableHeadData} isOptional={true}
                          rowsForOnePage={itemsForOnePage} pageIndex={pageIndex} checkBoxClick={::this.selectSource}
-                        initState={this.selectedList}/>
+                         initState={this.selectedList}/>
                 }
                 <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>
               </div>

@@ -28,10 +28,10 @@ import styles from './Table.scss';
  *
  * isOperatable:            MUST be a Boolean, default value is false.
  *
- * CheckBox:                You can deliver your own checkbox component through this prop, or you can ignore
+ * CheckBox:                You can deliver your own checkbox components through this prop, or you can ignore
  *                          this prop and use the default CheckBox.
  *
- * rowsForOnePage:          If you use this component with Pagination component together, this prop is used
+ * rowsForOnePage:          If you use this components with Pagination components together, this prop is used
  *                          for setting the row number of table showing in one page. MUST be set with
  *                          pageIndex together.
  *
@@ -373,7 +373,7 @@ class Table extends React.Component {
     //生成thead代码
     let headCodes = this.headNameList.map((item, index) => {
       return <th className={classNames(`thead-column-${index}`, this.formatClassName(thClass, index))}
-                  style={{ width: columnWidth }} ref={`column${index}`} key={index} onMouseMove={(e) => this.onMouseMove(e)}
+                   ref={`column${index}`} key={index} onMouseMove={(e) => this.onMouseMove(e)}
                  onMouseDown={(e) => this.onMouseDown(e, index)} onMouseUp={::this.onMouseUp}>
               {item}
               <span title="对当前页升序排序" className="script superscript"

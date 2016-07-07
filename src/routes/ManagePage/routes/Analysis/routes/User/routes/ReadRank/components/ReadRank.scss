@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.ReadRank {
+  .content-list {
+    width: 48%;
+    margin: 0 1%;
+    h4 {
+      border-bottom: 1px solid $grayD;
+      font-size: 14px;
+      padding: 5px;
+    }
+  }
+}

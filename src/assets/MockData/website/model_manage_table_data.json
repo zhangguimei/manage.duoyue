@@ -1,0 +1,165 @@
+{
+  "tableHeadData": {
+    "id": "编号",
+    "sortValue": "排序值",
+    "modelName": "模板名称",
+    "menu": "目录",
+    "basisInfo": "基础信息",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1111,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1112,
+      "sortValue": 0,
+      "modelName": "11111",
+      "width": 2,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1113,
+      "sortValue": 1,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 3,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1114,
+      "sortValue": 1,
+      "modelName": "武汉理工111",
+      "width": 4,
+      "height": 5,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1115,
+      "sortValue": 0,
+      "modelName": "武汉理工333",
+      "width": 4,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1116,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1117,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1118,
+      "sortValue": 1,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1119,
+      "sortValue": 2,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1120,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },{
+      "id": 1121,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1122,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1123,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    },
+    {
+      "id": 1124,
+      "sortValue": 0,
+      "modelName": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "menu": "",
+      "showNum": "是",
+      "basisInfo": "这里是基础信息",
+      "operation": ""
+    }
+  ]
+}

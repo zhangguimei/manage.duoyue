@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.BookConsult {
+  .btn-gray {
+    background-color: $grayD;
+    border-color: $grayD;
+    color: #555;
+  }
+
+  .consult-list {
+    @extend %clearfix;
+    li {
+      .consult-body {
+        @extend %clearfix;
+        padding: 15px 20px;
+        border-bottom: 1px dotted $grayD;
+        .left {
+          width: 80%;
+          .pic {
+            float: left;
+            width: 40px;
+            height: 40px;
+          }
+          .text {
+            margin-left: 55px;
+            h5 {
+              .name {
+                margin-left: 10px;
+                color: $gray7;
+              }
+            }
+            .date {
+              font-size: 12px;
+              margin-left: 20px;
+            }
+          }
+        }
+        .right {
+          width: 20%;
+        }
+      }
+      .consult-footer {
+        padding: 10px 20px;
+        .btn {
+          float: right;
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+        .text {
+          overflow: hidden;
+          .form-control {
+            width: 100%;
+            background-color: #f0f0f0;
+          }
+        }
+      }
+    }
+  }
+}

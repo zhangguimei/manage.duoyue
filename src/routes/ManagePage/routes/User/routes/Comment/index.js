@@ -13,13 +13,14 @@ module.exports = {
       cb(null, require('./components/Comment'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/BookConsult'),
-        require('./routes/SiteColumn'),
+        require('./routes/Article'),
         require('./routes/Book'),
-        require('./routes/Source')
+        require('./routes/Source'),
+        require('./routes/Topic'),
+        require('./routes/Group')
       ])
     })
   },

@@ -1,0 +1,25 @@
+{
+  "name": "吉品印象",
+  "originID": "gh_68ca21dfca93",
+  "appID": "wx76268ea81a9fd162",
+  "appSecret": "3cc6a479d436c3464b85b3881616f1df",
+  "url": "http://v2.duoyue.me/weixin/?s=11356&w=5631",
+  "token": "9D9D047D246889F09B3B302300725187",
+  "mchID":"1318155401",
+  "partnerKey":"lkdsjkf872lkr3kwjfou283kwejfu822",
+  "isCrossPay": false,
+  "options": [
+    {
+      "id":1,
+      "value":"RAYS"
+    },
+    {
+      "id":2,
+      "value":"洛克里尼"
+    },
+    {
+      "id":3,
+      "value":"煮酒风云"
+    }
+  ]
+}

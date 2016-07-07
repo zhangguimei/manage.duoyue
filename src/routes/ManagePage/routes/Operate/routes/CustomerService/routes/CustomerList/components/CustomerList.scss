@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/_function";
+
+.CustomerList {
+  .form {
+    padding: 20px;
+    border-bottom: 1px solid $grayD;
+  }
+  .customer-table {
+    padding: 20px;
+    .Table {
+      th {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+}

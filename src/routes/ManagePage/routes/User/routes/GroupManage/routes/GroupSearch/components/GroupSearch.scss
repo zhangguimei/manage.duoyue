@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.GroupSearch {
+  .header {
+    padding: 15px 20px;
+    border-bottom: 1px solid $grayD;
+    .search-btn, .add-btn {
+      line-height: 16px;
+    }
+  }
+  .content-wrap {
+    padding: 13px;
+    .item {
+      padding: 8px;
+      width: 20%;
+      .item-content {
+        position: relative;
+        height: 330px;
+        padding: 10px;
+        border: 1px solid $grayD;
+        .title {
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .img-wrap {
+          display: block;
+          height: 125px;
+          width: 100%;
+          overflow: hidden;
+        }
+        .desc {
+          height: 125px;
+          padding: 8px 0;
+        }
+        .btn-wrap {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          .delete-btn, .edit-btn {
+            display: inline-block;
+            width: 50%;
+            border: none;
+            border-top: 1px solid $grayD;
+            line-height: 30px;
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+  }
+  .detail-wrap {
+    position: relative;
+    padding: 20px;
+    .left-content {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid $grayD;
+      .title {
+        font-size: 16px;
+      }
+      .img {
+        display: block;
+        width: 100%;
+      }
+      .desc {
+        font-size: 14px;
+      }
+    }
+    .right-content {
+      width: 45%;
+      .font600 {
+        font-weight: 600;
+      }
+      .desc {
+        margin-top: 1em;
+      }
+    }
+  }
+  .create-wrap {
+    padding: 30px 50px;
+    .ImageUpload {
+      display: block;
+      width: 300px;
+      .img-box {
+        width: 100%;
+      }
+    }
+    .desc-input {
+      width: 300px;
+      height: 120px;
+    }
+    .subtitle {
+      display: block;
+      line-height: 30px;
+    }
+  }
+}

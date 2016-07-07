@@ -1,0 +1,15 @@
+{
+  "name": "吉品印象",
+  "pic": "",
+  "releaseDuration": "30",
+  "billingCycle": "0",
+  "minAmount": "0",
+  "tel": "18621117878",
+  "address": "武汉市武昌区武汉理工",
+  "postage": "12",
+  "freePostage": "88",
+  "introduce": "测试公众号",
+  "isVerify": false,
+  "isShowInput":false,
+  "signInfo":"编辑器"
+}

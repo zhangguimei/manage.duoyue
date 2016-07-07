@@ -1,0 +1,32 @@
+[
+	{
+		"id": 123,
+		"nickName": "张岑",
+		"headPic": "http://file.duoyue.me/images/default.jpg",
+		"pic": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164751956.jpg",
+		"fileUrl": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164751956.mp4",
+		"dateTime": "2016/3/29 20:25:39",
+		"fileName": "素材",
+		"fileDesc": "素材描述"
+	},
+	{
+		"id": 1203,
+		"nickName": "羊丁丁",
+		"headPic": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164652399.jpg",
+		"pic": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164751956.jpg",
+		"fileUrl": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164751956.mp4",
+		"dateTime": "2016/3/29 20:25:39",
+		"fileName": "素材",
+		"fileDesc": "素材描述"
+	},
+	{
+		"id": 1213,
+		"nickName": "888",
+		"headPic": "http://file.duoyue.me/images/default.jpg",
+		"pic": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164751956.jpg",
+		"fileUrl": "http://file.duoyue.me/upload/iuser/002/413/370/2016_07_05_164652399.mp4",
+		"dateTime": "2016/3/29 20:25:39",
+		"fileName": "素材",
+		"fileDesc": "素材描述"
+	}
+]

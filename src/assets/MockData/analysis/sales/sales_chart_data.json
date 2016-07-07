@@ -1,0 +1,87 @@
+ [
+  {
+    "id": 1,
+    "date": "06-21",
+    "salesChartData": "15",
+    "distribution": "34元"
+  },
+  {
+    "id": 2,
+    "date": "06-22",
+    "salesChartData": "14",
+    "distribution": "23元"
+  },
+  {
+    "id": 3,
+    "date": "06-23",
+    "salesChartData": "13",
+    "distribution": "18元"
+  },
+  {
+    "id": 4,
+    "date": "06-14",
+    "salesChartData": "10",
+    "distribution": "17元"
+  },
+  {
+    "id": 5,
+    "date": "06-25",
+    "salesChartData": "11",
+    "distribution": "13元"
+  },
+  {
+    "id": 6,
+    "date": "06-26",
+    "salesChartData": "7",
+    "distribution": "12元"
+  },
+  {
+    "id": 7,
+    "date": "06-27",
+    "salesChartData": "5",
+    "distribution": "10元"
+  },
+  {
+    "id": 1,
+    "date": "06-28",
+    "salesChartData": "8",
+    "distribution": "34元"
+  },
+  {
+    "id": 2,
+    "date": "06-29",
+    "salesChartData": "19",
+    "distribution": "23元"
+  },
+  {
+    "id": 3,
+    "date": "06-30",
+    "salesChartData": "13",
+    "distribution": "18元"
+  },
+  {
+    "id": 4,
+    "date": "7-01",
+    "salesChartData": "10",
+    "distribution": "17元"
+  },
+  {
+    "id": 5,
+    "date": "7-02",
+    "salesChartData": "8",
+    "distribution": "13元"
+  },
+  {
+    "id": 6,
+    "date": "7-03",
+    "salesChartData": "7",
+    "distribution": "12元"
+  },
+  {
+    "id": 7,
+    "date": "7-04",
+    "salesChartData": "5",
+    "distribution": "10元"
+  }
+]
+

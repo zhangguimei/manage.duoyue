@@ -1,0 +1,166 @@
+{
+  "tableHeadData": {
+    "id": "编号",
+    "areaName": "区域名称",
+    "areaCode": "区域编码",
+    "areaScale": "区域尺寸(像素)",
+    "showNum": "数字显示",
+    "tips": "备注",
+    "operation": "操作"
+  },
+  "tableContentData": [
+    {
+      "id": 1111,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1112,
+      "areaName": "吉品印象-商城",
+      "areaCode": "11111",
+      "width": 2,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1113,
+      "areaName": "吉品印象-资源",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 3,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1114,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工111",
+      "width": 4,
+      "height": 5,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1115,
+      "areaName": "吉品印象-资讯",
+      "areaCode": "武汉理工333",
+      "width": 4,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1116,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1117,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1118,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1119,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1120,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },{
+      "id": 1121,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1122,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1123,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    },
+    {
+      "id": 1124,
+      "areaName": "吉品印象-书城",
+      "areaCode": "武汉理工",
+      "width": 1,
+      "height": 2,
+      "areaScale": "",
+      "showNum": "是",
+      "tips": "这里是备注",
+      "operation": ""
+    }
+  ]
+}

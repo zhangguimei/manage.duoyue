@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as loginActions from 'ActionsFolder/LoginActions';
 import {animations} from 'UtilsFolder/animation';
+import auth from 'APIFolder/auth';
+import {regPath} from 'UtilsFolder/getDataInfo';
 
 @withRouter
 class FastMenu extends React.Component {
@@ -30,7 +32,7 @@ class FastMenu extends React.Component {
               fastData.map((item, i) => {
                 let {permissionName, accessPath, icon_max} = item;
                 return (
-                  <Link to={accessPath} key={i}>
+                  <Link to={regPath(accessPath)} key={i}>
                     <img src={icon_max} alt={permissionName} className="hvr-pop"/>
                     <span>{permissionName}</span>
                   </Link>

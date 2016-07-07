@@ -6,5 +6,15 @@ module.exports = {
     require.ensure([], (require) => {
       cb(null, require('./components/Website'))
     })
+  },
+  getChildRoutes(nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, [
+        require('./routes/AdvertiseManage'),
+        require('./routes/AdvertiseArea'),
+        require('./routes/ModelManage'),
+        require('./routes/WebList')
+      ])
+    })
   }
 }

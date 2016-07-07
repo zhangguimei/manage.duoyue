@@ -57,7 +57,7 @@ class RelatedRecommend extends React.Component {
 
   deleteRelatedArticle(id) {
     const {articleList} = this;
-    articleList.splice(articleList.indexOf(id), 1)
+    articleList.splice(articleList.indexOf(id), 1);
     this.forceUpdate();
   }
 

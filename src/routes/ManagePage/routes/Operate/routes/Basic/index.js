@@ -6,19 +6,20 @@
 
 'use strict';
 module.exports = {
-  path: 'comment',
+  path: 'basic',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/Comment'))
+      cb(null, require('./components/Basic'))
     })
   },
-  getChildRoutes(location, cb) {
+  getChildRoutes(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/BookConsult'),
-        require('./routes/SiteColumn'),
-        require('./routes/Book'),
-        require('./routes/Source')
+        require('./routes/CustomMenu'),
+        require('./routes/GroupManage'),
+        require('./routes/OperateSetting'),
+        require('./routes/PublicAuthority'),
+        require('./routes/ResponseMsg')
       ])
     })
   },

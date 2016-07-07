@@ -1,6 +1,7 @@
 'use strict';
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
+import {regPath} from 'UtilsFolder/getDataInfo';
 
 class SidebarSubItem extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class SidebarSubItem extends React.Component {
             children && children.map((item, i) => {
               return (
                 <li key={i}>
-                  <Link to={item.accessPath} className={item.accessPath == path ? 'cur' : ""} >{item.permissionName}</Link>
+                  <Link to={regPath(item.accessPath)} className={item.accessPath == path ? 'cur' : ""} >{item.permissionName}</Link>
                 </li>
               );
             })

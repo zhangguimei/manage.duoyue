@@ -4,7 +4,7 @@
  *  Declare : 展示设置-橱窗管理-商品橱窗-新增橱窗
  */
 'use strict';
-import React,{PropTypes}  from 'react';
+import React, {PropTypes}  from 'react';
 import FormItem from 'UIComponentFolder/FormComponent/FormItem';
 
 class ProductAdd extends React.Component {
@@ -27,7 +27,9 @@ class ProductAdd extends React.Component {
     )
   }
 }
+
 ProductAdd.propsType = {
   data: PropTypes.object
 };
+
 export default ProductAdd;

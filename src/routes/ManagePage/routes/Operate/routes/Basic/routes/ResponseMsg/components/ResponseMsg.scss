@@ -1,0 +1,150 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.ResponseMsg {
+  .msg-list {
+    padding: 0 20px;
+    @include group-grid(4, 20px);
+    ul {
+      li {
+        .btns {
+          margin-top: 2px;
+          margin-bottom: 5px;
+        }
+        .no-result {
+          padding: 20px;
+          border: 1px solid $grayD;
+          border-radius: 3px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .weixin-list {
+    border: 1px solid $grayD;
+    border-radius: 3px;
+    .delete {
+      padding: 0 10px 5px 10px;
+      text-align: right;
+    }
+    .no-result {
+      padding: 20px;
+      text-align: center;
+    }
+    dt {
+      .title {
+        position: relative;
+        height: 120px;
+        margin: 10px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+        h5 {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 5px 10px;
+          background-color: rgba(0, 0, 0, .8);
+          line-height: 20px;
+          color: $white;;
+          @extend %ellipsis;
+        }
+      }
+    }
+    dd {
+      .inner {
+        display: table;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid $grayD;
+      }
+      .text, .pic {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .text {
+        padding-right: 10px;
+      }
+      .pic {
+        width: 1%;
+        text-align: right;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+.ResponseModify {
+  padding: 20px 50px;
+  .date-wrap {
+    .DatePicker {
+      display: inline-block;
+      vertical-align: middle;
+      .date-input-wrap {
+        .date-input {
+          width: 140px;
+        }
+      }
+    }
+  }
+  .error-detail{
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+.ResponseSetting {
+  .setting-head {
+    padding: 20px;
+    border-bottom: 1px solid $grayD;
+    li {
+      .caption {
+        display: inline-block;
+        width: 60px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.ResponseSettingMulti {
+  padding: 20px;
+  @extend %clearfix;
+  .multi-left {
+    float: left;
+    width: 300px;
+  }
+  .multi-main {
+    margin-left: 320px;
+    border: 1px solid $grayD;
+    .form-inline {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-bottom: 1px solid $grayD;
+    }
+    .table-wrap {
+      padding: 10px 20px;
+    }
+  }
+  .Table th {
+    text-align: left;
+    padding: 5px;
+  }
+}
+
+.SingleList {
+  &.weixin-list {
+    dd:first-child .inner {
+      border-top: 0;
+    }
+  }
+}
+
+.ResponseSettingInfo{
+  padding:20px;
+}

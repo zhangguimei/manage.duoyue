@@ -44,7 +44,7 @@ class ProductSearch extends React.Component {
     });
   }
 
-  toggleModifyModal(id) {
+  toggleModifyLayer(id) {
     if (id) {
       //console.log(id);
       //获取弹出层数据
@@ -57,14 +57,14 @@ class ProductSearch extends React.Component {
   pluginTableData() {
     tableData.tableContentData.forEach((item, i) => {
       item.operation = <div className="ProductSearchOperation clearfix">
-        <div className="operation-btn left">下架</div>
-        <div className="operation-btn left" onClick={() => this.toggleModifyModal(item.id)}>修改</div>
-        <div className="operation-btn left">删除</div>
+        <button className="btn btn-operate left">下架</button>
+        <button className="btn btn-operate left" onClick={() => this.toggleModifyLayer(item.id)}>修改</button>
+        <button className="btn btn-operate left">删除</button>
       </div>
       item.info = <div className="product-info">
-        <div className="product-title">{item.title}</div>
-        <div className="product-desc">有效期：<span>{item.startTime}</span>至<span>{item.endTime}</span></div>
-        <div className="product-sales">销售量：<span>{item.salesNum}</span>{" "}分销量：<span>{item.subSales}</span></div>
+        <h5 className="product-title">{item.title}</h5>
+        <p className="product-desc">有效期：<span>{item.startTime}</span>至<span>{item.endTime}</span></p>
+        <p className="product-sales">销售量：<span>{item.salesNum}</span>{" "}分销量：<span>{item.subSales}</span></p>
       </div>
     });
   }
@@ -84,8 +84,8 @@ class ProductSearch extends React.Component {
                     selectOnChange={::this.selectOnChange}/>
         {
           showModifyModal &&
-          <Modal onModalClick={::this.toggleModifyModal}>
-            <ProductModify toggleModal={::this.toggleModifyModal}/>
+          <Modal onModalClick={::this.toggleModifyLayer}>
+            <ProductModify toggleModal={::this.toggleModifyLayer}/>
           </Modal>
         }
       </div>

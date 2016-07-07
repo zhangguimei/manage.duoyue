@@ -1,0 +1,75 @@
+{
+  "TreeData": [
+    {
+      "id": 14,
+      "parentId": 0,
+      "name": "甜品",
+      "data": [],
+      "selected": true
+    },
+    {
+      "id": 15,
+      "parentId": 0,
+      "name": "豪车",
+      "data": [],
+      "selected": true
+    },
+    {
+      "id": 16,
+      "parentId": 0,
+      "name": "零食",
+      "data": [],
+      "selected": true
+    },
+    {
+      "id": 17,
+      "parentId": 0,
+      "name": "手机",
+      "data": [],
+      "selected": true
+    },
+    {
+      "id": 18,
+      "parentId": 0,
+      "name": "电脑",
+      "data": [
+        {
+          "id": 19,
+          "parentId": 18,
+          "name": "笔记本",
+          "data": [],
+          "selected": false
+        },
+        {
+          "id": 20,
+          "parentId": 18,
+          "name": "平板电脑",
+          "data": [],
+          "selected": false
+        },
+        {
+          "id": 21,
+          "parentId": 18,
+          "name": "台式机",
+          "data": [],
+          "selected": false
+        },
+        {
+          "id": 22,
+          "parentId": 18,
+          "name": "一体机",
+          "data": [],
+          "selected": false
+        }
+      ],
+      "selected": true
+    },
+    {
+      "id": 23,
+      "parentId": 0,
+      "name": "首饰",
+      "data": [],
+      "selected": true
+    }
+  ]
+}

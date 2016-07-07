@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import "../../../../../../../assets/sass/function";
+
+.AdvertisingManage {
+	font-size: 13px;
+	.search-area {
+		border-bottom: 1px solid $grayD;
+	  padding: 10px 15px;
+	  display: block;
+	  label {
+	  	padding: 0 5px;
+	  }
+	  select {
+	  	height: 30px;
+	  }
+	}
+	.TablePage {
+		margin: 20px;
+		.order-font {
+			margin: 6px 0;
+			color: $gray6;
+		}
+	  .thead-column-0 {
+      width: 5% !important;
+    }
+    .thead-column-1 {
+      width: 5% !important;
+    }
+    .thead-column-2 {
+      width: 10% !important;
+    }
+    .thead-column-3 {
+      width: 10% !important;
+    }
+    .thead-column-4 {
+      width: 10% !important;
+    }
+    .thead-column-5 {
+      width: 10% !important;
+    }
+    .thead-column-6 {
+      width: 10% !important;
+    }
+    .thead-column-7 {
+      width: 10% !important;
+    }
+	}
+	.AdvertiseEditor {
+		padding: 20px 30px;
+	  .input-title {
+	    font-size: 13px;
+	    margin: 5px 0;
+	    display: block;
+	  }
+	  .require {
+	    &:before {
+	      content: "*";
+	      color: #f00;
+	      margin-right: 5px;
+	    }
+	  }
+	  .select-model {
+	  	margin-bottom: 15px;
+	  	.select-item {
+	  		display: inline-block;
+	  	}
+	  	select {
+			  height: 34px;
+			  display: inline-block;
+		    border: 1px solid #ccc;
+		    cursor: pointer;
+		    min-width: 60px;
+		    line-height: 30px !important;
+		    font-size: 13px !important;
+		    padding: 0px 0px 0px 10px;
+		  }
+	  }
+	  .targetWindow {
+	  	margin-bottom: 15px;
+	  	.target-window {
+		  	margin: 5px;
+		  }
+	  }
+	  .setDate {
+	  	margin-bottom: 15px;
+	  	.date-title {
+	  		margin: 5px 0;
+	  		display: block;
+	  	}
+	  	.DatePicker {
+	      display: inline-block;
+	      background-color: $white;
+	      .date-input-wrap {
+	        background-color: $white;
+	      }
+	      .ic {
+	        text-align: center;
+	      }
+		    }
+	    span {
+	      color: $gray3;
+	      padding: 0 5px;
+    	}	
+    }
+	}
+}

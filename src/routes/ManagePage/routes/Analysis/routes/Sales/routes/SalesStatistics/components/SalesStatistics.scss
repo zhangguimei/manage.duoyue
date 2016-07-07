@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.SalesStatistics {
+  .sales-detail {
+    border-bottom: 1px solid $grayD;
+    padding: 20px;
+    .sales-detail-item {
+      width: 180px;
+      border-right: 1px solid $grayD;
+      text-align: center;
+      h5 {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 10px;
+        color: $red;
+      }
+      p {
+        font-size: 14px;
+        line-height: 10px;
+        padding: 20px;
+      }
+    }
+    .sales-detail-item:nth-of-type(3) {
+      border: none;
+    }
+  }
+  .tab-wrap {
+    margin: 10px 0 20px;
+    .tab-type {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .tab-box {
+      display: inline-block;
+      .tab {
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      .active {
+        border-bottom: 2px solid $blue ;
+      }
+    }
+  }
+  .search-wrap {
+    .FormItem {
+      display: inline-block;
+      .subtitle {
+        padding:  0 10px;
+      }
+      .DatePicker {
+        display: inline-block;
+        .date-input-wrap {
+          line-height: 28px;
+          .date-input {
+            line-height: 28px;
+          }
+          .ic {
+            line-height: 28px;
+          }
+        }
+      }
+    }
+    .search-btn {
+      margin-bottom: 2px;
+    }
+  }
+  .chart-wrap {
+    width: 900px;
+    margin: 20px 0;
+  }
+}
+
+
+
+

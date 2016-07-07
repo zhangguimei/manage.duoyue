@@ -18,9 +18,9 @@ import MatchListModify from './MatchListModify';
 
 import styles from './MatchList.scss';
 
-const tableData = require("AssetsFolder/MockData/resource/match/matchlist/match_list_data.json"),
-  matchNullInfo = require("AssetsFolder/MockData/resource/match/matchlist/match_null_info.json"),
-  treeData = require("AssetsFolder/MockData/resource/match/matchlist/match_tree_data.json").menu;
+const tableData = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_list_data.json"),
+  matchNullInfo = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_null_info.json"),
+  treeData = require("AssetsFolder/MockData/sourcecenter/match/matchlist/match_tree_data.json").menu;
 
 class MatchList extends React.Component {
   constructor(props) {

@@ -1,3 +1,8 @@
+/*
+ *  Date    : 2016.7.6
+ *  Author  : Han-Shuangli
+ *  Declare : 用户管理
+ */
 'use strict';
 import React, {PropTypes} from 'react';
 
