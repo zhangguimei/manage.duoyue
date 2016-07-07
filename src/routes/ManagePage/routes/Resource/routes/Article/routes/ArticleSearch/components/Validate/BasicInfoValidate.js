@@ -1,5 +1,5 @@
 "use strict";
-import { isUrl, isInt, require } from 'UtilsFolder/validations';
+import { isUrl, isInt, require } from 'UtilsFolder/formValidations';
 
 const BasicInfoValidate = (values) => {
   const errors = {};

@@ -18,7 +18,7 @@ import Tree from '../Tree/Tree';
 import CascadeSelect from '../CascadeSelect/CascadeSelect';
 import ImageUpload from '../ImageUpload/ImageUpload';
 
-import { requiredValid, maxLengthValid, minLengthValid, patternValid } from '../../utils/validations';
+import { requiredValid, maxLengthValid, minLengthValid, patternValid } from '../../utils/formValidations';
 
 class FormItem extends React.Component {
 

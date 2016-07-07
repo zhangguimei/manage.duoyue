@@ -14,7 +14,7 @@ var nodeModulesPath = path.join(__dirname, 'node_modules');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'babel-polyfill',
+    
     'webpack-hot-middleware/client',
     './src/index.js'
   ],
