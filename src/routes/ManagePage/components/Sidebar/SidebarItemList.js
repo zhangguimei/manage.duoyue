@@ -1,15 +1,17 @@
 'use strict';
 import React, {PropTypes} from 'react';
+import {regPath} from 'UtilsFolder/getDataInfo';
 import {Link} from 'react-router';
 
 class SidebarItemList extends React.Component {
   render() {
-    const {menuData:{permissionName, accessPath}, changeRoute, parent, menuData, path} = this.props;
-    let selected = path.indexOf(accessPath) == 0;
+    const {menuData:{permissionName, accessPath}, changeSubData, menuData, path} = this.props, LEVEL = 3, reg = /^\//;
+    let selected = path.indexOf(accessPath) == 0 &&
+      path.split("/")[LEVEL] == accessPath.split("/")[reg.test("/accessPath") ? LEVEL : LEVEL - 1];
     return (
       <li className="">
-        <Link to={accessPath} className={selected ? "cur":"hvr-shutter-out-horizontal"}
-              onClick={() => changeRoute(parent.split(".").slice(0,-1), menuData)}>
+        <Link to={regPath(accessPath)} className={selected ? "cur":"hvr-shutter-out-horizontal"}
+              onClick={() => changeSubData(menuData)}>
           {permissionName}
         </Link>
       </li>
