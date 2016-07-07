@@ -97,11 +97,6 @@ class TopicCont extends React.Component {
     this.setState({
       showRightColumn: false
     });
-    const contentHeight = document.querySelector('.content').offsetHeight,
-      topHeight = document.querySelector('.TopicTop').offsetHeight,
-      navHeight = document.querySelector('.tab-nav').offsetHeight;
-    const specialHeight = contentHeight - topHeight - navHeight;
-    this.refs.TopicCont.style.height = specialHeight + 'px';
   }
 
   onPageClick(nextPageIndex) {                               //点击切换页数

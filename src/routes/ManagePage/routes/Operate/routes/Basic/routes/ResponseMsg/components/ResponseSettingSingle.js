@@ -11,6 +11,7 @@ import Tab from 'UIComponentFolder/Tab/Tab';
 import Table from 'UIComponentFolder/Table/Table';
 import Pagination from 'UIComponentFolder/Pagination/Pagination';
 import PhotoMaterial from 'PageComponentFolder/PhotoMaterial/PhotoMaterial';
+import styles from './ResponseMsg.scss';
 
 class ResponseSettingSingle extends PhotoMaterial {
   render() {
@@ -65,7 +66,7 @@ class ResponseSettingSingle extends PhotoMaterial {
             <input className="btn btn-primary btn-sm w80 ml10" type="button" value="搜索"/>
           </div>
           <div className="table-wrap">
-            <Table contentData={tableContentData} headData={tableHeadData} isOptional={true}
+            <Table className="table-left" contentData={tableContentData} headData={tableHeadData} isOptional={true}
                    rowsForOnePage={itemsForOnePage} pageIndex={pageIndex}
                    checkBoxClick={::this.onCheckClick} initState={selectedID}/>
             <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>

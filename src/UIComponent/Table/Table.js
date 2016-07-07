@@ -52,7 +52,8 @@ class Table extends React.Component {
     pageIndex: 0,                   //表格当前页数
     editable: false,                //表格是否可双击进行编辑
     deletable: false,               //表格数据是否可删除
-    initState: []                   //表格checkbox初始状态数据
+    initState: [],                  //表格checkbox初始状态数据
+    className:''                    //自定义类
   };
 
   constructor(props) {
@@ -365,7 +366,7 @@ class Table extends React.Component {
   }
 
   render() {
-    const { thClass, tdClass, isOptional, CheckBox, deletable } = this.props,
+    const { thClass, tdClass, isOptional, CheckBox, deletable, className } = this.props,
           { contentDataForShow } = this,
           { checkBoxState, editLocation } = this.state;
     //默认每列等宽
@@ -422,15 +423,15 @@ class Table extends React.Component {
              </tr>;
     });
     return (
-      <table className="Table">
+      <table className={`Table ${className}`}>
         <thead>
         <tr>
           {
             isOptional && (this.headNameList.length > 0) &&
-            <td title="全选当前页" className="select-all" style={{ width: "5%" }}>
+            <th title="全选当前页" className="select-all" style={{ width: "5%" }}>
               <CheckBox name="isAll" checked={checkBoxState && checkBoxState.selectAll}
                         checkBoxOnClick={::this.selectAllClick} value={null}/>
-            </td>
+            </th>
           }
           {headCodes}
         </tr>

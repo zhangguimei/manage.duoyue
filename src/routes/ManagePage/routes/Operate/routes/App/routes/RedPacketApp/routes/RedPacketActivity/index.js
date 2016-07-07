@@ -1,15 +1,15 @@
 /*
- * Created on 2016-06-25 12:15
+ * Created on 2016-06-26 10:43
  *
  * By Susan Su
  */
 
 'use strict';
 module.exports = {
-  path: 'group',
+  path: 'match',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/GroupManage'))
+      cb(null, require('./components/RedPacketActivity'))
     })
   }
 }

@@ -29,17 +29,21 @@ class ChattingRecords extends React.Component {
   render() {
     return (
       <div className="ChattingRecords">
-        <form className="form-inline form">
-          <div className="form-group form-group-sm">
-            <label>关键字&nbsp;&nbsp;</label>
-            <input type="text" className="form-control"/>
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>关键字：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <input type="button" className="btn btn-primary btn-sm w120 ml20" onClick={::this.onClick}
+                   value="同步聊天记录"/>
           </div>
-          <input type="submit" className="btn btn-primary btn-sm ml10 w80"/>
-          <input type="button" className="btn btn-primary btn-sm ml10 w150 right" value="同步聊天记录"
-                 onClick={::this.onClick}/>
-        </form>
+        </div>
         <div className="chatting-table">
-          <Table contentData={chattingrecordsData} headData={tableHeadData}/>
+          <Table className="table-left" contentData={chattingrecordsData} headData={tableHeadData}/>
         </div>
       </div>
     )

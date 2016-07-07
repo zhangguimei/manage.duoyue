@@ -32,7 +32,7 @@ class StyleTemplate extends React.Component {
     });
     return (
       <div className="StyleTemplate">
-        <Table contentData={templateData.tableContentData} headData={tableHeadData}/>
+        <Table className="table-left" contentData={templateData.tableContentData} headData={tableHeadData}/>
       </div>
     )
   }

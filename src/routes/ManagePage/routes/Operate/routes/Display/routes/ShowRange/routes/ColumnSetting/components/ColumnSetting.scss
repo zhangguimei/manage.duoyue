@@ -2,20 +2,4 @@
 @import "../../../../../../../../../../../assets/sass/function";
 
 .ColumnSetting {
-  padding: 40px;
-  .cursor {
-    cursor: pointer;
-  }
-  .CheckBoxItem {
-    width: 300px;
-    text-align: left;
-    .tree-item {
-      display: block;
-      width: 100%;
-      .item-title {
-        display: inline-block;
-        width: 70px;
-      }
-    }
-  }
 }

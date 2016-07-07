@@ -6,19 +6,18 @@
 
 'use strict';
 module.exports = {
-  path: 'usermanage',
+  path: 'apply',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/UserManage'))
+      cb(null, require('./components/App'))
     })
   },
   getChildRoutes(location, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./routes/UserSearch'),
-        require('./routes/UserImage'),
-        require('./routes/UserVideo'),
-        require('./routes/GroupManage')
+        require('./routes/WeiXinQRcode'),
+        require('./routes/KeywordApp'),
+        require('./routes/RedPacketApp')
       ])
     })
   },

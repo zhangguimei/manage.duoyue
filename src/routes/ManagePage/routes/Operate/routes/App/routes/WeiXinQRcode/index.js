@@ -6,10 +6,10 @@
 
 'use strict';
 module.exports = {
-  path: 'search',
+  path: 'qrcode',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/UserSearch'))
+      cb(null, require('./components/WeiXinQRcode'))
     })
   }
 }

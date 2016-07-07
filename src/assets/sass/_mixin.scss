@@ -527,3 +527,40 @@
   //filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: blur($value);
 }
+
+//表单错误提醒
+%error-inline {
+  .error-detail {
+    margin-left: 5px;
+    font-size: 12px;
+    color: $red;
+  }
+}
+
+%error-block {
+  .error-detail {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: $red;
+  }
+}
+
+//日期选择器
+%datepicker-sm {
+  .DatePicker {
+    .date-input-wrap {
+      .date-input {
+        height: 28px;
+        padding: 5px 10px;
+        line-height: 18px;
+        font-size: 12px;
+      }
+      .ic {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.KeywordApp {
+  .KeywordApp-table {
+    padding: 20px;
+    .Table {
+      th {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.KeywordSetup {
+  .hd {
+    padding:15px 20px;
+    border-bottom: 1px solid #ddd;
+    .text {
+      li {
+        padding:2px 0;
+        i {
+          display: inline-block;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+.BasicInfo {
+  padding: 20px;
+  .form-group {
+    .FormItem {
+      display: inline-block;
+    }
+  }
+  @extend %error-inline;
+}

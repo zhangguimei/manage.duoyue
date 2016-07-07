@@ -10,25 +10,24 @@ import TopicModify from './TopicModify';
 import styles from './TopicList.scss';
 
 const operData = [
-  {
-    'type': 'link',
-    'name': '查看链接'
-  },
-  {
-    'type': 'content',
-    'name': '栏目内容'
-  },
-  {
-    'type': 'modify',
-    'name': '修改信息'
-  },
-  {
-    'type': 'delect',
-    'name': '删除'
-  }
-];
-
-const tableData = require("AssetsFolder/MockData/sourcecenter/topic/topic_list_data.json");
+    {
+      'type': 'link',
+      'name': '查看链接'
+    },
+    {
+      'type': 'content',
+      'name': '栏目内容'
+    },
+    {
+      'type': 'modify',
+      'name': '修改信息'
+    },
+    {
+      'type': 'delect',
+      'name': '删除'
+    }
+  ],
+  tableData = require("AssetsFolder/MockData/sourcecenter/topic/topic_list_data.json");
 
 class TopicList extends React.Component {
   constructor(props) {
@@ -94,12 +93,31 @@ class TopicList extends React.Component {
 
     return (
       <div className="TopicList">
-        <Table contentData={tableContent} headData={tableData.tableHeadData}/>
-        {
-          showModal && <TopicModify index={index} list={list} showModal={showModal} toggleClick={()=>{
+        <div className="search-bar">
+          <form className="form-inline left">
+            <div className="form-group form-group-sm">
+              <label>分类：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <div className="form-group form-group-sm">
+              <label>名称：</label>
+              <input type="text" className="form-control"/>
+            </div>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
+          </form>
+          <div className="right">
+            <input type="button" className="btn btn-primary btn-sm w100 ml20"
+                   value="新增专题"/>
+          </div>
+        </div>
+        <div className="table-wrap">
+          <Table className="table-left" contentData={tableContent} headData={tableData.tableHeadData}/>
+          {
+            showModal && <TopicModify index={index} list={list} showModal={showModal} toggleClick={()=>{
           this.toggleClick()}
           }/>
-        }
+          }
+        </div>
       </div>
     )
   }

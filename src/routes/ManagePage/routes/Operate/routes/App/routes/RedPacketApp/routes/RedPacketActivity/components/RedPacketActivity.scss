@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import "../../../../../../../../../../../assets/sass/function";
+
+.RedPacketActivity {
+  .redPacket-main {
+    padding: 20px;
+    ul {
+      margin-left: -20px;
+      li {
+        float: left;
+        width: 260px;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        .redPacket-item-top {
+          padding: 10px;
+          height: 250px;
+          h5 {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+    .pic {
+      height: 150px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .greet {
+      font-size: 12px;
+      color: #999;
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0px 10px 0px;
+    }
+    .totalAmount {
+      color: #f30;
+      padding: 10px 0px;
+    }
+    .data {
+      padding: 5px 10px;
+    }
+    .oper {
+      border-top: 1px dotted #ddd;
+      padding: 10px 0px 10px 0px;
+      text-align: center;
+    }
+  }
+}
+
+.RedPacketModify {
+  .hd {
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    .text {
+      li {
+        margin-bottom: 4px;
+        i {
+          display: inline-block;
+          width: 70px;
+        }
+      }
+    }
+  }
+}
+
+.BasicInfos {
+  padding: 20px 50px;
+  @extend %error-block;
+  .basicInfo-top {
+    .basicInfo-top-left {
+      width: 450px;
+    }
+    .basicInfo-top-right {
+      float: left;
+      width: 500px;
+    }
+  }
+  .basicInfo-bottom {
+    .basicInfo-bottom-title {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0px 5px 0px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .basicInfo-bottom-main {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .basicInfo-bottom-main3 {
+      @extend %clearfix;
+      .FormItem {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    }
+  }
+  .form-default {
+    .form-group {
+      margin-bottom: 10px;
+      position: relative;
+      .unit {
+        position: absolute;
+        left: 110px;
+        top: 30px;
+      }
+    }
+    .FormItem {
+      margin-bottom: 0;
+    }
+  }
+  .subtitle {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .basicInfo-bottom {
+    .form-group {
+      position: relative;
+      float: left;
+      height: 77px;
+      .unit {
+        position: absolute;
+        left: 110px;
+        top: 30px;
+      }
+    }
+  }
+}
+
+.RedpacketDetails {
+  padding: 20px;
+  .Table {
+    padding-top: 20px;
+    th {
+      text-align: left;
+      padding-left: 5px;
+      font-weight: normal;
+    }
+  }
+}
+
+.MessagePrompt {
+  padding: 20px;
+  .form-group {
+    width: 400px;
+    .messagePrompt-title {
+      padding: 20px 0 20px 40px;
+    }
+
+  }
+  .FormItem {
+    margin-bottom: 10px;
+    position: relative;
+    .subtitle {
+      position: absolute;
+      top: 29%;
+      left: 0;
+    }
+    input, textarea {
+      margin-left: 40px;
+    }
+  }
+}
+
+.RedPacketAdd {
+  padding: 20px 40px;
+  @extend %error-block;
+}

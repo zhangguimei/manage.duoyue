@@ -15,7 +15,8 @@ import styles from './PhotoMaterial.scss';
 
 class PhotoMaterial extends React.Component {
   static defaultProps = {
-    itemsForOnePage: 10  //分页数
+    itemsForOnePage: 10,  //分页数
+    selectedData:[]
   };
 
   constructor(props) {
@@ -42,6 +43,11 @@ class PhotoMaterial extends React.Component {
       index: index,
       pageIndex: 1,
       tableData: this.fetchData(index),
+      showTable: false
+    }, ()=> {
+      this.setState({
+        showTable: true
+      })
     });
   }
 
@@ -79,7 +85,7 @@ class PhotoMaterial extends React.Component {
   }
 
   render() {
-    const {pageIndex, tableData:{tableHeadData, tableContentData}, selectedID} = this.state,
+    const {pageIndex, tableData:{tableHeadData, tableContentData}, selectedID, showTable} = this.state,
       {itemsForOnePage, data, navData} = this.props;
     const totalPages = Math.ceil(tableContentData.length / itemsForOnePage),
       tabContent = navData.map((item) => {
@@ -140,19 +146,22 @@ class PhotoMaterial extends React.Component {
           <Tab TabItemsData={TabItemsData} onTypeChange={::this.onTypeChange}/>
           <div className="form-inline">
             <div className="form-group form-group-sm">
-              <label>分类&nbsp;&nbsp;</label>
+              <label>分类</label>
               <input className="form-control"/>
             </div>
-            <div className="form-group form-group-sm ml10">
-              <label>文章标题&nbsp;&nbsp;</label>
+            <div className="form-group form-group-sm">
+              <label>文章标题</label>
               <input className="form-control"/>
             </div>
-            <input className="btn btn-primary btn-sm w80 ml10" type="button" value="搜索"/>
+            <input className="btn btn-primary btn-sm w80" type="button" value="搜索"/>
           </div>
           <div className="table-wrap">
-            <Table contentData={tableContentData} headData={tableHeadData} isOptional={true}
-                   rowsForOnePage={itemsForOnePage} pageIndex={pageIndex}
-                   checkBoxClick={::this.onCheckClick} initState={selectedID}/>
+            {
+              showTable &&
+              <Table className="table-left" contentData={tableContentData} headData={tableHeadData} isOptional={true}
+                     rowsForOnePage={itemsForOnePage} pageIndex={pageIndex}
+                     checkBoxClick={::this.onCheckClick} initState={selectedID}/>
+            }
             <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick}/>
           </div>
         </div>
@@ -162,10 +171,10 @@ class PhotoMaterial extends React.Component {
 }
 
 PhotoMaterial.propTypes = {
-  data: PropTypes.object.isRequired,
-  navData: PropTypes.array.isRequired,
-  itemsForOnePage:PropTypes.number,
-  selectedData:PropTypes.array
+  data: PropTypes.object.isRequired,//table数据
+  navData: PropTypes.array.isRequired,//tab数据
+  itemsForOnePage: PropTypes.number,//每一页的显示的数据
+  selectedData: PropTypes.array//默认勾选的数据
 };
 
 export default PhotoMaterial;

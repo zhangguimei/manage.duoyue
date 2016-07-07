@@ -82,19 +82,19 @@ class TextMaterial extends React.Component {
       <div className="TextMaterial">
         <div className="search-bar">
           <form className="form-inline left">
-            <div className="form-group">
+            <div className="form-group form-group-sm">
               <label>书名：</label>
               <input type="text" className="form-control"/>
             </div>
-            <input type="button" className="btn btn-primary w80" value="搜索"/>
+            <input type="button" className="btn btn-primary btn-sm w80" value="搜索"/>
           </form>
           <div className="right">
-            <input type="button" className="btn btn-primary w120" value="新增文本素材"
+            <input type="button" className="btn btn-primary btn-sm w120" value="新增文本素材"
                    onClick={() => this.onModifyClick('add')}/>
           </div>
         </div>
         <div className="table-wrap">
-          <Table contentData={tableContent} headData={tableData.tableHeadData}/>
+          <Table className="table-left" contentData={tableContent} headData={tableData.tableHeadData}/>
         </div>
         {
           showLayer &&

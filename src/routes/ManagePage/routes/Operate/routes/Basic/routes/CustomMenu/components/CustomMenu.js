@@ -29,14 +29,20 @@ class CustomMenu extends React.Component {
       menuData: menuListData,
       clickType: '',//add,modify
       clickData: {},
-      selectID: 1
+      selectID: 1,
+      showSelect: true
     }
   }
 
   onMenuClick(type, id) {
     const {menuData} = this.state;
     this.setState({
-      clickType: type
+      clickType: type,
+      showSelect: false
+    }, ()=> {
+      this.setState({
+        showSelect: true
+      })
     });
     switch (type) {
       case 'add':
@@ -105,8 +111,7 @@ class CustomMenu extends React.Component {
   }
 
   render() {
-    const {selectID, clickType, clickData, menuData} = this.state;
-    console.log("selectID", selectID, "clickData", clickData);
+    const {selectID, clickType, clickData, menuData, showSelect} = this.state;
     return (
       <div className="CustomMenu">
         <div className="menu-left">
@@ -154,16 +159,19 @@ class CustomMenu extends React.Component {
                 }
                 <div className="form-group">
                   <label>菜单类型</label>
-                  <select className="form-control" onChange={::this.onSelectChange}
-                          defaultValue={clickData.type}>
-                    {
-                      options.map((item, i) => {
-                        return (
-                          <option key={i} value={item.id}>{item.value}</option>
-                        )
-                      })
-                    }
-                  </select>
+                  {
+                    showSelect &&
+                    <select className="form-control" onChange={::this.onSelectChange}
+                            defaultValue={clickData.type}>
+                      {
+                        options.map((item, i) => {
+                          return (
+                            <option key={i} value={item.id}>{item.value}</option>
+                          )
+                        })
+                      }
+                    </select>
+                  }
                 </div>
                 <FormItem title="菜单名称" className="form-control" rules={{required: true}} requireError
                           defaultValue={clickData.title} value={clickData.title}/>

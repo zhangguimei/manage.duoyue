@@ -46,7 +46,7 @@ class ColumnSetting extends React.Component {
     });
     return (
       <div className="ColumnSetting">
-        <Table contentData={viewRangeData.tableContentData} headData={tableHeadData}/>
+        <Table className="table-left" contentData={viewRangeData.tableContentData} headData={tableHeadData}/>
         <FixBottom>
           <input className="btn btn-primary w100" type="button" value="确定"/>
         </FixBottom>

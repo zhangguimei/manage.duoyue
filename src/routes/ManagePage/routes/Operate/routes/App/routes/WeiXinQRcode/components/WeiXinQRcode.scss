@@ -1,0 +1,269 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.WeiXinQRcode {
+  .qrcode-content {
+    padding: 10px;
+    width: 100%;
+    .qrcode-item {
+      padding: 10px;
+      width: 25%;
+      &:nth-child(4n+1) {
+        clear: both;
+      }
+      .qrcode-item-top {
+        margin-bottom: 5px;
+        .qrcode-img {
+          width: 110px;
+          img {
+            width: 100px;
+          }
+        }
+        .qrcode-info {
+          padding-top: 3px;
+          margin-left: 110px;
+          width: 110px;
+          height: 100px;
+          .oper {
+            padding-top: 15px;
+          }
+          .color {
+            color: #777;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .WeiXinQRcodeSetup {
+    .hd {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      .img {
+        width: 90px;
+        height: 90px;
+      }
+      .text {
+        margin: 10px 0;
+        margin-left: 100px;
+        li {
+          margin-bottom: 4px;
+          i {
+            display: inline-block;
+            width: 50px;
+          }
+        }
+      }
+      .info {
+        margin: 10px 0;
+        border-left: 1px solid #ddd;
+        li {
+          width: 120px;
+          text-align: center;
+          height: 60px;
+          line-height: 30px;
+          border-right: 1px solid #ddd;
+        }
+      }
+    }
+  }
+  .BasicInfo {
+    padding: 20px;
+    .chart-box {
+      height: 352px;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      .Chart {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .TablePage {
+    padding: 20px;
+    .Table {
+      th {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+  .ScanUsers {
+    padding: 20px;
+    .Table {
+      th {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+  .ResponseMessage {
+    padding: 20px;
+    .response-left {
+      width: 300px;
+    }
+    .response-right {
+      margin-left: 310px;
+      border: 1px solid #ddd;
+      .cont-wrap {
+        padding: 0 20px;
+      }
+      .cont-search {
+        margin-top: 20px;
+        border-bottom: 1px solid $grayD;
+        padding-bottom: 10px;
+      }
+      .Table {
+        margin-top: 10px;
+        th {
+          text-align: left;
+          padding-left: 5px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.qrcode-item-main {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  li {
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+      border-bottom: none;
+    }
+    .item {
+      display: table;
+      width: 100%;
+      padding: 12px;
+      .qrcode-item-tit {
+        padding-right: 10px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .qrcode-tip-tit {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .pic {
+        text-align: right;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .qrcode-tip-img {
+        position: relative;
+        height: 120px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      .meg-tit {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 90px;
+        padding: 5px 10px;
+        background-color: rgba(0,0,0,.8);
+        line-height: 20px;
+        color: #fff;
+      }
+    }
+  }
+
+  .qrcode-tip-abstract {
+    font-size: 12px;
+    padding: 8px 0px;
+    color: #777;
+    line-height: 16px;
+  }
+  .qrcode-item-img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 40px;
+    text-align: right;
+    img {
+      width: 40px;
+    }
+  }
+  .item {
+    padding: 5px;
+  }
+}
+
+.delete {
+  border-top: 1px dotted #eee;
+  padding: 3px 12px 3px 0px;
+  text-align: right;
+}
+
+.WeiXinQRcodeModify {
+  padding: 20px;
+  @extend %error-block;
+}
+
+.MessageViewShow {
+  padding: 20px;
+  .message-main {
+    border: 1px dashed #ddd;
+    padding: 10px;
+    .pic {
+      width: 320px;
+      height: 165px;
+      border-right: 1px dashed #ddd;
+      img {
+        width: 297px;
+        height: 165px;
+      }
+    }
+    .abstract {
+      color: #797C80;
+      margin-left: 320px;
+      padding-left: 10px;
+    }
+  }
+}
+
+.MessageViewShow {
+  .msg-main {
+    .message-cont {
+      padding: 20px;
+      border: 1px solid #ddd;
+      width: 360px;
+      h5 {
+        margin-bottom: 10px;
+      }
+      img {
+        width: 100%;
+      }
+      .info {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    }
+    .message-abstract {
+      margin-left: 380px;
+      .title {
+        padding: 10px 0;
+        .link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.onMessage {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  color: $red;
+  border-radius: 5px;
+  margin-top: 5px;
+}
