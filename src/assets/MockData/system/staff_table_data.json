@@ -1,0 +1,183 @@
+{
+	"headData": {
+		"id": "编号",
+		"userName": "用户名",
+		"role": "角色",
+		"wechatManage": "微信管理",
+		"lastLogin": "最后登录",
+		"operation": "操作"
+	},
+	"contentData": [
+		{
+			"id": 1111,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1112,
+			"userName": "吉品印象-商城",
+			"role": "11111",
+			"width": 2,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 0,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1113,
+			"userName": "吉品印象-资源",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 3,
+			"wechatManage": "",
+			"wechatValue": 2,
+			"lastLogin": "2016-5-20 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1114,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工111",
+			"width": 4,
+			"height": 5,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2013-4-21 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1115,
+			"userName": "吉品印象-资讯",
+			"role": "武汉理工333",
+			"width": 4,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 0,
+			"lastLogin": "2012-3-10 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1116,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1117,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1118,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1119,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1120,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1121,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1122,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1123,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		},
+		{
+			"id": 1124,
+			"userName": "吉品印象-书城",
+			"role": "武汉理工",
+			"width": 1,
+			"height": 2,
+			"wechatManage": "",
+			"wechatValue": 1,
+			"lastLogin": "2016-6-29 00:10:12",
+			"operation": ""
+		}
+	],
+	"wechatOption": [
+		{
+			"id": 1,
+			"value": "吉品印象",
+			"content": "吉品印象"
+		},
+		{
+			"id": 2,
+			"value": "煮酒风云",
+			"content": "煮酒风云"
+		},
+		{
+			"id": 3,
+			"value": "洛克西尼",
+			"content": "洛克西尼"
+		}
+	]
+}

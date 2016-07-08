@@ -63,12 +63,11 @@ class ProductForm extends React.Component {
               <div className="base-info">
                 <div className="clearfix">
                   <div className="form-group w400 left">
-                    <FormItem type='tree' className="w200" treeData={classifyInfo} title="商品分类"
+                    <FormItem type='tree' className="form-control w200" treeData={classifyInfo} title="商品分类"
                               rules={{required: true}}/>
                   </div>
                   <div className="form-group ml30 left">
-                    <label >商品推荐度(越小推荐度越高,最小为0)</label>
-                    <input type="text" className="form-control w200"/>
+                    <FormItem title="商品推荐度(越小推荐度越高,最小为0)" name="topSize" type="text" className="form-control w200"/>
                   </div>
                 </div>
                 <div className="form-group w700 clearfix">
@@ -77,7 +76,7 @@ class ProductForm extends React.Component {
                 </div>
                 <div className="clearfix">
                   <div className="form-group left">
-                    <label >当前库存</label>
+                    <label className="subtitle">当前库存</label>
                     <input type="text" className="form-control w100"/>
                   </div>
                   <div className="form-group ml30 left">

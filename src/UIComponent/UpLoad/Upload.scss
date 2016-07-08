@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import "../../assets/sass/function";
+
+.Upload {
+  margin-left: 20%;
+  .click-area {
+    position: relative;
+    @include props-dpr(height, 50px);
+    .upload-box {
+      @extend %f14;
+      position: absolute;
+      border: 1px solid $grayC;
+      background-color: $grayF;
+      @include props-dpr(height width line-height, 50px 100px 50px);
+      z-index: 10001;
+      .upload-icon {
+        display: inline-block;
+        @include props-dpr(height width, 20px 20px)
+      }
+      .upload-btn {
+        border: 0;
+      }
+    }
+    .file-input {
+      position: absolute;
+      opacity: 0;
+      z-index: 10002;
+      @include props-dpr(height width, 50px 100px);
+      cursor: pointer;
+    }
+  }
+  > table {
+    margin-top: 20px;
+    text-align: center;
+    td {
+      @include props-dpr(height, 50px);
+      @include props-dpr(padding-top padding-bottom, 5px 5px);
+      border: 1px solid #cfd6db;
+      .ProgressController {
+        width: 80%;
+        margin-left: 10%;
+      }
+    }
+    tr {
+      border: 1px solid #cfd6db;
+      @include props-dpr(min-height, 50px);
+      &:nth-child(even) {
+        background-color: $white;
+      }
+      &:nth-child(odd) {
+        background-color: $grayF;
+      }
+      .delete-item {
+        cursor: pointer;
+      }
+    }
+    tr:hover {
+      background-color: #fffce4;
+    }
+
+    th {
+      white-space: nowrap;
+      font-weight: normal;
+      border-bottom: 1px solid #cfd6db;
+      border-left: 1px solid #cfd6db;
+      padding: 5px 5px 5px 5px;
+      background-color: $grayF;
+    }
+  }
+}

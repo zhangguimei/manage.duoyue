@@ -4,23 +4,22 @@
 .QRcode {
   padding: 20px;
   .main-content {
-    @extend %clearfix;
     .item {
-      width: 180px;
-      margin: 5px;
+      margin: 10px;
       border: 1px solid $grayD;
-      .pic {
+      border-radius: 3px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+      .img-wrap {
         padding: 10px;
-        img {
+        .img {
           width: 150px;
-          height:150px;
+          height: 150px;
         }
       }
       .title {
         border-top: 1px dashed $grayD;
         text-align: center;
         font-size: 16px;
-        height: 36px;
         line-height: 36px;
       }
     }

@@ -12,7 +12,7 @@ module.exports = {
       cb(null, [
         require('./routes/AdvertiseManage'),
         require('./routes/AdvertiseArea'),
-        require('./routes/ModelManage'),
+        require('./routes/Template'),
         require('./routes/WebList')
       ])
     })

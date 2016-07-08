@@ -20,30 +20,6 @@
 			margin: 6px 0;
 			color: $gray6;
 		}
-	  .thead-column-0 {
-      width: 5% !important;
-    }
-    .thead-column-1 {
-      width: 5% !important;
-    }
-    .thead-column-2 {
-      width: 10% !important;
-    }
-    .thead-column-3 {
-      width: 10% !important;
-    }
-    .thead-column-4 {
-      width: 10% !important;
-    }
-    .thead-column-5 {
-      width: 10% !important;
-    }
-    .thead-column-6 {
-      width: 10% !important;
-    }
-    .thead-column-7 {
-      width: 10% !important;
-    }
 	}
 	.AdvertiseEditor {
 		padding: 20px 30px;
@@ -55,7 +31,7 @@
 	  .require {
 	    &:before {
 	      content: "*";
-	      color: #f00;
+	      color: $red;
 	      margin-right: 5px;
 	    }
 	  }
@@ -67,7 +43,7 @@
 	  	select {
 			  height: 34px;
 			  display: inline-block;
-		    border: 1px solid #ccc;
+		    border: 1px solid $grayC;
 		    cursor: pointer;
 		    min-width: 60px;
 		    line-height: 30px !important;

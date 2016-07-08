@@ -16,14 +16,14 @@ class AssignMoney extends React.Component {
     super(props);
     this.state = {
       showModifyModal: false,
-      tableContent: [],
+      contentData: [],
       modifyData: {},
       title: "新增"
     };
   }
 
   modifyContent(id, i) {
-    const {tableContent} = this.state;
+    const {contentData} = this.state;
     if (i == true) {
       this.setState({title: "修改"})
     }
@@ -32,28 +32,28 @@ class AssignMoney extends React.Component {
     }
     this.setState({
       showModifyModal: !this.state.showModifyModal,
-      modifyData: tableContent.filter(v => v.id == id)
+      modifyData: contentData.filter(v => v.id == id)
     })
   }
 
   deleteOperation(id) {
-    const {tableContent} = this.state;
+    const {contentData} = this.state;
     this.setState({
-      tableContent: tableContent.filter(v => v.id != id)
+      contentData: contentData.filter(v => v.id != id)
     });
   }
 
   componentDidMount() {
     const {data} = this.props;
     this.setState({
-      tableContent: data.tableContentData
+      contentData: data.contentData
     });
   }
 
   render() {
     const {data} = this.props,
-      {showModifyModal, tableContent} = this.state;
-    data.tableContentData.map((item, i) => {
+      {showModifyModal, contentData} = this.state;
+    data.contentData.map((item, i) => {
       item.operation = <div className="ProductOperation clearfix">
         <div className="modify left" onClick={() => this.modifyContent(item.id,true)}>修改</div>
         <div className="order-font left">|</div>
@@ -62,7 +62,6 @@ class AssignMoney extends React.Component {
     });
     let pagedata = {
       width: "50%",
-      height: "90%",
       closeShowPage: ::this.modifyContent
     };
     let title = this.state.title + "分账商户信息";
@@ -73,13 +72,13 @@ class AssignMoney extends React.Component {
         </div>
         {
           showModifyModal &&
-          <Modal>
+          <Modal className="assign-layer">
             <ShowPage {...pagedata} title={title}>
               <AssignMoneyModal optionsData={data.userOption} modifyData={this.state.modifyData}/>
             </ShowPage>
           </Modal>
         }
-        <TablePage data={data} className="assign-money-table" contentData={tableContent}/>
+        <TablePage className="assign-money-table" headData={data.headData} contentData={contentData}/>
       </div>
     )
   }

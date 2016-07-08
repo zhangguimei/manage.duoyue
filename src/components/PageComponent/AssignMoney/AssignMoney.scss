@@ -2,8 +2,13 @@
 @import "../../../assets/sass/function";
 
 .AssignMoney {
-  .ShowPage {
-    z-index: 11100;
+  .assign-layer {
+    .real-modal {
+      z-index: 12000;
+    }
+    .ShowPage {
+      z-index: 12001;
+    }
   }
   .add-user-area {
     margin: 20px 0 10px 20px;
@@ -19,27 +24,6 @@
     .Table {
       img {
         height: 50px;
-      }
-      .thead-column-0 {
-        width: 5% !important;
-      }
-      .thead-column-1 {
-        width: 5% !important;
-      }
-      .thead-column-2 {
-        width: 5% !important;
-      }
-      .thead-column-3 {
-        width: 5% !important;
-      }
-      .thead-column-4 {
-        width: 5% !important;
-      }
-      .thead-column-5 {
-        width: 10% !important;
-      }
-      .thead-column-6 {
-        width: 5% !important;
       }
       .product-desc, .product-sales {
         font-size: 12px;
@@ -79,18 +63,25 @@
       cursor: pointer;
     }
   }
+
   .AssignMoneyModal {
     padding: 20px;
     .tag-info-title {
       margin: 5px 0;
       display: block;
     }
+    .subtitle {
+      display: block;
+    }
+    .validity-center-text {
+      padding: 5px 10px;
+    }
     .form-title {
       margin-top: 10px;
       div {
         margin-top: 5px;
       }
-      span{
+      span {
         padding: 0 5px;
       }
       .DatePicker {

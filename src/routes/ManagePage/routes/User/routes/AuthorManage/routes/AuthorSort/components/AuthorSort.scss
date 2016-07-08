@@ -2,13 +2,6 @@
 @import "../../../../../../../../../assets/sass/function";
 
 .AuthorSort {
-  .header {
-    padding: 15px 20px;
-    border-bottom: 1px solid $grayD;
-    .search-btn, .create-btn {
-      line-height: 16px;
-    }
-  }
   .content-wrap {
     padding: 20px;
   }
@@ -17,6 +10,9 @@
     .subtitle {
       display: block;
       line-height: 30px;
+    }
+    .desc {
+      resize: vertical;
     }
   }
 }

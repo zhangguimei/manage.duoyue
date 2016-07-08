@@ -65,10 +65,10 @@ class RelatedRecommend extends React.Component {
     const {relatedTableData, classifyData} = this.props,
       {pageIndex, rowsForOnePage} = this.state,
       {articleList} = this,
-      totalPages = Math.ceil(relatedTableData.tableContentData.length / rowsForOnePage);
+      totalPages = Math.ceil(relatedTableData.contentData.length / rowsForOnePage);
     let listCode, tempArr = [];
     articleList.map((item) => {
-      tempArr = tempArr.concat(relatedTableData.tableContentData.filter((dataItem) => {
+      tempArr = tempArr.concat(relatedTableData.contentData.filter((dataItem) => {
         return dataItem.id == item;
       }))
     });
@@ -104,7 +104,7 @@ class RelatedRecommend extends React.Component {
               <button className="btn btn-primary w80 btn-sm">搜索</button>
             </div>
           </form>
-          <Table headData={relatedTableData.tableHeadData} contentData={relatedTableData.tableContentData}
+          <Table headData={relatedTableData.headData} contentData={relatedTableData.contentData}
                  isOptional={true} rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}
                  checkBoxClick={::this.selectArticle}/>
           <Pagination totalPages={totalPages} index={pageIndex} onPageClick={::this.onPageClick} requireSelect={true}

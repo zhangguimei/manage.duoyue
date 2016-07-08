@@ -3,8 +3,6 @@
 
 .UserImage {
   .header {
-    padding: 15px 20px;
-    border-bottom: 1px solid $grayD;
     .DatePicker {
       display: inline-block;
       margin-left: 10px;
@@ -16,18 +14,22 @@
     }
     .search-btn {
       margin-top: -5px;
-      line-height: 16px;
     }
   }
   .content-wrap {
-    padding: 10px 15px;
+    padding: 10px 20px;
     .item {
       width: 20%;
       padding: 10px;
+      &:nth-of-type(5n-4) {
+        padding-left: 0;
+      }
+      &:nth-of-type(5n) {
+        padding-right: 0;
+      }
       .item-content {
         position: relative;
         height: 250px;
-        margin: 10px 1% 10px 0;
         border: 1px solid $grayD;
         overflow: hidden;
         .img-wrap {

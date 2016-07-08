@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.BookSort {
+  .search-bar {
+    padding: 15px 10px;
+    border-bottom: 1px solid $grayD;
+    .FormItem{
+      .subtitle {
+        width: 0;
+      }
+      .w300 {
+        width: 300px;
+      }
+      .tree-wrap {
+        display: inline-block;
+        .Tree {
+          position: absolute;
+          z-index: 10000;
+          width: 300px;
+          height: 180px;
+          border: 1px solid $grayC;
+          overflow: auto;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  .attr-content {
+    padding: 20px;
+  }
+
+  .SortDetail {
+    .w300 {
+      width: 300px;
+    }
+    .ml50 {
+      margin-left: 50px;
+    }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+      background-color: $white;
+    }
+    .subtitle {
+      display: block;
+      width: 120px;
+      padding: 5px 0;
+    }
+    .tree-wrap {
+      display: inline-block;
+      vertical-align: top;
+      .Tree {
+        position: absolute;
+        z-index: 10000;
+        width: 300px;
+        height: 230px;
+        border: 1px solid $grayC;
+        overflow: auto;
+        background-color: $white;
+      }
+    }
+    .icon-upload {
+      .img-box {
+        height: 80px;
+        .file-img {
+          width: 70px;
+          height: 70px;
+          margin: 0 auto;
+        }
+      }
+    }
+    .text-info {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+  }
+}

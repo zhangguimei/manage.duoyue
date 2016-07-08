@@ -1,5 +1,5 @@
 {
-  "tableHeadData": {
+  "headData": {
     "id": "编号",
     "sortNum": "排序值",
     "imgName": "图片名称",
@@ -9,7 +9,7 @@
     "endDate": "结束日期",
     "operation": "操作"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "id": 1111,
       "sortNum": "0",

@@ -1,5 +1,5 @@
 {
-  "tableHeadData": {
+  "headData": {
     "id": "编号",
     "areaName": "区域名称",
     "areaCode": "区域编码",
@@ -8,7 +8,7 @@
     "tips": "备注",
     "operation": "操作"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "id": 1111,
       "areaName": "吉品印象-书城",

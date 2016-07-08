@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import "../../../../../../../assets/sass/function";
+
+.Template {
+  font-size: 13px;
+  .search-area {
+    border-bottom: 1px solid $grayD;
+    padding: 10px 15px;
+    display: block;
+    label {
+      padding: 0 5px;
+    }
+  }
+  .TablePage {
+    margin: 20px;
+    .order-font {
+      margin: 6px 0;
+      color: $gray6;
+    }
+  }
+  .TemplateEditor {
+    padding: 20px 30px;
+    .require {
+      &:before {
+        content: "*";
+        color: $red;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -8,13 +8,14 @@ import Source from './Source';
 import Recommend from './Recommend';
 import Tag from 'PageComponentFolder/Tag/Tag'
 import QRcode from 'PageComponentFolder/QRcode/QRcode';
-import Account from './Account';
+import AssignMoney from 'PageComponentFolder/AssignMoney/AssignMoney';
 import TablePage from 'PageComponentFolder/TablePage/TablePage'
 import styles from './ArticleSearch.scss';
 
 const tagData = require("AssetsFolder/MockData/sourcecenter/book/book_tag_data.json"),
   navData = [{'info': '基本信息'}, {'source': '资源'}, {'tag': '标签'}, {'maxCard': '二维码'}, {'Cookies': '浏览记录'}, {'account': '分账设置'}, {'recommend': '相关推荐'}],
   qrcodeData = require("AssetsFolder/MockData/sourcecenter/article/code_data.json"),
+  fashionTableData = require("AssetsFolder/MockData/sourcecenter/product/product_fashion_table_data.json"),
   historyData = require('AssetsFolder/MockData/sourcecenter/article/cookies_data.json');
 const tabContent = navData.map((item) => {
   return Object.values(item)[0]
@@ -104,9 +105,9 @@ class ArticleModify extends React.Component {
             { index == 1 && <Source/>}
             { index == 2 && <Tag tagData={tagData}/>}
             { index == 3 && <QRcode data={qrcodeData}/>}
-            { index == 4 && <TablePage data={historyData}/>}
+            { index == 4 && <TablePage headData={historyData.tableHeadData} contentData={historyData.tableContentData}/>}
             { index == 6 && <Recommend/>}
-            { index == 5 && <Account/>}
+            { index == 5 && <AssignMoney data={fashionTableData}/>}
           </ShowPage>
         </Modal>
       </div>

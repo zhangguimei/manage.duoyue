@@ -1,0 +1,84 @@
+{
+  "treeData": [
+    {
+      "id": 1,
+      "parentId": 0,
+      "name": "微信阅读",
+      "data": [
+        {
+          "id": 11,
+          "parentId": 1,
+          "name": "热门资讯",
+          "data": []
+        },
+        {
+          "id": 12,
+          "parentId": 1,
+          "name": "好书推荐",
+          "data": []
+        }
+      ]
+    }
+  ],
+  "tableData": {
+    "head": {
+      "id": "编号",
+      "sortNum": "排序值",
+      "clsName": "分类名称",
+      "parentName": "父级名称",
+      "clsDesc": "分类简介",
+      "bookCount": "书籍数量",
+      "operation": "操作"
+    },
+    "content": [
+      {
+        "id": "1",
+        "num": "2",
+        "sortNum": "",
+        "clsName": "微信阅读",
+        "parentName": "",
+        "clsDesc": "巴拉巴拉",
+        "bookCount": "2",
+        "operation": "",
+        "pic": "",
+        "icon1": "",
+        "icon2": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+        "link": "www.baidu.com",
+        "desc": "很好吃哟，尝尝看吧",
+        "definedNum": 31
+      },
+      {
+        "id": "2",
+        "num": "1",
+        "sortNum": "",
+        "clsName": "热门资讯",
+        "parentName": "微信阅读",
+        "clsDesc": "巴拉巴拉",
+        "bookCount": "2",
+        "operation": "",
+        "pic": "http://file.duoyue.me/upload/producttype/20160616/2016_06_16_093803621.jpg",
+        "icon1": "http://file.duoyue.me/upload/producttype/icon/20160616/2016_06_16_093832098.jpg",
+        "icon2": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+        "link": "www.baidu.com",
+        "desc": "很好吃哟，尝尝看吧",
+        "definedNum": 2
+      },
+      {
+        "id": "3",
+        "num": "3",
+        "sortNum": "",
+        "clsName": "好书推荐",
+        "parentName": "微信阅读",
+        "clsDesc": "巴拉巴拉",
+        "bookCount": "2",
+        "operation": "",
+        "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+        "icon1": "http://file.duoyue.me/upload/producttype/icon/20160616/2016_06_16_093832098.jpg",
+        "icon2": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+        "link": "www.baidu.com",
+        "desc": "很好吃哟，尝尝看吧",
+        "definedNum": 1
+      }
+    ]
+  }
+}

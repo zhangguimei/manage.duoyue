@@ -15,19 +15,19 @@ class WebList extends React.Component {
       return (
         <div className="website-box" key={i}>
           <div className="info-group">
-            <span htmlFor="one">机构名称：</span><span>{item.name}</span>
+            <span className="table-name">机构名称：</span><span className="table-info">{item.name}</span>
           </div>
           <div className="info-group">
-            <span>登录账号：</span><span>{item.account}</span>
+            <span className="table-name">登录账号：</span><span className="table-info">{item.account}</span>
           </div>
           <div className="info-group">
-            <span>邀请码：</span><span>{item.invitationCode}</span>
+            <span className="table-name">邀请码：</span><span className="table-info">{item.invitationCode}</span>
           </div>
           <div className="info-group">
-            <span>PC网站：</span><span>{item.websiteURL}</span>
+            <span className="table-name">PC网站：</span><span className="table-info">{item.websiteURL}</span>
           </div>
           <div className="info-group">
-            <span>创建时间：</span><span>{item.createTime}</span>
+            <span className="table-name">创建时间：</span><span className="table-info">{item.createTime}</span>
           </div>
         </div>)
     });
