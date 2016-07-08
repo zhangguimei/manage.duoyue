@@ -63,19 +63,19 @@ class AssignMoneyModal extends React.Component {
     };
     return (
       <form className="AssignMoneyModal" onSubmit={handleSubmit}>
-        <div className="tag-info-title require w150">请选择商户</div>
-        <select defaultValue={defaultvalue}>
+        <span className="subtitle">请选择商户</span>
+        <select defaultValue={defaultvalue} className="form-control w200">
           {selectCode}
         </select>
         <div className="form-title">
-          <div>有效期</div>
+          <span className="subtitle">有效期</span>
           <DatePicker data={datePickerStartData} getPickDate={::this.getPickDate}/>
           <span className="validity-center-text">至</span>
           <DatePicker data={datePickerEndData} getPickDate={::this.getPickDateEnd}/>
         </div>
         <div className="input-model">
-          <span className="input-title">分账单价</span>
-          <input type="text" className="info-input w300" defaultValue={showData.unitPrice}/>
+          <span className="subtitle">分账单价</span>
+          <input type="text" className="form-control w200" defaultValue={showData.unitPrice}/>
         </div>
       </form>
     )

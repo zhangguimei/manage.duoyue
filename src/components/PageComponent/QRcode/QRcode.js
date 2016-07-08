@@ -42,8 +42,8 @@ class QRcode extends React.Component {
       QRcodeContent = showData.map((item, index) => {
         return (
           <div className="item left" key={index}>
-            <div className="pic">
-              <img src={item.pic} alt="二维码"/>
+            <div className="img-wrap">
+              <img className="img" src={item.pic} alt="二维码"/>
             </div>
             <div className="title">{item.title + item.id}</div>
           </div>
@@ -51,7 +51,7 @@ class QRcode extends React.Component {
       });
     return (
       <div className={`QRcode ${className}`}>
-        <div className="main-content">{QRcodeContent}</div>
+        <div className="main-content clearfix">{QRcodeContent}</div>
         <Pagination index={pageIndex} totalPages={totalPage} onPageClick={::this.onPageClick}/>
       </div>
     )

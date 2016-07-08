@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.PageBody {
+  position: relative;
+}
+.TagStruct {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  .select-tag-left {
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid $grayD;
+    overflow: auto;
+  }
+  .select-tag-right {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    padding: 20px 0;
+    .ml50 {
+      margin-left: 50px;
+    }
+    .mt20 {
+      margin-top: 20px;
+    }
+    .w300 {
+      width: 300px;
+    }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+      background-color: $white;
+    }
+    .subtitle {
+      display: inline-block;
+      width: 120px;
+      padding-top: 5px;
+    }
+    .tree-wrap {
+      display: inline-block;
+      vertical-align: top;
+      .Tree {
+        width: 300px;
+        height: 300px;
+        border: 1px solid $grayC;
+        overflow-y: auto;
+        position: absolute;
+        background-color: $white;
+      }
+    }
+    .tag-submit {
+      position:absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 8px 0;
+      border-top: 1px solid $grayD;
+      text-align: center;
+      background-color: $colorBgLight;
+    }
+  }
+  .delete-area {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: $gray3;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import "../../../../../../../../../assets/sass/function";
+
+.PageBody {
+  position: relative;
+}
+.ProductSort {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  .select-tag-left {
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid $grayD;
+    padding: 10px;
+    overflow: auto;
+  }
+  .click-info {
+    padding: 50px;
+    text-align: center;
+  }
+  .select-tag-right {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    padding: 20px 0;
+    overflow-y: auto;
+    .w300 {
+      width: 300px;
+    }
+    .ml50 {
+      margin-left: 50px;
+    }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+      background-color: $white;
+    }
+    .subtitle {
+      display: block;
+      width: 120px;
+      padding: 5px 0;
+    }
+    .tree-wrap {
+      display: inline-block;
+      vertical-align: top;
+      .Tree {
+        position: absolute;
+        z-index: 10000;
+        width: 300px;
+        height: 230px;
+        border: 1px solid $grayC;
+        overflow-y: auto;
+        background-color: $white;
+      }
+    }
+    .icon-upload {
+      .img-box {
+        height: 80px;
+        .file-img {
+          width: 70px;
+          height: 70px;
+          margin: 0 auto;
+        }
+      }
+    }
+    .tag-submit {
+      position:fixed;
+      bottom: 0;
+      width: 70%;
+      padding: 8px 0;
+      border-top: 1px solid $grayD;
+      text-align: center;
+      background-color: $colorBgLight;
+    }
+  }
+}

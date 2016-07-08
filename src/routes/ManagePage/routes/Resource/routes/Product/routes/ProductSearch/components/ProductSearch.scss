@@ -8,36 +8,6 @@
     img {
       height: 50px;
     }
-    .thead-column-0 {
-      width: 50px;
-    }
-    .thead-column-1 {
-      width: 50px;
-    }
-    .thead-column-2 {
-      width: 100px;
-    }
-    .thead-column-3 {
-      //width: 40%;
-    }
-    .thead-column-4 {
-      width: 80px;
-    }
-    .thead-column-5 {
-      width: 80px;
-    }
-    .thead-column-6 {
-      width: 80px;
-    }
-    .thead-column-7 {
-      width: 80px;
-    }
-    .thead-column-8 {
-      width: 80px;
-    }
-    .thead-column-9 {
-      width: 220px;
-    }
     .product-desc, .product-sales {
       font-size: 12px;
       color: $gray6;
@@ -56,6 +26,10 @@
     .ProductForm {
       position: relative;
       padding: 35px 50px 20px 50px;
+      .subtitle {
+        display: block;
+        line-height: 30px;
+      }
       .form-list {
         .form-item {
           padding-top: 20px;
@@ -90,30 +64,6 @@
     .Table {
       img {
         height: 50px;
-      }
-      .thead-column-0 {
-        width: 5% !important;
-      }
-      .thead-column-1 {
-        width: 5% !important;
-      }
-      .thead-column-2 {
-        width: 5% !important;
-      }
-      .thead-column-3 {
-        width: 5% !important;
-      }
-      .thead-column-4 {
-        width: 5% !important;
-      }
-      .thead-column-5 {
-        width: 5% !important;
-      }
-      .thead-column-6 {
-        width: 5% !important;
-      }
-      .thead-column-7 {
-        width: 5% !important;
       }
       .product-desc, .product-sales {
         font-size: 12px;

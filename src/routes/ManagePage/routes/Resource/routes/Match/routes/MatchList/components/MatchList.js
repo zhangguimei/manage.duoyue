@@ -68,7 +68,7 @@ class MatchList extends React.Component {
     });
   }
 
-  handleOperationClick(type,id) {
+  handleOperationClick(type, id) {
     switch (type) {
       case 0:
       case 1:
@@ -85,8 +85,8 @@ class MatchList extends React.Component {
         break;
       case 2:
         this.setState({
-            tableContentData: this.state.tableContentData.filter(v => v.id != id)
-          });
+          tableContentData: this.state.tableContentData.filter(v => v.id != id)
+        });
       default:
         break;
     }
@@ -100,18 +100,14 @@ class MatchList extends React.Component {
     });
     return (
       <div className="MatchList">
-        <div className="matchList-top form-inline">
-          <div className="keyword-area">
-            <div className="related-search-box clearfix">
-              <span className="inline">分类</span>
-              <FormItem type="tree" name="classify" className="form-control" treeData={treeData}/>
-              <span className="inline">名称</span>
-              <input className="form-control"/>
-              <input type="button" className="btn btn-primary w80 ml10" value="查询"/>
-              <span className="right btn btn-primary w120" onClick={::this.toggleCreareLayer}>新增活动报名</span>
-            </div>
-          </div>
-        </div>
+        <header className="search-bar header clearfix">
+          <span className="inline">分类</span>
+          <FormItem type="tree" name="classify" className="form-control input-sm w200" treeData={treeData}/>
+          <span className="inline">名称</span>
+          <input className="form-control input-sm w200 ml10"/>
+          <input type="button" className="btn btn-primary w80 ml10 btn-sm" value="查询"/>
+          <button className="right btn btn-primary w120 btn-sm" onClick={::this.toggleCreareLayer}>新增活动报名</button>
+        </header>
         <div className="matchList-table">
           <Table headData={tableData.tableHeadData} contentData={tableContentData}
                  rowsForOnePage={rowsForOnePage} pageIndex={pageIndex}/>

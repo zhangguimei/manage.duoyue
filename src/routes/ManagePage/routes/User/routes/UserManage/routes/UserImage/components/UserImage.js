@@ -44,14 +44,14 @@ class UserImage extends React.Component {
     const {showConfirm} = this.state;
     return (
       <div className="UserImage">
-        <header className="header">
+        <header className="search-bar header">
           <label htmlFor="keyword">图片作者</label>
           <input name="keyword" id="keyword" type="text" className="form-control inline-block input-sm w80 ml10"/>
           <label className="ml20">开始时间</label>
           <DatePicker className="startTime"/>
           <label className="ml20">结束时间</label>
           <DatePicker className="endTime"/>
-          <button className="btn btn-primary w80 ml10 input-sm search-btn" onClick={::this.searchUserImage}>搜索</button>
+          <button className="btn btn-primary w80 ml10 btn-sm search-btn" onClick={::this.searchUserImage}>搜索</button>
         </header>
         <section className="content-wrap clearfix">
           {

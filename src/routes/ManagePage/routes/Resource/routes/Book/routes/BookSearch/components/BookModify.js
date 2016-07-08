@@ -148,9 +148,9 @@ class BookModify extends React.Component {
           { tabIndex == 4 && <Tag tagData={tagData}/>}
           { tabIndex == 5 && <QRcode data={codeData} count={6}/>}
           { tabIndex == 6 && <BookAuthor authorListData={authorListData}/>}
-          { tabIndex == 7 && <TablePage className="book-browse-history" data={browseHistoryTableData}/>}
+          { tabIndex == 7 && <TablePage className="book-browse-history" headData={browseHistoryTableData.headData} contentData={browseHistoryTableData.contentData}/>}
           { tabIndex == 8 && <AssignMoney data={fashionTableData}/>}
-          { tabIndex == 9 && <TablePage className="book-sales-history" data={salesHistoryTableData}/> }
+          { tabIndex == 9 && <TablePage className="book-sales-history" headData={salesHistoryTableData.headData} contentData={salesHistoryTableData.contentData}/> }
           { tabIndex == 10 &&
           <RelatedRecommend relatedTableData={relatedTableData} classifyData={classifyInfo}/>}
         </ShowPage>

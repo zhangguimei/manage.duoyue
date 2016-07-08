@@ -16,4 +16,4 @@ System.propTypes = {
   children: PropTypes.any
 }
 
-export default System;
+module.exports = System;

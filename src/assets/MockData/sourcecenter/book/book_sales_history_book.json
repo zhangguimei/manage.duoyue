@@ -1,5 +1,5 @@
 {
-  "tableHeadData": { 
+  "headData": {
     "orderNum": "订单号",
     "submitTime": "提交时间",
     "wechatNum": "微信公号",
@@ -9,7 +9,7 @@
     "subtotal": "小计",
     "fashionUser":"分销用户"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "orderNum":1122,
       "submitTime": "2015-2-20",    

@@ -1,10 +1,10 @@
 {
-  "tableHeadData": {
+  "headData": {
     "article": "文章名称",
     "price": "售价",
     "classify": "操作"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "id": 11,
       "article": "荆门市水利志（1986—2008）",

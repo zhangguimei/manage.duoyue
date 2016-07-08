@@ -1,0 +1,154 @@
+{
+  "head": {
+    "id": "编号",
+    "attrName": "属性名称",
+    "optionsCount": "可选值数量",
+    "limit": "使用范围限定",
+    "operation": "操作"
+  },
+  "content": [
+    {
+      "id": 1,
+      "attrName": "口语",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": [
+          {
+            "id": 1,
+            "attrName": "职场英语1",
+            "operation": ""
+          },
+          {
+            "id": 2,
+            "attrName": "托福托福",
+            "operation": ""
+          },
+          {
+            "id": 3,
+            "attrName": "职场英语1",
+            "operation": ""
+          }
+        ]
+      },
+      "limit": "职场英语",
+      "operation": ""
+    },
+    {
+      "id": 2,
+      "attrName": "托福",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": []
+      },
+      "limit": "职称英语",
+      "operation": ""
+    },
+    {
+      "id": 3,
+      "attrName": "口语",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": [
+          {
+            "id": 1,
+            "attrName": "职场英语1",
+            "operation": ""
+          },
+          {
+            "id": 2,
+            "attrName": "托福托福",
+            "operation": ""
+          },
+          {
+            "id": 3,
+            "attrName": "职场英语1",
+            "operation": ""
+          }
+        ]
+      },
+      "limit": "职称英语",
+      "operation": ""
+    },
+    {
+      "id": 4,
+      "attrName": "托福",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": []
+      },
+      "limit": "职称英语",
+      "operation": ""
+    },
+    {
+      "id": 5,
+      "attrName": "口语",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": [
+          {
+            "id": 1,
+            "attrName": "职场英语1",
+            "operation": ""
+          },
+          {
+            "id": 2,
+            "attrName": "托福托福",
+            "operation": ""
+          },
+          {
+            "id": 3,
+            "attrName": "职场英语1",
+            "operation": ""
+          },
+          {
+            "id": 4,
+            "attrName": "职场英语1",
+            "operation": ""
+          }
+        ]
+      },
+      "limit": "职称英语",
+      "operation": ""
+    },
+    {
+      "id": 6,
+      "attrName": "托福",
+      "options": {
+        "optionHead": {
+          "id": "编号",
+          "attrName": "属性可选值",
+          "limit": "",
+          "operation": "操作"
+        },
+        "optionContent": []
+      },
+      "limit": "职称英语",
+      "operation": ""
+    }
+  ]
+}

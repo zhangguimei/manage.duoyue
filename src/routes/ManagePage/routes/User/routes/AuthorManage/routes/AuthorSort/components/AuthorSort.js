@@ -77,10 +77,10 @@ class AuthorSort extends React.Component {
       {showConfirmLayer, showCreateLayer} = this.state;
     return (
       <div className="AuthorSort">
-        <header className="header clearfix">
-          <input type="text" name="keyword" className="form-control w100 left"/>
-          <button className="search-btn btn btn-primary input-sm ml20 left">查询</button>
-          <button className="create-btn btn btn-primary input-sm right" onClick={()=>::this.toggleCreateLayer(false)}>
+        <header className="search-bar clearfix">
+          <input type="text" name="keyword" className="form-control input-sm w100 left"/>
+          <button className="search-btn btn btn-primary btn-sm ml20 left">查询</button>
+          <button className="create-btn btn btn-primary btn-sm right" onClick={()=>::this.toggleCreateLayer(false)}>
             新增分类
           </button>
         </header>

@@ -1,0 +1,61 @@
+@charset 'utf-8';
+@import "../../../../../../../assets/sass/function";
+
+.Staff {
+	font-size: 13px;
+	.search-area {
+		border-bottom: 1px solid $grayD;
+	  padding: 10px 15px;
+	  display: block;
+	}
+	.TablePage {
+		margin: 20px;
+	  .order-font {
+			margin: 6px 0;
+			color: $gray6;
+		}
+	}
+	.StaffEditor {
+		padding: 20px 30px;
+	  .require {
+	    &:before {
+	      content: "*";
+	      color: $red;
+	      margin-right: 5px;
+	    }
+	  }
+	  .select-model {
+	  	margin-bottom: 15px;
+	  	.select-item {
+	  		display: inline-block;
+	  	}
+	  	.input-title {
+		    font-size: 13px;
+		    margin: 5px 0;
+		    display: block;
+		  }
+	  	select {
+			  height: 34px;
+			  display: inline-block;
+		    border: 1px solid $grayC;
+		    cursor: pointer;
+		    min-width: 60px;
+		    line-height: 30px !important;
+		    font-size: 13px !important;
+		    padding: 0px 0px 0px 10px;
+		  }
+	  }
+	  input[type=checkbox] {
+	  	margin: 5px 5px 0;
+
+	  }
+	  .form-group {
+	  	p {
+	  		color: $gray6;
+	  	}
+	  	span {
+	  		color: $gray6;
+	  	}
+	  }
+	}
+}

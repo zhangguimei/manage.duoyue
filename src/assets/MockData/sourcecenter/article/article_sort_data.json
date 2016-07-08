@@ -1,0 +1,176 @@
+{
+  "treeData": [
+    {
+      "id": 1,
+      "parentId": 0,
+      "name": "微信阅读",
+      "data": [
+        {
+          "id": 11,
+          "parentId": 1,
+          "name": "热门资讯",
+          "data": [],
+          "articleData": {
+            "pageName": "hotNews",
+            "type": 3,
+            "desc": "",
+            "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+            "window": 1,
+            "style": 1,
+            "contentSort": 1,
+            "sortNum": 2,
+            "link": "www.baidu.com",
+            "systemCoding": 1,
+            "url1": "/demo/113562.aspx?id=5200",
+            "url2": "/demo/11356mobile/2.aspx?id=5200",
+            "url3": "/website/11356/cn/weiyuedu/zxdt.html",
+            "url4": "/website/11356/cn/mobile/weiyuedu/zxdt.html"
+          },
+          "selected": false
+        },
+        {
+          "id": 12,
+          "parentId": 1,
+          "name": "好书推荐",
+          "data": [],
+          "articleData": {
+            "pageName": "goodBooks",
+            "type": 1,
+            "desc": "",
+            "pic": "",
+            "window": 1,
+            "style": 1,
+            "contentSort": 1,
+            "sortNum": 3,
+            "link": "www.baidu.com",
+            "systemCoding": 0,
+            "url1": "/demo/113562.aspx?id=5200",
+            "url2": "/demo/11356mobile/2.aspx?id=5200",
+            "url3": "/website/11356/cn/weiyuedu/zxdt.html",
+            "url4": "/website/11356/cn/mobile/weiyuedu/zxdt.html"
+          },
+          "selected": false
+        }
+      ],
+      "articleData": {
+        "pageName": "weixinRead",
+        "type": 1,
+        "desc": "",
+        "pic": "",
+        "window": 1,
+        "style": 1,
+        "contentSort": 1,
+        "sortNum": 0,
+        "link": "",
+        "systemCoding": 1,
+        "url1": "/demo/113562.aspx?id=5200",
+        "url2": "/demo/11356mobile/2.aspx?id=5200",
+        "url3": "/website/11356/cn/weiyuedu/zxdt.html",
+        "url4": "/website/11356/cn/mobile/weiyuedu/zxdt.html"
+      },
+      "selected": true
+    },
+    {
+      "id": 2,
+      "parentId": 0,
+      "name": "最新动态",
+      "data": [],
+      "articleData": {
+        "pageName": "goodBooks",
+        "type": 2,
+        "desc": "",
+        "pic": "",
+        "window": 2,
+        "style": 2,
+        "contentSort": 2,
+        "sortNum": 0,
+        "link": "www.baidu.com",
+        "systemCoding": 1,
+        "url1": "/demo/113562.aspx?id=5200",
+        "url2": "/demo/11356mobile/2.aspx?id=5200",
+        "url3": "/website/11356/cn/weiyuedu/zxdt.html",
+        "url4": "/website/11356/cn/mobile/weiyuedu/zxdt.html"
+      },
+      "selected": true
+    }
+  ],
+  "options":
+  {
+    "type": [
+      {
+        "id": 1,
+        "value": "主栏目"
+      },
+      {
+        "id": 2,
+        "value": "顶部栏目"
+      },
+      {
+        "id": 3,
+        "value": "底部栏目"
+      },
+      {
+        "id": 4,
+        "value": "隐藏栏目"
+      }
+    ],
+    "window": [
+      {
+        "id": 1,
+        "value": "默认"
+      },
+      {
+        "id": 2,
+        "value": "新窗口"
+      },
+      {
+        "id": 3,
+        "value": "顶级窗口"
+      }
+    ],
+    "style": [
+      {
+        "id": 1,
+        "value": "A.默认样式"
+      },
+      {
+        "id": 2,
+        "value": "B.新闻列表样式"
+      },
+      {
+        "id": 3,
+        "value": "C.相册列表样式"
+      },
+      {
+        "id": 4,
+        "value": "D.日志图文列表"
+      }
+    ],
+    "format": [
+      {
+        "id": 1,
+        "value": "春"
+      },
+      {
+        "id": 2,
+        "value": "夏"
+      }
+    ],
+    "contentSort": [
+      {
+        "id": 1,
+        "value": "最新添加的在最后"
+      },
+      {
+        "id": 2,
+        "value": "最新添加的在最前"
+      }
+    ],
+    "systemCoding": [
+      {
+        "id": 1,
+        "value": "自动更新"
+      }
+    ]
+  }
+}

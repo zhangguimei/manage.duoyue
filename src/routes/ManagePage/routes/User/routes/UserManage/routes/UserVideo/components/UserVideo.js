@@ -18,27 +18,29 @@ class UserVideo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showVideoLayer: false,
-      showConfirmLayer: false
+      layerIndex: -1
     };
     this.showData = {};
     this.deleteId = -1;
   }
 
-  toggleVideoLayer(content) {
-    if (content) {
-      this.showData = content;
-    }
+  toggleLayer(index) {
+    const {layerIndex} = this.state;
     this.setState({
-      showVideoLayer: !this.state.showVideoLayer
+      layerIndex: index == layerIndex ? -1 : index
     });
   }
 
-  toggleConfirmLayer(id) {
-    this.setState({
-      showConfirmLayer: !this.state.showConfirmLayer
-    });
+  deleteItemFunc(id) {
+    this.toggleLayer(2);
     this.deleteId = id;
+  }
+
+  saveToMaterialFunc(content) {
+    if (content) {
+      this.showData = content;
+    }
+    this.toggleLayer(1);
   }
 
   confirmResult(result) {
@@ -46,7 +48,7 @@ class UserVideo extends React.Component {
     if (result) {
       console.log('删除', deleteId, '成功！');
     }
-    this.toggleConfirmLayer();
+    this.toggleLayer(2);
   }
 
   searchUserImage() {
@@ -58,18 +60,18 @@ class UserVideo extends React.Component {
   }
 
   render() {
-    const {showVideoLayer, showConfirmLayer} = this.state,
+    const {layerIndex} = this.state,
       {showData} = this;
     return (
       <div className="UserVideo">
-        <header className="header">
+        <header className="header search-bar">
           <label htmlFor="keyword">图片作者</label>
           <input name="keyword" id="keyword" type="text" className="form-control inline-block input-sm w80 ml10"/>
           <label className="ml20">开始时间</label>
           <DatePicker className="startTime"/>
           <label className="ml20">结束时间</label>
           <DatePicker className="endTime"/>
-          <button className="btn btn-primary w80 ml10 input-sm search-btn" onClick={::this.searchUserImage}>搜索</button>
+          <button className="btn btn-primary w80 ml10 btn-sm search-btn" onClick={::this.searchUserImage}>搜索</button>
         </header>
         <section className="content-wrap clearfix">
           {
@@ -90,8 +92,8 @@ class UserVideo extends React.Component {
                       </div>
                     </div>
                     <footer className="btn-wrap">
-                      <button className="save-btn" onClick={()=>this.toggleVideoLayer(item)}>存为素材</button>
-                      <button className="delete-btn" onClick={()=>this.toggleConfirmLayer(item.id)}>删除</button>
+                      <button className="save-btn" onClick={()=>this.saveToMaterialFunc(item)}>存为素材</button>
+                      <button className="delete-btn" onClick={()=>this.deleteItemFunc(item.id)}>删除</button>
                     </footer>
                   </div>
                 </div>
@@ -100,24 +102,24 @@ class UserVideo extends React.Component {
           }
         </section>
         {
-          showVideoLayer &&
-          <Modal onModalClick={::this.toggleVideoLayer}>
-            <ShowPage width="50%" title="存为素材" closeShowPage={::this.toggleVideoLayer} submitForm={::this.submitModifyVideoForm}>
+          layerIndex == 1 &&
+          <Modal onModalClick={()=>::this.toggleLayer(1)}>
+            <ShowPage width="40%" title="存为素材" closeShowPage={()=>::this.toggleLayer(1)} submitForm={::this.submitModifyVideoForm}>
               <div className="video-layer-wrap">
                 <video className="video" controls poster={showData.pic}>
                   <source src={showData.fileUrl}/>
                 </video>
                 <form className="video-form">
-                  <FormItem name="videoName" type="text" className="form-control w200" title="标题"/>
-                  <FormItem name="videoDesc" type="textarea" className="form-control w240" title="描述"/>
+                  <FormItem name="videoName" type="text" className="form-control w400" title="标题"/>
+                  <FormItem name="videoDesc" type="textarea" className="form-control w400" title="描述"/>
                 </form>
               </div>
             </ShowPage>
           </Modal>
         }
         {
-          showConfirmLayer &&
-          <Modal onModalClick={::this.toggleConfirmLayer}>
+          layerIndex == 2 &&
+          <Modal onModalClick={()=>::this.toggleLayer(2)}>
             <Confirm confirmResult={::this.confirmResult} content="确定删除么？"/>
           </Modal>
         }

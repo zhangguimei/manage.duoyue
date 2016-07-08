@@ -1,12 +1,12 @@
 {
-  "tableHeadData": {
+  "headData": {
     "id": "ID",
     "time": "时间",
     "user": "用户",
     "IP": "IP",
     "position": "位置"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "id": 1122,
       "time": "2016/5/20 16:42:02",

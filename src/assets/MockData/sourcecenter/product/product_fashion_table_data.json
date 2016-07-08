@@ -1,5 +1,5 @@
 {
-  "tableHeadData": {
+  "headData": {
     "id": "ID",
     "merchantName": "商户名称",
     "wechatNum": "微信公号",
@@ -8,7 +8,7 @@
     "fashionableValidity": "分账有效期",
     "operation": "操作"
   },
-  "tableContentData": [
+  "contentData": [
     {
       "id": 1122,
       "merchantName": "传播",

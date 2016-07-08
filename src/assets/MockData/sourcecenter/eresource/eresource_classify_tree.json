@@ -1,0 +1,27 @@
+[
+	{
+		"id": 1,
+		"name": "资源分类",
+		"parentid": 0,
+		"data": [
+			{
+				"id": 1,
+				"name": "杂谈",
+				"parentid": 1,
+				"data": []
+			},
+			{
+				"id": 2,
+				"name": "前端开发",
+				"parentid": 1,
+				"data": []
+			},
+			{
+				"id": 3,
+				"name": "网络文学",
+				"parentid": 1,
+				"data": []
+			}
+		]
+	}
+]

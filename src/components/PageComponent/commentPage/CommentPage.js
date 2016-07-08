@@ -5,31 +5,32 @@ import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import ImageUpload from 'UIComponentFolder/ImageUpload/ImageUpload';
 import FormItem from 'UIComponentFolder/FormComponent/FormItem';
 import Confirm from 'UIComponentFolder/Modals/Confirm';
-import Table from 'UIComponentFolder/Table/Table';
+import TablePage from 'PageComponentFolder/TablePage/TablePage';
 import style from './CommentPage.scss';
-
-//const data = require("AssetsFolder/MockData/user/comment/article_comment_table.json");
 
 class CommentPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showReplyLayer: false,
-      showConfirm: false
+      layerIndex: -1
     };
     this.deleteId = -1;
   }
 
-  toggleReplyLayer() {
+  toggleLayer(index) {
+    const {layerIndex} = this.state;
     this.setState({
-      showReplyLayer: !this.state.showReplyLayer
+      layerIndex: index == layerIndex ? -1 : index
     });
   }
 
-  toggleConfirm(id) {
-    this.setState({
-      showConfirm: !this.state.showConfirm
-    });
+  replyFunc(id) {
+    //回复评论接口
+    this.toggleLayer(1);
+  }
+
+  deleteItemFunc(id) {
+    this.toggleLayer(2);
     this.deleteId = id;
   }
 
@@ -38,7 +39,7 @@ class CommentPage extends React.Component {
     if (result) {
       console.log('删除', deleteId, '成功！');
     }
-    this.toggleConfirm();
+    this.toggleLayer(2);
   }
 
   passComment(id) {
@@ -75,7 +76,7 @@ class CommentPage extends React.Component {
                       <img className="img" src={item.pic} alt="回复图片"/>
                     </div>
                     <time className="time">{item.replyTime}</time>
-                    <button className="delete-btn" onClick={()=>this.toggleConfirm(item.id)}>删除</button>
+                    <button className="delete-btn" onClick={()=>this.deleteItemFunc(item.id)}>删除</button>
                   </div>
                 );
               })
@@ -86,10 +87,10 @@ class CommentPage extends React.Component {
       item.statusType = <div>{item.status ? <span>已审核</span> : <span className="red">未审核</span>}</div>;
       item.operation = <div className="operation-wrap">
         {
-          item.status ? <button className="btn btn-operate" onClick={()=>this.toggleReplyLayer(item.id)}>回复</button> :
+          item.status ? <button className="btn btn-operate" onClick={()=>this.replyFunc(item.id)}>回复</button> :
             <button className="btn btn-operate" onClick={()=>::this.passComment(item.id)}>通过审核</button>
         }
-        <button className="btn btn-operate" onClick={()=>this.toggleConfirm(item.id)}>删除</button>
+        <button className="btn btn-operate" onClick={()=>this.deleteItemFunc(item.id)}>删除</button>
       </div>;
 
     });
@@ -102,22 +103,22 @@ class CommentPage extends React.Component {
 
   render() {
     const {headData, contentData} = this.props.data,
-      {showReplyLayer, showConfirm} = this.state,
+      {layerIndex} = this.state,
       {searchTitle} = this.props;
     return (
       <div className="CommentPage">
-        <header className="header">
+        <header className="header search-bar">
           <label htmlFor="search-input">{searchTitle}</label>
           <input name="keyword" id="search-input" type="text" className="form-control w100 ml20 input-sm"/>
-          <button className="search-btn btn btn-primary w80 ml10 input-sm" onClick={::this.sumbitSearchForm}>搜索</button>
+          <button className="search-btn btn btn-primary w80 ml10 btn-sm" onClick={::this.sumbitSearchForm}>搜索</button>
         </header>
         <section className="content-wrap">
-          <Table headData={headData} contentData={contentData}/>
+          <TablePage headData={headData} contentData={contentData} rowsForOnePage={2} fixBottom={true}/>
         </section>
         {
-          showReplyLayer &&
-          <Modal onModalClick={::this.toggleReplyLayer}>
-            <ShowPage width="40%" height="60%" title="回复评论" closeShowPage={::this.toggleReplyLayer}>
+          layerIndex == 1 &&
+          <Modal onModalClick={()=>::this.toggleLayer(1)}>
+            <ShowPage width="40%" height="60%" title="回复评论" closeShowPage={()=>::this.toggleLayer(1)}>
               <div className="reply-layer-wrap">
                 <FormItem type="textarea" name="text" title="回复内容:" rules={{required:true}}
                           className="text-area form-control"/>
@@ -130,8 +131,8 @@ class CommentPage extends React.Component {
           </Modal>
         }
         {
-          showConfirm &&
-          <Modal onModalClick={::this.toggleConfirm}>
+          layerIndex == 2 &&
+          <Modal onModalClick={()=>::this.toggleLayer(2)}>
             <Confirm confirmResult={::this.confirmResult} content="确定删除么？"/>
           </Modal>
         }

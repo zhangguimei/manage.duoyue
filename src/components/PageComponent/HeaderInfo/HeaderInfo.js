@@ -26,7 +26,8 @@ let info = {
   "city": "城市",
   "tag": "标签",
   "price": "价格",
-  "update": "更新时间"
+  "update": "更新时间",
+  "type": "类型"
 };
 
 let headUrl = {
@@ -54,7 +55,7 @@ class HeaderInfo extends React.Component {
               {
                 Object.keys(info).map((item, index) => {
                   if(info[item] && data[item]) {
-                    return <h4 className={` info-${item}-name`} key={index}><span className={`info-${item}-desc`}>{info[item]}</span>{data[item]}</h4>
+                    return <h4 className={`left-item info-${item}-name`} key={index}><span className={`info-${item}-desc`}>{info[item]}：</span>{data[item]}</h4>
                   }
                 })
               }
@@ -96,7 +97,7 @@ HeaderInfo.propTypes = {
     sex: PropTypes.string,
     city: PropTypes.string,
     tag: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     update: PropTypes.string
   }).isRequired
 };

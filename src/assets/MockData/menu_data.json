@@ -27,7 +27,7 @@
       "id": "372",
       "parentPermissionId": "337",
       "permissionName": "资源查询",
-      "accessPath": "/resource/ebook/search",
+      "accessPath": "/resource/eresource/search",
       "icon_min": "",
       "icon_min_light": "",
       "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185340009.png",
@@ -140,16 +140,6 @@
               "parentPermissionId": "329",
               "permissionName": "用户视频",
               "accessPath": "/user/usermanage/video",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": ""
-            },
-            {
-              "id": "720",
-              "parentPermissionId": "329",
-              "permissionName": "群组管理",
-              "accessPath": "/user/usermanage/group",
               "icon_min": "",
               "icon_min_light": "",
               "icon_max": "",
@@ -270,16 +260,6 @@
               "icon_min_light": "",
               "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185323306.png",
               "icon_max_light": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185325650.png"
-            },
-            {
-              "id": "365",
-              "parentPermissionId": "333",
-              "permissionName": "内容管理",
-              "accessPath": "/user/group/content",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": ""
             }
           ]
         }
@@ -363,7 +343,7 @@
           "id": "337",
           "parentPermissionId": "325",
           "permissionName": "电子资源",
-          "accessPath": "/resource/ebook",
+          "accessPath": "/resource/eresource",
           "icon_min": "ic-source",
           "icon_min_light": "",
           "icon_max": "",
@@ -373,38 +353,17 @@
               "id": "372",
               "parentPermissionId": "337",
               "permissionName": "资源查询",
-              "accessPath": "/resource/ebook/search",
+              "accessPath": "/resource/eresource/search",
               "icon_min": "",
               "icon_min_light": "",
               "icon_max": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185340009.png",
               "icon_max_light": "http://file.duoyue.me/upload/menu/20160323/2016_03_23_185342384.png"
             },
             {
-              "id": "373",
-              "parentPermissionId": "337",
-              "permissionName": "资源统计",
-              "accessPath": "/resource/ebook/statistics",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": ""
-            },
-            {
-              "id": "374",
-              "parentPermissionId": "337",
-              "permissionName": "流量趋势",
-              "accessPath": "/resource/ebook/flow",
-              "icon_min": "",
-              "icon_min_light": "",
-              "icon_max": "",
-              "icon_max_light": "",
-              "children": []
-            },
-            {
               "id": "762",
               "parentPermissionId": "337",
               "permissionName": "资源分类",
-              "accessPath": "/resource/ebook/sort",
+              "accessPath": "/resource/eresource/sort",
               "icon_min": "",
               "icon_min_light": "",
               "icon_max": "",
@@ -482,7 +441,7 @@
               "id": "729",
               "parentPermissionId": "727",
               "permissionName": "扩展属性",
-              "accessPath": "/resource/tag/expand",
+              "accessPath": "/resource/tag/extend",
               "icon_min": "",
               "icon_min_light": "",
               "icon_max": "",

@@ -2,16 +2,6 @@
 @import "../../../assets/sass/function";
 
 .CommentPage {
-  .red {
-    color: red;
-  }
-  .header {
-    padding: 15px 20px;
-    border-bottom: 1px solid $grayD;
-    .search-btn {
-      line-height: 16px;
-    }
-  }
   .content-wrap {
     padding: 20px;
     .head-pic {

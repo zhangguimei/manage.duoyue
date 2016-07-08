@@ -1,5 +1,11 @@
 
 'use strict'
+/*
+ *  Project : website manage
+ *  Date    : 2016.06.29
+ *  Author  : jin guolong
+ *  Declare : website manage page
+ */
 
 import React, {PropTypes} from 'react';
 import ImageUpload from 'UIComponentFolder/ImageUpload/ImageUpload';
@@ -7,21 +13,16 @@ import ImageUpload from 'UIComponentFolder/ImageUpload/ImageUpload';
 class AdvertiseEditor extends React.Component {
 
 	render() {
-		const {modifyData} = this.props,
-				  data = modifyData[0] || {};
-		let areaName = data.areaName || "",
-			  areaCode = data.areaCode || "",
-			  width = data.width || "",
-			  height = data.height || "",
-			  tips = data.tips || "",
-			  defaultChecked=-1;
+		const {modifyData} = this.props;
+		let {areaName="", areaCode="", width="", height="", tips=""} = modifyData,
+				defaultChecked = -1;
 		{
-			if (data.showNum=="是") {defaultChecked=0}
-				else if (data.showNum=="否") {defaultChecked=1}
+			if (modifyData.showNum=="是") {defaultChecked=0}
+				else if (modifyData.showNum=="否") {defaultChecked=1}
 		}
 		return(
 			<div className="AdvertiseEditor">
-				<form>
+				<form className="form-default">
 						<div className="form-group">
 		          <label className="require">区域名称</label>
 		          <input type="text" className="form-control" defaultValue={areaName} />
@@ -62,7 +63,7 @@ class AdvertiseEditor extends React.Component {
 		}
 	}
 AdvertiseEditor.propTypes = {
-	modifyData: PropTypes.array
+	modifyData: PropTypes.object
 
 }
 export default AdvertiseEditor;

@@ -12,10 +12,12 @@ module.exports = {
       cb(null, [
         require('./routes/Article'),
         require('./routes/Book'),
+        require('./routes/Eresource'),
         require('./routes/Product'),
-        require('./routes/Topic'),
         require('./routes/CrowdFunding'),
-        require('./routes/Match')
+        require('./routes/Tag'),
+        require('./routes/Match'),
+        require('./routes/Topic')
       ])
     })
   }

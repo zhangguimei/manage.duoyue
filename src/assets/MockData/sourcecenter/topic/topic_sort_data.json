@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "parentId": 0,
+    "name": "微信阅读",
+    "data": [
+      {
+        "id": 11,
+        "parentId": 1,
+        "name": "热门资讯",
+        "data": [],
+        "pic": "http://file.duoyue.me/upload/columninfo/20160616/2016_06_16_092852577.jpg",
+        "icon": "http://file.duoyue.me/upload/producttype/icon/20160616/2016_06_16_093832098.jpg",
+        "sortNum": 0,
+        "selected": false
+      },
+      {
+        "id": 12,
+        "parentId": 1,
+        "name": "好书推荐",
+        "data": [],
+        "pic": "http://file.duoyue.me/upload/producttype/20160616/2016_06_16_093803621.jpg",
+        "icon": "http://file.duoyue.me/upload/producttype/icon/20160616/2016_06_16_093832098.jpg",
+        "sortNum": 0,
+        "selected": false
+      }
+    ],
+    "pic": "",
+    "sortNum": 0,
+    "icon": "",
+    "selected": true
+  },
+  {
+    "id": 2,
+    "parentId": 0,
+    "name": "最新动态",
+    "data": [],
+    "pic": "",
+    "icon": "",
+    "sortNum": 0,
+    "selected": true
+  }
+]

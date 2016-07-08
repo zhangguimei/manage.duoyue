@@ -4,10 +4,10 @@
  *  Declare : 优化表格功能
  * */
 "use strict";
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import classNames from 'classnames';
 import {Map, is, fromJS} from 'immutable';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 import shouldComponentUpdate from 'UtilsFolder/shouldComponentUpdate';
 
 import DefaultCheckBox from './CheckBox';
@@ -53,7 +53,7 @@ class Table extends React.Component {
     editable: false,                //表格是否可双击进行编辑
     deletable: false,               //表格数据是否可删除
     initState: [],                  //表格checkbox初始状态数据
-    className:''                    //自定义类
+    className: ''                    //自定义类
   };
 
   constructor(props) {
@@ -66,7 +66,7 @@ class Table extends React.Component {
     };
     this.shouldComponentUpdate = shouldComponentUpdate.bind(this);
     this.startIndex = 0;
-    if(this.props.rowsForOnePage) {
+    if (this.props.rowsForOnePage) {
       this.endIndex = this.props.rowsForOnePage;
     }
     this.headNameList = [];
@@ -75,14 +75,14 @@ class Table extends React.Component {
 
   //初始化checkBox的状态
   initCheckBoxState(data) {
-    const { initState } = this.props;
+    const {initState} = this.props;
     const checkBoxState = this.state.checkBoxState || {selectAll: false};
     let IcheckBoxState = fromJS(checkBoxState),
-        key,
-        checked = false;
+      key,
+      checked = false;
     data.map((item) => {
       key = item.id;
-      if(IcheckBoxState.get(key.toString()) == undefined) {
+      if (IcheckBoxState.get(key.toString()) == undefined) {
         checked = initState.indexOf(key) >= 0;
         IcheckBoxState = IcheckBoxState.set(key.toString(), checked);
       }
@@ -95,9 +95,9 @@ class Table extends React.Component {
 
   //对thClass和tdClass进行格式化
   formatClassName(className, index) {
-    if(typeof className == "string") {
+    if (typeof className == "string") {
       return className;
-    } else if(className instanceof Array) {
+    } else if (className instanceof Array) {
       return className[index];
     } else {
       return null;
@@ -106,11 +106,11 @@ class Table extends React.Component {
 
   //checkBox click事件
   checkBoxClick(id) {
-    const { checkBoxState } = this.state,
-      { checkBoxClick } = this.props;
+    const {checkBoxState} = this.state,
+      {checkBoxClick} = this.props;
     let IcheckBoxState = fromJS(checkBoxState);
     IcheckBoxState = IcheckBoxState.set(id.toString(), !IcheckBoxState.get(id.toString()));
-    if(IcheckBoxState.get(id.toString())) {
+    if (IcheckBoxState.get(id.toString())) {
       IcheckBoxState = IcheckBoxState.set("selectAll", this.checkBoxStateIterator(IcheckBoxState.toJS(), this.contentDataForShow));
       checkBoxClick && checkBoxClick(id, true);
     } else {
@@ -124,11 +124,11 @@ class Table extends React.Component {
 
   //全选click事件
   selectAllClick() {
-    const { checkBoxState } = this.state,
-          data = this.contentDataForShow,
-          { checkBoxClick } = this.props;
+    const {checkBoxState} = this.state,
+      data = this.contentDataForShow,
+      {checkBoxClick} = this.props;
     let IcheckBoxState = fromJS(checkBoxState);
-    if(!IcheckBoxState) {
+    if (!IcheckBoxState) {
       return;
     }
     let nextSelectAll = !IcheckBoxState.get("selectAll");
@@ -144,11 +144,11 @@ class Table extends React.Component {
 
   //遍历checkBox是否全部选中
   checkBoxStateIterator(checkBoxState, data) {
-    if(data.length == 0) {
+    if (data.length == 0) {
       return false;
     }
-    for(let item of data) {
-      if(checkBoxState[item.id] == false) {
+    for (let item of data) {
+      if (checkBoxState[item.id] == false) {
         return false;
       }
     }
@@ -159,19 +159,19 @@ class Table extends React.Component {
   sortData(data, columnIndex, isAscending) {
     let _this = this,
       key = _this.headKeyList[columnIndex];
-    if(_this.columnHasString(data, columnIndex)) {
-      _this.contentDataForShow = data.sort(function(o1, o2) {
-        if(_this.str2Unicode(o1[key]) > _this.str2Unicode(o2[key])) {
+    if (_this.columnHasString(data, columnIndex)) {
+      _this.contentDataForShow = data.sort(function (o1, o2) {
+        if (_this.str2Unicode(o1[key]) > _this.str2Unicode(o2[key])) {
           return isAscending ? -1 : 1;
-        } else if(_this.str2Unicode(o1[key]) < _this.str2Unicode(o2[key])) {
+        } else if (_this.str2Unicode(o1[key]) < _this.str2Unicode(o2[key])) {
           return isAscending ? 1 : -1;
         } else {
           return 0;
         }
       });
     } else {
-      _this.contentDataForShow = data.sort(function(o1, o2) {
-        if(isAscending) {
+      _this.contentDataForShow = data.sort(function (o1, o2) {
+        if (isAscending) {
           return o2[key] - o1[key];
         } else {
           return o1[key] - o2[key];
@@ -184,7 +184,7 @@ class Table extends React.Component {
   //该列是否含有字符类型数据
   columnHasString(data, columnIndex) {
     for (let i = 0; i < data.length; i++) {
-      if(typeof(data[i][this.headKeyList[columnIndex]]) == "string") {
+      if (typeof(data[i][this.headKeyList[columnIndex]]) == "string") {
         return true;
       }
     }
@@ -193,10 +193,10 @@ class Table extends React.Component {
 
   //将数字或字符串转换成unicode
   str2Unicode(str) {
-    if(str == "") {
+    if (str == "") {
       return "";
     }
-    if(typeof(str) == "number") {
+    if (typeof(str) == "number") {
       str = str + "";
     }
     let resultStr = "", char;
@@ -212,7 +212,9 @@ class Table extends React.Component {
 
   //表格单元格双击可编辑
   tdOnDblClick(e, key, id) {
-    if(!this.props.editable || e.target.nodeName != "TD") {return;}
+    if (!this.props.editable || e.target.nodeName != "TD") {
+      return;
+    }
     this.editTDDOM = e.target;
     this.setState({
       editLocation: {
@@ -223,31 +225,33 @@ class Table extends React.Component {
   }
 
   inputOnBlur(e, key, id) {
-    if(!this.props.editable || e.target.nodeName != "INPUT") {return;}
+    if (!this.props.editable || e.target.nodeName != "INPUT") {
+      return;
+    }
     let editInput = e.target,
-        inputText = editInput.value.trim(),
-        isInputAllNumber = true;
-    if(inputText == "") {
+      inputText = editInput.value.trim(),
+      isInputAllNumber = true;
+    if (inputText == "") {
       inputText = "无";
     } else {
       for (let char of inputText) {
-        if(char < "0" || char > "9") {
+        if (char < "0" || char > "9") {
           isInputAllNumber = false;
           break;
         }
       }
-      if(isInputAllNumber) {
+      if (isInputAllNumber) {
         inputText = parseInt(inputText, 10);
       }
     }
     for (let i = this.startIndex; i < this.endIndex; i++) {
-      if(this.props.contentData[i].id == id) {
+      if (this.props.contentData[i].id == id) {
         this.props.contentData[i][key] = inputText;
         break;
       }
     }
     for (let i = 0; i < this.props.rowsForOnePage; i++) {
-      if(this.contentDataForShow[i].id == id) {
+      if (this.contentDataForShow[i].id == id) {
         this.contentDataForShow[i][key] = inputText;
         break;
       }
@@ -266,17 +270,19 @@ class Table extends React.Component {
   //表格可调整每列的宽度
   onMouseMove(e) {
     let node = e.target,
-        thDOM = this.dragThDOM,
-        mouseX = e.pageX,
-        tdRight = node.getBoundingClientRect().right,
-        dragDistance;
-    if(!["TD", "TH"].includes(node.nodeName)) { return; }
-    if(mouseX <= tdRight && mouseX >= tdRight - 5) {
+      thDOM = this.dragThDOM,
+      mouseX = e.pageX,
+      tdRight = node.getBoundingClientRect().right,
+      dragDistance;
+    if (!["TD", "TH"].includes(node.nodeName)) {
+      return;
+    }
+    if (mouseX <= tdRight && mouseX >= tdRight - 5) {
       node.style.cursor = "e-resize";
     } else {
       node.style.cursor = "default";
     }
-    if(this.dragStartX != undefined && this.dragStartX != null) {
+    if (this.dragStartX != undefined && this.dragStartX != null) {
       dragDistance = mouseX - this.dragStartX;
       thDOM.style.width = this.dragThInitWidth + dragDistance + "px";
     }
@@ -284,12 +290,12 @@ class Table extends React.Component {
 
   onMouseDown(e, columnIndex) {
     let node = e.target,
-        mouseX = e.pageX,
-        tdRight = node.getBoundingClientRect().right;
-    if(mouseX <= tdRight && mouseX >= tdRight - 5) {
+      mouseX = e.pageX,
+      tdRight = node.getBoundingClientRect().right;
+    if (mouseX <= tdRight && mouseX >= tdRight - 5) {
       this.dragStartX = e.pageX;
       this.dragThDOM = this.refs[`column${columnIndex}`];
-      if(this.dragThDOM.style.width.indexOf("%") > 0) {
+      if (this.dragThDOM.style.width.indexOf("%") > 0) {
         this.turnPercentToNum();
       }
       this.dragThInitWidth = this.dragThDOM.clientWidth
@@ -297,7 +303,7 @@ class Table extends React.Component {
   }
 
   onMouseUp() {
-    if(this.dragStartX != undefined && this.dragStartX != null) {
+    if (this.dragStartX != undefined && this.dragStartX != null) {
       this.dragStartX = null;
       this.dragThInitWidth = null;
       this.dragThDOM = null;
@@ -306,7 +312,7 @@ class Table extends React.Component {
 
   turnPercentToNum() {
     let thDOM;
-    for(let i = 0; i < this.headNameList.length; i++) {
+    for (let i = 0; i < this.headNameList.length; i++) {
       thDOM = this.refs[`column${i}`];
       thDOM.style.width = thDOM.clientWidth + "px";
     }
@@ -314,14 +320,14 @@ class Table extends React.Component {
 
   //删除
   deleteData(id) {
-    const { deletable, deleteDataFunc } = this.props;
-    if(deletable) {
+    const {deletable, deleteDataFunc} = this.props;
+    if (deletable) {
       deleteDataFunc && deleteDataFunc(id);
     }
   }
 
   componentWillMount() {
-    let { isOptional, headData, contentData, pageIndex, rowsForOnePage } = this.props;
+    let {isOptional, headData, contentData, pageIndex, rowsForOnePage} = this.props;
     for (let key in headData) {
       this.headNameList.push(headData[key]);
       this.headKeyList.push(key);
@@ -329,34 +335,34 @@ class Table extends React.Component {
     this.contentDataForShow = (pageIndex && rowsForOnePage)
       ? contentData.slice(this.startIndex, this.endIndex)
       : contentData;
-    if(isOptional && this.contentDataForShow.length > 0) {
+    if (isOptional && this.contentDataForShow.length > 0) {
       ::this.initCheckBoxState(this.contentDataForShow);
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    let { isOptional } = this.props,
-      { checkBoxState } = this.state,
-      { headData, pageIndex, rowsForOnePage, contentData } = nextProps;
-    if(this.headNameList.length == 0) {
+    let {isOptional} = this.props,
+      {checkBoxState} = this.state,
+      {headData, pageIndex, rowsForOnePage, contentData} = nextProps;
+    if (this.headNameList.length == 0) {
       for (let key in headData) {
         this.headNameList.push(headData[key]);
         this.headKeyList.push(key);
       }
     }
     //表格翻页
-    if(pageIndex) {
-      if((this.props.rowsForOnePage != rowsForOnePage) || (this.props.pageIndex != pageIndex)
-        || !is(this.props.contentData, contentData)  || this.contentDataForShow.length < 1) {
+    if (pageIndex) {
+      if ((this.props.rowsForOnePage != rowsForOnePage) || (this.props.pageIndex != pageIndex)
+        || !is(this.props.contentData, contentData) || this.contentDataForShow.length < 1) {
         this.startIndex = (pageIndex - 1) * rowsForOnePage;
         this.endIndex = pageIndex * rowsForOnePage;
         this.contentDataForShow = contentData.slice(this.startIndex, this.endIndex);
         ::this.initCheckBoxState(this.contentDataForShow);
       }
-    } else if(!pageIndex) {
+    } else if (!pageIndex) {
       this.contentDataForShow = contentData;
     }
-    if(isOptional && !checkBoxState && this.contentDataForShow.length > 0) {
+    if (isOptional && !checkBoxState && this.contentDataForShow.length > 0) {
       ::this.initCheckBoxState(this.contentDataForShow);
     }
   }
@@ -366,61 +372,66 @@ class Table extends React.Component {
   }
 
   render() {
-    const { thClass, tdClass, isOptional, CheckBox, deletable, className } = this.props,
-          { contentDataForShow } = this,
-          { checkBoxState, editLocation } = this.state;
+    const {thClass, tdClass, isOptional, CheckBox, deletable, className} = this.props,
+      {contentDataForShow} = this,
+      {checkBoxState, editLocation} = this.state;
     //默认每列等宽
     const columnWidth = isOptional ? (95 / this.headNameList.length) + "%" : (100 / this.headNameList.length) + "%";
     //生成thead代码
     let headCodes = this.headNameList.map((item, index) => {
       return <th className={classNames(`thead-column-${index}`, this.formatClassName(thClass, index))}
-                   ref={`column${index}`} key={index} onMouseMove={(e) => this.onMouseMove(e)}
+                 ref={`column${index}`} key={index} onMouseMove={(e) => this.onMouseMove(e)}
                  onMouseDown={(e) => this.onMouseDown(e, index)} onMouseUp={::this.onMouseUp}>
-              {item}
-              <span title="对当前页升序排序" className="script superscript"
-                    onClick={() => this.sortData(contentDataForShow, index, false)}/>
-              <span title="对当前页降序排序" className="script subscript"
+        {item}
+        <span className="script-wrap">
+          <em title="对当前页升序排序" className="script superscript"
+                onClick={() => this.sortData(contentDataForShow, index, false)}/>
+          <em title="对当前页降序排序" className="script subscript"
                     onClick={() => this.sortData(contentDataForShow, index, true)}/>
-             </th>;
+        </span>
+
+      </th>;
     });
     //生成tbody代码
     let contentCodes = contentDataForShow.map((item, index) => {
       let tdCodes = [];
-      for(let i = 0; i < this.headKeyList.length; i++) {
+      for (let i = 0; i < this.headKeyList.length; i++) {
         let key = this.headKeyList[i],
-            tdContent = item[key];
-        if(key == editLocation.key && item.id == editLocation.id) {
-          tdContent = <input className="edit-input" ref="editInput" type="text" autofocus="autofocus" defaultValue={item[key]}
-                             onBlur={(e) => this.inputOnBlur(e, key, item.id)} />
+          tdContent = item[key];
+        if (key == editLocation.key && item.id == editLocation.id) {
+          tdContent =
+            <input className="edit-input" ref="editInput" type="text" autofocus="autofocus" defaultValue={item[key]}
+                   onBlur={(e) => this.inputOnBlur(e, key, item.id)}/>
         }
-        if(key == "img") {
+        if (key == "img") {
           tdContent = item.imgLink ?
             <Link to={item.imgLink}><img src={item.imgSrc} alt="图片"/></Link>
             :
             <img className="img" src={item.imgSrc} alt="图片"/>;
-        } else if(key == "link") {
+        } else if (key == "link") {
           tdContent = <Link to="item.href">{item[key]}</Link>
         }
-          tdCodes.push(<td className={classNames(`tbody-column-${i}`, this.formatClassName(tdClass, i))}
-                           key={i} onDoubleClick={(e) => this.tdOnDblClick(e, key, item.id)} onMouseMove={(e) => this.onMouseMove(e)}
-                           onMouseDown={(e) => this.onMouseDown(e, i)} onMouseUp={::this.onMouseUp}>
-                        {tdContent}
-                        {
-                          deletable && (i == this.headKeyList.length - 1) &&
-                          <i className="ic ic-close" onClick={() => this.deleteData(item.id)} />
-                        }
-                       </td>);
+        tdCodes.push(<td className={classNames(`tbody-column-${i}`, this.formatClassName(tdClass, i))}
+                         key={i} onDoubleClick={(e) => this.tdOnDblClick(e, key, item.id)}
+                         onMouseMove={(e) => this.onMouseMove(e)}
+                         onMouseDown={(e) => this.onMouseDown(e, i)} onMouseUp={::this.onMouseUp}>
+          {tdContent}
+          {
+            deletable && (i == this.headKeyList.length - 1) &&
+            <i className="ic ic-close" onClick={() => this.deleteData(item.id)}/>
+          }
+        </td>);
       }
       return <tr key={index}>
-              {
-                isOptional &&
-                <td>
-                  <CheckBox checked={checkBoxState[item.id]} checkBoxOnClick={::this.checkBoxClick}
-                            index={item.id} value={item.id}/>
-                </td>
-              }
-              {tdCodes}
-             </tr>;
+        {
+          isOptional &&
+          <td>
+            <CheckBox checked={checkBoxState[item.id]} checkBoxOnClick={::this.checkBoxClick}
+                      index={item.id} value={item.id}/>
+          </td>
+        }
+        {tdCodes}
+      </tr>;
     });
     return (
       <table className={`Table ${className}`}>
@@ -437,7 +448,7 @@ class Table extends React.Component {
         </tr>
         </thead>
         <tbody>
-          {contentCodes}
+        {contentCodes}
         </tbody>
       </table>
     );

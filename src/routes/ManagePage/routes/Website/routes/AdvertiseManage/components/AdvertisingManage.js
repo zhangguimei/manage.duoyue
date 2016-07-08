@@ -21,14 +21,13 @@ class AdvertisingManage extends React.Component {
     super(props);
     this.state = {
       showModel: false,
-      tableContent: []
+      contentData: []
     };
     this.title = "新增";
     this.modifyData = {};
   }
 
-  modifyContent(id, i) {
-    const {tableContent} = this.state;
+  modifyContent(item, i) {
     if (i == true)
       this.title = "修改";
     else
@@ -36,7 +35,7 @@ class AdvertisingManage extends React.Component {
     this.setState({
       showModel: !this.state.showModel
     });
-    this.modifyData = tableContent.filter(v => v.id == id)
+    this.modifyData = item
   }
 
   submitChange() {
@@ -47,30 +46,51 @@ class AdvertisingManage extends React.Component {
   }
 
   deleteOperation(id) {
-    const {tableContent} = this.state;
+    const {contentData} = this.state;
     this.setState({
-      tableContent: tableContent.filter(v => v.id != id)
+      contentData: contentData.filter(v => v.id != id)
     });
+  }
+
+  pluginData() {
+    advertisingManageData.contentData.forEach((item)=> {
+      item.operation = <div className="AdvertiseOperation clearfix">
+        <button className="btn btn-operate left" onClick={() => this.modifyContent(item,true)}>修改</button>
+        <span className="order-font left">|</span>
+        <button className="btn btn-operate left" onClick={() => this.deleteOperation(item.id)}>删除</button>
+      </div>
+    });
+  }
+
+  picConsult() {
+
+  }
+
+  areaChange(e) {
+    const contentData = advertisingManageData.contentData;
+    let select = e.target,
+      value = select.options[select.options.selectedIndex].value;
+    if (select.options.selectedIndex)
+      this.setState({
+        contentData: contentData.filter((v)=>v.areaName == value)
+      });
+    else
+      this.setState({
+        contentData: contentData
+      })
   }
 
   componentWillMount() {
     this.setState({
-      tableContent: advertisingManageData.tableContentData
+      contentData: advertisingManageData.contentData
     });
+    this.pluginData();
   }
 
   render() {
     const {areaOption} = advertisingManageData,
       {modifyData} = this,
-      {showModel} = this.state,
-      {tableContent} = this.state;
-    advertisingManageData.tableContentData.forEach((item, i)=> {
-      item.operation = <div className="AdvertiseOperation clearfix">
-        <button className="btn btn-operate left" onClick={() => this.modifyContent(item.id,true)}>修改</button>
-        <span className="order-font left">|</span>
-        <button className="btn btn-operate left" onClick={() => this.deleteOperation(item.id)}>删除</button>
-      </div>
-    });
+      {showModel, contentData} = this.state;
     let selectCodes = areaOption.map((item)=> {
       return <option key={item.id} value={item.value}>{item.content}</option>
     });
@@ -82,23 +102,21 @@ class AdvertisingManage extends React.Component {
     let title = this.title + "广告图片";
     return (
       <div className="AdvertisingManage">
-        <header className="search-area">
+        <header className="search-bar">
           <div className="form-inline">
             <div className="form-group form-group-sm">
               <label>区域</label>
-              <select>{selectCodes}</select>
+              <select onChange={::this.areaChange}>{selectCodes}</select>
             </div>
             <div className="form-group form-group-sm ml10">
               <label>图片名称</label>
               <input className="form-control"/>
             </div>
-            <button className="btn btn-primary ml10">查询</button>
+            <button className="btn btn-primary ml10" onClick={::this.picConsult}>查询</button>
             <button className="btn btn-primary right" onClick={::this.modifyContent}>新增图片</button>
           </div>
         </header>
-        <div className="TablePage">
-          <TablePage data={advertisingManageData} contentData={tableContent}/>
-        </div>
+        <TablePage headData={advertisingManageData.headData} contentData={contentData}/>
         {
           showModel &&
           <Modal>

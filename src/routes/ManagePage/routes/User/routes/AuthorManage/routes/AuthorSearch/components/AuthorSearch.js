@@ -5,14 +5,12 @@
  */
 'use strict';
 import React from 'react';
-import {fromJS} from 'immutable';
-
 import Modal from 'UIComponentFolder/Modals/Modal';
 import ShowPage from 'UIComponentFolder/Modals/ShowPage';
 import ImageUpload from 'UIComponentFolder/ImageUpload/ImageUpload';
 import FormItem from 'UIComponentFolder/FormComponent/FormItem';
 import Confirm from 'UIComponentFolder/Modals/Confirm';
-import Table from 'UIComponentFolder/Table/Table';
+import TablePage from 'PageComponentFolder/TablePage/TablePage';
 import RightAsideDetail from 'PageComponentFolder/RightAsideDetail/RightAsideDetail';
 
 import styles from "./AuthorSearch.scss";
@@ -27,14 +25,38 @@ class AuthorSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showUserDetailArea: false,
-      showRelatedWechatLayer: false,
-      showCreateLayer: false,
-      showConfirmLayer: false
+      layerIndex: -1
     };
     this.authorInfo = {};
     this.deleteId = -1;
 
+  }
+
+  toggleLayer(index) {
+    const {layerIndex} = this.state;
+    this.setState({
+      layerIndex: index == layerIndex ? -1 : index
+    });
+  }
+
+  deleteItemFunc(id) {
+    this.toggleLayer(4);
+    this.deleteId = id;
+  }
+
+  relatedWechatFunc(id) {
+    this.toggleLayer(2);
+  }
+
+  addOrModifyFunc(content) {
+    this.authorInfo = {
+      pageTitle: "新增作者"
+    };
+    if (content) {
+      this.authorInfo = content;
+      this.authorInfo.pageTitle = "修改作者信息";
+    }
+    this.toggleLayer(1);
   }
 
   toggleUserDetail(type = '', content) {
@@ -44,33 +66,6 @@ class AuthorSearch extends React.Component {
     this.setState({
       showUserDetailArea: type + '' ? type : !this.state.showUserDetailArea
     });
-
-  }
-
-  toggleRelatedWetchatLayer() {
-    this.setState({
-      showRelatedWechatLayer: !this.state.showRelatedWechatLayer
-    });
-  }
-
-  toggleCreateLayer(content) {
-    this.authorInfo = {
-      pageTitle: "新增作者"
-    };
-    if (content) {
-      this.authorInfo = content;
-      this.authorInfo.pageTitle = "修改作者信息";
-    }
-    this.setState({
-      showCreateLayer: !this.state.showCreateLayer
-    });
-  }
-
-  toggleConfirmLayer(id) {
-    this.setState({
-      showConfirmLayer: !this.state.showConfirmLayer
-    });
-    this.deleteId = id;
   }
 
   confirmResult(result) {
@@ -78,7 +73,7 @@ class AuthorSearch extends React.Component {
     if (result) {
       console.log('删除', deleteId, '成功！');
     }
-    this.toggleConfirmLayer();
+    this.toggleLayer(4);
   }
 
   submitAddOrEdit() {
@@ -92,9 +87,9 @@ class AuthorSearch extends React.Component {
         item.plugInUserName = <span className="user-name" onClick={()=>this.toggleUserDetail("", item)}>{userName}</span>;
       }
       item.operation = <div className="operation-btn-wrap">
-        <button className="btn btn-operate" onClick={()=>this.toggleRelatedWetchatLayer(item.id)}>关联微信</button>
-        <button className="btn btn-operate" onClick={()=>this.toggleCreateLayer(item)}>修改</button>
-        <button className="btn btn-operate" onClick={()=>this.toggleConfirmLayer(item.id)}>删除</button>
+        <button className="btn btn-operate" onClick={()=>this.relatedWechatFunc(2)}>关联微信</button>
+        <button className="btn btn-operate" onClick={()=>this.addOrModifyFunc(item)}>修改</button>
+        <button className="btn btn-operate" onClick={()=>this.deleteItemFunc(item.id)}>删除</button>
       </div>
     });
   }
@@ -105,7 +100,7 @@ class AuthorSearch extends React.Component {
 
   render() {
     const {headData, contentData} = data,
-      {showUserDetailArea, showRelatedWechatLayer, showCreateLayer, showConfirmLayer} = this.state,
+      {showUserDetailArea, layerIndex} = this.state,
       {authorInfo} = this;
     const details = {
         pic: authorInfo.pic,
@@ -120,26 +115,26 @@ class AuthorSearch extends React.Component {
       };
     return (
       <div className="AuthorSearch">
-        <header className="header clearfix">
-          <input type="text" name="keyword" className="form-control w100 left"/>
-          <button className="search-btn btn btn-primary input-sm ml20 left">查询</button>
-          <button className="create-btn btn btn-primary input-sm right" onClick={()=>::this.toggleCreateLayer(false)}>
+        <header className="header search-bar">
+          <input type="text" name="keyword" className="form-control input-sm w100 left"/>
+          <button className="search-btn btn btn-primary btn-sm ml20 left">查询</button>
+          <button className="create-btn btn btn-primary btn-sm right" onClick={()=>::this.addOrModifyFunc()}>
             新增作者
           </button>
         </header>
         <section className="content-wrap">
-          <Table headData={headData} contentData={contentData}/>
+          <TablePage headData={headData} contentData={contentData} fixBottom={true}/>
         </section>
         {
           showUserDetailArea &&
           <RightAsideDetail {...details} className="animated bounceInRight"/>
         }
         {
-          showRelatedWechatLayer &&
-          <Modal onModalClick={::this.toggleRelatedWetchatLayer}>
-            <ShowPage width="50%" title="关联微信" closeShowPage={::this.toggleRelatedWetchatLayer}>
+          layerIndex == 2 &&
+          <Modal onModalClick={()=>this.toggleLayer(2)}>
+            <ShowPage width="50%" title="关联微信" closeShowPage={()=>this.toggleLayer(2)}>
               <div className="related-wechat-wrap">
-                <header className="header clearfix">
+                <header className="header search-bar">
                   <input type="text" name="keyword" className="form-control w100 left"/>
                   <button className="search-btn btn btn-primary input-sm ml10 left">查询</button>
                 </header>
@@ -151,14 +146,14 @@ class AuthorSearch extends React.Component {
           </Modal>
         }
         {
-          showCreateLayer &&
-          <Modal onModalClick={::this.toggleCreateLayer}>
-            <ShowPage width="50%" title={authorInfo.pageTitle} closeShowPage={::this.toggleCreateLayer}
+          layerIndex == 1 &&
+          <Modal onModalClick={::this.addOrModifyFunc}>
+            <ShowPage width="50%" title={authorInfo.pageTitle} closeShowPage={::this.addOrModifyFunc}
                       submitForm={::this.submitAddOrEdit}>
               <form className="create-author-wrap">
                 <FormItem name="userName" type="text" defaultValue={authorInfo.userName} title="登陆名"
                           rules={{required: true}} className="form-control"/>
-                <label htmlFor="password" className="subtitle">密码<span className="required red">不填写则不修改</span></label>
+                <label htmlFor="password" className="subtitle">密码<span className="required text-danger">不填写则不修改</span></label>
                 <input type="password" id="password" className="form-control"/>
                 <label htmlFor="password-repeat" className="subtitle">确认密码</label>
                 <input type="password" id="password-repeat" className="form-control"/>
@@ -182,8 +177,8 @@ class AuthorSearch extends React.Component {
           </Modal>
         }
         {
-          showConfirmLayer &&
-          <Modal onModalClick={::this.toggleConfirmLayer}>
+          layerIndex == 4 &&
+          <Modal onModalClick={()=>::this.toggleLayer(4)}>
             <Confirm confirmResult={::this.confirmResult} content="确定删除么？"/>
           </Modal>
         }
